@@ -113,7 +113,7 @@ void fix_colour(char *image, int x, int y)
    char tmp;
    i = x * y;
    while(--i) {
-      tmp = image[0];
+	  tmp = image[0];
       image[0] = image[2];
       image[2] = tmp;
       image += 3;

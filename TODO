@@ -1,6 +1,6 @@
 camorama todo
 
-- put read() back in
+- put read() back in - done
 - allow resize on the fly
 - allow configuration of format of timestamp (image and filename)
 - fix threads

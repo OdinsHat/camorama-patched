@@ -309,6 +309,70 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam * cam)
    }
    gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
 }
+
+void on_change_size_activate(GtkWidget * widget, cam * cam)
+{
+   gchar *name;
+   name = gtk_widget_get_name(widget);
+
+   if(strcmp(name, "small1") == 0) {
+      cam->x = cam->vid_cap.minwidth;
+      cam->y = cam->vid_cap.minheight;
+   } else if(strcmp(name, "medium1") == 0) {
+      cam->x = cam->vid_cap.maxwidth / 2;
+      cam->y = cam->vid_cap.maxheight / 2;
+   } else {
+      cam->x = cam->vid_cap.maxwidth;
+      cam->y = cam->vid_cap.maxheight;
+   }
+   cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
+   gtk_widget_set_size_request(glade_xml_get_widget(cam->xml, "da"), cam->x, cam->y);
+   if(cam->read == FALSE) {
+      cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
+
+      if((unsigned char *) -1 == (unsigned char *) cam->pic) {
+         if(cam->debug == TRUE) {
+            fprintf(stderr, "Unable to capture image (mmap).\n");
+         }
+         error_dialog(_("Unable to capture image."));
+         exit(-1);
+      }
+   }else{
+	   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
+	   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
+   }
+   cam->vid_win.x = 0;
+   cam->vid_win.y = 0;
+   cam->vid_win.width = cam->x;
+   cam->vid_win.height = cam->y;
+   cam->vid_win.chromakey = 0;
+   cam->vid_win.flags = 0;
+
+   set_win_info(cam);
+   get_win_info(cam);
+   cam->vid_map.height = cam->y;
+   cam->vid_map.width = cam->x;
+   /*cam->vid_win.height = cam->y;
+   cam->vid_win.width = cam->x;
+   get_win_info(cam);*/
+   cam->vid_map.format = cam->vid_pic.palette;
+   //get_win_info(cam);
+   if(cam->read == FALSE) {
+      for(frame = 0; frame < cam->vid_buf.frames; frame++) {
+         cam->vid_map.frame = frame;
+         if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
+            if(cam->debug == TRUE) {
+               fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE) during resize.\n");
+            }
+            error_dialog(_("Unable to capture image."));
+            exit(-1);
+         }
+      }
+   }
+   frame = 0;
+   gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
+
+}
 void on_show_effects_activate(GtkMenuItem * menuitem, cam * cam)
 {
 
@@ -361,16 +425,18 @@ gint read_timeout_func(cam * cam)
    read(cam->dev, cam->pic, (cam->x * cam->y * 3));
    frames2++;
    /*update_rec.x = 0;
-   update_rec.y = 0;
-   update_rec.width = cam->x;
-   update_rec.height = cam->y;*/
+    * update_rec.y = 0;
+    * update_rec.width = cam->x;
+    * update_rec.height = cam->y; */
    count++;
    /* refer the frame */
-   cam->pic_buf = cam->pic + cam->vid_buf.offsets[frame];
+   cam->pic_buf = cam->pic;     // + cam->vid_buf.offsets[frame];
+
    if(cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
       yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
       cam->pic_buf = cam->tmp;
    }
+
    if(func_state.fc == TRUE) {
       fix_colour(cam->pic_buf, cam->x, cam->y);
    }
@@ -412,14 +478,12 @@ gint read_timeout_func(cam * cam)
    }
 
    gc = gdk_gc_new(cam->pixmap);
-
    gdk_draw_rgb_image(cam->pixmap,
                       gc, 0, 0,
                       cam->vid_win.width, cam->vid_win.height, GDK_RGB_DITHER_NORMAL,
                       cam->pic_buf, cam->vid_win.width * cam->depth);
 
    gtk_widget_queue_draw_area(glade_xml_get_widget(cam->xml, "da"), 0, 0, cam->x, cam->y);
-
    return 1;
 
 }

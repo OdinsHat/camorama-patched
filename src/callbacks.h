@@ -15,6 +15,7 @@ typedef struct image_state {
    gboolean fc;
 } state;
 
+void on_change_size_activate(GtkWidget *widget, cam *cam);
 void on_quit1_activate(GtkMenuItem * menuitem, gpointer user_data);
 void gconf_notify_func(GConfClient * client, guint cnxn_id, GConfEntry * entry, char *);
 void gconf_notify_func_bool(GConfClient * client, guint cnxn_id, GConfEntry * entry, gboolean val);

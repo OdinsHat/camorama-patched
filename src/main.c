@@ -16,7 +16,7 @@ int frames, frames2, seconds;
 GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *directory_entry, *filename_entry, *login_entry, *pw_entry;
 
-static gboolean ver = FALSE, max = FALSE, min = FALSE, half = FALSE;
+static gboolean ver = FALSE, max = FALSE, min = FALSE, half = FALSE, use_read = FALSE;
 
 int main(int argc, char *argv[])
 {
@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
       {"max", 'M', POPT_ARG_NONE, &max, 0, N_("maximum capture size"), NULL},
       {"min", 'm', POPT_ARG_NONE, &min, 0, N_("minimum capture size"), NULL},
       {"half", 'H', POPT_ARG_NONE, &half, 0, N_("middle capture size"), NULL},
+	  {"read", 'R', POPT_ARG_NONE, &use_read, 0, N_("use read() rather than mmap()"), NULL},
       POPT_TABLEEND
    };
 
@@ -50,6 +51,7 @@ int main(int argc, char *argv[])
    cam->pixmap = NULL;
    cam->size = PICHALF;
    cam->video_dev = NULL;
+   cam->read = FALSE;
 
    bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
@@ -84,7 +86,10 @@ int main(int argc, char *argv[])
    if(half) {
       cam->size = PICHALF;
    }
-
+   if(use_read) {
+	  printf("gah!\n");
+      cam->read = TRUE;
+   }
    gc = gconf_client_get_default();
    cam->gc = gc;
 
@@ -169,10 +174,13 @@ int main(int argc, char *argv[])
    set_buffer(cam);
    //cam->read = FALSE;
    /* initialize cam and create the window */
+   
    if(cam->read == FALSE) {
       pt2Function = timeout_func;
 	   init_cam(NULL, cam);
    }else{
+	   printf("using read()\n");
+	   cam->pic = realloc(cam->pic,(cam->vid_cap.maxwidth * cam->vid_cap.maxheight *3));
 	   pt2Function = read_timeout_func;
    }
    cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
@@ -203,10 +211,16 @@ int main(int argc, char *argv[])
 
    gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), logo);
    gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")), logo);
-
+   
    glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_effects_activate), cam);
    glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),
                                  cam);
+   
+   glade_xml_signal_connect_data(cam->xml, "on_large1_activate", G_CALLBACK(on_change_size_activate), cam);
+   glade_xml_signal_connect_data(cam->xml, "on_medium1_activate", G_CALLBACK(on_change_size_activate), cam);
+   glade_xml_signal_connect_data(cam->xml, "on_small1_activate", G_CALLBACK(on_change_size_activate), cam);
+   
+   //glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
    glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(capture_func), cam);
    glade_xml_signal_connect_data(cam->xml, "gtk_main_quit", G_CALLBACK(delete_event), NULL);
 

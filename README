@@ -105,6 +105,7 @@ these are projects that i looked at when creating camorama:
 - xawtv - v4l stuff
 - metacity-setup (http://plastercast.tzo.com/~plastercast/Projects/) - configure scripts and gnome2 stuff
 - Mark McClelland for the code for YUV->RGB conversion
+- gnomemeeting for the eggtray icon stuff (system tray applet). 
 
 homepage:
 

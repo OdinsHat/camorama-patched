@@ -1,7 +1,12 @@
-stuffdir = $(datadir)/camorama/pixmaps
+stuffdir = $(datadir)/camorama
 stuff_DATA =				\
 	pixmaps/snap-icon.xpm \
-	pixmaps/snap-icon-small.xpm
+	pixmaps/snap-icon-small.xpm \
+	pixmaps/contrast.png \
+	pixmaps/colourness.png \
+	pixmaps/brightness.png \
+	pixmaps/whiteness.png \
+	pixmaps/stock-tool-hue-saturation-16.png 
 	
 gladedir = $(datadir)/camorama
 glade_DATA =				\
@@ -23,5 +28,5 @@ install-data-local:
 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(srcdir)/$(schema_DATA) 
 	$(GCONFTOOL) --shutdown
 
-EXTRA_DIST = $(glade_DATA) $(schema_in_files)
+EXTRA_DIST = $(glade_DATA) $(schema_in_files) $(stuff_DATA)
 

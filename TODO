@@ -2,14 +2,11 @@ camorama todo
 
 - FIX THREADS IN REMOTE CAPTURE!
 - put read() back in - done
-- allow resize on the fly
+- allow resize on the fly - kind of done
 - allow configuration of format of timestamp (image and filename)
-- fix threads
 - better documentation - ongoing ;)
-- work on increasing fps, especially at higher res - ongoing
-- translations  -  trying to figure it out...
 - better/more filters  - ongoing...
 - fullscreen mode ala xawtv
 - look at having filters as plugins
 - recording of video
-- add support for gnome system tray?
+- add support for gnome system tray? - almost done

@@ -325,8 +325,10 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
       cam->x = cam->vid_cap.maxwidth;
       cam->y = cam->vid_cap.maxheight;
    }
+   
    cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
    gtk_widget_set_size_request(glade_xml_get_widget(cam->xml, "da"), cam->x, cam->y);
+   
    if(cam->read == FALSE) {
       cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
 
@@ -341,6 +343,7 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
 	   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
 	   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
    }
+   
    cam->vid_win.x = 0;
    cam->vid_win.y = 0;
    cam->vid_win.width = cam->x;
@@ -357,18 +360,18 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
    get_win_info(cam);*/
    cam->vid_map.format = cam->vid_pic.palette;
    //get_win_info(cam);
-   /*if(cam->read == FALSE) {
+   if(cam->read == FALSE) {
       for(frame = 0; frame < cam->vid_buf.frames; frame++) {
          cam->vid_map.frame = frame;
          if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
             if(cam->debug == TRUE) {
                fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE) during resize.\n");
             }
-            error_dialog(_("Unable to capture image."));
-            exit(-1);
+            /*error_dialog(_("Unable to capture image."));
+            exit(-1);*/
          }
       }
-   }*/
+   }
    
    get_win_info(cam);
    frame = 0;

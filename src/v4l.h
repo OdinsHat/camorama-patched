@@ -42,7 +42,7 @@ typedef struct camera {
    unsigned char *pic;
    unsigned char *image;
    char *capturefile, *rcapturefile;
-   char *pixdir, *rpixdir;
+   char pixdir[256], *rpixdir;
    int savetype, rsavetype;
    char *rhost, *rlogin, *rpw;
    char *ts_string;

@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Camorama Webcam Viewer 
+_Name=Camorama Webcam Viewer
 _Comment=View, alter and save images from a webcam
 Exec=camorama
 Terminal=0

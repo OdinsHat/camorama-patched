@@ -3,5 +3,8 @@
 data/camorama.glade
 data/camorama.schemas.in
 src/callbacks.c
+src/fileio.c
 src/main.c
+src/v4l.c
 src/support.c
+camorama.desktop.in

@@ -1,6 +1,7 @@
 2003-02-24  Christian Neumair  <chris@gnome-de.org>
 
-	* camorama.desktop.in: Marked Name and Comment fields for translation.
+	* camorama.desktop.in: Marked Name and Comment fields for translation;
+	removed obsolete character from Name field.
 
 2003-02-24  Evandro Fernandes Giovanini <evandrofg@ig.com.br>
 

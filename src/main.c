@@ -14,9 +14,7 @@ state func_state;
 int frames, frames2, seconds;
 GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *directory_entry, *filename_entry, *login_entry, *pw_entry;
-//anjuta cvs test
 
-//popt variables
 static gboolean ver = FALSE, max = FALSE, min = FALSE, half = FALSE;
 
 int main(int argc, char *argv[])
@@ -30,7 +28,6 @@ int main(int argc, char *argv[])
    GdkPixbuf *logo;
    GConfClient *gc;
 
-   //popt option array
    const struct poptOption popt_options[] = {
       {"version", 'V', POPT_ARG_NONE, &ver, 0, N_("show version and exit"), NULL},
       {"device", 'd', POPT_ARG_STRING, &poopoo, 0, N_("v4l device to use"), NULL},
@@ -70,7 +67,6 @@ int main(int argc, char *argv[])
    cam->y = y;
    glade_gnome_init();
 
-   //popt stuff...
    if(ver) {
       fprintf(stderr, "\n\nCamorama version %s\n\n", VERSION);
       exit(0);
@@ -152,7 +148,7 @@ int main(int argc, char *argv[])
    set_win_info(cam);
    get_win_info(cam);
 
-   //get picture attributes
+   /* get picture attributes */
    get_pic_info(cam);
 
    /* set_pic_info(cam); */
@@ -201,7 +197,8 @@ int main(int argc, char *argv[])
                                  cam);
    glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(capture_func), cam);
    glade_xml_signal_connect_data(cam->xml, "gtk_main_quit", G_CALLBACK(delete_event), NULL);
-   //sliders
+
+   /* sliders */
    glade_xml_signal_connect_data(cam->xml, "on_scale1_drag_data_received", G_CALLBACK(on_scale1_drag_data_received),
                                  cam);
 
@@ -216,7 +213,7 @@ int main(int argc, char *argv[])
    glade_xml_signal_connect_data(cam->xml, "wb_change", G_CALLBACK(wb_change), cam);
    gtk_range_set_value((GtkRange *) glade_xml_get_widget(cam->xml, "slider6"), (int) (cam->wb / 256));
 
-   //buttons
+   /* buttons */
    glade_xml_signal_connect_data(cam->xml, "fix_colour_func", G_CALLBACK(fix_colour_func), (gpointer) poopoo);
    glade_xml_signal_connect_data(cam->xml, "threshold_func1", G_CALLBACK(threshold_func1), (gpointer) NULL);
    glade_xml_signal_connect_data(cam->xml, "threshold_ch_func", G_CALLBACK(threshold_ch_func), (gpointer) NULL);
@@ -237,10 +234,10 @@ int main(int argc, char *argv[])
                                  (gpointer) cam);
    glade_xml_signal_connect_data(cam->xml, "on_about1_activate", G_CALLBACK(on_about1_activate), (gpointer) cam);
 
-   //prefs
+   /* prefs */
    glade_xml_signal_connect_data(cam->xml, "prefs_func", G_CALLBACK(prefs_func), cam);
-   //general
 
+   /* general */
    glade_xml_signal_connect_data(cam->xml, "cap_func", G_CALLBACK(cap_func), cam);
 
    gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "captured_cb"), cam->cap);
@@ -318,7 +315,6 @@ int main(int argc, char *argv[])
    cam->status = glade_xml_get_widget(cam->xml, "status");
    set_sensitive(cam);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "string_entry"), cam->usestring);
-   /* prefs */
 
    gtk_widget_set_size_request(glade_xml_get_widget(cam->xml, "da"), cam->x, cam->y);
 

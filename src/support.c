@@ -14,7 +14,6 @@
 GtkWidget *xpm_label_box(gchar * xpm_filename)
 {
    GtkWidget *box;
-   //   GtkWidget *label;
    GtkWidget *image;
 
    /* Create box for image and label */
@@ -25,14 +24,11 @@ GtkWidget *xpm_label_box(gchar * xpm_filename)
    image = gtk_image_new_from_file(xpm_filename);
 
    /* Create a label for the button */
-   //   label = gtk_label_new (label_text);
 
    /* Pack the image and label into the box */
    gtk_box_pack_start(GTK_BOX(box), image, FALSE, FALSE, 3);
-   // gtk_box_pack_start (GTK_BOX (box), label, FALSE, FALSE, 3);
 
    gtk_widget_show(image);
-   //gtk_widget_show (label);
 
    return box;
 }
@@ -68,9 +64,8 @@ GdkPixbuf *create_pixbuf(const gchar * filename)
 
    if(!pathname) {
       g_warning(_("Couldn't find pixmap file: %s"), filename);
-      //    return NULL;
+      return NULL;
    }
-   //pathname = "/usr/share/pixmaps/camorama.png";
    pixbuf = gdk_pixbuf_new_from_file("/usr/share/pixmaps/camorama.png", &error);
    if(!pixbuf) {
       fprintf(stderr, "Failed to load pixbuf file: %s: %s\n", pathname, error->message);
@@ -86,11 +81,6 @@ int error_dialog(char *message)
    int test;
 
    dialog = gnome_message_box_new(message, GNOME_MESSAGE_BOX_ERROR, GNOME_STOCK_BUTTON_CLOSE, NULL);
-   //gnome_dialog_set_close(dialog,TRUE);
-
    test = gnome_dialog_run(GNOME_DIALOG(dialog));
    return test;
-
-   //g_thread_exit(NULL);
-
 }

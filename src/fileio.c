@@ -1,9 +1,7 @@
 #include"fileio.h"
-//#include"v4l.h"
 #include<time.h>
 #include<errno.h>
 #include "support.h"
-//#include<gnome.h>
 
 #include <gdk-pixbuf/gdk-pixbuf.h>
 #include<stdio.h>
@@ -15,7 +13,7 @@
 
 static int print_error(GnomeVFSResult result, const char *uri_string);
 
-//add timestamp/text to image - stolen from gspy
+/* add timestamp/text to image - stolen from gspy */
 int add_rgb_text(char *image, int width, int height, char *cstring, char *format, gboolean str, gboolean date)
 {
    time_t t;
@@ -249,7 +247,6 @@ int local_save(cam * cam)
    if(cam->debug == TRUE) {
       fprintf(stderr, "filename = %s\n", filename);
    }
-   //check to see if dir exists, and if not, create it...
    mkd = mkdir(cam->pixdir, 0777);
 
    if(cam->debug == TRUE) {
@@ -259,7 +256,6 @@ int local_save(cam * cam)
 
    if(mkd != 0 && errno != EEXIST) {
       error_message = g_strdup_printf(_("could not create directory - %s"), cam->pixdir);
-      //fprintf(stderr, "%s\n", error_message);
       error_dialog(error_message);
       g_free(filename);
       g_free(error_message);
@@ -267,7 +263,6 @@ int local_save(cam * cam)
    }
 
    if(chdir(cam->pixdir) != 0) {
-      //fprintf(stderr, "could not change to dir: %s\n",cam->pixdir);
       error_message = g_strdup_printf(_("could not change to directory - %s"), cam->pixdir);
       error_dialog(error_message);
       g_free(filename);
@@ -286,7 +281,6 @@ int local_save(cam * cam)
       g_free(filename);
       g_free(error_message);
       return -1;
-      //pthread_exit(NULL);
    }
 
    if(cam->debug == TRUE) {

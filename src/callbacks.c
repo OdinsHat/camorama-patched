@@ -59,7 +59,6 @@ void append_func(GtkWidget * rb, cam * cam)
 
 }
 
-//remote append date?
 void rappend_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -70,7 +69,6 @@ void rappend_func(GtkWidget * rb, cam * cam)
 
 }
 
-//local image selection
 void jpg_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -126,7 +124,6 @@ void cap_func(GtkWidget * rb, cam * cam)
 
 }
 
-//do remote capture?
 void rcap_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -138,7 +135,6 @@ void rcap_func(GtkWidget * rb, cam * cam)
 
 }
 
-//do automatic capture?
 void acap_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -154,7 +150,6 @@ void acap_func(GtkWidget * rb, cam * cam)
    set_sensitive(cam);
 }
 
-//change capture interval
 void interval_change(GtkWidget * sb, cam * cam)
 {
    GConfClient *client;
@@ -166,7 +161,6 @@ void interval_change(GtkWidget * sb, cam * cam)
    cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, cam);
 }
 
-//remote image selection
 void rjpg_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -194,7 +188,6 @@ void rppm_func(GtkWidget * rb, cam * cam)
    gconf_client_set_int(cam->gc, KEY10, cam->rsavetype, NULL);
 }
 
-//draw remote ts?
 void rts_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -245,7 +238,6 @@ void prefs_func(GtkWidget * okbutton, cam * cam)
 
    if(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, TRUE) != NULL) {
       cam->pixdir = g_strdup((gchar *) gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE));
-      //strncpy(cam->pixdir, gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE),255);
       gconf_client_set_string(cam->gc, KEY1, cam->pixdir, NULL);
 
    } else {
@@ -427,7 +419,6 @@ gint timeout_func(cam * cam)
    return 1;
 }
 
-//calculate and draw fps
 gint fps(GtkWidget * sb)
 {
    gchar *stat;
@@ -435,8 +426,6 @@ gint fps(GtkWidget * sb)
    seconds++;
    stat = g_strdup_printf("%.2f fps - current     %.2f fps - average",
                           (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));
-/*sprintf((char *) stat, "%.2f fps - current     %.2f fps - average",
-           (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));*/
    frames = 0;
    gnome_appbar_push(GNOME_APPBAR(sb), stat);
    return 1;
@@ -447,7 +436,6 @@ void on_status_show(GtkWidget * sb, cam * cam)
    cam->status = sb;
 }
 
-//init cam
 void init_cam(GtkWidget * capture, cam * cam)
 {
    cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
@@ -469,11 +457,9 @@ void init_cam(GtkWidget * capture, cam * cam)
    frame = 0;
 }
 
-//capture images - called when user clicks capture button
 void capture_func(GtkWidget * capture, cam * cam)
 {
    GThread *remote_thread;
-   //GThread *local_thread;
 
    if(cam->cap == TRUE) {
       if(local_save(cam) < 0) {
@@ -486,7 +472,6 @@ void capture_func(GtkWidget * capture, cam * cam)
 
 }
 
-//capture images - called by gtk_timeout() if set
 gint timeout_capture_func(cam * cam)
 {
    pthread_t mythread;
@@ -506,10 +491,8 @@ gint timeout_capture_func(cam * cam)
    return 1;
 }
 
-//expose event
 gboolean on_drawingarea1_expose_event(GtkWidget * widget, GdkEventExpose * event, cam * cam)
 {
-   //gtk_widget_set_size_request     (widget, cam->x, cam->y);
    gdk_draw_drawable(widget->window,
                      widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
                      cam->pixmap,
@@ -519,7 +502,6 @@ gboolean on_drawingarea1_expose_event(GtkWidget * widget, GdkEventExpose * event
    return FALSE;
 }
 
-//filter callbacks
 void fix_colour_func(GtkToggleButton * tb, char *data)
 {
    func_state.fc = gtk_toggle_button_get_active(tb);
@@ -570,7 +552,6 @@ void colour_func(GtkToggleButton * tb, gpointer data)
    func_state.colour = gtk_toggle_button_get_active(tb);
 }
 
-//slider callbacks
 void on_scale1_drag_data_received(GtkHScale * sc1, cam * cam)
 {
    cam->dither = (int) gtk_range_get_value((GtkRange *) sc1);
@@ -611,7 +592,6 @@ void wb_change(GtkHScale * sc1, cam * cam)
    set_pic_info(cam);
 }
 
-//imaginary help cb
 void help_cb(GtkWidget * widget, gpointer data)
 {
    GError *error = NULL;

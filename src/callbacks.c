@@ -349,7 +349,7 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
    cam->vid_win.flags = 0;
 
    set_win_info(cam);
-   get_win_info(cam);
+   //get_win_info(cam);
    cam->vid_map.height = cam->y;
    cam->vid_map.width = cam->x;
    /*cam->vid_win.height = cam->y;
@@ -357,7 +357,7 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
    get_win_info(cam);*/
    cam->vid_map.format = cam->vid_pic.palette;
    //get_win_info(cam);
-   if(cam->read == FALSE) {
+   /*if(cam->read == FALSE) {
       for(frame = 0; frame < cam->vid_buf.frames; frame++) {
          cam->vid_map.frame = frame;
          if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
@@ -368,7 +368,9 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
             exit(-1);
          }
       }
-   }
+   }*/
+   
+   get_win_info(cam);
    frame = 0;
    gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
 

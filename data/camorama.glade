@@ -2560,7 +2560,7 @@
 	      <child>
 		<widget class="GtkImage" id="brightness_icon">
 		  <property name="visible">True</property>
-		  <property name="pixbuf">stock_brightness.png</property>
+		  <property name="pixbuf">brightness.png</property>
 		  <property name="xalign">0.5</property>
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
@@ -2579,7 +2579,7 @@
 	      <child>
 		<widget class="GtkImage" id="color_icon">
 		  <property name="visible">True</property>
-		  <property name="pixbuf">stock_3d-colors.png</property>
+		  <property name="pixbuf">colourness.png</property>
 		  <property name="xalign">0.5</property>
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
@@ -2617,7 +2617,7 @@
 	      <child>
 		<widget class="GtkImage" id="balance_icon">
 		  <property name="visible">True</property>
-		  <property name="pixbuf">stock-tool-color-balance-16.png</property>
+		  <property name="pixbuf">whiteness.png</property>
 		  <property name="xalign">0.5</property>
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>
@@ -2636,7 +2636,7 @@
 	      <child>
 		<widget class="GtkImage" id="contrast_icon">
 		  <property name="visible">True</property>
-		  <property name="pixbuf">stock-tool-brightness-contrast-16.png</property>
+		  <property name="pixbuf">contrast.png</property>
 		  <property name="xalign">0.5</property>
 		  <property name="yalign">0.5</property>
 		  <property name="xpad">0</property>

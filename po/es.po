@@ -9,14 +9,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD.es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-06-12 19:57+0200\n"
-"PO-Revision-Date: 2003-06-13 00:09+0000\n"
-"Last-Translator: Francisco Javier F. Serrador <serrador@arrakis.es>\n"
+"POT-Creation-Date: 2003-08-05 11:26+0200\n"
+"PO-Revision-Date: 2003-08-05 11:11-0300\n"
+"Last-Translator: Pablo G. del Campo <pablodc@bigfoot.com>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.1\n"
+"X-Generator: KBabel 1.0\n"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Visor de cámara web Camorama"
+
+#: camorama.desktop.in.h:2 src/callbacks.c:515
+msgid "View, alter and save images from a webcam"
+msgstr "Ver, alterar y guardar imagenes desde una cámara web"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -79,11 +87,11 @@ msgid "Capture Interval (in minutes):"
 msgstr "Intervalo de la captura (en minutos):"
 
 #: data/camorama.glade.h:16
-msgid "Color correction"
+msgid "Colour correction"
 msgstr "Corrección de color"
 
 #: data/camorama.glade.h:17
-msgid "Color threshold"
+msgid "Colour threshold"
 msgstr "Umbral del color"
 
 #: data/camorama.glade.h:18
@@ -449,99 +457,107 @@ msgstr ""
 "captura automática, esta clave activa el guardado de las imágenes en un "
 "servidor remoto."
 
-#: src/callbacks.c:410
+#: src/callbacks.c:499
 msgid "translator_credits"
 msgstr "Pablo Gonzalo del Campo <pablodc@bigfoot.com>, 2003"
 
-#: src/callbacks.c:425 camorama.desktop.in.h:2
-msgid "View, alter and save images from a webcam"
-msgstr "Ver, alterar y guardar imagenes desde una cámara web"
-
-#: src/callbacks.c:524 src/callbacks.c:590 src/callbacks.c:633
-#: src/callbacks.c:645
+#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
+#: src/callbacks.c:757
 msgid "Unable to capture image."
 msgstr "No se puede capturar la imagen"
 
-#: src/fileio.c:114
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Orientación"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "La orientación de la bandeja."
+
+#: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
 msgstr "No se ha podido guardar el archivo temporal de imagen en /tmp."
 
-#: src/fileio.c:129
+#: src/fileio.c:137
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "No se puede crear la imagen «%s»"
 
-#: src/fileio.c:142
-#, c-format
-msgid "Unable to open temporary image file '%s'."
-msgstr "No se puede abrir el archivo de imagen temporal «%s»."
-
-#: src/fileio.c:173
-#, c-format
-msgid "An error occured opening %s."
-msgstr "Ha ocurrido un error al abrir %s."
-
-#: src/fileio.c:182
-#, c-format
-msgid "An error occured writing to %s."
-msgstr "Ha ocurrido un error al escribir en %s"
-
-#: src/fileio.c:258
-#, c-format
-msgid "Could not create directory '%s'."
-msgstr "No se ha podido crear el directorio «%s»"
-
-#: src/fileio.c:266
-#, c-format
-msgid "Could not change to directory '%s'."
-msgstr "No se ha podido cambiar al directorio «%s»."
-
-#: src/fileio.c:279
+#: src/fileio.c:146 src/fileio.c:429
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "No se ha podido guardar la imagen «%s/%s»."
 
-#: src/main.c:193
+#: src/fileio.c:273
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"No se puede abrir el archivo de imagen temporal «%s».\n"
+"No se puede enviar la imagen."
+
+#: src/fileio.c:311
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Ha ocurrido un error al abrir %s."
+
+#: src/fileio.c:323
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Ha ocurrido un error al escribir en %s"
+
+#: src/fileio.c:403
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "No se ha podido crear el directorio «%s»"
+
+#: src/fileio.c:414
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "No se ha podido cambiar al directorio «%s»."
+
+#: src/main.c:413
 msgid "show version and exit"
 msgstr "muestra la versión y termina"
 
-#: src/main.c:194
+#: src/main.c:415
 msgid "v4l device to use"
 msgstr "dispositivo v4l a utilizar"
 
-#: src/main.c:195
+#: src/main.c:417
 msgid "enable debuging code"
 msgstr "activar la depuración de código"
 
-#: src/main.c:196
+#: src/main.c:418
 msgid "capture width"
 msgstr "ancho de la captura"
 
-#: src/main.c:197
+#: src/main.c:420
 msgid "capture height"
 msgstr "altura de la captura"
 
-#: src/main.c:198
+#: src/main.c:423
 msgid "maximum capture size"
 msgstr "tamaño máximo de la captura"
 
-#: src/main.c:199
+#: src/main.c:425
 msgid "minimum capture size"
 msgstr "tamaño mínimo de la captura"
 
-#: src/main.c:200
+#: src/main.c:427
 msgid "middle capture size"
 msgstr "tamaño intermedio de la captura"
 
-#: src/main.c:201
+#: src/main.c:429
 msgid "use read() rather than mmap()"
 msgstr "usar read() en vez de  mmap()"
 
-#: src/main.c:221
+#: src/main.c:451
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:235
+#: src/main.c:465
 #, c-format
 msgid ""
 "\n"
@@ -554,11 +570,16 @@ msgstr ""
 "Camorama versión %s\n"
 "\n"
 
-#: src/main.c:350
+#: src/main.c:597
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "No se ha podido encontrar el archivo principal de la interfase (camorama."
 "glade)"
+
+#: src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "No se ha podido encontrar el archivo de pixmap: %s"
 
 #: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
 #: src/v4l.c:222
@@ -569,15 +590,6 @@ msgid ""
 msgstr ""
 "No se ha podido conectar al dispositivo de video (%s).\n"
 "Por favor revise la conexión."
-
-#: src/support.c:66
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "No se ha podido encontrar el archivo de pixmap: %s"
-
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Visor de cámara web Camorama"
 
 #~ msgid "Add timestamp to captured images"
 #~ msgstr "Agregar una marca de tiempo a las imágenes capturadas"

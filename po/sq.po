@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-07-28 03:01+0200\n"
+"POT-Creation-Date: 2004-08-18 11:03+0200\n"
 "PO-Revision-Date: 2004-05-18 11:15+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -198,7 +198,6 @@ msgstr "Merr foto"
 msgid "Threshold:"
 msgstr "Kufiri:"
 
-#. GRUT modified this item
 #: data/camorama.glade.h:45
 msgid "Timestamp"
 msgstr "Koha"
@@ -584,4 +583,3 @@ msgid ""
 msgstr ""
 "Nuk arrij të lidhem me dispozitivin video (%s).\n"
 "Kontrollo lidhjen."
-

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.4\n"
 "Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
-"POT-Creation-Date: 2003-08-15 17:53+0100\n"
-"PO-Revision-Date: 2003-08-15 17:55+0000\n"
+"POT-Creation-Date: 2003-08-26 01:15+0100\n"
+"PO-Revision-Date: 2003-08-26 01:20+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -321,7 +321,7 @@ msgstr "Nome servidor FYP para capturas remotas."
 
 #: data/camorama.schemas.in.h:15
 msgid "Interval for auto-capture"
-msgstr "Intreval de auto-captura"
+msgstr "Interval de auto-captura"
 
 #: data/camorama.schemas.in.h:16
 msgid "Local capture image format"
@@ -449,8 +449,8 @@ msgstr ""
 msgid "translator_credits"
 msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:625 src/callbacks.c:696 src/callbacks.c:746
+#: src/callbacks.c:759
 msgid "Unable to capture image."
 msgstr "Incapaz de capturar imagem."
 
@@ -568,8 +568,8 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr "Incapaz de encontrar ficheiro pixmap: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:163 src/v4l.c:188 src/v4l.c:209
-#: src/v4l.c:224
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

@@ -12,3 +12,5 @@ aclocal.m4
 autm4te.cache
 Makefile
 Makefile.in
+camorama.prj
+camorama.pws*

@@ -253,6 +253,17 @@
 	<long>Toggles the use of the sliders to adjust the video properties</long>
       </locale>
     </schema>
+<schema>
+      <key>/schemas/apps/camorama/preferences/show_effects</key>
+      <applyto>/apps/camorama/preferences/show_effects</applyto>
+      <owner>camorama</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+	<short>Toggles the video effects buttons</short>
+	<long>Toggles the use of the buttons to adjust the video filters</long>
+      </locale>
+    </schema>
 
 </schemalist>
 </gconfschemafile>

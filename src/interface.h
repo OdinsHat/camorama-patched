@@ -21,5 +21,4 @@
 #define KEY20 "/apps/camorama/preferences/auto_capture"
 #define KEY21 "/apps/camorama/preferences/auto_capture_interval"
 #define KEY22 "/apps/camorama/preferences/show_adjustments"
-
-
+#define KEY23 "/apps/camorama/preferences/show_effects"

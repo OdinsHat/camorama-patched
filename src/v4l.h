@@ -49,7 +49,7 @@ typedef struct camera {
     gchar *ts_string;
     gchar *date_format;
     gboolean debug, read, hidden;
-    gboolean cap, rcap, acap, show_adjustments;
+    gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
     GdkPixmap *pixmap;

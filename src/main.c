@@ -52,16 +52,19 @@ tray_clicked_callback (GtkWidget * widget, GdkEventButton * event, cam * cam)
         //change to switch
         if (event_button->button == 1) {
             if (GTK_WIDGET_VISIBLE
-                (glade_xml_get_widget (cam->xml, "window2"))) {
+                (glade_xml_get_widget (cam->xml, "main_window"))) {
                 cam->hidden = TRUE;
-				    gtk_idle_remove(cam->idle_id);
-						 gtk_widget_hide (glade_xml_get_widget (cam->xml, "window2"));
-					
+                gtk_idle_remove (cam->idle_id);
+                gtk_widget_hide (glade_xml_get_widget
+                                 (cam->xml, "main_window"));
+
             } else {
-                cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
-					 gtk_widget_show (glade_xml_get_widget (cam->xml, "window2"));
-					 cam->hidden = FALSE;
-					
+                cam->idle_id =
+                    gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+                gtk_widget_show (glade_xml_get_widget
+                                 (cam->xml, "main_window"));
+                cam->hidden = FALSE;
+
             }
             return TRUE;
         } else if (event_button->button == 3) {
@@ -84,7 +87,7 @@ void load_interface (cam * cam)
     GtkWidget *eventbox = NULL, *image = NULL;
     gint width, height;
 
-    (GtkTooltips *)cam->tooltips = gtk_tooltips_new ();
+    (GtkTooltips *) cam->tooltips = gtk_tooltips_new ();
     logo = (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");
@@ -99,14 +102,20 @@ void load_interface (cam * cam)
     //image = gtk_image_new_from_stock (GNOME_STOCK_TRASH, GTK_ICON_SIZE_MENU);
 
     if (cam->show_adjustments == FALSE) {
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "table6"));
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "vbox37"));
+        gtk_widget_hide (glade_xml_get_widget
+                         (cam->xml, "adjustments_table"));
+
         gtk_window_resize (GTK_WINDOW
                            (glade_xml_get_widget
-                            (cam->xml, "window2")), 320, 240);
+                            (cam->xml, "main_window")), 320, 240);
 
     }
-
+    if (cam->show_effects == FALSE) {
+        gtk_widget_hide (glade_xml_get_widget (cam->xml, "effects_box"));
+        gtk_window_resize (GTK_WINDOW
+                           (glade_xml_get_widget
+                            (cam->xml, "main_window")), 320, 240);
+    }
     eventbox = gtk_event_box_new ();
 
     gtk_widget_show (image);
@@ -122,7 +131,7 @@ void load_interface (cam * cam)
     g_object_set_data (G_OBJECT (cam->tray_icon), "embedded",
                        GINT_TO_POINTER (0));
     gtk_container_add (GTK_CONTAINER (eventbox), image);
-    gtk_container_add ((GtkContainer *)cam->tray_icon, eventbox);
+    gtk_container_add ((GtkContainer *) cam->tray_icon, eventbox);
 
     g_signal_connect (G_OBJECT (eventbox), "button_press_event",
                       G_CALLBACK (tray_clicked_callback), cam);
@@ -140,12 +149,13 @@ void load_interface (cam * cam)
     title = g_strdup_printf ("Camorama - %s - %dx%d", cam->vid_cap.name,
                              cam->x, cam->y);
     gtk_window_set_title (GTK_WINDOW
-                          (glade_xml_get_widget (cam->xml, "window2")),
+                          (glade_xml_get_widget (cam->xml, "main_window")),
                           title);
     g_free (title);
 
     gtk_window_set_icon (GTK_WINDOW
-                         (glade_xml_get_widget (cam->xml, "window2")), logo);
+                         (glade_xml_get_widget (cam->xml, "main_window")),
+                         logo);
     gtk_window_set_icon (GTK_WINDOW
                          (glade_xml_get_widget (cam->xml, "prefswindow")),
                          logo);
@@ -158,15 +168,15 @@ void load_interface (cam * cam)
                                                         "togglebutton1"),
                                   cam->show_adjustments);
     glade_xml_signal_connect_data (cam->xml,
-                                   "on_show_adjustments1_activate",
+                                   "on_show_adjustments_activate",
                                    G_CALLBACK
-                                   (on_show_adjustments1_activate), cam);
+                                   (on_show_adjustments_activate), cam);
 
-    glade_xml_signal_connect_data (cam->xml, "on_large1_activate",
+    glade_xml_signal_connect_data (cam->xml, "on_large_activate",
                                    G_CALLBACK (on_change_size_activate), cam);
-    glade_xml_signal_connect_data (cam->xml, "on_medium1_activate",
+    glade_xml_signal_connect_data (cam->xml, "on_medium_activate",
                                    G_CALLBACK (on_change_size_activate), cam);
-    glade_xml_signal_connect_data (cam->xml, "on_small1_activate",
+    glade_xml_signal_connect_data (cam->xml, "on_small_activate",
                                    G_CALLBACK (on_change_size_activate), cam);
 
     //glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(on_change_size_activate), cam);
@@ -237,21 +247,21 @@ void load_interface (cam * cam)
                                    G_CALLBACK (edge_func1), (gpointer) NULL);
 
     glade_xml_signal_connect_data (cam->xml,
-                                   "on_drawingarea1_expose_event",
+                                   "on_drawingarea_expose_event",
                                    G_CALLBACK
-                                   (on_drawingarea1_expose_event),
+                                   (on_drawingarea_expose_event),
                                    (gpointer) cam);
     glade_xml_signal_connect_data (cam->xml, "on_status_show",
                                    G_CALLBACK (on_status_show),
                                    (gpointer) cam);
-    glade_xml_signal_connect_data (cam->xml, "on_quit1_activate",
-                                   G_CALLBACK (on_quit1_activate),
+    glade_xml_signal_connect_data (cam->xml, "on_quit_activate",
+                                   G_CALLBACK (on_quit_activate),
                                    (gpointer) cam);
     glade_xml_signal_connect_data (cam->xml, "on_preferences1_activate",
                                    G_CALLBACK (on_preferences1_activate),
                                    (gpointer) cam);
-    glade_xml_signal_connect_data (cam->xml, "on_about1_activate",
-                                   G_CALLBACK (on_about1_activate),
+    glade_xml_signal_connect_data (cam->xml, "on_about_activate",
+                                   G_CALLBACK (on_about_activate),
                                    (gpointer) cam);
 
     /* prefs */
@@ -521,6 +531,8 @@ int main (int argc, char *argv[])
     cam->acap = gconf_client_get_bool (cam->gc, KEY20, NULL);
     cam->timeout_interval = gconf_client_get_int (cam->gc, KEY21, NULL);
     cam->show_adjustments = gconf_client_get_bool (cam->gc, KEY22, NULL);
+	 cam->show_effects = gconf_client_get_bool (cam->gc, KEY23, NULL);
+
 
     /* get desktop depth */
     display = (Display *) gdk_x11_get_default_xdisplay ();

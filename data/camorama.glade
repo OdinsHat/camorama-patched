@@ -1595,7 +1595,7 @@
   </child>
 </widget>
 
-<widget class="GnomeApp" id="window2">
+<widget class="GnomeApp" id="main_window">
   <property name="visible">True</property>
   <property name="title" translatable="yes">Camorama-libglade</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
@@ -1637,7 +1637,7 @@
 			  <accelerator key="t" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 
 			  <child internal-child="image">
-			    <widget class="GtkImage" id="image18">
+			    <widget class="GtkImage" id="image21">
 			      <property name="visible">True</property>
 			      <property name="pixbuf">snap-icon-small.xpm</property>
 			      <property name="xalign">0.5</property>
@@ -1659,7 +1659,7 @@
 			<widget class="GtkImageMenuItem" id="quit">
 			  <property name="visible">True</property>
 			  <property name="stock_item">GNOMEUIINFO_MENU_EXIT_ITEM</property>
-			  <signal name="activate" handler="on_quit1_activate" last_modification_time="Wed, 08 Jan 2003 17:02:08 GMT"/>
+			  <signal name="activate" handler="on_quit_activate" last_modification_time="Tue, 26 Aug 2003 03:10:03 GMT"/>
 			</widget>
 		      </child>
 		    </widget>
@@ -1700,13 +1700,13 @@
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Show Adjustments</property>
 			  <property name="use_underline">True</property>
-			  <signal name="activate" handler="on_show_adjustments1_activate" last_modification_time="Wed, 08 Jan 2003 01:09:20 GMT"/>
+			  <signal name="activate" handler="on_show_adjustments_activate" last_modification_time="Tue, 26 Aug 2003 03:30:10 GMT"/>
 			  <accelerator key="a" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 			</widget>
 		      </child>
 
 		      <child>
-			<widget class="GtkMenuItem" id="show_effects1">
+			<widget class="GtkMenuItem" id="show_effects">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Show Effects</property>
 			  <property name="use_underline">True</property>
@@ -1722,34 +1722,34 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkRadioMenuItem" id="small1">
+			<widget class="GtkRadioMenuItem" id="small">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Small</property>
 			  <property name="use_underline">True</property>
 			  <property name="active">False</property>
-			  <signal name="activate" handler="on_small1_activate" last_modification_time="Wed, 14 May 2003 22:46:27 GMT"/>
+			  <signal name="activate" handler="on_small_activate" last_modification_time="Tue, 26 Aug 2003 03:09:34 GMT"/>
 			</widget>
 		      </child>
 
 		      <child>
-			<widget class="GtkRadioMenuItem" id="medium1">
+			<widget class="GtkRadioMenuItem" id="medium">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Medium</property>
 			  <property name="use_underline">True</property>
 			  <property name="active">True</property>
-			  <property name="group">small1</property>
-			  <signal name="activate" handler="on_medium1_activate" last_modification_time="Wed, 14 May 2003 22:46:27 GMT"/>
+			  <property name="group">small</property>
+			  <signal name="activate" handler="on_medium_activate" last_modification_time="Tue, 26 Aug 2003 03:09:42 GMT"/>
 			</widget>
 		      </child>
 
 		      <child>
-			<widget class="GtkRadioMenuItem" id="large1">
+			<widget class="GtkRadioMenuItem" id="large">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Large</property>
 			  <property name="use_underline">True</property>
 			  <property name="active">False</property>
-			  <property name="group">small1</property>
-			  <signal name="activate" handler="on_large1_activate" last_modification_time="Wed, 14 May 2003 22:46:27 GMT"/>
+			  <property name="group">small</property>
+			  <signal name="activate" handler="on_large_activate" last_modification_time="Tue, 26 Aug 2003 03:09:55 GMT"/>
 			</widget>
 		      </child>
 		    </widget>
@@ -1769,7 +1769,7 @@
 			<widget class="GtkImageMenuItem" id="imagemenuitem4">
 			  <property name="visible">True</property>
 			  <property name="stock_item">GNOMEUIINFO_MENU_ABOUT_ITEM</property>
-			  <signal name="activate" handler="on_about1_activate" last_modification_time="Wed, 08 Jan 2003 17:25:39 GMT"/>
+			  <signal name="activate" handler="on_about_activate" last_modification_time="Tue, 26 Aug 2003 04:24:46 GMT"/>
 			</widget>
 		      </child>
 		    </widget>
@@ -1806,7 +1806,7 @@
 		  <property name="width_request">320</property>
 		  <property name="height_request">240</property>
 		  <property name="visible">True</property>
-		  <signal name="expose_event" handler="on_drawingarea1_expose_event" object="cam" last_modification_time="Wed, 01 Jan 2003 15:18:53 GMT"/>
+		  <signal name="expose_event" handler="on_drawingarea_expose_event" object="cam" last_modification_time="Tue, 26 Aug 2003 03:13:06 GMT"/>
 		</widget>
 		<packing>
 		  <property name="padding">0</property>
@@ -1816,7 +1816,7 @@
 	      </child>
 
 	      <child>
-		<widget class="GtkVBox" id="vbox37">
+		<widget class="GtkVBox" id="effects_box">
 		  <property name="border_width">6</property>
 		  <property name="visible">True</property>
 		  <property name="homogeneous">False</property>
@@ -2149,7 +2149,7 @@
 		      <property name="relief">GTK_RELIEF_NORMAL</property>
 		      <property name="active">False</property>
 		      <property name="inconsistent">False</property>
-		      <signal name="toggled" handler="on_show_adjustments1_activate" last_modification_time="Thu, 31 Jul 2003 00:47:15 GMT"/>
+		      <signal name="toggled" handler="on_show_adjustments_activate" last_modification_time="Tue, 26 Aug 2003 03:10:26 GMT"/>
 
 		      <child>
 			<widget class="GtkAlignment" id="alignment3">
@@ -2304,7 +2304,7 @@
 	  </child>
 
 	  <child>
-	    <widget class="GtkTable" id="table6">
+	    <widget class="GtkTable" id="adjustments_table">
 	      <property name="border_width">12</property>
 	      <property name="visible">True</property>
 	      <property name="n_rows">5</property>

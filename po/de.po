@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camora 0.17\n"
-"POT-Creation-Date: 2003-04-25 20:04+0200\n"
-"PO-Revision-Date: 2003-04-25 20:04+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-06-11 15:00+0200\n"
+"PO-Revision-Date: 2003-06-11 14:59+0200\n"
 "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,12 +60,12 @@ msgid "Automatic Capture"
 msgstr "Automatisch mitschneiden"
 
 #: data/camorama.glade.h:12
-msgid "Black & White"
+msgid "Black & white"
 msgstr "Schwarz/Weiß"
 
 #: data/camorama.glade.h:13
-msgid "Brightness"
-msgstr "Helligkeit"
+msgid "Brightness:"
+msgstr "Helligkeit:"
 
 #: data/camorama.glade.h:14
 msgid "Camorama-libglade"
@@ -83,12 +84,12 @@ msgid "Color threshold"
 msgstr "Farbschwellwert"
 
 #: data/camorama.glade.h:18
-msgid "Colour"
-msgstr "Farbe"
+msgid "Colour:"
+msgstr "Farbe:"
 
 #: data/camorama.glade.h:19
-msgid "Contrast"
-msgstr "Kontrast"
+msgid "Contrast:"
+msgstr "Kontrast:"
 
 #: data/camorama.glade.h:20
 msgid "Draw date and time"
@@ -107,146 +108,150 @@ msgid "General"
 msgstr "Allgemein"
 
 #: data/camorama.glade.h:24
-msgid "Hue"
-msgstr "Farbton"
+msgid "Hue:"
+msgstr "Farbton:"
 
 #: data/camorama.glade.h:25
 msgid "Laplace"
 msgstr "Laplace"
 
 #: data/camorama.glade.h:26
+msgid "Large"
+msgstr "Groß"
+
+#: data/camorama.glade.h:27
 msgid "Local Capture"
 msgstr "Lokal mitschneiden"
 
-#: data/camorama.glade.h:27
+#: data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Mittel"
+
+#: data/camorama.glade.h:29
 msgid "Mirror image"
 msgstr "Bild spiegeln"
 
-#: data/camorama.glade.h:28
+#: data/camorama.glade.h:30
 msgid "Negative"
 msgstr "Nagativ"
 
-#: data/camorama.glade.h:29
+#: data/camorama.glade.h:31
 msgid "Password:"
 msgstr "Passwort:"
 
-#: data/camorama.glade.h:30
+#: data/camorama.glade.h:32
 msgid "Preferences"
 msgstr "Einstellungen"
 
-#: data/camorama.glade.h:31
+#: data/camorama.glade.h:33
 msgid "Remote Capture"
 msgstr "Entfernt mitschneiden"
 
-#: data/camorama.glade.h:32
+#: data/camorama.glade.h:34
 msgid "Save directory:"
 msgstr "Speicherverzeichnis:"
 
-#: data/camorama.glade.h:33
+#: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
 msgstr "Dateien im JPEG-Format speichern"
 
-#: data/camorama.glade.h:34
+#: data/camorama.glade.h:36
 msgid "Save files in png format"
 msgstr "Dateien im PNG-Format speichern"
 
-#: data/camorama.glade.h:35
+#: data/camorama.glade.h:37
 msgid "Show Adjustments"
 msgstr "Anpassungen anzeigen"
 
-#: data/camorama.glade.h:36
+#: data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr "Effekte anzeigen"
+
+#: data/camorama.glade.h:39
+msgid "Small"
+msgstr "Klein"
+
+#: data/camorama.glade.h:40
 msgid "Smoothing"
 msgstr "Glättung"
 
-#: data/camorama.glade.h:37
+#: data/camorama.glade.h:41
 msgid "Sobel"
 msgstr "Sobel"
 
-#: data/camorama.glade.h:38
+#: data/camorama.glade.h:42
 msgid "String:"
 msgstr "Zeichenkette:"
 
-#: data/camorama.glade.h:39
+#: data/camorama.glade.h:43
 msgid "Take Picture"
 msgstr "Bild aufnehmen"
 
-#: data/camorama.glade.h:40
-msgid "Threshold"
-msgstr "Schwellwert"
+#: data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr "Schwellwert:"
 
-#: data/camorama.glade.h:41
+#: data/camorama.glade.h:45
 msgid "Timestamp"
 msgstr "Zeitstempel"
 
-#: data/camorama.glade.h:42
+#: data/camorama.glade.h:46
 msgid "Use custom string"
 msgstr "Benutzerdefinierte Zeichenkette verwenden"
 
-#: data/camorama.glade.h:43
+#: data/camorama.glade.h:47
 msgid "Username:"
 msgstr "Benutzername:"
 
-#: data/camorama.glade.h:44
+#: data/camorama.glade.h:48
 msgid "Wacky"
 msgstr "Verrückt"
 
-#: data/camorama.glade.h:45
-msgid "White Balance"
-msgstr "Weißbalance"
+#: data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr "Weißbalance:"
 
-#: data/camorama.glade.h:46
+#: data/camorama.glade.h:50
 msgid "_Directory for captured pics:"
 msgstr "_Verzeichnis für mitgeschnittene Bilder:"
 
-#: data/camorama.glade.h:47
+#: data/camorama.glade.h:51
 msgid "_Enable local capture"
 msgstr "Lokal _mitschneiden"
 
-#: data/camorama.glade.h:48
+#: data/camorama.glade.h:52
 msgid "_Enable remote capture"
 msgstr "Entfernt _mitschneiden"
 
-#: data/camorama.glade.h:49
+#: data/camorama.glade.h:53
 msgid "_Filename for pictures:"
 msgstr "_Dateiname für Bilder:"
 
-#: data/camorama.glade.h:50
+#: data/camorama.glade.h:54
 msgid "ftp.yourdomain.org"
 msgstr "ftp.ihredomaene.org"
 
-#: data/camorama.glade.h:51
-msgid "large"
-msgstr "groß"
-
-#: data/camorama.glade.h:52
-msgid "medium"
-msgstr "mittel"
-
-#: data/camorama.glade.h:53
+#: data/camorama.glade.h:55
 msgid "path/to/save/to"
 msgstr "pfad/zum/speichern"
 
-#: data/camorama.glade.h:54
-msgid "small"
-msgstr "klein"
-
-#: data/camorama.glade.h:55
+#: data/camorama.glade.h:56
 msgid "webcam-capture"
 msgstr "webcam-mitschneiden"
 
-#: data/camorama.glade.h:56
+#: data/camorama.glade.h:57
 msgid "webcamshot"
 msgstr "webcamshot"
 
-#: data/camorama.glade.h:57
+#: data/camorama.glade.h:58
 msgid "your-password"
 msgstr "Ihr-Passwort"
 
-#: data/camorama.glade.h:58
+#: data/camorama.glade.h:59
 msgid "your-username"
 msgstr "Ihr-Benutzername"
 
-#: data/camorama.glade.h:59
+#: data/camorama.glade.h:60
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -438,16 +443,16 @@ msgstr ""
 "mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder auf "
 "einem entfernten Rechner gespeichert werden."
 
-#: src/callbacks.c:401
+#: src/callbacks.c:410
 msgid "translator_credits"
 msgstr "Christian Neumair <chris@gnome-de.org>"
 
-#: src/callbacks.c:416 camorama.desktop.in.h:2
+#: src/callbacks.c:425 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Webcam-Bilder anzeigen, bearbeiten und speichern"
 
-#: src/callbacks.c:513 src/callbacks.c:579 src/callbacks.c:620
-#: src/callbacks.c:632
+#: src/callbacks.c:524 src/callbacks.c:590 src/callbacks.c:633
+#: src/callbacks.c:645
 msgid "Unable to capture image."
 msgstr "Bild konnte nicht mitgeschnitten werden."
 
@@ -490,47 +495,47 @@ msgstr "Wechseln in's Verzeichnis »%s« fehlgeschlagen."
 msgid "Could not save image '%s/%s'."
 msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
 
-#: src/main.c:35
+#: src/main.c:193
 msgid "show version and exit"
 msgstr "Die Version anzeigen und beenden"
 
-#: src/main.c:36
+#: src/main.c:194
 msgid "v4l device to use"
 msgstr "Zu verwendendes v4l-Gerät"
 
-#: src/main.c:37
+#: src/main.c:195
 msgid "enable debuging code"
 msgstr "Fehlerdiagnose durchführen"
 
-#: src/main.c:38
+#: src/main.c:196
 msgid "capture width"
 msgstr "Mittschnittbreite"
 
-#: src/main.c:39
+#: src/main.c:197
 msgid "capture height"
 msgstr "Mittschnitthöhe"
 
-#: src/main.c:40
+#: src/main.c:198
 msgid "maximum capture size"
 msgstr "Maximale Mitschnittgröße"
 
-#: src/main.c:41
+#: src/main.c:199
 msgid "minimum capture size"
 msgstr "Minimale Mitschnittgröße"
 
-#: src/main.c:42
+#: src/main.c:200
 msgid "middle capture size"
 msgstr "Durchschnittliche Mitschnittgröße"
 
-#: src/main.c:43
+#: src/main.c:201
 msgid "use read() rather than mmap()"
 msgstr "read() gegenüber mmap() bevorzugen"
 
-#: src/main.c:63
+#: src/main.c:221
 msgid "camorama"
 msgstr "Camorama"
 
-#: src/main.c:77
+#: src/main.c:235
 #, c-format
 msgid ""
 "\n"
@@ -543,7 +548,7 @@ msgstr ""
 "Camorama, Version %s\n"
 "\n"
 
-#: src/main.c:192
+#: src/main.c:350
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Die Haupt-Oberflächendatei (camorama.glade) konnte nicht gefunden werden."

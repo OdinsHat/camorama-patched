@@ -1,13 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# German Camorama translation.
+# Copyright (C) 2003 Greg Jones <greg@fixedgear.org>
+# This file is distributed under the same license as the camorama package.
+# Christian Neumair <chris@gnome-de.org>, 2003.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: camora VERSION\n"
-"POT-Creation-Date: 2003-04-12 17:39+0200\n"
-"PO-Revision-Date: 2003-04-12 17:39+0200\n"
+"Project-Id-Version: camora 0.17\n"
+"POT-Creation-Date: 2003-04-25 20:04+0200\n"
+"PO-Revision-Date: 2003-04-25 20:04+0200\n"
 "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -215,26 +215,38 @@ msgid "ftp.yourdomain.org"
 msgstr "ftp.ihredomaene.org"
 
 #: data/camorama.glade.h:51
+msgid "large"
+msgstr "groß"
+
+#: data/camorama.glade.h:52
+msgid "medium"
+msgstr "mittel"
+
+#: data/camorama.glade.h:53
 msgid "path/to/save/to"
 msgstr "pfad/zum/speichern"
 
-#: data/camorama.glade.h:52
+#: data/camorama.glade.h:54
+msgid "small"
+msgstr "klein"
+
+#: data/camorama.glade.h:55
 msgid "webcam-capture"
 msgstr "webcam-mitschneiden"
 
-#: data/camorama.glade.h:53
+#: data/camorama.glade.h:56
 msgid "webcamshot"
 msgstr "webcamshot"
 
-#: data/camorama.glade.h:54
+#: data/camorama.glade.h:57
 msgid "your-password"
 msgstr "Ihr-Passwort"
 
-#: data/camorama.glade.h:55
+#: data/camorama.glade.h:58
 msgid "your-username"
 msgstr "Ihr-Benutzername"
 
-#: data/camorama.glade.h:56
+#: data/camorama.glade.h:59
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -426,17 +438,16 @@ msgstr ""
 "mittels der Auto-Aufnahme sorgt dieser Knopf dafür, dass die Bilder auf "
 "einem entfernten Rechner gespeichert werden."
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:317
+#: src/callbacks.c:401
 msgid "translator_credits"
 msgstr "Christian Neumair <chris@gnome-de.org>"
 
-#: src/callbacks.c:324 camorama.desktop.in.h:2
+#: src/callbacks.c:416 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Webcam-Bilder anzeigen, bearbeiten und speichern"
 
-#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
-#: src/callbacks.c:465
+#: src/callbacks.c:513 src/callbacks.c:579 src/callbacks.c:620
+#: src/callbacks.c:632
 msgid "Unable to capture image."
 msgstr "Bild konnte nicht mitgeschnitten werden."
 
@@ -479,43 +490,47 @@ msgstr "Wechseln in's Verzeichnis »%s« fehlgeschlagen."
 msgid "Could not save image '%s/%s'."
 msgstr "Bild »%s/%s« konnte nicht gespeichert werden."
 
-#: src/main.c:33
+#: src/main.c:35
 msgid "show version and exit"
 msgstr "Die Version anzeigen und beenden"
 
-#: src/main.c:34
+#: src/main.c:36
 msgid "v4l device to use"
 msgstr "Zu verwendendes v4l-Gerät"
 
-#: src/main.c:35
+#: src/main.c:37
 msgid "enable debuging code"
 msgstr "Fehlerdiagnose durchführen"
 
-#: src/main.c:36
+#: src/main.c:38
 msgid "capture width"
 msgstr "Mittschnittbreite"
 
-#: src/main.c:37
+#: src/main.c:39
 msgid "capture height"
 msgstr "Mittschnitthöhe"
 
-#: src/main.c:38
+#: src/main.c:40
 msgid "maximum capture size"
 msgstr "Maximale Mitschnittgröße"
 
-#: src/main.c:39
+#: src/main.c:41
 msgid "minimum capture size"
 msgstr "Minimale Mitschnittgröße"
 
-#: src/main.c:40
+#: src/main.c:42
 msgid "middle capture size"
 msgstr "Durchschnittliche Mitschnittgröße"
 
-#: src/main.c:59
+#: src/main.c:43
+msgid "use read() rather than mmap()"
+msgstr "read() gegenüber mmap() bevorzugen"
+
+#: src/main.c:63
 msgid "camorama"
 msgstr "Camorama"
 
-#: src/main.c:73
+#: src/main.c:77
 #, c-format
 msgid ""
 "\n"
@@ -528,13 +543,13 @@ msgstr ""
 "Camorama, Version %s\n"
 "\n"
 
-#: src/main.c:175
+#: src/main.c:192
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Die Haupt-Oberflächendatei (camorama.glade) konnte nicht gefunden werden."
 
-#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
-#: src/v4l.c:215
+#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
+#: src/v4l.c:222
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

@@ -1,3 +1,6 @@
+2004-09-08  Jayaradha <njaya@redhat.com>
+
+	* configure.in: Added 'ta' (Tamil) to ALL_LINGUAS.
 2004-09-08  Ankit Patel <ankit@redhat.com>
 
 	* configure.in: Added 'gu' (Gujarati) to ALL_LINGUAS.

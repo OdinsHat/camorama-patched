@@ -8,7 +8,7 @@ AC_PROG_INTLTOOL([0.21])
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
 
-ALL_LINGUAS="am az be ca cs da de en_CA en_GB es eu fa fi fr ga gu hr it ml ms nl no pa pl pt pt_BR sq sr sr@Latn sv uk vi ja"
+ALL_LINGUAS="am az be ca cs da de en_CA en_GB es eu fa fi fr ga gu hr it ml ms nl no pa pl pt pt_BR sq sr sr@Latn sv ta uk vi ja"
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AM_GLIB_GNU_GETTEXT

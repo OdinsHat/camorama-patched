@@ -299,10 +299,10 @@ void save_thread (cam * cam)
     }
     uri_1 = gnome_vfs_uri_new (output_uri_string);
 
-    test = gnome_vfs_uri_exists (uri_1);
-
+    //test = gnome_vfs_uri_exists (uri_1);
     gnome_vfs_uri_set_user_name (uri_1, cam->rlogin);
     gnome_vfs_uri_set_password (uri_1, cam->rpw);
+    
 
     result = gnome_vfs_open_uri ((GnomeVFSHandle **) & write_handle,
                                  uri_1, GNOME_VFS_OPEN_WRITE);

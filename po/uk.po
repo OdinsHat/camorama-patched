@@ -1,13 +1,12 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Ukrainian translation of camorama module.
+# This file is distributed under the same license as the Camorama package.
+# Yuriy Syrota <rasta renome.rovno.ua>, 2003.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "POT-Creation-Date: 2003-04-01 17:39+0300\n"
-"PO-Revision-Date: 2003-04-01 05:46--500\n"
+"PO-Revision-Date: 2003-04-01 09:08--500\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +115,7 @@ msgstr "Відтінок"
 
 #: data/camorama.glade.h:26
 msgid "Laplace"
-msgstr "Трансформація Лапласа"
+msgstr "Перетворення Лапласа"
 
 #: data/camorama.glade.h:27
 msgid "Local Capture"
@@ -164,7 +163,7 @@ msgstr "Згладжування"
 
 #: data/camorama.glade.h:38
 msgid "Sobel"
-msgstr "Трансформація Собеля"
+msgstr "Перетворення Собеля"
 
 #: data/camorama.glade.h:39
 msgid "String:"
@@ -192,7 +191,7 @@ msgstr "Користувач"
 
 #: data/camorama.glade.h:45
 msgid "Wacky"
-msgstr "Дивна трансформація"
+msgstr "Дивне перетворення"
 
 #: data/camorama.glade.h:46
 msgid "White Balance"
@@ -268,7 +267,7 @@ msgstr "Визначає рядок нетипового тексту, що йо
 
 #: data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
-msgstr "Назва файлу для локальних зйомок"
+msgstr "Назва файла для локальних зйомок"
 
 #: data/camorama.schemas.in.h:8
 msgid "Filename for saving captured pictures to locally"

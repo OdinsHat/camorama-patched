@@ -1,21 +1,20 @@
 # English/Canada translation of camorama.
 # Copyright (C) 2004 Adam Weinberger and the GNOME Foundation
-# This file is distributed under the same license as the camorama package.
+# This file is distributed under the same licence as the camorama package.
 # Adam Weinberger <adamw@gnome.org>, 2004.
-# , fuzzy
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-04-08 02:21-0400\n"
-"PO-Revision-Date: 2004-04-08 02:24-0400\n"
+"POT-Creation-Date: 2004-09-11 14:59-0400\n"
+"PO-Revision-Date: 2004-09-11 02:24-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: English/Canada <adamw@FreeBSD.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
@@ -163,11 +162,11 @@ msgstr "Save directory:"
 
 #: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
-msgstr "Save files in jpeg format"
+msgstr "Save files in JPEG format"
 
 #: data/camorama.glade.h:36
 msgid "Save files in png format"
-msgstr "Save files in png format"
+msgstr "Save files in PNG format"
 
 #: data/camorama.glade.h:37
 msgid "Show Adjustments"
@@ -251,15 +250,15 @@ msgstr "webcam-capture"
 
 #: data/camorama.glade.h:57
 msgid "webcamshot"
-msgstr "webcamshot"
+msgstr "webcam shot"
 
 #: data/camorama.glade.h:58
 msgid "your-password"
-msgstr "your-password"
+msgstr "your password"
 
 #: data/camorama.glade.h:59
 msgid "your-username"
-msgstr "your-username"
+msgstr "your username"
 
 #: data/camorama.glade.h:60
 msgid "~/.gnome-desktop"
@@ -275,11 +274,11 @@ msgstr "Append timestamp to remote filename"
 
 #: data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "Appends a timestamp, in UNIX time, to the end of filenames"
 
 #: data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "Appends a timestamp, in UNIX time, to the end of remote filenames"
 
 #: data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
@@ -307,11 +306,11 @@ msgstr "Folder for remote captures"
 
 #: data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr "Folder for saving captured pictures remotely"
+msgstr "Remote folder for saving captured pictures"
 
 #: data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "Folder for saving captured pictures to locally"
+msgstr "Local folder for saving captured pictures"
 
 #: data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
@@ -472,7 +471,7 @@ msgstr "The orientation of the tray."
 
 #: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
-msgstr "Could save temporary image file in /tmp."
+msgstr "Could not save temporary image file in /tmp."
 
 #: src/fileio.c:137
 #, c-format
@@ -568,12 +567,12 @@ msgstr ""
 
 #: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Couldn't find the main interface file (camorama.glade)."
+msgstr "Could not find the main interface file (camorama.glade)."
 
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Couldn't find pixmap file: %s"
+msgstr "Could not find pixmap file: %s"
 
 #: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
 #: src/v4l.c:235
@@ -584,4 +583,3 @@ msgid ""
 msgstr ""
 "Could not connect to video device (%s).\n"
 "Please check connection."
-

@@ -212,15 +212,15 @@ void set_buffer(cam * cam)
 {
    char *msg;
    if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
-      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
-      error_dialog(msg);
-      if(cam->debug == TRUE) {
-         fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
-      }
-      g_free(msg);
+      //msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      //error_dialog(msg);
+      //if(cam->debug == TRUE) {
+      //   fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
+      //}
+      //g_free(msg);
       cam->read = TRUE;
 
-      printf("Using read\n");
+      //printf("Using read\n");
       //exit(0);
    } else {
       cam->read = FALSE;

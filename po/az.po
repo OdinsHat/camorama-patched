@@ -1,27 +1,28 @@
+# translation of camorama.HEAD.po to Azerbaijani
 # camorama.HEAD.po faylının Azərbaycan Dilinə tərcüməsi
 # camorama.HEAD.po faylının Azərbaycan dilinə tərcüməsi
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# Mətin Əmirov <metin@karegen.com>, 2003
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Mətin Əmirov <metin@karegen.com>, 2003, 2004.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-11 11:22+0200\n"
-"PO-Revision-Date: 2003-10-19 19:35+0300\n"
+"POT-Creation-Date: 2004-06-13 03:11+0200\n"
+"PO-Revision-Date: 2004-06-17 12:25+0300\n"
 "Last-Translator: Mətin Əmirov <metin@karegen.com>\n"
-"Language-Team: Azərbaycan Dili <gnome@azətt.com>\n"
+"Language-Team: Azerbaijani <translation-team-az@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.1\n"
+"X-Generator: KBabel 1.3\n"
 
 #: camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama Veb Kamera Nümayişçisi"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:515
+#: camorama.desktop.in.h:2 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr "Veb kameranızdan rəsmləri nümayiş edin, dəyişdirin və qeyd edin"
 
@@ -86,15 +87,15 @@ msgid "Capture Interval (in minutes):"
 msgstr "Çəkim Aralığı (dəqiqə olaraq):"
 
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Rəng düzəltməsi"
 
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Rəng başlanğıcı"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Rəng:"
 
 #: data/camorama.glade.h:19
@@ -347,7 +348,9 @@ msgstr "Uzaq qeyd üçün fayl adı"
 
 #: data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Yerli olaraq qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını müəyyən edir"
+msgstr ""
+"Yerli olaraq qeyd edilən rəsmlər üçün istifadə ediləcək rəsm formatını "
+"müəyyən edir"
 
 #: data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
@@ -398,57 +401,72 @@ msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "FTP ilə göndərilən rəsimlərə vaxt mühürünün vurulmasını fəallaşdırır."
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "Video filtrlərini sazlamaq üçün düymələri fəallaşdırır"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr "Rəsimlərə vaxt mühürünün vurulması üçün xüsusi qatarı istifadəyə açır."
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Video qurğularını sazlamaq üçün çubuqların istifadəsini fəallaşdırır"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "Video sazlama çubuqlarını fəallaşdırır"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "Video effektlər düymələrini fəallaşdırır"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "Yerli çəkimlər üçün vaxt mühürünü fəallaşdırır"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "Uzaq çəkimlər üçün vaxt mühürünü fəallaşdırır"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "FTP vericisinin istifadəçi adı"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Çəkilən rəsmlərin FTP ilə göndərilməsi üçün FTP istifadəçi adı"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu "
-"düymə rəsmlərin yerli olaraq qeyd edilməsini fəallaşdırır."
+"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
+"rəsmlərin yerli olaraq qeyd edilməsini fəallaşdırır."
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu "
-"düymə rəsmlərin uzaq vericiyə qeyd edilməsini fəallaşdırır."
+"\"Şəkil Çək\" düyməsi ilə çəkimdə ya da avtomatik çəkim modunda bu düymə "
+"rəsmlərin uzaq vericiyə qeyd edilməsini fəallaşdırır."
 
 #: src/callbacks.c:499
 msgid "translator_credits"
 msgstr ""
 "Vasif İsmailoğlu <linuxaz@azerimail.net>\n"
-"Mətin Əmirov <metin@karegen.com>"
+"Mətin Əmirov <metin@karegen.com>\n"
+"\n"
+"Tərcümə işləri üzrə yazışma siyahısı ünvanımız:\n"
+"<translation-team-az@lists.sourceforge.net> "
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Camorama"
+
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "Rəsm çəkilə bilmədi."
 
@@ -503,47 +521,47 @@ msgstr "'%s' qovluğu yaradıla bilmədi."
 msgid "Could not change to directory '%s'."
 msgstr "'%s' qovluğuna keçə bilmədi."
 
-#: src/main.c:413
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "buraxılış nömrəsini göstər və çıx"
 
-#: src/main.c:415
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "işlədiləcək v4l avadanlığı"
 
-#: src/main.c:417
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "xəta ayırma kodunu fəallaşdır"
 
-#: src/main.c:418
+#: src/main.c:428
 msgid "capture width"
 msgstr "çəkim eni"
 
-#: src/main.c:420
+#: src/main.c:430
 msgid "capture height"
 msgstr "çəkim hündürlüyü"
 
-#: src/main.c:423
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "maksimal çəkim böyüklüyü"
 
-#: src/main.c:425
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "minimal çəkim böyüklüyü"
 
-#: src/main.c:427
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "orta çəkim böyüklüyü"
 
-#: src/main.c:429
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "mmap() yerinə read() işlət"
 
-#: src/main.c:451
+#: src/main.c:461
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:465
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -556,7 +574,7 @@ msgstr ""
 "Camorama buraxılış %s\n"
 "\n"
 
-#: src/main.c:597
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Əsas ara üz faylı tapıla bilmədi (camorama.glade)."
 
@@ -565,8 +583,8 @@ msgstr "Əsas ara üz faylı tapıla bilmədi (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Poksməp faylı tapıla bilmədi: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

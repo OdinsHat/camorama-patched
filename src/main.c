@@ -84,7 +84,7 @@ void load_interface (cam * cam)
     GtkWidget *eventbox = NULL, *image = NULL;
     gint width, height;
 
-    cam->tooltips = gtk_tooltips_new ();
+    (GtkTooltips *)cam->tooltips = gtk_tooltips_new ();
     logo = (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");
@@ -122,7 +122,7 @@ void load_interface (cam * cam)
     g_object_set_data (G_OBJECT (cam->tray_icon), "embedded",
                        GINT_TO_POINTER (0));
     gtk_container_add (GTK_CONTAINER (eventbox), image);
-    gtk_container_add (cam->tray_icon, eventbox);
+    gtk_container_add ((GtkContainer *)cam->tray_icon, eventbox);
 
     g_signal_connect (G_OBJECT (eventbox), "button_press_event",
                       G_CALLBACK (tray_clicked_callback), cam);

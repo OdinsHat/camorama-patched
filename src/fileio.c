@@ -328,7 +328,7 @@ void save_thread (cam * cam)
     gnome_vfs_close ((GnomeVFSHandle *) write_handle);
     gnome_vfs_shutdown ();
     free (tmp);
-    g_thread_exit (NULL);
+	 g_thread_exit (NULL);
 }
 
 static int print_error (GnomeVFSResult result, const char *uri_string)

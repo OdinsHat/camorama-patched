@@ -380,7 +380,7 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 {
     gchar *name, *title;
 
-    name = gtk_widget_get_name (widget);
+    (G_CONST_RETURN) name = gtk_widget_get_name (widget);
 
     if (strcmp (name, "small1") == 0) {
         cam->x = cam->vid_cap.minwidth;
@@ -562,6 +562,7 @@ gint read_timeout_func (cam * cam)
     }
 
     if (func_state.laplace == TRUE) {
+		 
         laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
     }
 
@@ -648,6 +649,7 @@ gint timeout_func (cam * cam)
     }
 
     if (func_state.laplace == TRUE) {
+		 
         laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
     }
 

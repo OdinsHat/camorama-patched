@@ -349,7 +349,7 @@ void laplace (unsigned char *image, int z, int x, int y)
     int neighbours;
     int total0, total1, total2;
     unsigned char *image2, *image3;
-
+	
     image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * z);
     memcpy (image2, image, x * y * z);
     image3 = image2;

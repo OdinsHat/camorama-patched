@@ -101,7 +101,6 @@ int main(int argc, char *argv[])
    gconf_client_notify_add(cam->gc, KEY3, (void *) gconf_notify_func_int, cam->savetype, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY4, (void *) gconf_notify_func_bool, &cam->timestamp, NULL, NULL);
    
-   printf("gconf KEY1 = %s\nIf null, that means we can't find the schema\n",gconf_client_get_string(cam->gc, KEY1, NULL));
    //cam->pixdir = malloc(sizeof(char) * 256);
    strncpy(cam->pixdir,gconf_client_get_string(cam->gc, KEY1, NULL),255);
    

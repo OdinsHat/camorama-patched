@@ -75,11 +75,12 @@ void print_palette(int p)
 
 void camera_cap(cam * cam)
 {
-	char msg[256];
+	char *msg;
    if(ioctl(cam->dev, VIDIOCGCAP, &cam->vid_cap) == -1) {
       fprintf(stderr, "VIDIOCGCAP  --  could not get camera capabilities, exiting.....\n");
-      sprintf(msg,"Could not get camera capabilities:\n%s",cam->video_dev);
+      msg = g_strdup_printf(_("Could not get camera capabilities:\n%s"),cam->video_dev);
 	   error_dialog (msg);
+	   g_free (msg);
 	   exit(0);
    }
    if(cam->x > 0 && cam->y > 0) {
@@ -132,21 +133,25 @@ void camera_cap(cam * cam)
 }
 void set_pic_info(cam * cam)
 {
-	char msg[256];
+	char *msg;
    if(ioctl(cam->dev, VIDIOCSPICT, &cam->vid_pic) == -1) {
       fprintf(stderr, "VIDIOCSPICT  --  could not set picture info, exiting....\n");
-      sprintf(msg,"Could not set picture attributes:\n%s",cam->video_dev);
-	   error_dialog (msg);exit(0);
+      msg = g_strdup_printf(_("Could not set picture attributes:\n%s"),cam->video_dev);
+	   error_dialog (msg);
+	   g_free (msg);
+	   exit(0);
    }
 
 }
 
 void get_pic_info(cam * cam)
 {
-   char msg[256];
+   char *msg;
 	if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
-      sprintf(msg,"Could not get picture attributes:\n%s",cam->video_dev);
-	   error_dialog (msg);fprintf(stderr, "VIDIOCGPICT  --  could not get picture info, exiting....\n");
+		msg = g_strdup_printf(_("Could not get picture attributes:\n%s"),cam->video_dev);
+		error_dialog (msg);
+		fprintf(stderr, "VIDIOCGPICT  --  could not get picture info, exiting....\n");
+		g_free (msg);
       exit(0);
    }
    if(cam->debug == TRUE) {
@@ -164,9 +169,9 @@ void get_pic_info(cam * cam)
 
 void get_win_info(cam * cam)
 {
-   char msg[256];
+   char *msg;
 	if(ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
-      sprintf(msg,"Could not get window attributes:\n%s",cam->video_dev);
+      msg = g_strdup_printf(_("Could not get window attributes:\n%s"),cam->video_dev);
 	   error_dialog (msg);fprintf(stderr, "VIDIOCGWIN  --  could not get window info, exiting....\n");
       exit(0);
    }
@@ -184,10 +189,11 @@ void get_win_info(cam * cam)
 }
 void set_win_info(cam * cam)
 {
-   char msg[256];
+   char *msg;
 	if(ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
-      sprintf(msg,"Could not set windown attributes:\n%s",cam->video_dev);
+      msg = g_strdup_printf(_("Could not set windown attributes:\n%s"),cam->video_dev);
 	   error_dialog (msg);fprintf(stderr, "VIDIOCSWIN  --  could not set window info, exiting....\nerrno = %d", errno);
+	   g_free (msg);
       exit(0);
    }
 
@@ -195,10 +201,11 @@ void set_win_info(cam * cam)
 
 void set_buffer(cam * cam)
 {
-   char msg[256];
+   char *msg;
 	if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
-      sprintf(msg,"Could not get buffer attributes:\n%s",cam->video_dev);
+      msg = g_strdup_printf(_("Could not get buffer attributes:\n%s"),cam->video_dev);
 	   error_dialog (msg);fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
+	   g_free (msg);
       exit(0);
    }
    if(cam->debug == TRUE) {

@@ -9,3 +9,4 @@ po2tbl.sed
 po2tbl.sed.in
 messages
 missing
+Makefile.in.in

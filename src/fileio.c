@@ -263,7 +263,7 @@ local_save (cam * cam)
 	char filename[256], ext[12];
 	time_t t;
 	struct tm *tm;
-	char timenow[64], error_message[512];
+	char timenow[64], *error_message;
 	int len, mkd;
 	gboolean pbs;
 	GdkPixbuf *pb;
@@ -327,19 +327,21 @@ local_save (cam * cam)
 
 	if (mkd != 0 && errno != EEXIST)
 	{
-		sprintf (error_message, "could not create directory - %s",
+		error_message = g_strdup_printf (_("could not create directory - %s"),
 			 cam->pixdir);
 		//fprintf(stderr, "%s\n", error_message);
 		error_dialog (error_message);
+		g_free (error_message);
 		return -1;
 	}
 
 	if (chdir (cam->pixdir) != 0)
 	{
 		//fprintf(stderr, "could not change to dir: %s\n",cam->pixdir);
-		sprintf (error_message, "could not change to directory - %s",
+		error_message = g_strdup_printf (_("could not change to directory - %s"),
 			 cam->pixdir);
 		error_dialog (error_message);
+		g_free (error_message);
 		return -1;
 	}
 
@@ -362,9 +364,10 @@ local_save (cam * cam)
 	
 	if (pbs == FALSE)
 	{
-		sprintf (error_message, "Could not save image:\n %s/%s",cam->pixdir,
+		error_message = g_strdup_printf (_("Could not save image:\n %s/%s"),cam->pixdir,
 			 filename);
 		error_dialog (error_message);
+		g_free (error_message);
 		return -1;
 		//pthread_exit(NULL);
 	}

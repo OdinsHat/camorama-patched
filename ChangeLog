@@ -1,3 +1,12 @@
+2003-02-05  Bastien Nocera  <hadess@hadess.net>
+
+	* .cvsignore: updated
+	* src/fileio.c: (local_save):
+	* src/v4l.c: (camera_cap), (set_pic_info), (get_pic_info),
+	(get_win_info), (set_win_info), (set_buffer):
+	fix most of the uses of sprintf, mark a bunch of strings for
+	translation
+
 2003-02-01  Christophe Merlet  <redfox@redfoxcenter.org>
 
 	* configure.in: Added French (fr) to ALL_LINGUAS

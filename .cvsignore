@@ -17,6 +17,7 @@ Makefile.in
 camorama.prj*
 camorama.pws
 autom4te-2.53.cache
+autom4te.cache
 config.h.in
 depcomp
 stamp-h1

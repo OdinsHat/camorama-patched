@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
-"POT-Creation-Date: 2003-03-01 02:05+0000\n"
-"PO-Revision-Date: 2003-03-01 02:08+0000\n"
+"POT-Creation-Date: 2003-03-25 22:07+0000\n"
+"PO-Revision-Date: 2003-03-25 22:08+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -449,7 +449,7 @@ msgstr "Incapaz de criar imagem '%s'."
 
 #: src/fileio.c:142
 #, c-format
-msgid "Unable to open temorary image file '%s'."
+msgid "Unable to open temporary image file '%s'."
 msgstr "Incapaz de abrir ficheiro temporário de imagem '%s'."
 
 #: src/fileio.c:173

@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-02-26 12:58+0100\n"
-"PO-Revision-Date: 2003-02-26 12:59+0100\n"
+"POT-Creation-Date: 2003-03-24 22:53+0100\n"
+"PO-Revision-Date: 2003-03-24 22:54+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -448,7 +448,7 @@ msgstr "Kan inte skapa bild \"%s\"."
 
 #: src/fileio.c:142
 #, c-format
-msgid "Unable to open temorary image file '%s'."
+msgid "Unable to open temporary image file '%s'."
 msgstr "Kan inte öppna temporär bildfil \"%s\"."
 
 #: src/fileio.c:173

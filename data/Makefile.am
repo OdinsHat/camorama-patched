@@ -7,9 +7,7 @@ schemadir =  @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = camorama.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 #    schema_DATA = camorama.schemas
-
-	 
-#@INTLTOOL_SCHEMAS_RULE@
+@INTLTOOL_SCHEMAS_RULE@
 
 # For the sake of some users
 user-install: $(app_DATA) $(keys_DATA)

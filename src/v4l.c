@@ -151,9 +151,12 @@ void camera_cap(cam * cam)
       printf("min height = %d\n", cam->vid_cap.minheight);
    }
 }
-void set_pic_info(cam * cam)
-{
+void set_pic_info(cam * cam){
    char *msg;
+	printf("SET PIC\n");
+	//cam->vid_pic.palette = VIDEO_PALETTE_RGB24;
+	//cam->vid_pic.depth = 24;
+	//cam->vid_pic.palette = VIDEO_PALETTE_YUV420P;
    if(ioctl(cam->dev, VIDIOCSPICT, &cam->vid_pic) == -1) {
       if(cam->debug == TRUE) {
          fprintf(stderr, "VIDIOCSPICT  --  could not set picture info, exiting....\n");
@@ -166,8 +169,8 @@ void set_pic_info(cam * cam)
 
 }
 
-void get_pic_info(cam * cam)
-{
+void get_pic_info(cam * cam){
+//set_pic_info(cam);
    char *msg;
 	
    if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {

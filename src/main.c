@@ -11,7 +11,6 @@
 #include <locale.h>
 
 GtkWidget *main_window, *prefswindow;
-state func_state;
 int frames, frames2, seconds;
 GtkWidget *dentry, *entry2, *string_entry, *format_selection;
 GtkWidget *host_entry, *directory_entry, *filename_entry, *login_entry,
@@ -41,8 +40,7 @@ static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
 }*/
 
 static gint
-tray_clicked_callback (GtkWidget * widget, GdkEventButton * event, cam * cam)
-{
+tray_clicked_callback (GtkWidget * widget, GdkEventButton * event, cam * cam){
     GdkEventButton *event_button = NULL;
 
     if (event->type == GDK_BUTTON_PRESS) {
@@ -540,15 +538,7 @@ int main (int argc, char *argv[])
     gdk_pixbuf_xlib_init (display, 0);
     cam->desk_depth = xlib_rgb_get_depth ();
 
-    func_state.wacky = 0;
-    func_state.threshold = 0;
-    func_state.laplace = 0;
-    func_state.negative = 0;
-    func_state.colour = 0;
-    func_state.mirror = 0;
-    func_state.smooth = 0;
-    func_state.fc = 1;
-
+	effect_mask |= FIX_COLOUR;
     cam->dither = 128;
 
     cam->dev = open (cam->video_dev, O_RDWR);
@@ -569,7 +559,7 @@ int main (int argc, char *argv[])
 
     /* get picture attributes */
     get_pic_info (cam);
-
+//	set_pic_info(cam);
     /* set_pic_info(cam); */
     cam->contrast = cam->vid_pic.contrast;
     cam->brightness = cam->vid_pic.brightness;

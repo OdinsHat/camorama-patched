@@ -11,7 +11,8 @@
 #include <pthread.h>
 
 extern GtkWidget *main_window, *prefswindow;
-extern state func_state;
+//extern state func_state;
+//extern gint effect_mask;
 extern int frames;
 extern int frames2;
 extern int seconds;
@@ -546,46 +547,43 @@ gint read_timeout_func (cam * cam)
         cam->pic_buf = cam->tmp;
     }
 
-    if (func_state.fc == TRUE) {
-        fix_colour (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.threshold_channel == TRUE) {
+    if( (effect_mask & FIX_COLOUR)  != 0)
+		fix_colour (cam->pic_buf, cam->x, cam->y);
+    
+	if((effect_mask & THRESHOLD_CHANNEL)  != 0) 
         threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
+    
 
-    if (func_state.threshold == TRUE) {
+	if((effect_mask & THRESHOLD)  != 0) 
         threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
+    
 
-    if (func_state.laplace == TRUE) {
+	if((effect_mask & LAPLACE) != 0) 
+		laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
+    
 
-        laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.sobel == TRUE) {
+	if((effect_mask & SOBEL) != 0)
         sobel (cam->pic_buf, cam->x, cam->y);
-    }
+    
 
-    if (func_state.wacky == TRUE) {
+	if((effect_mask & WACKY)  != 0)
         wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
+    
 
-    if (func_state.negative == TRUE) {
+	if((effect_mask & NEGATIVE)  != 0)
         negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
+    
 
-    if (func_state.mirror == TRUE) {
+	if((effect_mask & MIRROR) != 0)
         mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
+    
 
-    if (func_state.colour == TRUE) {
+	if((effect_mask & COLOUR)  != 0) 
         bw (cam->pic_buf, cam->x, cam->y);
-    }
+    
 
-    if (func_state.smooth == TRUE) {
+	if((effect_mask & SMOOTH)  != 0) 
         smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
 
     gc = gdk_gc_new (cam->pixmap);
     gdk_draw_rgb_image (cam->pixmap,
@@ -633,47 +631,38 @@ gint timeout_func (cam * cam)
         yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
         cam->pic_buf = cam->tmp;
     }
-    if (func_state.fc == TRUE) {
-        fix_colour (cam->pic_buf, cam->x, cam->y);
-    }
 
-    if (func_state.threshold_channel == TRUE) {
+	if( (effect_mask & FIX_COLOUR)  != 0) 
+		fix_colour (cam->pic_buf, cam->x, cam->y);
+ 
+	if((effect_mask & THRESHOLD_CHANNEL)  != 0) 
         threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
 
-    if (func_state.threshold == TRUE) {
-        threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-    }
+	if((effect_mask & THRESHOLD)  != 0) 
+		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
 
-    if (func_state.laplace == TRUE) {
-
+	if((effect_mask & LAPLACE) != 0) 
         laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
-    if (func_state.sobel == TRUE) {
+    
+	if((effect_mask & SOBEL) != 0) 
         sobel (cam->pic_buf, cam->x, cam->y);
-    }
 
-    if (func_state.wacky == TRUE) {
+	if((effect_mask & WACKY)  != 0) 
         wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
 
-    if (func_state.negative == TRUE) {
+	if((effect_mask & NEGATIVE)  != 0) 
         negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
 
-    if (func_state.mirror == TRUE) {
+	if((effect_mask & MIRROR) != 0)
         mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-    }
 
-    if (func_state.colour == TRUE) {
+	if((effect_mask & COLOUR)  != 0) 
         bw (cam->pic_buf, cam->x, cam->y);
-    }
-
-    if (func_state.smooth == TRUE) {
+   
+	if((effect_mask & SMOOTH)  != 0) 
         smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
-    }
-
+ 
+ 
     gc = gdk_gc_new (cam->pixmap);
 
     gdk_draw_rgb_image (cam->pixmap,
@@ -823,54 +812,83 @@ on_drawingarea_expose_event (GtkWidget * widget, GdkEventExpose * event,
     return FALSE;
 }
 
-void fix_colour_func (GtkToggleButton * tb, char *data)
-{
-    func_state.fc = gtk_toggle_button_get_active (tb);
+void fix_colour_func (GtkToggleButton * tb, char *data){
+    if(gtk_toggle_button_get_active (tb))
+		effect_mask |= FIX_COLOUR;
+	 else
+	 	effect_mask &= (~FIX_COLOUR);
 }
 
 void edge_func1 (GtkToggleButton * tb, gpointer data)
 {
-    func_state.wacky = gtk_toggle_button_get_active (tb);
+    if(gtk_toggle_button_get_active (tb))
+		effect_mask |= WACKY;
+	 else
+	 	effect_mask &= (~WACKY);
 }
 
 void sobel_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.sobel = gtk_toggle_button_get_active (tb);
+    if(gtk_toggle_button_get_active (tb))
+		effect_mask |= SOBEL;
+	 else
+	 	effect_mask &= (~SOBEL);
 }
 
 void threshold_func1 (GtkToggleButton * tb, gpointer data)
 {
-    func_state.threshold = gtk_toggle_button_get_active (tb);
+     if(gtk_toggle_button_get_active (tb))
+		effect_mask |= THRESHOLD;
+	  else
+	 	effect_mask &= (~THRESHOLD);
 }
 
 void threshold_ch_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.threshold_channel = gtk_toggle_button_get_active (tb);
+    if(gtk_toggle_button_get_active (tb))
+		effect_mask |= THRESHOLD_CHANNEL;
+	 else
+	 	effect_mask &= (~THRESHOLD_CHANNEL);
 }
 
 void edge_func3 (GtkToggleButton * tb, gpointer data)
 {
-    func_state.laplace = gtk_toggle_button_get_active (tb);
+     if(gtk_toggle_button_get_active (tb))
+		effect_mask |= LAPLACE;
+	  else
+	 	effect_mask &= (~LAPLACE);
 }
 
 void negative_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.negative = gtk_toggle_button_get_active (tb);
+    if(gtk_toggle_button_get_active (tb))
+		effect_mask |= NEGATIVE;
+	 else
+	 	effect_mask &= (~NEGATIVE);
 }
 
 void mirror_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.mirror = gtk_toggle_button_get_active (tb);
+     if(gtk_toggle_button_get_active (tb))
+		effect_mask |= MIRROR;
+	 else
+	 	effect_mask &= (~MIRROR);
 }
 
 void smooth_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.smooth = gtk_toggle_button_get_active (tb);
+     if(gtk_toggle_button_get_active (tb))
+		effect_mask |= SMOOTH;
+	  else
+	 	effect_mask &= (~SMOOTH);
 }
 
 void colour_func (GtkToggleButton * tb, gpointer data)
 {
-    func_state.colour = gtk_toggle_button_get_active (tb);
+     if(gtk_toggle_button_get_active (tb))
+		effect_mask |= COLOUR;
+	  else
+	 	effect_mask &= (~COLOUR);
 }
 
 void on_scale1_drag_data_received (GtkHScale * sc1, cam * cam)

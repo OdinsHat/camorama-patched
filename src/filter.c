@@ -12,8 +12,7 @@ static inline void move_420_block (int yTL, int yTR, int yBL, int yBR, int u,
 
 void
 yuv420p_to_rgb (unsigned char *image, unsigned char *temp, int x, int y,
-                int z)
-{
+                int z){
     const int numpix = x * y;
     const int bytes = z;        /* (z*8) >> 3; */
     int i, j, y00, y01, y10, y11, u, v;
@@ -21,7 +20,7 @@ yuv420p_to_rgb (unsigned char *image, unsigned char *temp, int x, int y,
     unsigned char *pU = pY + numpix;
     unsigned char *pV = pU + numpix / 4;
     unsigned char *image2 = temp;
-
+	printf("yuv420p->rgb\n");
     for (j = 0; j <= y - 2; j += 2) {
         for (i = 0; i <= x - 2; i += 2) {
             y00 = *pY;

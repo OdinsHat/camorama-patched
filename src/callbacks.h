@@ -2,18 +2,20 @@
 #include "fileio.h"
 #include <gconf/gconf-client.h>
 
-typedef struct image_state {
-    gboolean wacky;
-    gboolean threshold;
-    gboolean threshold_channel;
-    gboolean sobel;
-    gboolean laplace;
-    gboolean negative;
-    gboolean mirror;
-    gboolean colour;
-    gboolean smooth;
-    gboolean fc;
-} state;
+
+
+static const unsigned gint WACKY =  1<<0;
+static const unsigned gint THRESHOLD =  1<<1;
+static const unsigned gint  THRESHOLD_CHANNEL =  1<<2;
+static const unsigned gint  SOBEL =  1<<3;
+static const unsigned gint  LAPLACE =  1<<4;
+static const unsigned gint  NEGATIVE =  1<<5;
+static const unsigned gint  MIRROR =  1<<6;
+static const unsigned gint  COLOUR =  1<<7;
+static const unsigned gint  SMOOTH =  1<<8;
+static const unsigned gint  FIX_COLOUR =  1<<9;
+
+static unsigned gint effect_mask = 0;
 
 void on_change_size_activate (GtkWidget * widget, cam * cam);
 void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data);

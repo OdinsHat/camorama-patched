@@ -1,10 +1,10 @@
-# Commentaar:
+# Translations of camorama do not seem to work
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Camorama 0.16\n"
-"POT-Creation-Date: 2003-02-07 15:53-0500\n"
-"PO-Revision-Date: 2003-02-04 14:58+0100\n"
+"Project-Id-Version: Camorama 0.17\n"
+"POT-Creation-Date: 2003-02-25 04:32+0100\n"
+"PO-Revision-Date: 2003-02-25 09:16+0100\n"
 "Last-Translator: Huib Kleinhout <huib@stack.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -438,15 +438,53 @@ msgstr ""
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:324
+#: src/callbacks.c:324 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
-msgstr ""
+msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
 #: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
 #: src/callbacks.c:465
-#, fuzzy
 msgid "Unable to capture image."
-msgstr "_Lokale opname inschakelen"
+msgstr "De afbeelding kan niet worden opgeslagen."
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "Kan geen tijdelijk afbeeldingsbestand opslaan in /tmp."
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "De afbeelding '%s' kan niet worden aangemaakt."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temorary image file '%s'."
+msgstr "Het tijdelijke afbeeldingsbestand '%s' kan niet worden geopend."
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Er is een fout opgetreden tijdens het openen van %s."
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Er is een fout opgetreden tijdens het schrijven naar %s."
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Kan map '%s' niet aanmaken."
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "De map '%s' kan niet geopend worden."
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Kan afbeelding '%s/%s' niet opslaan."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -492,12 +530,31 @@ msgid ""
 "Camorama version %s\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Camorama versie %s\n"
+"\n"
 
-#: src/main.c:174
+#: src/main.c:173
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
+"Kan het hoofdbestand voor de gebruikersinterface niet vinden (camorama.glade)"
+
+#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Kan geen verbinding maken met video-apparaat (%s).\n"
+"Controleer de verbinding."
 
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Het afbeeldingsbestand %s kan niet gevonden worden"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama webcamprogramma"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-06-23 14:06+0200\n"
+"POT-Creation-Date: 2004-07-28 03:01+0200\n"
 "PO-Revision-Date: 2004-05-18 11:15+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -114,7 +114,6 @@ msgstr "Emri i file"
 msgid "General"
 msgstr "Të përgjithshme"
 
-#. GRUT modified this item
 #: data/camorama.glade.h:24
 msgid "Hue:"
 msgstr "Tonaliteti:"
@@ -131,7 +130,6 @@ msgstr "E madhe"
 msgid "Local Capture"
 msgstr "Marrja lokale"
 
-#. GRUT modified this item
 #: data/camorama.glade.h:28
 msgid "Medium"
 msgstr "Mesatare"
@@ -144,12 +142,10 @@ msgstr "Figura e reflektuar"
 msgid "Negative"
 msgstr "Negativi"
 
-#. GRUT modified this item
 #: data/camorama.glade.h:31
 msgid "Password:"
 msgstr "Fjalëkalimi:"
 
-#. GRUT modified this item
 #: data/camorama.glade.h:32
 msgid "Preferences"
 msgstr "Preferimet"
@@ -202,9 +198,10 @@ msgstr "Merr foto"
 msgid "Threshold:"
 msgstr "Kufiri:"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:45
 msgid "Timestamp"
-msgstr "Timestamp"
+msgstr "Koha"
 
 #: data/camorama.glade.h:46
 msgid "Use custom string"
@@ -469,7 +466,6 @@ msgstr "E pamundur marrja e figurës."
 msgid "Orientation"
 msgstr "Orientimi"
 
-#. GRUT modified this item
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
 msgstr "Orientimi i sirtarit."

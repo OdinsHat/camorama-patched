@@ -144,7 +144,7 @@ int main(int argc, char *argv[])
    cam->dev = open(cam->video_dev, O_RDWR);
 
    camera_cap(cam);
-   get_win_info(cam);
+   //get_win_info(cam);
 
    /* query/set window attributes */
    cam->vid_win.x = 0;

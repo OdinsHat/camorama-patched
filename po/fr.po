@@ -1,15 +1,16 @@
 # French translation of camorama.
-# Copyright (C) 2003 Free Software FFoundation, Inc.
-# This file is distributed under the GNU General Public License version 2.
+# Copyright (C) 2003-2004 Free Software FFoundation, Inc.
+# This file is distributed under the same license as the camorama package..
+#
 # Baptiste MILLE-MATHIAS <bmm80@ifrance.com>, 2003.
-# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2003.
+# Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2003-2004.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: Camorama 0.17\n"
+"Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-09-02 01:00+0200\n"
-"PO-Revision-Date: 2003-09-02 00:47+0200\n"
+"POT-Creation-Date: 2004-03-13 12:54+0100\n"
+"PO-Revision-Date: 2004-03-13 12:51+0100\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +83,7 @@ msgstr "Camorama-libglade"
 
 #: data/camorama.glade.h:15
 msgid "Capture Interval (in minutes):"
-msgstr "Intervalle de capture (en minutes) :"
+msgstr "Intervalle de capture (en minutes) :"
 
 #: data/camorama.glade.h:16
 msgid "Color correction"
@@ -106,7 +107,7 @@ msgstr "Dessine la date et l'heure"
 
 #: data/camorama.glade.h:21
 msgid "FTP server: "
-msgstr "Serveur FTP : "
+msgstr "Serveur FTP : "
 
 #: data/camorama.glade.h:22
 msgid "Filename"
@@ -146,7 +147,7 @@ msgstr "Négatif"
 
 #: data/camorama.glade.h:31
 msgid "Password:"
-msgstr "Mot de passe :"
+msgstr "Mot de passe :"
 
 #: data/camorama.glade.h:32
 msgid "Preferences"
@@ -158,7 +159,7 @@ msgstr "Capture distante"
 
 #: data/camorama.glade.h:34
 msgid "Save directory:"
-msgstr "Répertoire d'enregistrement :"
+msgstr "Répertoire d'enregistrement :"
 
 #: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
@@ -190,7 +191,7 @@ msgstr "Sobel"
 
 #: data/camorama.glade.h:42
 msgid "String:"
-msgstr "Chaîne :"
+msgstr "Chaîne :"
 
 #: data/camorama.glade.h:43
 msgid "Take Picture"
@@ -580,7 +581,7 @@ msgstr "Ne peut trouver le fichier d'interface principal (camorama.glade)."
 #: src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Impossible de trouver le fichier pixmap : %s"
+msgstr "Impossible de trouver le fichier pixmap : %s"
 
 #: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
 #: src/v4l.c:235
@@ -591,6 +592,3 @@ msgid ""
 msgstr ""
 "Ne peut se connecter au périphérique vidéo (%s).\n"
 "Veuillez vérifier la connexion."
-
-#~ msgid "Add timestamp to captured images"
-#~ msgstr "Ajouter un horodatage aux images capturées"

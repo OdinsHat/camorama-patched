@@ -2,14 +2,14 @@
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the camorama package.
 # Alexandre Folle de Menezes <afmenez@terra.com.br>, 2003.
-# based on the translation to Portuguese (pt) by
+# based on the GNOME 2.2 translation to Portuguese (pt) by
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2003.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
-"POT-Creation-Date: 2003-02-24 08:42-0300\n"
-"PO-Revision-Date: 2003-02-24 03:00-0300\n"
+"POT-Creation-Date: 2003-02-24 19:27+0100\n"
+"PO-Revision-Date: 2003-02-25 01:45-0300\n"
 "Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr "<span weight=\"bold\">Geral</span>"
 
 #: data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Tipo Imagem</span>"
+msgstr "<span weight=\"bold\">Tipo de Imagem</span>"
 
 #: data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Local Capture</span>"
@@ -46,19 +46,19 @@ msgstr "<span weight=\"bold\">Captura Remota</span>"
 
 #: data/camorama.glade.h:8
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">Hora</span>"
+msgstr "<span weight=\"bold\">Horário</span>"
 
 #: data/camorama.glade.h:9
 msgid "Add a timestamp to captured images"
-msgstr "Adicionar hora às imagens capturadas"
+msgstr "Adicionar horário às imagens capturadas"
 
 #: data/camorama.glade.h:10
 msgid "Add timestamp to captured images"
-msgstr "Adicionar hora às imagens capturadas"
+msgstr "Adicionar horário às imagens capturadas"
 
 #: data/camorama.glade.h:11
 msgid "Append time to filename"
-msgstr "Acrescentar hora ao nome do arquivo"
+msgstr "Acrescentar horário ao nome do arquivo"
 
 #: data/camorama.glade.h:12
 msgid "Automatic Capture"
@@ -182,7 +182,7 @@ msgstr "Intrevalo"
 
 #: data/camorama.glade.h:42
 msgid "Timestamp"
-msgstr "Hora"
+msgstr "Horário"
 
 #: data/camorama.glade.h:43
 msgid "Use custom string"
@@ -246,23 +246,23 @@ msgstr "~/.gnome-desktop"
 
 #: data/camorama.schemas.in.h:1
 msgid "Append timestamp to filename"
-msgstr "Acrescentar hora ao nome arquivo"
+msgstr "Acrescentar horário ao nome arquivo"
 
 #: data/camorama.schemas.in.h:2
 msgid "Append timestamp to remote filename"
-msgstr "Acrescentar hora ao nome arquivo remoto"
+msgstr "Acrescentar horário ao nome arquivo remoto"
 
 #: data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Acrescenta hora, em hora UNIX, ao final dos nomes arquivos"
+msgstr "Acrescenta horário, em hora UNIX, ao final dos nomes arquivos"
 
 #: data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Acrescenta hora, em hora UNIX, ao final dos nomes arquivos remotos"
+msgstr "Acrescenta horário, em hora UNIX, ao final dos nomes arquivos remotos"
 
 #: data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
-msgstr "Texto customizado para a hora"
+msgstr "Texto customizado para o horário"
 
 #: data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
@@ -326,15 +326,11 @@ msgstr "Nome arquivo gravação remota"
 
 #: data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr ""
-"Especifica o formato de imagem, a ser utilizado para imagens gravadas "
-"localmente"
+msgstr "Especifica o formato de imagem a ser utilizado para imagens salvas localmente"
 
 #: data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr ""
-"Especifica o formato de imagem, a ser utilizado para imagens gravadas "
-"remotamente"
+msgstr "Especifica o formato de imagem a ser utilizado para imagens salvas remotamente"
 
 #: data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
@@ -374,20 +370,19 @@ msgstr "Alterna o desenho da data dentro das imagens capturadas"
 
 #: data/camorama.schemas.in.h:32
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Alterna o desenho da data dentro das imagens locais"
+msgstr "Alterna o desenho do horário dentro das imagens locais"
 
 #: data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Alterna o desenho da data dentro das imagens para envio FTP."
+msgstr "Alterna o desenho do horário dentro das imagens para envio FTP."
 
 #: data/camorama.schemas.in.h:34
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Alterna a uso da expressão customizada na hora em imagens."
+msgstr "Alterna a uso da expressão customizada no horário em imagens."
 
 #: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
-"Alterna a uso de barras deslizantes para ajustar as propriedades de vídeo"
+msgstr "Alterna a uso de barras deslizantes para ajustar as propriedades de vídeo"
 
 #: data/camorama.schemas.in.h:36
 msgid "Toggles the video adjustment sliders"
@@ -395,11 +390,11 @@ msgstr "Alterna as barras deslizantes de ajuste vídeo"
 
 #: data/camorama.schemas.in.h:37
 msgid "Toggles timestamp for local captures"
-msgstr "Alterna a data para capturas locais"
+msgstr "Alterna horário para capturas locais"
 
 #: data/camorama.schemas.in.h:38
 msgid "Toggles timestamp for remote captures"
-msgstr "Alterna hora para capturas remotas"
+msgstr "Alterna horário para capturas remotas"
 
 #: data/camorama.schemas.in.h:39
 msgid "Username for FTP server"
@@ -428,16 +423,57 @@ msgstr ""
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: src/callbacks.c:317
 msgid "translator_credits"
-msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
+msgstr ""
+"Duarte Loreto <happyguy_pt@hotmail.com>"
+"Alexandre Folle de Menezes <afmenez@terra.com.br>"
 
-#: src/callbacks.c:324
+#: src/callbacks.c:324 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
 #: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
 #: src/callbacks.c:465
 msgid "Unable to capture image."
-msgstr "Incapaz de capturar imagem."
+msgstr "Impossível capturar imagem."
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "É possível salvar a imagem temporária em /tmp."
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Impossível criar imagem '%s'."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temorary image file '%s'."
+msgstr "Impossível abrir arquivo de imagem temporário '%s'."
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Ocorreu um erro abrindo %s."
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Ocorreu um erro escrevendo em %s."
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Impossível criar o diretório '%s'."
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Impossível mudar para o diretório '%s'."
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Impossível salvar a imagem '%s/%s'."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -490,10 +526,23 @@ msgstr ""
 
 #: src/main.c:173
 msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "Impossível encontrar o arquivo de interface principal (camorama.glade)."
+
+#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
 msgstr ""
-"Incapaz de encontrar o arquivo de interface principal (camorama.glade)."
+"Impossível conectar ao dispositivo de vídeo (%s).\n"
+"Verifique a conexão."
 
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Incapaz de encontrar arquivo pixmap: %s"
+msgstr "Impossível encontrar arquivo pixmap: %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Visualizador de Webcam Camorama"

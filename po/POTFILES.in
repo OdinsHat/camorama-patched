@@ -1,0 +1,7 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/camorama.glade
+data/camorama.schemas.in
+src/callbacks.c
+src/main.c
+src/support.c

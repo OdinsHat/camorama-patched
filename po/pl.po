@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-05 06:37+0200\n"
-"PO-Revision-Date: 2003-08-05 23:46+0100\n"
+"POT-Creation-Date: 2003-08-24 10:58+0200\n"
+"PO-Revision-Date: 2003-07-27 23:46+0100\n"
 "Last-Translator: GNOME PL Team <granslators@gnome.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,15 +87,15 @@ msgid "Capture Interval (in minutes):"
 msgstr "Okres przechwytywania (w minutach):"
 
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Korekcja koloru"
 
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Próg koloru"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Kolor:"
 
 #: data/camorama.glade.h:19
@@ -457,8 +457,8 @@ msgstr ""
 msgid "translator_credits"
 msgstr "GNOME PL Team <translators@gnome.pl>"
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:625 src/callbacks.c:696 src/callbacks.c:746
+#: src/callbacks.c:759
 msgid "Unable to capture image."
 msgstr "Nie można przechwycić obrazu."
 
@@ -575,8 +575,8 @@ msgstr "Nie można odnaleźć pliku głównego interfejsu (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Nie można znaleźć pliku piksmapy: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

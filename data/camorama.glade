@@ -1710,7 +1710,7 @@
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Show Effects</property>
 			  <property name="use_underline">True</property>
-			  <signal name="activate" handler="on_show_effects1_activate" last_modification_time="Tue, 22 Apr 2003 18:14:11 GMT"/>
+			  <signal name="activate" handler="on_show_effects_activate" last_modification_time="Wed, 21 May 2003 18:46:37 GMT"/>
 			  <accelerator key="e" modifiers="GDK_CONTROL_MASK" signal="activate"/>
 			</widget>
 		      </child>
@@ -2153,6 +2153,7 @@
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="active">False</property>
 			  <property name="inconsistent">False</property>
+			  <signal name="toggled" handler="on_show_adjustments1_activate" last_modification_time="Wed, 21 May 2003 18:45:02 GMT"/>
 
 			  <child>
 			    <widget class="GtkAlignment" id="alignment2">

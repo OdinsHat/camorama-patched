@@ -1,5 +1,6 @@
 camorama todo
 
+- FIX THREADS IN REMOTE CAPTURE!
 - put read() back in - done
 - allow resize on the fly
 - allow configuration of format of timestamp (image and filename)

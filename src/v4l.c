@@ -181,7 +181,7 @@ void get_pic_info(cam * cam)
 
 void get_win_info(cam * cam)
 {
-   char *msg;
+   gchar *msg;
    if(ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
@@ -202,7 +202,7 @@ void get_win_info(cam * cam)
 }
 void set_win_info(cam * cam)
 {
-   char *msg;
+   gchar *msg;
    if(ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);

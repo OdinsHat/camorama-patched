@@ -18,7 +18,7 @@ extern int seconds;
 extern GtkWidget *dentry, *entry2, *string_entry;
 extern GtkWidget *host_entry, *directory_entry, *filename_entry, *login_entry, *pw_entry;
 int frame;
-
+int test = 0;
 /*pref callbacks*/
 
 void ts_func(GtkWidget * rb, cam * cam)
@@ -314,16 +314,26 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
 {
    gchar *name;
    name = gtk_widget_get_name(widget);
-
+   test++;
+   printf("\ntest = %d\n", test);
    if(strcmp(name, "small1") == 0) {
       cam->x = cam->vid_cap.minwidth;
       cam->y = cam->vid_cap.minheight;
+      if(cam->debug) {
+         printf("\nsmall\n");
+      }
    } else if(strcmp(name, "medium1") == 0) {
       cam->x = cam->vid_cap.maxwidth / 2;
       cam->y = cam->vid_cap.maxheight / 2;
+      if(cam->debug) {
+         printf("\nmed\n");
+      }
    } else {
       cam->x = cam->vid_cap.maxwidth;
       cam->y = cam->vid_cap.maxheight;
+      if(cam->debug) {
+         printf("\nlarge\n");
+      }
    }
 
    cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
@@ -372,7 +382,6 @@ void on_change_size_activate(GtkWidget * widget, cam * cam)
     * }
     * }
     * } */
-
    get_win_info(cam);
    frame = 0;
    gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
@@ -503,7 +512,9 @@ gint timeout_func(cam * cam)
       i = ioctl(cam->dev, VIDIOCSYNC, &frame);
 
       if(i < 0 && errno == EINTR) {
-
+         if(cam->debug == TRUE) {
+            printf("i = %d\n", i);
+         }
          continue;
       }
       if(i < 0) {
@@ -589,7 +600,7 @@ gint timeout_func(cam * cam)
    }
 
    frames2++;
-   g_object_unref((gpointer)gc);
+   g_object_unref((gpointer) gc);
    return 1;
 }
 
@@ -603,7 +614,7 @@ gint fps(GtkWidget * sb)
    frames = 0;
    gnome_appbar_push(GNOME_APPBAR(sb), stat);
    g_free(stat);
-	return 1;
+   return 1;
 }
 
 void on_status_show(GtkWidget * sb, cam * cam)

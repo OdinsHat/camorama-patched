@@ -1,3 +1,7 @@
+2003-01-28  Pablo Saratxaga  <pablo@mandrakesoft.com>
+
+	* vi.po: Added Vietnamese file
+
 2003-01-27  Bastien Nocera  <hadess@hadess.net>
 
 	* Makefile.in.in: shouldn't be in CVS

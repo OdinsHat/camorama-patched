@@ -1,4 +1,4 @@
-# Translation of cs.po to Czech
+# Translation of camorama to Czech
 # This file is distributed under the same license as the Camorama package.
 # Copyright (C) 2003 Free Software Foundation.
 # Michal Bukovjan <bukm@centrum.cz>, 2003
@@ -6,14 +6,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: cs\n"
-"POT-Creation-Date: 2003-03-10 22:07+0100\n"
-"PO-Revision-Date: 2003-03-10 22:43GMT\n"
-"Last-Translator: Michal Bukovjan <bukm@centrum.cz>\n"
+"POT-Creation-Date: 2003-03-24 03:37+0100\n"
+"PO-Revision-Date: 2003-03-24 12:46+0100\n"
+"Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.1\n"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -408,16 +407,16 @@ msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém záznamu, "
-"tento klíč přepíná ukládání obrázků lokálně."
+"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
+"záznamu, tento klíč přepíná ukládání obrázků lokálně."
 
 #: data/camorama.schemas.in.h:42
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém záznamu, "
-"tento klíč přepíná ukládání obrázků na vzdálený server."
+"Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
+"záznamu, tento klíč přepíná ukládání obrázků na vzdálený server."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
 #: src/callbacks.c:317
@@ -444,7 +443,7 @@ msgstr "Nelze vytvořit obrázek '%s'."
 
 #: src/fileio.c:142
 #, c-format
-msgid "Unable to open temorary image file '%s'."
+msgid "Unable to open temporary image file '%s'."
 msgstr "Nelze otevřít dočasný soubor obrázku '%s'."
 
 #: src/fileio.c:173
@@ -543,4 +542,3 @@ msgstr "Nelze nalézt soubor s obrázkem: %s"
 #: camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
 msgstr "Prohlížeč webových kamer Camorama"
-

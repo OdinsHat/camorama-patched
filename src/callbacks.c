@@ -327,7 +327,6 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam *cam){
 		gtk_widget_show(glade_xml_get_widget(cam->xml, "table6"));
 		cam->show_adjustments = TRUE;
 	}
-	printf("sa = %d\n",cam->show_adjustments);
 	gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
 }
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)

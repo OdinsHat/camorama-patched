@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-07-21 19:07+0200\n"
-"PO-Revision-Date: 2003-02-24 01:29+0100\n"
+"POT-Creation-Date: 2003-07-27 23:53+0200\n"
+"PO-Revision-Date: 2003-07-27 23:46+0100\n"
 "Last-Translator: GNOME PL Team <granslators@gnome.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,7 +164,7 @@ msgstr "Zapis plików w formacie png"
 
 #: data/camorama.glade.h:37
 msgid "Show Adjustments"
-msgstr "Wświetlenie nastaw"
+msgstr "Wyświetlenie nastaw"
 
 #: data/camorama.glade.h:38
 msgid "Show Effects"
@@ -460,12 +460,12 @@ msgstr "Nie można otworzyć tymczasowego pliku obrazu \"%s\"."
 #: src/fileio.c:173
 #, c-format
 msgid "An error occured opening %s."
-msgstr "Podczas otwierania %s wystapił błąd."
+msgstr "Podczas otwierania %s wystąpił błąd."
 
 #: src/fileio.c:182
 #, c-format
 msgid "An error occured writing to %s."
-msgstr "Podczas zapisu do %s wystapił błąd."
+msgstr "Podczas zapisu do %s wystąpił błąd."
 
 #: src/fileio.c:258
 #, c-format
@@ -482,47 +482,47 @@ msgstr "Nie można zmienić katalogu na \"%s\"."
 msgid "Could not save image '%s/%s'."
 msgstr "Nie można zapisać obrazu \"%s/%s\"."
 
-#: src/main.c:193
+#: src/main.c:194
 msgid "show version and exit"
 msgstr "wyświetlenie wersji i zakończenie pracy"
 
-#: src/main.c:194
+#: src/main.c:195
 msgid "v4l device to use"
 msgstr "używane urządzenie v4l"
 
-#: src/main.c:195
+#: src/main.c:196
 msgid "enable debuging code"
 msgstr "włączenie kodu śledzenia"
 
-#: src/main.c:196
+#: src/main.c:197
 msgid "capture width"
 msgstr "szerokość przechwytywanego obrazu"
 
-#: src/main.c:197
+#: src/main.c:198
 msgid "capture height"
 msgstr "wysokość przechwytywanego obrazu"
 
-#: src/main.c:198
-msgid "maximum capture size"
-msgstr "maksymalny rozmiar przechwytywnia"
-
 #: src/main.c:199
+msgid "maximum capture size"
+msgstr "maksymalny rozmiar przechwytywania"
+
+#: src/main.c:200
 msgid "minimum capture size"
 msgstr "minimalny rozmiar przechwytywania"
 
-#: src/main.c:200
+#: src/main.c:201
 msgid "middle capture size"
 msgstr "średni rozmiar przechwytywania"
 
-#: src/main.c:201
+#: src/main.c:202
 msgid "use read() rather than mmap()"
 msgstr ""
 
-#: src/main.c:221
+#: src/main.c:222
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:235
+#: src/main.c:236
 #, c-format
 msgid ""
 "\n"
@@ -535,7 +535,7 @@ msgstr ""
 "Camorama - wersja %s\n"
 "\n"
 
-#: src/main.c:350
+#: src/main.c:351
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nie można odnaleźć pliku głównego interfejsu (camorama.glade)."
 

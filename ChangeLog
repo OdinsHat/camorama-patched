@@ -1,5 +1,9 @@
 2003-01-27  Bastien Nocera  <hadess@hadess.net>
 
+	* .cvsignore: updated
+
+2003-01-27  Bastien Nocera  <hadess@hadess.net>
+
 	* src/callbacks.c: (on_show_adjustments1_activate),
 	(on_about1_activate), (timeout_func), (fps),
 	(timeout_capture_func), (on_scale1_drag_data_received):

@@ -1,3 +1,7 @@
+2003-01-27  Bastien Nocera  <hadess@hadess.net>
+
+	* Makefile.in.in: shouldn't be in CVS
+
 2003-01-26  Pablo Gonzalo del Campo  <pablodc@bigfoot.com>
 
 	* es.po: Add Spanish translation.

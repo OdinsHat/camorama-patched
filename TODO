@@ -1,22 +1,14 @@
 camorama todo
 
+- put read() back in
+- allow resize on the fly
 - allow configuration of format of timestamp (image and filename)
 - fix threads
-- gnomeify gui
 - better documentation - ongoing ;)
-- try camorama on various other webcams and make the code more generic - ongoing
-- make menus do something useful ;-) - ongoing
 - work on increasing fps, especially at higher res - ongoing
 - translations  -  trying to figure it out...
 - better/more filters  - ongoing...
 - fullscreen mode ala xawtv
 - look at having filters as plugins
 - recording of video
-- add support for gnome system tray
-- add debug option - done (0.12)
-- allow save of more than one ppm.  and allow user to choose location, filename, etc - done (0.12)
-- sliders for everything (oops) - done (0.13)
-- save as jpeg rather than ppm - done (0.14) can save as ppm, png and jpeg
-- make gui more compact - done (0.13)
-- gnomevfs support - save files to webserver, etc  - done (0.15)
-- allow timestamp/title for saved images  - done (0.15)
+- add support for gnome system tray?

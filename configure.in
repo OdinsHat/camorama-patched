@@ -1,9 +1,14 @@
-dnl Process this file with autoconf to produce a configure script.
-
-AC_INIT(configure.in)
-AM_INIT_AUTOMAKE(camorama, 0.16)
-AM_MAINTAINER_MODE
+AC_INIT(camorama,0.17, http://bugzilla.gnome.org/enter_bug.cgi?product=camorama)
+AC_CONFIG_SRCDIR(src/main.c)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(config.h)
+
+AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
+AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
+AC_DEFINE(GETTEXT_PACKAGE, "AC_PACKAGE_NAME", [foo])
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
+
+AC_SUBST(GETTEXT_PACKAGE)
 
 AC_PROG_INTLTOOL([0.20])
 
@@ -21,17 +26,13 @@ AC_SUBST(PACKAGE_CFLAGS)
 AC_SUBST(PACKAGE_LIBS)
 AC_DEFINE(HAVE_GCONF,1,[Build with gconf support])
 
+AC_PATH_PROG(GCONFTOOL, gconftool-2)
 AM_GCONF_SOURCE_2
-
-GETTEXT_PACKAGE=camorama
-AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Name of default gettext domain])
 
 
 dnl Add the languages which your application supports here.
-AM_GLIB_GNU_GETTEXT
-AC_PATH_PROG(GCONFTOOL, gconftool-2)
 ALL_LINGUAS="am es no sv vi"
+AM_GLIB_GNU_GETTEXT
 
 
 
@@ -40,6 +41,6 @@ Makefile
 src/Makefile
 data/Makefile
 pixmaps/Makefile
-po/Makefile
+po/Makefile.in
 ])
 

@@ -3,9 +3,7 @@ desktop_in_files = camorama.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-#POFILES= ru.po fr.po
-
-SUBDIRS = src pixmaps data
+SUBDIRS = src pixmaps data po
 
 EXTRA_DIST =   autogen.sh     \
 	camorama.desktop     \

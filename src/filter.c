@@ -348,7 +348,7 @@ void laplace(unsigned char *image, int z, int x, int y)
    memcpy(image2, image, x * y * z);
    image3 = image2;
 
-   for(i = 1; i < x * y - 1; i++) {
+   for(i = 1; i < x * (y - 1); i++) {
       total0 = 0;
       total1 = 0;
       total2 = 0;
@@ -414,7 +414,8 @@ void laplace(unsigned char *image, int z, int x, int y)
 
       image += 3;
       image2 += 3;
-   }
+      }
+   
    free(image3);
 
 }

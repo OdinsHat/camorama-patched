@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
-"POT-Creation-Date: 2003-08-13 02:56+0200\n"
-"PO-Revision-Date: 2003-08-13 02:41+0200\n"
+"POT-Creation-Date: 2003-08-19 01:53+0200\n"
+"PO-Revision-Date: 2003-08-19 01:53+0200\n"
 "Last-Translator: Дејан Матијевић <dejan@ns.sympatico.ca>\n"
 "Language-Team: Serbian (sr) <serbiangnome-lista@nongnu.org>\n"
 "MIME-Version: 1.0\n"
@@ -84,19 +84,16 @@ msgstr "Каморама - либгладе"
 msgid "Capture Interval (in minutes):"
 msgstr "Трајање снимања (у минутама):"
 
-# bug: AFAIK, Gnome language is "American English"
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Подешавање боје"
 
-# bug: AFAIK, Gnome language is "American English"
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Праг боје"
 
-# bug: AFAIK, Gnome language is "American English"
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Боја:"
 
 #: data/camorama.glade.h:19
@@ -452,8 +449,8 @@ msgstr ""
 "\n"
 "Prevod.org — превод на српски језик."
 
-#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
-#: src/callbacks.c:757
+#: src/callbacks.c:625 src/callbacks.c:696 src/callbacks.c:746
+#: src/callbacks.c:759
 msgid "Unable to capture image."
 msgstr "У немогућности да снима снимке."
 
@@ -570,8 +567,8 @@ msgstr "Nemoguће наћи главну приступну датотеку (ca
 msgid "Couldn't find pixmap file: %s"
 msgstr "Немогуће наћи пиксмап датотеку: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
+#: src/v4l.c:235
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

@@ -1,7 +1,11 @@
-
+stuffdir = $(datadir)/camorama/
+stuff_DATA =				\
+	pixmaps/snap-icon.xpm \
+	pixmaps/snap-icon-small.xpm
+	
 gladedir = $(datadir)/camorama/
 glade_DATA =				\
-	camorama.glade			
+	camorama.glade	
 
 schemadir =  @GCONF_SCHEMA_FILE_DIR@
 schema_in_files = camorama.schemas.in
@@ -20,5 +24,4 @@ install-data-local:
 	$(GCONFTOOL) --shutdown
 
 EXTRA_DIST = $(glade_DATA) $(schema_in_files)
-
 

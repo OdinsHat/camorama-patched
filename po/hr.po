@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0\n"
 "POT-Creation-Date: 2003-11-06 18:06+0100\n"
-"PO-Revision-Date: 2003-11-07 18:38+CET\n"
+"PO-Revision-Date: 2003-11-10 16:48+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,7 @@ msgstr "Prag:"
 
 #: data/camorama.glade.h:45
 msgid "Timestamp"
-msgstr ""
+msgstr "Vremenska marka"
 
 #: data/camorama.glade.h:46
 msgid "Use custom string"

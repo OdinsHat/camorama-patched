@@ -1,3 +1,7 @@
+2003-12-06  Iñaki Larrañaga  <dooteo@euskalgnu.org>
+
+	* configure.in: Added "eu" (Basque) to ALL_LINGUAS.
+
 2003-10-24  Hasbullah Bin Pit <sebol@ikhlas.com>
                                                                                 
         * configure.in: Added ms (malay) to ALL_LINGUAS.

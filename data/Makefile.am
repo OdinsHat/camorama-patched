@@ -1,9 +1,9 @@
-stuffdir = $(datadir)/camorama/
+stuffdir = $(datadir)/camorama/pixmaps
 stuff_DATA =				\
 	pixmaps/snap-icon.xpm \
 	pixmaps/snap-icon-small.xpm
 	
-gladedir = $(datadir)/camorama/
+gladedir = $(datadir)/camorama
 glade_DATA =				\
 	camorama.glade	
 

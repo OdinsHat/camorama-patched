@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
-"POT-Creation-Date: 2003-02-05 19:10+0100\n"
-"PO-Revision-Date: 2003-02-09 16:38+0000\n"
+"POT-Creation-Date: 2003-02-09 19:34+0000\n"
+"PO-Revision-Date: 2003-02-09 19:38+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -413,60 +413,85 @@ msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"Ao capturar imagens através do botão \"Tirar Fotografia\", ou com "
-"auto-captura, esta tecla alterna a gravação local das imagens."
+"Ao capturar imagens através do botão \"Tirar Fotografia\", ou com auto-"
+"captura, esta tecla alterna a gravação local das imagens."
 
 #: data/camorama.schemas.in.h:42
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"Ao capturar imagens através do botão \"Tirar Fotografia\", ou com "
-"auto-captura, esta tecla alterna a gravação das imagens num servidor remoto."
+"Ao capturar imagens através do botão \"Tirar Fotografia\", ou com auto-"
+"captura, esta tecla alterna a gravação das imagens num servidor remoto."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:340
+#: src/callbacks.c:317
 msgid "translator_credits"
 msgstr "Duarte Loreto <happyguy_pt@hotmail.com>"
 
-#: src/main.c:35
+#: src/callbacks.c:324
+msgid "View, alter and save images from a webcam"
+msgstr "Ver, alterar e gravar imagens de uma webcam"
+
+#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
+#: src/callbacks.c:465
+msgid "Unable to capture image."
+msgstr "Incapaz de capturar imagem."
+
+#: src/main.c:32
 msgid "show version and exit"
 msgstr "mostrar versão e sair"
 
-#: src/main.c:36
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr "Dispositivo v4l a utilizar"
 
-#: src/main.c:37
+#: src/main.c:34
 msgid "enable debuging code"
 msgstr "activar depuração código"
 
-#: src/main.c:38
+#: src/main.c:35
 msgid "capture width"
 msgstr "largura captura"
 
-#: src/main.c:39
+#: src/main.c:36
 msgid "capture height"
 msgstr "altura captura"
 
-#: src/main.c:40
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "tamanho máximo captura"
 
-#: src/main.c:41
+#: src/main.c:38
 msgid "minimum capture size"
 msgstr "tamanho mínimo captura"
 
-#: src/main.c:42
+#: src/main.c:39
 msgid "middle capture size"
 msgstr "tamanho médio captura"
 
-#: src/main.c:58
+#: src/main.c:57
 msgid "camorama"
 msgstr "camorama"
 
-#: src/support.c:70
+#: src/main.c:71
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Versão Camorama %s\n"
+"\n"
+
+#: src/main.c:173
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "Incapaz de encontrar o ficheiro de interface principal (camorama.glade)."
+
+#: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Incapaz de encontrar ficheiro pixmap: %s"
-

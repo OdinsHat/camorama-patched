@@ -1,12 +1,14 @@
 #include "v4l.h"
 
+static inline void move_420_block(int yTL, int yTR, int yBL, int yBR, int u, int v, int rowPixels, unsigned char *rgb, int bits);
+
 //these two functions are borrowed from the ov511 driver, with the author, 
 //Mark McClelland's kind encoragement
 
 /* LIMIT: convert a 16.16 fixed-point value to a byte, with clipping. */
 #define LIMIT(x) ((x)>0xffffff?0xff: ((x)<=0xffff?0:((x)>>16)))
 
-unsigned char yuv420p_to_rgb(unsigned char *image, unsigned char *temp, int x, int y, int z)
+void yuv420p_to_rgb(unsigned char *image, unsigned char *temp, int x, int y, int z)
 {
    const int numpix = x * y;
    const int bytes = z;         // (z*8) >> 3;
@@ -128,7 +130,7 @@ void negative(unsigned char *image, int x, int y, int z)
 
 void threshold(unsigned char *image, int x, int y, int threshold_value)
 {
-   int i, j;
+   int i;
    for(i = 0; i < x * y; i++) {
       if((image[0] + image[1] + image[2]) > (threshold_value * 3)) {
          image[0] = 255;
@@ -145,7 +147,7 @@ void threshold(unsigned char *image, int x, int y, int threshold_value)
 
 void threshold_channel(unsigned char *image, int x, int y, int threshold_value)
 {
-   int i, j;
+   int i;
    for(i = 0; i < x * y; i++) {
       if(image[0] > threshold_value) {
          image[0] = 255;
@@ -280,7 +282,7 @@ void smooth(unsigned char *image, int z, int x, int y)
 {
    int i;
    int neighbours;
-   int total0, total1, total2, total[z];
+   int total0, total1, total2;
    unsigned char *image2, *image3;
    int tr = 0, br = 0;
 
@@ -374,7 +376,6 @@ void edge3(unsigned char *image, int z, int x, int y)
    int neighbours;
    int total0, total1, total2;
    unsigned char *image2, *image3;
-   int tr = 0, br = 0;
 
    image2 = (unsigned char *) malloc(sizeof(unsigned char) * x * y * z);
    memcpy(image2, image, x * y * z);

@@ -2,6 +2,7 @@
 //#include"v4l.h"
 #include<time.h>
 #include<errno.h>
+#include "support.h"
 //#include<gnome.h>
 
 #include <gdk-pixbuf/gdk-pixbuf.h>
@@ -11,6 +12,8 @@
 # define CHAR_START   4
 # include "font_6x11.h"
  #include <gnome.h>
+
+static int print_error (GnomeVFSResult result, const char *uri_string);
 
 //add timestamp/text to image - stolen from gspy
 int
@@ -96,27 +99,23 @@ add_rgb_text (char *image, int width, int height, char *cstring, char *format,
 
 
 //upload image to remote server via ftp
-void * remote_save (cam * cam)
+void remote_save (cam * cam)
 {
-	GnomeVFSHandle **write_handle, **read_handle;
+	GnomeVFSHandle **write_handle;
 	char *output_uri_string, *input_uri_string;
-	const char *path;
-	GnomeVFSFileSize bytes_read, bytes_written, fuck_off;
-	GnomeVFSURI *uri_1, *uri_2;
-	gpointer buffer;
-	gchar *url;
-	unsigned char *header, *tmp;
-	GnomeVFSResult result;
+	GnomeVFSFileSize bytes_written;
+	GnomeVFSURI *uri_1;
+	unsigned char *tmp;
+	GnomeVFSResult result = 0;
 	gboolean test;
-	char *filename, error_message[512];
+	char *filename, *error_message;
 	FILE *fp;
-	int bytes = 0, fd;
+	int bytes = 0;
 	time_t t;
 	char timenow[64], ext[12];
 	struct tm *tm;
-	GtkWidget *dialog;
 	gboolean pbs;
-    GdkPixbuf *pb;
+	GdkPixbuf *pb;
 	
 	/* remember to initialize GnomeVFS! */
 	/*if(!gnome_vfs_init()) {
@@ -145,7 +144,7 @@ void * remote_save (cam * cam)
 	//save file in tmp dir....
 	if (chdir ("/tmp") != 0)
 	{
-		fprintf (stderr, "could not change to dir: %s\n");
+		fprintf (stderr, "could not change to dir: '/tmp'\n");
 		error_dialog ("Could not write to /tmp");
 		g_thread_exit (NULL);
 	}
@@ -154,28 +153,29 @@ void * remote_save (cam * cam)
 	tm = localtime (&t);
 	strftime (timenow, sizeof (timenow) - 1, "%s", tm);
 
-	filename = malloc (sizeof (char) * 64);
-	sprintf (filename, "camorama.%s", ext);
+	filename = g_strdup_printf ("camorama.%s", ext);
 	pb = gdk_pixbuf_new_from_data(cam->tmp,GDK_COLORSPACE_RGB,FALSE,8,cam->x,cam->y,cam->x*cam->vid_pic.depth/8,NULL,NULL);
 	if (pb == NULL){
 		
-		sprintf (error_message, "could not create gdk pixbuf image",
-			 output_uri_string);
-		print_error (result, output_uri_string);
+		error_message = g_strdup_printf ("could not create image '%s'",
+			 filename);
+		print_error (result, filename);
 		error_dialog(error_message);
+		g_free (error_message);
 		
 		g_thread_exit (NULL);
 	}
 		pbs = gdk_pixbuf_save(pb,filename,ext,NULL,NULL);
+		g_free (filename);
 	
 	
 	//open tmp file and read it
-	input_uri_string = malloc (sizeof (char) * 64);
-	sprintf (input_uri_string, "camorama.%s", ext);
+	input_uri_string = g_strdup_printf ("camorama.%s", ext);
 
 	if (!(fp = fopen (input_uri_string, "rb")))
 	{
 		perror ("file");
+		g_free (input_uri_string);
 		exit (0);
 	}
 
@@ -186,21 +186,20 @@ void * remote_save (cam * cam)
 	}
 	fclose (fp);
     //set output uri
-	output_uri_string = malloc (sizeof (char) * 512);
-
 	time (&t);
 	tm = localtime (&t);
 	strftime (timenow, sizeof (timenow) - 1, "%s", tm);
 	if (cam->rtimefn == TRUE)
 	{
-		sprintf (output_uri_string, "ftp://%s/%s/%s-%s.%s",
+		output_uri_string = g_strdup_printf ("ftp://%s/%s/%s-%s.%s",
 			 cam->rhost, cam->rpixdir, cam->rcapturefile, timenow,
 			 ext);
 	}
 	else
 	{
-		sprintf (output_uri_string, "ftp://%s/%s/%s.%s", cam->rhost,
-			 cam->rpixdir, cam->rcapturefile, ext);
+		output_uri_string = g_strdup_printf ("ftp://%s/%s/%s.%s",
+				cam->rhost, cam->rpixdir, cam->rcapturefile,
+				ext);
 	}
 	uri_1 = gnome_vfs_uri_new (output_uri_string);
 
@@ -215,10 +214,11 @@ void * remote_save (cam * cam)
 				     GNOME_VFS_OPEN_WRITE);
 	if (result != GNOME_VFS_OK)
 	{
-		sprintf (error_message, "An error occured opening %s",
+		error_message = g_strdup_printf ("An error occured opening %s",
 			 output_uri_string);
 		print_error (result, output_uri_string);
 		error_dialog(error_message);
+		g_free (error_message);
 		//dialog = gnome_message_box_new(error_message, GNOME_MESSAGE_BOX_ERROR,GNOME_STOCK_BUTTON_OK, NULL);
 		//gnome_dialog_close(GNOME_DIALOG(dialog));
 
@@ -242,7 +242,7 @@ void * remote_save (cam * cam)
 }
 
 //print gnomevfs error
-int
+static int
 print_error (GnomeVFSResult result, const char *uri_string)
 {
 	const char *error_string;
@@ -259,19 +259,15 @@ print_error (GnomeVFSResult result, const char *uri_string)
 int
 local_save (cam * cam)
 {
-	FILE *fp;
 	int fc;
 	char filename[256], ext[12];
 	time_t t;
 	struct tm *tm;
-	int now;
 	char timenow[64], error_message[512];
 	int len, mkd;
 	gboolean pbs;
-	
-    GdkPixbuf *pb;
-	int rs =  0;  //rowstride?  what the hell is that :)?
-	
+	GdkPixbuf *pb;
+
 	// run gdk-pixbuf-query-loaders to get available image types
 
 	//set file extension
@@ -301,7 +297,7 @@ local_save (cam * cam)
 
 	if (cam->debug == TRUE)
 	{
-		fprintf (stderr, "len: %d\ntime = %s\n", fc, timenow);
+		fprintf (stderr, "time = %s\n", timenow);
 	}
 
 	if (cam->timefn == TRUE)

@@ -2,7 +2,8 @@
 #include <config.h>
 #include "callbacks.h"
 #include "interface.h"
-//#include "fileio.h"
+#include "support.h"
+#include "filter.h"
 #include <gnome.h>
 #include <libgnomeui/gnome-about.h>
 #include <libgnomeui/gnome-propertybox.h>
@@ -320,7 +321,7 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam *cam){
 	
 	if(GTK_WIDGET_VISIBLE(glade_xml_get_widget(cam->xml, "table6"))){
 		gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
-		gtk_window_resize(glade_xml_get_widget(cam->xml, "window2"),320,240);
+		gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),320,240);
 		cam->show_adjustments = FALSE;
 	   
 	}else{
@@ -332,7 +333,6 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam *cam){
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
    GtkWidget *about1;
-   GtkWidget *about1_icon_pixbuf;
    const gchar *authors[] = { "greg jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>",NULL };
    const gchar *documenters[] = { NULL };
    GdkPixbuf *logo = (GdkPixbuf *) create_pixbuf("camorama.png");
@@ -351,9 +351,7 @@ void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 //get image from cam - does all the work ;)
 gint timeout_func(cam * cam)
 {
-   int ctl, i, count = 0;
-   unsigned char *tmp;
-   GdkFont *font;
+   int i, count = 0;
    GdkGC *gc;
 
    i = -1;
@@ -454,13 +452,12 @@ gint timeout_func(cam * cam)
 gint fps(GtkWidget * sb)
 {
    const gchar stat[128];
-   guint context;
 
    seconds++;
    sprintf((char *) stat, "%.2f fps - current     %.2f fps - average",
            (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));
    frames = 0;
-   gnome_appbar_push(sb, stat);
+   gnome_appbar_push(GNOME_APPBAR(sb), stat);
    return 1;
 }
 
@@ -514,7 +511,6 @@ void capture_func(GtkWidget * capture, cam * cam)
 gint timeout_capture_func(cam * cam)
 {
    pthread_t mythread;
-   pthread_attr_t *attr;
 
    if(cam->cap == TRUE) {
       if(local_save(cam) < 0) {
@@ -598,7 +594,6 @@ void colour_func(GtkToggleButton * tb, gpointer data)
 //slider callbacks
 void on_scale1_drag_data_received(GtkHScale * sc1, cam * cam)
 {
-   gdouble value2;
    cam->dither = (int) gtk_range_get_value((GtkRange *) sc1);
 }
 

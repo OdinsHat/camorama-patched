@@ -1,3 +1,19 @@
+2003-01-27  Bastien Nocera  <hadess@hadess.net>
+
+	* src/callbacks.c: (on_show_adjustments1_activate),
+	(on_about1_activate), (timeout_func), (fps),
+	(timeout_capture_func), (on_scale1_drag_data_received):
+	* src/callbacks.h:
+	* src/fileio.c: (remote_save), (local_save):
+	* src/fileio.h:
+	* src/filter.c: (yuv420p_to_rgb), (threshold), (threshold_channel),
+	(smooth), (edge3):
+	* src/filter.h:
+	* src/main.c: (main):
+	* src/support.h:
+	* src/v4l.h: fix all the -Wall warnings, start making use of
+	g_strdup_printf instead of sprintf, added filter.h
+
 2003-01-26  Pablo Gonzalo del Campo  <pablodc@bigfoot.com>
 
     configure.in: Added "es" to ALL_LINGUAS

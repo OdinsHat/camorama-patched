@@ -1,12 +1,13 @@
-#include <gtk/gtk.h>
+#include <gnome.h>
 #include "interface.h"
 
 #include "callbacks.h"
+#include "support.h"
 #include <config.h>
-#include <gnome.h>
 
+#include <gdk/gdkx.h>
+#include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
-#include <libgnome/gnome-program.h>
 
 GtkWidget *main_window, *prefswindow;
 state func_state;
@@ -20,18 +21,13 @@ static gboolean ver = FALSE, max = FALSE, min = FALSE, half = FALSE;
 
 int main(int argc, char *argv[])
 {
-   int one = 1;
-   int done = 0;
    cam cam_object, *cam;
-   GConfClient *client;
    Display *display;
    Screen *screen_num;
-   GnomeProgram *program;
    char *poopoo = NULL, title[256], *filename, *pixfilename;
    int x = -1, y = -1;
    gboolean buggery = FALSE;
 	GdkPixbuf *logo;
-	char *testc;
 	GConfClient *gc;
    
 	//popt option array
@@ -98,7 +94,7 @@ int main(int argc, char *argv[])
    gconf_client_notify_add(cam->gc, KEY1, (void *) gconf_notify_func, cam->pixdir, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY5, (void *) gconf_notify_func, cam->rhost, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY2, (void *) gconf_notify_func, cam->capturefile, NULL, NULL);
-   gconf_client_notify_add(cam->gc, KEY3, (void *) gconf_notify_func_int, cam->savetype, NULL, NULL);
+   gconf_client_notify_add(cam->gc, KEY3, (void *) gconf_notify_func_int, GINT_TO_POINTER(cam->savetype), NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY4, (void *) gconf_notify_func_bool, &cam->timestamp, NULL, NULL);
    
    //cam->pixdir = malloc(sizeof(char) * 256);
@@ -221,7 +217,8 @@ int main(int argc, char *argv[])
    cam->xml = glade_xml_new(filename, NULL, NULL);
    if(cam->show_adjustments == FALSE){
 	   gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
-	   gtk_window_resize(glade_xml_get_widget(cam->xml, "window2"),320,240);
+	   gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),320,240);
+			   
    }
    /* connect the signals in the interface */
    //glade_xml_signal_autoconnect(xml);
@@ -230,8 +227,8 @@ int main(int argc, char *argv[])
    sprintf(title, "Camorama -- %s", cam->vid_cap.name);
    gtk_window_set_title(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), title);
    
-   gtk_window_set_icon(glade_xml_get_widget(cam->xml, "window2"),logo);
-   gtk_window_set_icon(glade_xml_get_widget(cam->xml, "prefswindow"),logo);
+   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),logo);
+   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")),logo);
    
    glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),cam);
    glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(capture_func), cam);

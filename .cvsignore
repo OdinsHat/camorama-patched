@@ -1,0 +1,13 @@
+*.gz
+stamp-h
+stamp-h.in
+intltool*
+configure
+config.log
+config.status
+install-sh
+missing 
+mkinstalldirs
+aclocal.m4
+Makefile
+Makefile.in

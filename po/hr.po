@@ -1,11 +1,11 @@
-# Translation of camorama to Croatian
-# Copyright (C) Croatian team
-# Translators: Automatski Prijevod <>,
+# Translation of camorama to Croatiann
+# Copyright (C) Croatiann team
+# Translators: Automatski Prijevod <>,Ivan Jankovic <rbrrneck@gmx.net>,
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0\n"
-"POT-Creation-Date: 2003-11-06 18:06+0100\n"
-"PO-Revision-Date: 2003-11-10 16:48+CET\n"
+"POT-Creation-Date: 2004-02-01 16:49+0100\n"
+"PO-Revision-Date: 2004-02-01 16:49+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/camorama.glade.h:9
 msgid "Add a timestamp to captured images"
-msgstr ""
+msgstr "Dodaj vremensku oznaku kaptruriranim slikama"
 
 #: data/camorama.glade.h:10
 msgid "Append time to filename"
@@ -461,46 +461,39 @@ msgstr "Orijentacija"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr ""
+msgstr "Usmjerenje trake."
 
 #: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
 msgstr ""
 
 #: src/fileio.c:137
-#, c-format
 msgid "Unable to create image '%s'."
 msgstr ""
 
 #: src/fileio.c:146 src/fileio.c:429
-#, c-format
 msgid "Could not save image '%s/%s'."
 msgstr ""
 
 #: src/fileio.c:273
-#, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr ""
 
 #: src/fileio.c:311
-#, c-format
 msgid "An error occured opening %s."
 msgstr ""
 
 #: src/fileio.c:323
-#, c-format
 msgid "An error occured writing to %s."
 msgstr ""
 
 #: src/fileio.c:403
-#, c-format
 msgid "Could not create directory '%s'."
 msgstr ""
 
 #: src/fileio.c:414
-#, c-format
 msgid "Could not change to directory '%s'."
 msgstr ""
 
@@ -546,7 +539,6 @@ msgid "camorama"
 msgstr "Camorama"
 
 #: src/main.c:475
-#, c-format
 msgid ""
 "\n"
 "\n"
@@ -565,7 +557,6 @@ msgstr "Ne mogu pronaći pixmap datoteku: %s"
 
 #: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
 #: src/v4l.c:235
-#, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
 "Please check connection."

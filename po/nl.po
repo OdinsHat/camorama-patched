@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.17\n"
-"POT-Creation-Date: 2003-02-25 04:32+0100\n"
-"PO-Revision-Date: 2003-02-25 09:16+0100\n"
+"POT-Creation-Date: 2003-06-13 03:53+0200\n"
+"PO-Revision-Date: 2003-06-14 13:05+0100\n"
 "Last-Translator: Huib Kleinhout <huib@stack.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -48,194 +48,206 @@ msgid "Add a timestamp to captured images"
 msgstr "Tijdstempel aan opgeslagen afbeeldingen toevoegen"
 
 #: data/camorama.glade.h:10
-msgid "Add timestamp to captured images"
-msgstr "Tijdstempel aan opgeslagen afbeeldingen toevoegen"
-
-#: data/camorama.glade.h:11
 msgid "Append time to filename"
 msgstr "Tijd aan bestandsnaam toevoegen"
 
-#: data/camorama.glade.h:12
+#: data/camorama.glade.h:11
 msgid "Automatic Capture"
 msgstr "Automatische opname"
 
-#: data/camorama.glade.h:13
-msgid "Black & White"
+#: data/camorama.glade.h:12
+msgid "Black & white"
 msgstr "Zwart-wit"
 
-#: data/camorama.glade.h:14
-msgid "Brightness"
-msgstr "Helderheid"
+#: data/camorama.glade.h:13
+msgid "Brightness:"
+msgstr "Helderheid:"
 
-#: data/camorama.glade.h:15
+#: data/camorama.glade.h:14
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama.glade.h:16
+#: data/camorama.glade.h:15
 msgid "Capture Interval (in minutes):"
 msgstr "Opname-interval (in minuten):"
 
-#: data/camorama.glade.h:17
+#: data/camorama.glade.h:16
 msgid "Color correction"
 msgstr "Kleurcorrectie"
 
-#: data/camorama.glade.h:18
+#: data/camorama.glade.h:17
 msgid "Color threshold"
 msgstr "Kleurdrempel"
 
+#: data/camorama.glade.h:18
+msgid "Colour:"
+msgstr "Kleur:"
+
 #: data/camorama.glade.h:19
-msgid "Colour"
-msgstr "Kleur"
+msgid "Contrast:"
+msgstr "Contrast:"
 
 #: data/camorama.glade.h:20
-msgid "Contrast"
-msgstr "Contrast"
-
-#: data/camorama.glade.h:21
 msgid "Draw date and time"
 msgstr "Datum en tijd weergeven"
 
-#: data/camorama.glade.h:22
+#: data/camorama.glade.h:21
 msgid "FTP server: "
 msgstr "FTP-server:"
 
-#: data/camorama.glade.h:23
+#: data/camorama.glade.h:22
 msgid "Filename"
 msgstr "Bestandsnaam"
 
-#: data/camorama.glade.h:24
+#: data/camorama.glade.h:23
 msgid "General"
 msgstr "Algemeen"
 
-#: data/camorama.glade.h:25
-msgid "Hue"
-msgstr "Tint"
+#: data/camorama.glade.h:24
+msgid "Hue:"
+msgstr "Tint:"
 
-#: data/camorama.glade.h:26
+#: data/camorama.glade.h:25
 msgid "Laplace"
 msgstr "Laplace"
+
+#: data/camorama.glade.h:26
+msgid "Large"
+msgstr "Groot"
 
 #: data/camorama.glade.h:27
 msgid "Local Capture"
 msgstr "Lokale opname"
 
 #: data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Gemiddeld"
+
+#: data/camorama.glade.h:29
 msgid "Mirror image"
 msgstr "Beeld spiegelen"
 
-#: data/camorama.glade.h:29
+#: data/camorama.glade.h:30
 msgid "Negative"
 msgstr "Negatief"
 
-#: data/camorama.glade.h:30
+#: data/camorama.glade.h:31
 msgid "Password:"
 msgstr "Wachtwoord:"
 
-#: data/camorama.glade.h:31
+#: data/camorama.glade.h:32
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: data/camorama.glade.h:32
+#: data/camorama.glade.h:33
 msgid "Remote Capture"
 msgstr "Opname op afstand"
 
-#: data/camorama.glade.h:33
+#: data/camorama.glade.h:34
 msgid "Save directory:"
 msgstr "Map met opnames:"
 
-#: data/camorama.glade.h:34
+#: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
 msgstr "Bestanden in jpeg-formaat opslaan"
 
-#: data/camorama.glade.h:35
+#: data/camorama.glade.h:36
 msgid "Save files in png format"
 msgstr "Bestanden in png-formaat opslaan"
 
-#: data/camorama.glade.h:36
+#: data/camorama.glade.h:37
 msgid "Show Adjustments"
 msgstr "Regelaars weergeven"
 
-#: data/camorama.glade.h:37
+#: data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr "Effecten weergeven"
+
+#: data/camorama.glade.h:39
+msgid "Small"
+msgstr "Klein"
+
+#: data/camorama.glade.h:40
 msgid "Smoothing"
 msgstr "Vloeiend"
 
-#: data/camorama.glade.h:38
+#: data/camorama.glade.h:41
 msgid "Sobel"
 msgstr "Sobel"
 
-#: data/camorama.glade.h:39
+#: data/camorama.glade.h:42
 msgid "String:"
 msgstr "Tekst:"
 
-#: data/camorama.glade.h:40
+#: data/camorama.glade.h:43
 msgid "Take Picture"
 msgstr "Foto maken"
 
-#: data/camorama.glade.h:41
-msgid "Threshold"
-msgstr "Drempel"
+#: data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr "Drempel:"
 
-#: data/camorama.glade.h:42
+#: data/camorama.glade.h:45
 msgid "Timestamp"
 msgstr "Tijdstempel"
 
-#: data/camorama.glade.h:43
+#: data/camorama.glade.h:46
 msgid "Use custom string"
 msgstr "Aangepaste tekst gebruiken"
 
-#: data/camorama.glade.h:44
+#: data/camorama.glade.h:47
 msgid "Username:"
 msgstr "Gebruikersnaam:"
 
-#: data/camorama.glade.h:45
+#: data/camorama.glade.h:48
 msgid "Wacky"
 msgstr "Idioot"
 
-#: data/camorama.glade.h:46
-msgid "White Balance"
-msgstr "Witbalans"
+#: data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr "Witbalans:"
 
-#: data/camorama.glade.h:47
+#: data/camorama.glade.h:50
 msgid "_Directory for captured pics:"
 msgstr "Map met opgenomen beelden:"
 
-#: data/camorama.glade.h:48
+#: data/camorama.glade.h:51
 msgid "_Enable local capture"
 msgstr "_Lokale opname inschakelen"
 
-#: data/camorama.glade.h:49
+#: data/camorama.glade.h:52
 msgid "_Enable remote capture"
 msgstr "_Opname op afstand inschakelen"
 
-#: data/camorama.glade.h:50
+#: data/camorama.glade.h:53
 msgid "_Filename for pictures:"
 msgstr "_Bestandsnaam voor afbeeldingen:"
 
-#: data/camorama.glade.h:51
+#: data/camorama.glade.h:54
 msgid "ftp.yourdomain.org"
 msgstr "ftp.uwdomein.org"
 
-#: data/camorama.glade.h:52
+#: data/camorama.glade.h:55
 msgid "path/to/save/to"
 msgstr "pad/naar/opslagplaats"
 
-#: data/camorama.glade.h:53
+#: data/camorama.glade.h:56
 msgid "webcam-capture"
 msgstr "webcam-opname"
 
-#: data/camorama.glade.h:54
+#: data/camorama.glade.h:57
 msgid "webcamshot"
 msgstr "webcam-kiekje"
 
-#: data/camorama.glade.h:55
+#: data/camorama.glade.h:58
 msgid "your-password"
 msgstr "uw-wachtwoord"
 
-#: data/camorama.glade.h:56
+#: data/camorama.glade.h:59
 msgid "your-username"
 msgstr "uw-gebruikersnaam"
 
-#: data/camorama.glade.h:57
+#: data/camorama.glade.h:60
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -433,17 +445,16 @@ msgstr ""
 "automatische opname, schakelt deze toets de opslag op afstand van "
 "afbeeldingen in/uit."
 
-#. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:317
+#: src/callbacks.c:410
 msgid "translator_credits"
 msgstr "Huib Kleinhout <huib@stack.nl>"
 
-#: src/callbacks.c:324 camorama.desktop.in.h:2
+#: src/callbacks.c:425 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Beelden van een webcam bekijken, bewerken of opslaan"
 
-#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
-#: src/callbacks.c:465
+#: src/callbacks.c:524 src/callbacks.c:590 src/callbacks.c:633
+#: src/callbacks.c:645
 msgid "Unable to capture image."
 msgstr "De afbeelding kan niet worden opgeslagen."
 
@@ -458,7 +469,7 @@ msgstr "De afbeelding '%s' kan niet worden aangemaakt."
 
 #: src/fileio.c:142
 #, c-format
-msgid "Unable to open temorary image file '%s'."
+msgid "Unable to open temporary image file '%s'."
 msgstr "Het tijdelijke afbeeldingsbestand '%s' kan niet worden geopend."
 
 #: src/fileio.c:173
@@ -486,43 +497,47 @@ msgstr "De map '%s' kan niet geopend worden."
 msgid "Could not save image '%s/%s'."
 msgstr "Kan afbeelding '%s/%s' niet opslaan."
 
-#: src/main.c:32
+#: src/main.c:193
 msgid "show version and exit"
 msgstr "Versie weergeven en afsluiten"
 
-#: src/main.c:33
+#: src/main.c:194
 msgid "v4l device to use"
 msgstr "v4l-apparaat dat gebruikt dient te worden"
 
-#: src/main.c:34
+#: src/main.c:195
 msgid "enable debuging code"
 msgstr "debug-code inschakelen"
 
-#: src/main.c:35
+#: src/main.c:196
 msgid "capture width"
 msgstr "opnamebreedte"
 
-#: src/main.c:36
+#: src/main.c:197
 msgid "capture height"
 msgstr "opnamehoogte"
 
-#: src/main.c:37
+#: src/main.c:198
 msgid "maximum capture size"
 msgstr "maximale opnamegrootte"
 
-#: src/main.c:38
+#: src/main.c:199
 msgid "minimum capture size"
 msgstr "minimale opnamegrootte"
 
-#: src/main.c:39
+#: src/main.c:200
 msgid "middle capture size"
 msgstr "gemiddelde opnamegrootte"
 
-#: src/main.c:57
+#: src/main.c:201
+msgid "use read() rather than mmap()"
+msgstr "Gebruik read() in plaats van mmap()"
+
+#: src/main.c:221
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:71
+#: src/main.c:235
 #, c-format
 msgid ""
 "\n"
@@ -535,13 +550,13 @@ msgstr ""
 "Camorama versie %s\n"
 "\n"
 
-#: src/main.c:173
+#: src/main.c:350
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Kan het hoofdbestand voor de gebruikersinterface niet vinden (camorama.glade)"
 
-#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
-#: src/v4l.c:215
+#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
+#: src/v4l.c:222
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.1\n"
-"POT-Creation-Date: 2003-02-07 15:53-0500\n"
-"PO-Revision-Date: 2003-01-24 22:05+0100\n"
+"POT-Creation-Date: 2003-03-16 16:19+0100\n"
+"PO-Revision-Date: 2003-03-16 16:21+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian <no@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr "Glød"
 
 #: data/camorama.glade.h:26
 msgid "Laplace"
-msgstr ""
+msgstr "Laplace"
 
 #: data/camorama.glade.h:27
 msgid "Local Capture"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: data/camorama.glade.h:28
 msgid "Mirror image"
-msgstr ""
+msgstr "Speilvend bilde"
 
 #: data/camorama.glade.h:29
 msgid "Negative"
@@ -147,15 +147,15 @@ msgstr "Katalog for lagring:"
 
 #: data/camorama.glade.h:34
 msgid "Save files in jpeg format"
-msgstr ""
+msgstr "Lagre filer i jpeg-format"
 
 #: data/camorama.glade.h:35
 msgid "Save files in png format"
-msgstr ""
+msgstr "Lagre filer i png-format"
 
 #: data/camorama.glade.h:36
 msgid "Show Adjustments"
-msgstr ""
+msgstr "Vis justeringer"
 
 #: data/camorama.glade.h:37
 msgid "Smoothing"
@@ -163,7 +163,7 @@ msgstr "Utjevning"
 
 #: data/camorama.glade.h:38
 msgid "Sobel"
-msgstr ""
+msgstr "Sobel"
 
 #: data/camorama.glade.h:39
 msgid "String:"
@@ -183,7 +183,7 @@ msgstr "Tidsstempel"
 
 #: data/camorama.glade.h:43
 msgid "Use custom string"
-msgstr ""
+msgstr "Bruk egendefinert streng"
 
 #: data/camorama.glade.h:44
 msgid "Username:"
@@ -418,7 +418,7 @@ msgstr ""
 msgid "translator_credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: src/callbacks.c:324
+#: camorama.desktop.in.h:2 src/callbacks.c:324
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
@@ -426,6 +426,45 @@ msgstr ""
 #: src/callbacks.c:465
 msgid "Unable to capture image."
 msgstr ""
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr ""
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Kan ikke opprette bilde «%s»."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temorary image file '%s'."
+msgstr ""
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr ""
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr ""
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr ""
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr ""
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Kunne ikke lagre bilde «%s/%s»."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -470,13 +509,25 @@ msgid ""
 "\n"
 "Camorama version %s\n"
 "\n"
+msgstr "\n\nCamorama versjon %s\n\n"
+
+#: src/main.c:173
+msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 
-#: src/main.c:174
-msgid "Couldn't find the main interface file (camorama.glade)."
+#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
 msgstr ""
 
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Kunne ikke finne bildefil: %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr ""

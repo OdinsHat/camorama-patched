@@ -252,9 +252,9 @@ void prefs_func(GtkWidget * okbutton, cam * cam)
    client = gconf_client_get_default();
 
    if(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, TRUE) != NULL) {
-      cam->pixdir =
-         malloc(sizeof(char) * (strlen(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE)) + 1));
-      strcpy(cam->pixdir, gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE));
+      //cam->pixdir =
+        // malloc(sizeof(char) * (strlen(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE)) + 1));
+      strncpy(cam->pixdir, gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE),255);
       gconf_client_set_string(cam->gc, KEY1, cam->pixdir, NULL);
 
    } else {

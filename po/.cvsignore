@@ -2,11 +2,12 @@
 *.mo
 *.pot
 Makefile
+Makefile.in
+Makefile.in.in
 POTFILES
 cat-id-tbl.c
-stamp-cat-id
-po2tbl.sed
-po2tbl.sed.in
 messages
 missing
-Makefile.in.in
+po2tbl.sed
+po2tbl.sed.in
+stamp-cat-id

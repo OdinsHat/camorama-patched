@@ -8,6 +8,7 @@
 #include <gdk/gdkx.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
+#include <locale.h>
 
 GtkWidget *main_window, *prefswindow;
 state func_state;
@@ -51,6 +52,7 @@ int main(int argc, char *argv[])
    bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
    textdomain(GETTEXT_PACKAGE);
+   setlocale(LC_ALL, "");
 
    /* gnome_program_init  - initialize everything (gconf, threads, etc) */
    gnome_program_init(PACKAGE, VERSION, LIBGNOMEUI_MODULE, argc, argv, GNOME_PARAM_APP_DATADIR, DATADIR,

@@ -1,3 +1,12 @@
+2003-04-12  Christian Neumair  <chris@gnome-de.org>
+
+	* src/main.c: Add setlocale call to enable translation of "--help"
+	output.
+	* data/camorama.glade: Reduced number of gettext strings by one by
+	assimilating to strings meaning the same.
+	* configure.in: Added AC_PREREQ macro to satisfy ac wrapper scripts,
+	add "de" (German) to ALL_LINGUAS.
+
 2003-03-23  Christophe Merlet  <redfox@redfoxcenter.org>
 
 	* src/fileio.c: Fixed typo.

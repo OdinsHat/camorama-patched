@@ -47,7 +47,7 @@ typedef struct camera {
    gchar *rhost, *rlogin, *rpw;
    gchar *ts_string;
    gchar *date_format;
-   gboolean debug;
+   gboolean debug, read;
    gboolean cap, rcap, acap, show_adjustments;
    gboolean timestamp, rtimestamp, usedate, usestring;
    gboolean rtimefn, timefn;

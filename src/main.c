@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
    Display *display;
    Screen *screen_num;
    gchar *poopoo = NULL, *title;
-   gchar	*pixfilename = "camorama/camorama.png";
-   gchar  *filename;//= "/usr/opt/garnome/share/camorama/camorama.glade";
-	int x = -1, y = -1;
+   gchar *pixfilename = "camorama/camorama.png";
+   gchar *filename;             //= "/usr/opt/garnome/share/camorama/camorama.glade";
+   int x = -1, y = -1;
    gboolean buggery = FALSE;
    GdkPixbuf *logo;
    GConfClient *gc;
@@ -167,9 +167,14 @@ int main(int argc, char *argv[])
 
    /* set the buffer size */
    set_buffer(cam);
-
+   //cam->read = FALSE;
    /* initialize cam and create the window */
-   init_cam(NULL, cam);
+   if(cam->read == FALSE) {
+      pt2Function = timeout_func;
+	   init_cam(NULL, cam);
+   }else{
+	   pt2Function = read_timeout_func;
+   }
    cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
 
    filename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "camorama/camorama.glade", TRUE, NULL);
@@ -177,15 +182,14 @@ int main(int argc, char *argv[])
       error_dialog(_("Couldn't find the main interface file (camorama.glade)."));
       exit(1);
    }
-   
    //pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);
    //printf("pixfile = %s\n",pixfilename);
-   logo = (GdkPixbuf *) create_pixbuf(DATADIR "/pixmaps/camorama.png");//pixfilename);
+   logo = (GdkPixbuf *) create_pixbuf(DATADIR "/pixmaps/camorama.png"); //pixfilename);
    //printf("pixfile = %s\n",pixfilename);
    cam->xml = glade_xml_new(filename, NULL, NULL);
    if(cam->show_adjustments == FALSE) {
       gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
-	   gtk_widget_hide(glade_xml_get_widget(cam->xml, "vbox37"));
+      gtk_widget_hide(glade_xml_get_widget(cam->xml, "vbox37"));
       gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
 
    }
@@ -200,8 +204,7 @@ int main(int argc, char *argv[])
    gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), logo);
    gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")), logo);
 
-   glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_effects_activate),
-                                 cam);
+   glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_effects_activate), cam);
    glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),
                                  cam);
    glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(capture_func), cam);
@@ -329,10 +332,10 @@ int main(int argc, char *argv[])
 
    prefswindow = glade_xml_get_widget(cam->xml, "prefswindow");
 
-   gtk_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
+   gtk_idle_add((GSourceFunc) pt2Function, (gpointer) cam);
 
    if(cam->acap == TRUE) {
-	  cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, (gpointer) cam);
+      cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, (gpointer) cam);
    }
 
    gtk_timeout_add(2000, (GSourceFunc) fps, cam->status);

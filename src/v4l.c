@@ -218,12 +218,17 @@ void set_buffer(cam * cam)
          fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
       }
       g_free(msg);
-      exit(0);
-   }
-   if(cam->debug == TRUE) {
-      printf("\nVIDIOCGMBUF\n");
-      printf("mb.size = %d\n", cam->vid_buf.size);
-      printf("mb.frames = %d\n", cam->vid_buf.frames);
-      printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
+      cam->read = TRUE;
+
+      printf("Using read\n");
+      //exit(0);
+   } else {
+      cam->read = FALSE;
+      if(cam->debug == TRUE) {
+         printf("\nVIDIOCGMBUF\n");
+         printf("mb.size = %d\n", cam->vid_buf.size);
+         printf("mb.frames = %d\n", cam->vid_buf.frames);
+         printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
+      }
    }
 }

@@ -158,7 +158,7 @@ void interval_change(GtkWidget * sb, cam * cam)
    cam->timeout_interval = gtk_spin_button_get_value((GtkSpinButton *) sb) * 60000;
    gconf_client_set_int(cam->gc, KEY21, cam->timeout_interval, NULL);
    if(cam->acap == TRUE) {
-	  gtk_timeout_remove(cam->timeout_id);
+      gtk_timeout_remove(cam->timeout_id);
       cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, cam);
    }
 }
@@ -333,29 +333,97 @@ void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 
    if(!strcmp(translators, "translator_credits"))
       translators = NULL;
-   
-	if (about1 != NULL)
-	{
-		printf("before the old return\n");
-		gdk_window_raise (about1->window);
-		gdk_window_show (about1->window);
-		return;
-		printf("after the old return\n");
-	}
+
+   if(about1 != NULL) {
+      printf("before the old return\n");
+      gdk_window_raise(about1->window);
+      gdk_window_show(about1->window);
+      return;
+      printf("after the old return\n");
+   }
 
    about1 = gnome_about_new("Camorama", VERSION,
                             "Copyright \xc2\xa9 2002 Greg Jones",
                             _("View, alter and save images from a webcam"), authors, documenters, translators, logo);
-   
-	g_signal_connect (G_OBJECT (about1), "destroy", G_CALLBACK
-			(gtk_widget_destroyed), &about1);
-	g_object_add_weak_pointer (G_OBJECT (about1),
-			(void**)&(about1));
 
-	gtk_widget_show(about1);
+   g_signal_connect(G_OBJECT(about1), "destroy", G_CALLBACK(gtk_widget_destroyed), &about1);
+   g_object_add_weak_pointer(G_OBJECT(about1), (void **) &(about1));
+
+   gtk_widget_show(about1);
 }
 
 /* get image from cam - does all the work ;) */
+gint read_timeout_func(cam * cam)
+{
+   int i, count = 0;
+   GdkGC *gc;
+
+   read(cam->dev, cam->pic, (cam->x * cam->y * 3));
+   frames2++;
+   /*update_rec.x = 0;
+   update_rec.y = 0;
+   update_rec.width = cam->x;
+   update_rec.height = cam->y;*/
+   count++;
+   /* refer the frame */
+   cam->pic_buf = cam->pic + cam->vid_buf.offsets[frame];
+   if(cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
+      yuv420p_to_rgb(cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
+      cam->pic_buf = cam->tmp;
+   }
+   if(func_state.fc == TRUE) {
+      fix_colour(cam->pic_buf, cam->x, cam->y);
+   }
+
+   if(func_state.threshold_channel == TRUE) {
+      threshold_channel(cam->pic_buf, cam->x, cam->y, cam->dither);
+   }
+
+   if(func_state.threshold == TRUE) {
+      threshold(cam->pic_buf, cam->x, cam->y, cam->dither);
+   }
+
+   if(func_state.laplace == TRUE) {
+      laplace(cam->pic_buf, cam->depth, cam->x, cam->y);
+   }
+
+   if(func_state.sobel == TRUE) {
+      sobel(cam->pic_buf, cam->x, cam->y);
+   }
+
+   if(func_state.wacky == TRUE) {
+      wacky(cam->pic_buf, cam->depth, cam->x, cam->y);
+   }
+
+   if(func_state.negative == TRUE) {
+      negative(cam->pic_buf, cam->x, cam->y, cam->depth);
+   }
+
+   if(func_state.mirror == TRUE) {
+      mirror(cam->pic_buf, cam->x, cam->y, cam->depth);
+   }
+
+   if(func_state.colour == TRUE) {
+      bw(cam->pic_buf, cam->x, cam->y);
+   }
+
+   if(func_state.smooth == TRUE) {
+      smooth(cam->pic_buf, cam->depth, cam->x, cam->y);
+   }
+
+   gc = gdk_gc_new(cam->pixmap);
+
+   gdk_draw_rgb_image(cam->pixmap,
+                      gc, 0, 0,
+                      cam->vid_win.width, cam->vid_win.height, GDK_RGB_DITHER_NORMAL,
+                      cam->pic_buf, cam->vid_win.width * cam->depth);
+
+   gtk_widget_queue_draw_area(glade_xml_get_widget(cam->xml, "da"), 0, 0, cam->x, cam->y);
+
+   return 1;
+
+}
+
 gint timeout_func(cam * cam)
 {
    int i, count = 0;

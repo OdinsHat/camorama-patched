@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-18 11:03+0200\n"
+"POT-Creation-Date: 2004-08-19 11:03+0200\n"
 "PO-Revision-Date: 2004-05-18 11:15+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -206,9 +206,10 @@ msgstr "Koha"
 msgid "Use custom string"
 msgstr "Përdor një frazë të personalizuar"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:47
 msgid "Username:"
-msgstr "Emri i përdoruesit:"
+msgstr "Përdoruesi:"
 
 #: data/camorama.glade.h:48
 msgid "Wacky"
@@ -583,3 +584,4 @@ msgid ""
 msgstr ""
 "Nuk arrij të lidhem me dispozitivin video (%s).\n"
 "Kontrollo lidhjen."
+

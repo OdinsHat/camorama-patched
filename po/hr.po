@@ -1,11 +1,11 @@
 # Translation of camorama to Croatiann
 # Copyright (C) Croatiann team
-# Translators: Automatski Prijevod <>,Ivan Jankovic <rbrrneck@gmx.net>,
+# Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0\n"
-"POT-Creation-Date: 2004-02-01 16:49+0100\n"
-"PO-Revision-Date: 2004-02-01 16:49+CET\n"
+"POT-Creation-Date: 2004-03-17 23:51+0100\n"
+"PO-Revision-Date: 2004-03-17 23:51+CET\n"
 "Last-Translator: auto\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr ""
 
 #: data/camorama.glade.h:9
 msgid "Add a timestamp to captured images"
-msgstr "Dodaj vremensku oznaku kaptruriranim slikama"
+msgstr "Dodaj vremensku oznaku uhvaćenim slikama"
 
 #: data/camorama.glade.h:10
 msgid "Append time to filename"
@@ -66,7 +66,6 @@ msgid "Automatic Capture"
 msgstr ""
 
 #: data/camorama.glade.h:12
-#, fuzzy
 msgid "Black & white"
 msgstr "Crno-bijelo"
 
@@ -534,7 +533,6 @@ msgid "use read() rather than mmap()"
 msgstr ""
 
 #: src/main.c:461
-#, fuzzy
 msgid "camorama"
 msgstr "Camorama"
 

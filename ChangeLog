@@ -1,3 +1,7 @@
+2003-02-24  Christian Neumair  <chris@gnome-de.org>
+
+	* camorama.desktop.in: Marked Name and Comment fields for translation.
+
 2003-02-24  Evandro Fernandes Giovanini <evandrofg@ig.com.br>
 
 	* configure.in(ALL_LINGUAS): Added pt_BR (Brazilian Portuguese).

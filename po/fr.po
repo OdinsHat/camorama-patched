@@ -1,15 +1,15 @@
-# French translation of camoram.
+# French translation of camorama.
 # Copyright (C) 2003 Free Software FFoundation, Inc.
-# This file is distributed under the same license as the Camorama package.
+# This file is distributed under the GNU General Public License version 2.
 # Baptiste MILLE-MATHIAS <bmm80@ifrance.com>, 2003.
 # Christophe Merlet (RedFox) <redfox@redfoxcenter.org>, 2003.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.17\n"
-"POT-Creation-Date: 2003-02-07 15:53-0500\n"
-"PO-Revision-Date: 2003-02-01 21:20+0100\n"
-"Last-Translator: Baptiste MILLE-MATHIAS <bmm80@ifrance.com>\n"
+"POT-Creation-Date: 2003-02-23 19:23+0100\n"
+"PO-Revision-Date: 2003-02-23 19:05+0100\n"
+"Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Ajouter un horodatage aux images capturées"
 
 #: data/camorama.glade.h:10
 msgid "Add timestamp to captured images"
-msgstr "Ajouter l'horodatage aux images capturées"
+msgstr "Ajouter un horodatage aux images capturées"
 
 #: data/camorama.glade.h:11
 msgid "Append time to filename"
@@ -217,7 +217,7 @@ msgstr "Nom de _fichier pour les images :"
 
 #: data/camorama.glade.h:51
 msgid "ftp.yourdomain.org"
-msgstr "ftp.votre_domaine.org"
+msgstr "ftp.votredomaine.org"
 
 #: data/camorama.glade.h:52
 msgid "path/to/save/to"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
-msgstr "texte alternatif pour l'horodatage"
+msgstr "Texte alternatif pour l'horodatage"
 
 #: data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
@@ -429,17 +429,17 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 "Traducteurs :\n"
-"Mille-Mathias Baptiste <bmm80@ifrance.com>"
+"Baptiste Mille-Mathias <bmm80@ifrance.com>\n"
+"Christophe Merlet (RedFox) <redfox@redfoxcenter.org>"
 
 #: src/callbacks.c:324
 msgid "View, alter and save images from a webcam"
-msgstr ""
+msgstr "Affiche, modifie et enregistre les images d'une webcam"
 
 #: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
 #: src/callbacks.c:465
-#, fuzzy
 msgid "Unable to capture image."
-msgstr "Activ_er les capture en local"
+msgstr "Incapable de capturer l'image."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -485,10 +485,14 @@ msgid ""
 "Camorama version %s\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
 
-#: src/main.c:174
+#: src/main.c:173
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr ""
+msgstr "Ne peut trouver le fichier d'interface principal (camorama.glade)."
 
 #: src/support.c:66
 #, c-format

@@ -171,7 +171,9 @@ int main(int argc, char *argv[])
    cam->tmp = malloc(cam->x * cam->y * cam->depth);
 
    /* set the buffer size */
-   set_buffer(cam);
+   if(cam->read == FALSE){
+      set_buffer(cam);
+   }
    //cam->read = FALSE;
    /* initialize cam and create the window */
    

@@ -121,10 +121,17 @@ void camera_cap(cam * cam)
          break;
       }
    }
+   if((cam->vid_cap.type & VID_TYPE_CAPTURE) != 1) {
+      cam->read = TRUE;
+   }
+
    if(cam->debug == TRUE) {
       printf("\nVIDIOCGCAP\n");
       printf("device name = %s\n", cam->vid_cap.name);
       printf("device type = %d\n", cam->vid_cap.type);
+      if(cam->read == FALSE){
+		  printf("can use mmap()\n");
+	  }
       printf("# of channels = %d\n", cam->vid_cap.channels);
       printf("# of audio devices = %d\n", cam->vid_cap.audios);
       printf("max width = %d\n", cam->vid_cap.maxwidth);
@@ -212,25 +219,21 @@ void set_buffer(cam * cam)
 {
    char *msg;
    if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
-      /*msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
-       * //error_dialog(msg);
-       * //if(cam->debug == TRUE) {
-       * //   fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
-       * //}
-       * g_free(msg); */
-
-      /*can't get buffer info, assuming no mmap().  we do this last, if there is a real problem, i hope it has been caught already ;) */
-      cam->read = TRUE;
-
-      /*printf("Using read\n");
-       * exit(0); */
-   } else {
-      //cam->read = FALSE;
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
       if(cam->debug == TRUE) {
-         printf("\nVIDIOCGMBUF\n");
-         printf("mb.size = %d\n", cam->vid_buf.size);
-         printf("mb.frames = %d\n", cam->vid_buf.frames);
-         printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
+         fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
       }
+      g_free(msg);
+      exit(0);
+
    }
+   
+   if(cam->debug == TRUE) {
+      printf("\nVIDIOCGMBUF\n");
+      printf("mb.size = %d\n", cam->vid_buf.size);
+      printf("mb.frames = %d\n", cam->vid_buf.frames);
+      printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
+   }
+
 }

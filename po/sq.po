@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-05-18 10:30+0200\n"
+"POT-Creation-Date: 2004-06-23 14:06+0200\n"
 "PO-Revision-Date: 2004-05-18 11:15+0200\n"
 "Last-Translator: Laurent Dhima <laurenti@alblinux.net>\n"
 "Language-Team: Albanian <gnome-albanian-perkthyesit@lists.sourceforge.net>\n"
@@ -114,9 +114,10 @@ msgstr "Emri i file"
 msgid "General"
 msgstr "Të përgjithshme"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:24
 msgid "Hue:"
-msgstr "Hue:"
+msgstr "Tonaliteti:"
 
 #: data/camorama.glade.h:25
 msgid "Laplace"
@@ -130,9 +131,10 @@ msgstr "E madhe"
 msgid "Local Capture"
 msgstr "Marrja lokale"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:28
 msgid "Medium"
-msgstr "E mesme"
+msgstr "Mesatare"
 
 #: data/camorama.glade.h:29
 msgid "Mirror image"
@@ -142,13 +144,15 @@ msgstr "Figura e reflektuar"
 msgid "Negative"
 msgstr "Negativi"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:31
 msgid "Password:"
-msgstr "Password:"
+msgstr "Fjalëkalimi:"
 
+#. GRUT modified this item
 #: data/camorama.glade.h:32
 msgid "Preferences"
-msgstr "Preferime"
+msgstr "Preferimet"
 
 #: data/camorama.glade.h:33
 msgid "Remote Capture"
@@ -400,11 +404,13 @@ msgstr "Aktivon përdorimin e pulsantëve për rregullimin e filtrave video"
 
 #: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Aktivon përdorimin e tekstit të personalizuar për datën dhe orën në figura."
+msgstr ""
+"Aktivon përdorimin e tekstit të personalizuar për datën dhe orën në figura."
 
 #: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e pronësive video"
+msgstr ""
+"Aktivon përdorimin e kursorëve rrëshkitës për rregullimin e pronësive video"
 
 #: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
@@ -463,9 +469,10 @@ msgstr "E pamundur marrja e figurës."
 msgid "Orientation"
 msgstr "Orientimi"
 
+#. GRUT modified this item
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr "Orientimi i ikonës së zonës së njoftimit."
+msgstr "Orientimi i sirtarit."
 
 #: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."

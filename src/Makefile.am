@@ -7,5 +7,5 @@ INCLUDES = \
 
 bin_PROGRAMS = camorama
 
-camorama_SOURCES = main.c v4l.c filter.c callbacks.c support.c fileio.c v4l.h callbacks.h support.h interface.h fileio.h font_6x11.h
+camorama_SOURCES = main.c v4l.c filter.c callbacks.c support.c fileio.c v4l.h callbacks.h support.h interface.h fileio.h font_6x11.h filter.h
 camorama_LDADD = @PACKAGE_LIBS@ 

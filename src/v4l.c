@@ -158,6 +158,7 @@ void set_pic_info(cam * cam)
 void get_pic_info(cam * cam)
 {
    char *msg;
+	
    if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
@@ -167,6 +168,7 @@ void get_pic_info(cam * cam)
       g_free(msg);
       exit(0);
    }
+	
    if(cam->debug == TRUE) {
       printf("\nVIDIOCGPICT:\n");
       printf("bright = %d\n", cam->vid_pic.brightness);

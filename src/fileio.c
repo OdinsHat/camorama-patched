@@ -39,7 +39,7 @@ add_rgb_text (char *image, int width, int height, char *cstring, char *format,
     time (&t);
     tm = localtime (&t);
     len = strftime (line, 127, image_label, tm);
-
+    
     for (y = 0; y < CHAR_HEIGHT; y++) {
         /* locate text in lower left corner of image */
         ptr = image + 3 * width * (height - CHAR_HEIGHT - 2 + y) + 12;
@@ -131,7 +131,7 @@ void remote_save (cam * cam)
                                    cam->x, cam->y,
                                    cam->x * cam->vid_pic.depth / 8, NULL,
                                    NULL);
-
+ 
     if (pb == NULL) {
         error_message =
             g_strdup_printf (_("Unable to create image '%s'."), filename);

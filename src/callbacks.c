@@ -782,9 +782,9 @@ void capture_func (GtkWidget * widget, cam * cam)
 
 gint timeout_capture_func (cam * cam)
 {
-    GdkRectangle *rect;
-    rect->x = 0, rect->y = 0;
-    rect->width = cam->x, rect->height = cam->y;
+   /* GdkRectangle rect;
+    rect->x = 0; rect->y = 0;
+    rect->width = cam->x; rect->height = cam->y;*/
 
     /* need to return true, or the timeout will be destroyed - don't forget! :) */
     if (cam->hidden == TRUE) {
@@ -800,6 +800,7 @@ gint timeout_capture_func (cam * cam)
 
     }
     memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
+
     if (cam->cap == TRUE) {
         local_save (cam);
     }

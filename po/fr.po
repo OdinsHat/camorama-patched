@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.17\n"
-"POT-Creation-Date: 2003-02-23 19:23+0100\n"
-"PO-Revision-Date: 2003-02-23 19:05+0100\n"
+"POT-Creation-Date: 2003-03-23 19:42+0100\n"
+"PO-Revision-Date: 2003-03-23 19:25+0100\n"
 "Last-Translator: Christophe Merlet (RedFox) <redfox@redfoxcenter.org>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,7 +113,7 @@ msgstr "Général"
 
 #: data/camorama.glade.h:25
 msgid "Hue"
-msgstr "Ton"
+msgstr "Teinte"
 
 #: data/camorama.glade.h:26
 msgid "Laplace"
@@ -157,7 +157,7 @@ msgstr "Enregistrer les fichiers au format png"
 
 #: data/camorama.glade.h:36
 msgid "Show Adjustments"
-msgstr "Afficher les ajustements"
+msgstr "Afficher les réglages"
 
 #: data/camorama.glade.h:37
 msgid "Smoothing"
@@ -197,7 +197,7 @@ msgstr "Wacky"
 
 #: data/camorama.glade.h:46
 msgid "White Balance"
-msgstr "Balance du blanc"
+msgstr "Balance des blancs"
 
 #: data/camorama.glade.h:47
 msgid "_Directory for captured pics:"
@@ -432,7 +432,7 @@ msgstr ""
 "Baptiste Mille-Mathias <bmm80@ifrance.com>\n"
 "Christophe Merlet (RedFox) <redfox@redfoxcenter.org>"
 
-#: src/callbacks.c:324
+#: src/callbacks.c:324 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Affiche, modifie et enregistre les images d'une webcam"
 
@@ -440,6 +440,45 @@ msgstr "Affiche, modifie et enregistre les images d'une webcam"
 #: src/callbacks.c:465
 msgid "Unable to capture image."
 msgstr "Incapable de capturer l'image."
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "Peut enregistrer les images temporaires dans /tmp."
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Incapable de créer l'image « %s »."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temporary image file '%s'."
+msgstr "Incapable d'ouvrir l'image temporaire « %s »."
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Une erreur est survenue en ouvrant %s."
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Une erreur est survenue en écrivant dans %s."
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Ne peut créer le répertoire « %s »."
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Ne peut se placer dans le répertoire « %s »."
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Ne peut enregistrer l'image « %s/%s »."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -494,7 +533,21 @@ msgstr ""
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Ne peut trouver le fichier d'interface principal (camorama.glade)."
 
+#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Ne peut se connecter au périphérique vidéo (%s).\n"
+"Veuillez vérifier la connexion."
+
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Impossible de trouver le fichier pixmap : %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Visionneur de webcam Camorama"

@@ -139,7 +139,7 @@ void remote_save(cam * cam)
    input_uri_string = g_strdup_printf("camorama.%s", ext);
 
    if(!(fp = fopen(input_uri_string, "rb"))) {
-      error_message = g_strdup_printf(_("Unable to open temorary image file '%s'."), filename);
+      error_message = g_strdup_printf(_("Unable to open temporary image file '%s'."), filename);
       error_dialog(error_message);
       g_free(input_uri_string);
       g_free(error_message);

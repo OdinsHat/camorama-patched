@@ -1,3 +1,7 @@
+2003-03-23  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* src/fileio.c: Fixed typo.
+
 2003-03-16  Roozbeh Pournader  <roozbeh@sharif.edu>
 
 	* configure.in: Added "fa" to ALL_LINGUAS.

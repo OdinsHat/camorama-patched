@@ -1,0 +1,464 @@
+# Copyright (C) 2002-2003 Free Software Foundation, Inc.
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aktualną wersję tego pliku możesz odnaleźć w repozytorium cvs.gnome.pl
+# (:pserver:anonymous@cvs.gnome.pl:/home/cvs, puste hasło)
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas na adres:
+# translators@gnome.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama\n"
+"POT-Creation-Date: 2003-01-30 11:10+0100\n"
+"PO-Revision-Date: 2003-02-24 01:29+0100\n"
+"Last-Translator: GNOME PL Team <granslators@gnome.pl>\n"
+"Language-Team: Polish <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: data/camorama.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">Effects</span>"
+msgstr "<span weight=\"bold\">Efekty</span>"
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">Ogólne</span>"
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">Typ obrazu</span>"
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Add a timestamp to captured images"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Add timestamp to captured images"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Append time to filename"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Automatic Capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Black & White"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Brightness"
+msgstr "Jasność"
+
+#: data/camorama.glade.h:1
+msgid "Camorama-libglade"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Capture Interval (in minutes):"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Color correction"
+msgstr "Korekcja koloru"
+
+#: data/camorama.glade.h:1
+msgid "Color threshold"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Colour"
+msgstr "Kolor"
+
+#: data/camorama.glade.h:1
+msgid "Contrast"
+msgstr "Kontrast"
+
+#: data/camorama.glade.h:1
+msgid "Draw date and time"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "FTP server: "
+msgstr "Serwer FTP: "
+
+#: data/camorama.glade.h:1
+msgid "Filename"
+msgstr "Nazwa pliku"
+
+#: data/camorama.glade.h:1
+msgid "General"
+msgstr "Ogólne"
+
+#: data/camorama.glade.h:1
+msgid "Hue"
+msgstr "Odcień"
+
+#: data/camorama.glade.h:1
+msgid "Laplace"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Local Capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Mirror image"
+msgstr "Odbicie obrazu"
+
+#: data/camorama.glade.h:1
+msgid "Negative"
+msgstr "Negatyw"
+
+#: data/camorama.glade.h:1
+msgid "Password:"
+msgstr "Hasło:"
+
+#: data/camorama.glade.h:1
+msgid "Preferences"
+msgstr "Preferencje"
+
+#: data/camorama.glade.h:1
+msgid "Remote Capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Save directory:"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Save files in jpeg format"
+msgstr "Zapis plików w formacie jpeg"
+
+#: data/camorama.glade.h:1
+msgid "Save files in png format"
+msgstr "Zapis plików w formacie png"
+
+#: data/camorama.glade.h:1
+msgid "Show Adjustments"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Smoothing"
+msgstr "Wygładzanie"
+
+#: data/camorama.glade.h:1
+msgid "Sobel"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "String:"
+msgstr "Napis:"
+
+#: data/camorama.glade.h:1
+msgid "Take Picture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Threshold"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Timestamp"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Use custom string"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "Username:"
+msgstr "Użytkownik:"
+
+#: data/camorama.glade.h:1
+msgid "Wacky"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "White Balance"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "_Directory for captured pics:"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "_Enable local capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "_Enable remote capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "_Filename for pictures:"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "ftp.yourdomain.org"
+msgstr "ftp.twojadomena.org"
+
+#: data/camorama.glade.h:1
+msgid "path/to/save/to"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "webcam-capture"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "webcamshot"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "your-password"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "your-username"
+msgstr ""
+
+#: data/camorama.glade.h:1
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Append timestamp to remote filename"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Custom text for the timestamp"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Filename for local captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Filename for saving captured pictures to locally"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Folder for local captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Folder for remote captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Folder for saving captured pictures remotely"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Folder for saving captured pictures to locally"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Hostname for FTP server"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Hostname for the FTP server for remote captures."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Interval for auto-capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Local capture image format"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Name for the filename of uploaded images."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Password for FTP server"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Remote capture image format"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Remote save filename"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "The password for the FTP account for remote captures."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles auto-capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles automatic capturing of pictures."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles local capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles remote capture"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the custom string"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the datestamp in captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles the video adjustment sliders"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles timestamp for local captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Toggles timestamp for remote captures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Username for FTP server"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: data/camorama.schemas.in.h:1
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#. TRANSLATORS: Replace this string with your names, one name per line.
+#: src/callbacks.c:1
+msgid "translator_credits"
+msgstr "GNOME PL Team <translators@gnome.pl>"
+
+#: src/main.c:1
+msgid "show version and exit"
+msgstr ""
+
+#: src/main.c:1
+msgid "v4l device to use"
+msgstr ""
+
+#: src/main.c:1
+msgid "enable debuging code"
+msgstr ""
+
+#: src/main.c:1
+msgid "capture width"
+msgstr ""
+
+#: src/main.c:1
+msgid "capture height"
+msgstr ""
+
+#: src/main.c:1
+msgid "maximum capture size"
+msgstr ""
+
+#: src/main.c:1
+msgid "minimum capture size"
+msgstr ""
+
+#: src/main.c:1
+msgid "middle capture size"
+msgstr ""
+
+#: src/main.c:1
+msgid "camorama"
+msgstr "camorama"
+
+#: src/support.c:1
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Nie można znaleźć pliku piksmapy: %s"

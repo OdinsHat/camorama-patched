@@ -27,16 +27,19 @@ GETTEXT_PACKAGE=camorama
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Name of default gettext domain])
 
-dnl AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE")
 
 dnl Add the languages which your application supports here.
 AM_GLIB_GNU_GETTEXT
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
+ALL_LINGUAS="sv"
+
+
 
 AC_OUTPUT([
 Makefile
 src/Makefile
 data/Makefile
 pixmaps/Makefile
+po/Makefile
 ])
 

@@ -6,13 +6,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-04-30 19:39+0200\n"
-"PO-Revision-Date: 2003-04-30 19:39+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2003-08-06 22:30+0200\n"
+"PO-Revision-Date: 2003-08-06 22:32+0200\n"
 "Last-Translator: Ole Laursen <olau@hardworking.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Camorama - netkamerafremviser"
+
+#: camorama.desktop.in.h:2 src/callbacks.c:515
+msgid "View, alter and save images from a webcam"
+msgstr "Vis, justér og gem billeder fra et netkamera"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -59,12 +68,12 @@ msgid "Automatic Capture"
 msgstr "Automatisk optagelse"
 
 #: data/camorama.glade.h:12
-msgid "Black & White"
+msgid "Black & white"
 msgstr "Sort/hvid"
 
 #: data/camorama.glade.h:13
-msgid "Brightness"
-msgstr "Lysstyrke"
+msgid "Brightness:"
+msgstr "Lysstyrke:"
 
 #: data/camorama.glade.h:14
 msgid "Camorama-libglade"
@@ -75,20 +84,20 @@ msgid "Capture Interval (in minutes):"
 msgstr "Optagelseinterval (i minutter):"
 
 #: data/camorama.glade.h:16
-msgid "Color correction"
+msgid "Colour correction"
 msgstr "Farvekorrigering"
 
 #: data/camorama.glade.h:17
-msgid "Color threshold"
+msgid "Colour threshold"
 msgstr "Farvetærskel"
 
 #: data/camorama.glade.h:18
-msgid "Colour"
-msgstr "Farve"
+msgid "Colour:"
+msgstr "Farve:"
 
 #: data/camorama.glade.h:19
-msgid "Contrast"
-msgstr "Kontrast"
+msgid "Contrast:"
+msgstr "Kontrast:"
 
 #: data/camorama.glade.h:20
 msgid "Draw date and time"
@@ -107,146 +116,150 @@ msgid "General"
 msgstr "Generelt"
 
 #: data/camorama.glade.h:24
-msgid "Hue"
-msgstr "Farvetone"
+msgid "Hue:"
+msgstr "Farvetone:"
 
 #: data/camorama.glade.h:25
 msgid "Laplace"
 msgstr "Laplace"
 
 #: data/camorama.glade.h:26
+msgid "Large"
+msgstr "Stor"
+
+#: data/camorama.glade.h:27
 msgid "Local Capture"
 msgstr "Lokal optagelse"
 
-#: data/camorama.glade.h:27
+#: data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Mellem"
+
+#: data/camorama.glade.h:29
 msgid "Mirror image"
 msgstr "Spejlvend billede"
 
-#: data/camorama.glade.h:28
+#: data/camorama.glade.h:30
 msgid "Negative"
 msgstr "Negativ"
 
-#: data/camorama.glade.h:29
+#: data/camorama.glade.h:31
 msgid "Password:"
 msgstr "Adgangskode:"
 
-#: data/camorama.glade.h:30
+#: data/camorama.glade.h:32
 msgid "Preferences"
 msgstr "Indstillinger"
 
-#: data/camorama.glade.h:31
+#: data/camorama.glade.h:33
 msgid "Remote Capture"
 msgstr "Fjernoptagelse"
 
-#: data/camorama.glade.h:32
+#: data/camorama.glade.h:34
 msgid "Save directory:"
 msgstr "Gemningsmappe:"
 
-#: data/camorama.glade.h:33
+#: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
 msgstr "Gem filer i JPEG-format"
 
-#: data/camorama.glade.h:34
+#: data/camorama.glade.h:36
 msgid "Save files in png format"
 msgstr "Gem filer i PNG-format"
 
-#: data/camorama.glade.h:35
+#: data/camorama.glade.h:37
 msgid "Show Adjustments"
 msgstr "Vis justeringer"
 
-#: data/camorama.glade.h:36
+#: data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr "Vis effekter"
+
+#: data/camorama.glade.h:39
+msgid "Small"
+msgstr "Lille"
+
+#: data/camorama.glade.h:40
 msgid "Smoothing"
 msgstr "Udjævning"
 
-#: data/camorama.glade.h:37
+#: data/camorama.glade.h:41
 msgid "Sobel"
 msgstr "Sobel"
 
-#: data/camorama.glade.h:38
+#: data/camorama.glade.h:42
 msgid "String:"
 msgstr "Tekst:"
 
-#: data/camorama.glade.h:39
+#: data/camorama.glade.h:43
 msgid "Take Picture"
 msgstr "Optag billede"
 
-#: data/camorama.glade.h:40
-msgid "Threshold"
-msgstr "Tærskel"
+#: data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr "Tærskel:"
 
-#: data/camorama.glade.h:41
+#: data/camorama.glade.h:45
 msgid "Timestamp"
 msgstr "Tidsstempel"
 
-#: data/camorama.glade.h:42
+#: data/camorama.glade.h:46
 msgid "Use custom string"
 msgstr "Benyt brugerdefineret tekst"
 
-#: data/camorama.glade.h:43
+#: data/camorama.glade.h:47
 msgid "Username:"
 msgstr "Brugernavn:"
 
-#: data/camorama.glade.h:44
+#: data/camorama.glade.h:48
 msgid "Wacky"
 msgstr "Skør"
 
-#: data/camorama.glade.h:45
-msgid "White Balance"
-msgstr "Hvidbalance"
+#: data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr "Hvidbalance:"
 
-#: data/camorama.glade.h:46
+#: data/camorama.glade.h:50
 msgid "_Directory for captured pics:"
 msgstr "_Mappe til optagede billeder:"
 
-#: data/camorama.glade.h:47
+#: data/camorama.glade.h:51
 msgid "_Enable local capture"
 msgstr "Aktivér _lokal optagelse"
 
-#: data/camorama.glade.h:48
+#: data/camorama.glade.h:52
 msgid "_Enable remote capture"
 msgstr "Aktivér _fjern optagelse"
 
-#: data/camorama.glade.h:49
+#: data/camorama.glade.h:53
 msgid "_Filename for pictures:"
 msgstr "_Filnavn for billeder:"
 
-#: data/camorama.glade.h:50
+#: data/camorama.glade.h:54
 msgid "ftp.yourdomain.org"
 msgstr "ftp.ditdomæne.dk"
 
-#: data/camorama.glade.h:51
-msgid "large"
-msgstr "stor"
-
-#: data/camorama.glade.h:52
-msgid "medium"
-msgstr "mellem"
-
-#: data/camorama.glade.h:53
+#: data/camorama.glade.h:55
 msgid "path/to/save/to"
 msgstr "sti/at/gemme/til"
 
-#: data/camorama.glade.h:54
-msgid "small"
-msgstr "lille"
-
-#: data/camorama.glade.h:55
+#: data/camorama.glade.h:56
 msgid "webcam-capture"
 msgstr "netkamera-optagelse"
 
-#: data/camorama.glade.h:56
+#: data/camorama.glade.h:57
 msgid "webcamshot"
 msgstr "netkamera-billede"
 
-#: data/camorama.glade.h:57
+#: data/camorama.glade.h:58
 msgid "your-password"
 msgstr "din-adgangskode"
 
-#: data/camorama.glade.h:58
+#: data/camorama.glade.h:59
 msgid "your-username"
 msgstr "din-brugernavn"
 
-#: data/camorama.glade.h:59
+#: data/camorama.glade.h:60
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -427,99 +440,107 @@ msgstr ""
 "Når billeder gemmes vha. knappen \"Gem billede\" eller med automatisk "
 "optagelse, angiver denne nøgle om billederne gemmes på en server."
 
-#: src/callbacks.c:401
+#: src/callbacks.c:499
 msgid "translator_credits"
 msgstr "Ole Laursen <olau@hardworking.dk>"
 
-#: src/callbacks.c:416 camorama.desktop.in.h:2
-msgid "View, alter and save images from a webcam"
-msgstr "Vis, justér og gem billeder fra et netkamera"
-
-#: src/callbacks.c:513 src/callbacks.c:579 src/callbacks.c:620
-#: src/callbacks.c:632
+#: src/callbacks.c:624 src/callbacks.c:694 src/callbacks.c:744
+#: src/callbacks.c:757
 msgid "Unable to capture image."
 msgstr "Kan ikke optage billede."
 
-#: src/fileio.c:114
+#: src/eggtrayicon.c:118
+msgid "Orientation"
+msgstr "Orientering"
+
+#: src/eggtrayicon.c:119
+msgid "The orientation of the tray."
+msgstr "Orienteringen af området."
+
+#: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."
 msgstr "Kunne ikke gemme midlertidig billedfil i /tmp."
 
-#: src/fileio.c:129
+#: src/fileio.c:137
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Kan ikke oprette billedet '%s'."
 
-#: src/fileio.c:142
-#, c-format
-msgid "Unable to open temporary image file '%s'."
-msgstr "Kan ikke åbne midlertidig billedfil '%s'."
-
-#: src/fileio.c:173
-#, c-format
-msgid "An error occured opening %s."
-msgstr "En fejl opstod ved åbning af '%s'."
-
-#: src/fileio.c:182
-#, c-format
-msgid "An error occured writing to %s."
-msgstr "En fejl opstod ved skrivning til '%s'."
-
-#: src/fileio.c:258
-#, c-format
-msgid "Could not create directory '%s'."
-msgstr "Kunne ikke oprette mappen '%s'."
-
-#: src/fileio.c:266
-#, c-format
-msgid "Could not change to directory '%s'."
-msgstr "Kunne ikke skifte til mappen '%s'."
-
-#: src/fileio.c:279
+#: src/fileio.c:146 src/fileio.c:429
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Kunne ikke gemme billedet '%s/%s'."
 
-#: src/main.c:35
+#: src/fileio.c:273
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"Kan ikke åbne midlertidig billedfil '%s'.\n"
+"Kan ikke overføre billede."
+
+#: src/fileio.c:311
+#, c-format
+msgid "An error occured opening %s."
+msgstr "En fejl opstod ved åbning af '%s'."
+
+#: src/fileio.c:323
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "En fejl opstod ved skrivning til '%s'."
+
+#: src/fileio.c:403
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Kunne ikke oprette mappen '%s'."
+
+#: src/fileio.c:414
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Kunne ikke skifte til mappen '%s'."
+
+#: src/main.c:413
 msgid "show version and exit"
 msgstr "Vis versionsnummer og afslut"
 
-#: src/main.c:36
+#: src/main.c:415
 msgid "v4l device to use"
 msgstr "v4l-enhed som skal benyttes"
 
-#: src/main.c:37
+#: src/main.c:417
 msgid "enable debuging code"
 msgstr "Aktivér fejlsøgningskode"
 
-#: src/main.c:38
+#: src/main.c:418
 msgid "capture width"
 msgstr "Optagelsesbredde"
 
-#: src/main.c:39
+#: src/main.c:420
 msgid "capture height"
 msgstr "Optagelseshøjde"
 
-#: src/main.c:40
+#: src/main.c:423
 msgid "maximum capture size"
 msgstr "Største optagelsesstørrelse"
 
-#: src/main.c:41
+#: src/main.c:425
 msgid "minimum capture size"
 msgstr "Mindste optagelsesstørrelse"
 
-#: src/main.c:42
+#: src/main.c:427
 msgid "middle capture size"
 msgstr "Mellemste optagelsesstørrelse"
 
-#: src/main.c:43
+#: src/main.c:429
 msgid "use read() rather than mmap()"
 msgstr "Brug read() i stedet for mmap()"
 
-#: src/main.c:63
+#: src/main.c:451
 msgid "camorama"
 msgstr "Camorama"
 
-#: src/main.c:77
+#: src/main.c:465
 #, c-format
 msgid ""
 "\n"
@@ -532,9 +553,15 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:192
+#: src/main.c:597
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Kunne ikke finde hovedgrænsefladefilen (camorama.glade)."
+
+# %s er billedfilen
+#: src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Kunne ikke finde billedfilen: %s"
 
 #: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
 #: src/v4l.c:222
@@ -545,16 +572,6 @@ msgid ""
 msgstr ""
 "Kunne ikke komme i forbindelse med videoenheden (%s).\n"
 "Kontrollér tilslutningen."
-
-# %s er billedfilen
-#: src/support.c:66
-#, c-format
-msgid "Couldn't find pixmap file: %s"
-msgstr "Kunne ikke finde billedfilen: %s"
-
-#: camorama.desktop.in.h:1
-msgid "Camorama Webcam Viewer"
-msgstr "Camorama - netkamerafremviser"
 
 #~ msgid "Add timestamp to captured images"
 #~ msgstr "Tilføj tidsstempel til optagede billeder"

@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.4\n"
-"POT-Creation-Date: 2003-08-05 01:04+0100\n"
-"PO-Revision-Date: 2003-08-05 01:05+0000\n"
+"Report-Msgid-Bugs-To: Duarte Loreto <happyguy_pt@hotmail.com>\n"
+"POT-Creation-Date: 2003-08-15 17:53+0100\n"
+"PO-Revision-Date: 2003-08-15 17:55+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -83,15 +84,15 @@ msgid "Capture Interval (in minutes):"
 msgstr "Intervalo Captura (em minutos):"
 
 #: data/camorama.glade.h:16
-msgid "Colour correction"
+msgid "Color correction"
 msgstr "Correcção cor"
 
 #: data/camorama.glade.h:17
-msgid "Colour threshold"
+msgid "Color threshold"
 msgstr "Intervalo cor"
 
 #: data/camorama.glade.h:18
-msgid "Colour:"
+msgid "Color:"
 msgstr "Cor:"
 
 #: data/camorama.glade.h:19
@@ -567,8 +568,8 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr "Incapaz de encontrar ficheiro pixmap: %s"
 
-#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
-#: src/v4l.c:222
+#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:163 src/v4l.c:188 src/v4l.c:209
+#: src/v4l.c:224
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
-"POT-Creation-Date: 2003-02-24 19:27+0100\n"
+"POT-Creation-Date: 2003-02-28 04:30+0100\n"
 "PO-Revision-Date: 2003-02-25 01:45-0300\n"
 "Last-Translator: Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar.conectiva.com.br>\n"
@@ -78,15 +78,15 @@ msgstr "Camorama-libglade"
 
 #: data/camorama.glade.h:16
 msgid "Capture Interval (in minutes):"
-msgstr "Intrevalo Captura (em minutos):"
+msgstr "Intervalo Captura (em minutos):"
 
 #: data/camorama.glade.h:17
 msgid "Color correction"
-msgstr "Correção cor"
+msgstr "Correção de cor"
 
 #: data/camorama.glade.h:18
 msgid "Color threshold"
-msgstr "Intrevalo cor"
+msgstr "Intervalo de cor"
 
 #: data/camorama.glade.h:19
 msgid "Colour"
@@ -178,7 +178,7 @@ msgstr "Tirar Fotografia"
 
 #: data/camorama.glade.h:41
 msgid "Threshold"
-msgstr "Intrevalo"
+msgstr "Intervalo"
 
 #: data/camorama.glade.h:42
 msgid "Timestamp"
@@ -326,15 +326,18 @@ msgstr "Nome arquivo gravação remota"
 
 #: data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Especifica o formato de imagem a ser utilizado para imagens salvas localmente"
+msgstr ""
+"Especifica o formato de imagem a ser utilizado para imagens salvas localmente"
 
 #: data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Especifica o formato de imagem a ser utilizado para imagens salvas remotamente"
+msgstr ""
+"Especifica o formato de imagem a ser utilizado para imagens salvas "
+"remotamente"
 
 #: data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Especifica o intrevalo para imagens capturadas automaticamente."
+msgstr "Especifica o intervalo para imagens capturadas automaticamente."
 
 #: data/camorama.schemas.in.h:24
 msgid "The password for the FTP account for remote captures."
@@ -382,7 +385,8 @@ msgstr "Alterna a uso da expressão customizada no horário em imagens."
 
 #: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Alterna a uso de barras deslizantes para ajustar as propriedades de vídeo"
+msgstr ""
+"Alterna a uso de barras deslizantes para ajustar as propriedades de vídeo"
 
 #: data/camorama.schemas.in.h:36
 msgid "Toggles the video adjustment sliders"
@@ -424,8 +428,9 @@ msgstr ""
 #: src/callbacks.c:317
 msgid "translator_credits"
 msgstr ""
+"Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
+"baseado na versão em Português Ibérico por\n"
 "Duarte Loreto <happyguy_pt@hotmail.com>"
-"Alexandre Folle de Menezes <afmenez@terra.com.br>"
 
 #: src/callbacks.c:324 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
@@ -526,7 +531,8 @@ msgstr ""
 
 #: src/main.c:173
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr "Impossível encontrar o arquivo de interface principal (camorama.glade)."
+msgstr ""
+"Impossível encontrar o arquivo de interface principal (camorama.glade)."
 
 #: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
 #: src/v4l.c:215

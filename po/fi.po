@@ -472,7 +472,7 @@ msgstr "Suunta"
 
 #: src/eggtrayicon.c:119
 msgid "The orientation of the tray."
-msgstr "Paperikaukalon suunta."
+msgstr "Hyllyn suunta."
 
 #: src/fileio.c:119 src/fileio.c:265
 msgid "Could save temporary image file in /tmp."

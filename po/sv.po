@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-04-24 23:10+0200\n"
-"PO-Revision-Date: 2003-04-24 23:12+0200\n"
+"POT-Creation-Date: 2003-05-21 12:55+0200\n"
+"PO-Revision-Date: 2003-05-21 12:56+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -61,12 +61,12 @@ msgid "Automatic Capture"
 msgstr "Automatisk tagning"
 
 #: data/camorama.glade.h:12
-msgid "Black & White"
+msgid "Black & white"
 msgstr "Svartvit"
 
 #: data/camorama.glade.h:13
-msgid "Brightness"
-msgstr "Ljusstyrka"
+msgid "Brightness:"
+msgstr "Ljusstyrka:"
 
 #: data/camorama.glade.h:14
 msgid "Camorama-libglade"
@@ -85,12 +85,12 @@ msgid "Color threshold"
 msgstr "Färgtröskel"
 
 #: data/camorama.glade.h:18
-msgid "Colour"
-msgstr "Färg"
+msgid "Colour:"
+msgstr "Färg:"
 
 #: data/camorama.glade.h:19
-msgid "Contrast"
-msgstr "Kontrast"
+msgid "Contrast:"
+msgstr "Kontrast:"
 
 #: data/camorama.glade.h:20
 msgid "Draw date and time"
@@ -109,147 +109,151 @@ msgid "General"
 msgstr "Allmänt"
 
 #: data/camorama.glade.h:24
-msgid "Hue"
-msgstr "Nyans"
+msgid "Hue:"
+msgstr "Nyans:"
 
 #: data/camorama.glade.h:25
 msgid "Laplace"
 msgstr "Laplace"
 
 #: data/camorama.glade.h:26
+msgid "Large"
+msgstr "Stor"
+
+#: data/camorama.glade.h:27
 msgid "Local Capture"
 msgstr "Lokal fångst"
 
-#: data/camorama.glade.h:27
+#: data/camorama.glade.h:28
+msgid "Medium"
+msgstr "Mellan"
+
+#: data/camorama.glade.h:29
 msgid "Mirror image"
 msgstr "Spegla bild"
 
-#: data/camorama.glade.h:28
+#: data/camorama.glade.h:30
 msgid "Negative"
 msgstr "Negativ"
 
-#: data/camorama.glade.h:29
+#: data/camorama.glade.h:31
 msgid "Password:"
 msgstr "Lösenord:"
 
-#: data/camorama.glade.h:30
+#: data/camorama.glade.h:32
 msgid "Preferences"
 msgstr "Inställningar"
 
-#: data/camorama.glade.h:31
+#: data/camorama.glade.h:33
 msgid "Remote Capture"
 msgstr "Fjärrfångst"
 
-#: data/camorama.glade.h:32
+#: data/camorama.glade.h:34
 msgid "Save directory:"
 msgstr "Spara katalog:"
 
-#: data/camorama.glade.h:33
+#: data/camorama.glade.h:35
 msgid "Save files in jpeg format"
 msgstr "Spara filer i jpeg-format"
 
-#: data/camorama.glade.h:34
+#: data/camorama.glade.h:36
 msgid "Save files in png format"
 msgstr "Spara filer i png-format"
 
-#: data/camorama.glade.h:35
+#: data/camorama.glade.h:37
 msgid "Show Adjustments"
 msgstr "Visa justeringar"
 
-#: data/camorama.glade.h:36
+#: data/camorama.glade.h:38
+msgid "Show Effects"
+msgstr "Visa effekter"
+
+#: data/camorama.glade.h:39
+msgid "Small"
+msgstr "Liten"
+
+#: data/camorama.glade.h:40
 msgid "Smoothing"
 msgstr "Utjämning"
 
 # Osäker
-#: data/camorama.glade.h:37
+#: data/camorama.glade.h:41
 msgid "Sobel"
 msgstr "Sobel"
 
-#: data/camorama.glade.h:38
+#: data/camorama.glade.h:42
 msgid "String:"
 msgstr "Sträng:"
 
-#: data/camorama.glade.h:39
+#: data/camorama.glade.h:43
 msgid "Take Picture"
 msgstr "Ta bild"
 
-#: data/camorama.glade.h:40
-msgid "Threshold"
-msgstr "Tröskel"
+#: data/camorama.glade.h:44
+msgid "Threshold:"
+msgstr "Tröskel:"
 
-#: data/camorama.glade.h:41
+#: data/camorama.glade.h:45
 msgid "Timestamp"
 msgstr "Tidsstämpel"
 
-#: data/camorama.glade.h:42
+#: data/camorama.glade.h:46
 msgid "Use custom string"
 msgstr "Använd anpassad sträng"
 
-#: data/camorama.glade.h:43
+#: data/camorama.glade.h:47
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: data/camorama.glade.h:44
+#: data/camorama.glade.h:48
 msgid "Wacky"
 msgstr "Knasig"
 
-#: data/camorama.glade.h:45
-msgid "White Balance"
-msgstr "Vitbalans"
+#: data/camorama.glade.h:49
+msgid "White Balance:"
+msgstr "Vitbalans:"
 
-#: data/camorama.glade.h:46
+#: data/camorama.glade.h:50
 msgid "_Directory for captured pics:"
 msgstr "_Katalog för tagna bilder:"
 
-#: data/camorama.glade.h:47
+#: data/camorama.glade.h:51
 msgid "_Enable local capture"
 msgstr "_Aktivera lokal tagning"
 
-#: data/camorama.glade.h:48
+#: data/camorama.glade.h:52
 msgid "_Enable remote capture"
 msgstr "_Aktivera fjärrtagning"
 
-#: data/camorama.glade.h:49
+#: data/camorama.glade.h:53
 msgid "_Filename for pictures:"
 msgstr "_Filnamn på bilder:"
 
-#: data/camorama.glade.h:50
+#: data/camorama.glade.h:54
 msgid "ftp.yourdomain.org"
 msgstr "ftp.dindomän.se"
 
-#: data/camorama.glade.h:51
-msgid "large"
-msgstr "stor"
-
-#: data/camorama.glade.h:52
-msgid "medium"
-msgstr "mellan"
-
-#: data/camorama.glade.h:53
+#: data/camorama.glade.h:55
 msgid "path/to/save/to"
 msgstr "sökväg/att/spara/till"
 
-#: data/camorama.glade.h:54
-msgid "small"
-msgstr "liten"
-
-#: data/camorama.glade.h:55
+#: data/camorama.glade.h:56
 msgid "webcam-capture"
 msgstr "webbkameratagning"
 
-#: data/camorama.glade.h:56
+#: data/camorama.glade.h:57
 msgid "webcamshot"
 msgstr "webbkamerabild"
 
-#: data/camorama.glade.h:57
+#: data/camorama.glade.h:58
 msgid "your-password"
 msgstr "ditt-lösenord"
 
-#: data/camorama.glade.h:58
+#: data/camorama.glade.h:59
 msgid "your-username"
 msgstr "ditt-användarnamn"
 
-#: data/camorama.glade.h:59
+#: data/camorama.glade.h:60
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -429,20 +433,20 @@ msgstr ""
 "När bilder tas via knappen \"Ta bild\" eller automatisk tagning växlar denna "
 "nyckel sparandet av bilder på en fjärrserver."
 
-#: src/callbacks.c:337 src/callbacks.c:367 src/callbacks.c:508
-#: src/callbacks.c:574 src/callbacks.c:615 src/callbacks.c:627
-msgid "Unable to capture image."
-msgstr "Kan inte ta bild."
-
-#: src/callbacks.c:396
+#: src/callbacks.c:401
 msgid "translator_credits"
 msgstr ""
 "Christian Rose\n"
 "Skicka synpunkter på översättningen till sv@li.org"
 
-#: src/callbacks.c:411 camorama.desktop.in.h:2
+#: src/callbacks.c:416 camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
 msgstr "Visa, redigera och spara bilder från en webbkamera"
+
+#: src/callbacks.c:513 src/callbacks.c:579 src/callbacks.c:622
+#: src/callbacks.c:634
+msgid "Unable to capture image."
+msgstr "Kan inte ta bild."
 
 #: src/fileio.c:114
 msgid "Could save temporary image file in /tmp."
@@ -536,11 +540,12 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:190
+#: src/main.c:192
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Kunde inte hitta huvudgränssnittsfilen (camorama.glade)."
 
-#: src/v4l.c:83 src/v4l.c:143 src/v4l.c:155 src/v4l.c:179 src/v4l.c:200
+#: src/v4l.c:83 src/v4l.c:150 src/v4l.c:162 src/v4l.c:186 src/v4l.c:207
+#: src/v4l.c:222
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -558,14 +563,38 @@ msgstr "Kunde inte hitta pixmap-filen: %s"
 msgid "Camorama Webcam Viewer"
 msgstr "Webbkameravisaren Camorama"
 
+#~ msgid "Brightness"
+#~ msgstr "Ljusstyrka"
+
+#~ msgid "Colour"
+#~ msgstr "Färg"
+
+#~ msgid "Color:"
+#~ msgstr "Färg:"
+
+#~ msgid "Color"
+#~ msgstr "Färg"
+
+#~ msgid "Contrast"
+#~ msgstr "Kontrast"
+
+#~ msgid "Hue"
+#~ msgstr "Nyans"
+
+#~ msgid "Effects"
+#~ msgstr "Effekter"
+
+#~ msgid "Threshold"
+#~ msgstr "Tröskel"
+
+#~ msgid "White Balance"
+#~ msgstr "Vitbalans"
+
 #~ msgid "Add timestamp to captured images"
 #~ msgstr "Lägg till tidsstämpel till tagna bilder"
 
 #~ msgid "Webcam Viewer"
 #~ msgstr "Webbkameravisare"
-
-#~ msgid "Effects"
-#~ msgstr "Effekter"
 
 #~ msgid "Image Type"
 #~ msgstr "Bildtyp"

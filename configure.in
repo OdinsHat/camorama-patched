@@ -31,7 +31,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE",[Name of default gettext d
 dnl Add the languages which your application supports here.
 AM_GLIB_GNU_GETTEXT
 AC_PATH_PROG(GCONFTOOL, gconftool-2)
-ALL_LINGUAS="am sv"
+ALL_LINGUAS="am no sv"
 
 
 

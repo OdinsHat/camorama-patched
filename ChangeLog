@@ -1,3 +1,7 @@
+2003-04-18  Ole Laursen  <olau@hardworking.dk>
+
+	* configure.in: Added "da" (Danish) to ALL_LINGUAS.
+
 2003-04-12  Christian Neumair  <chris@gnome-de.org>
 
 	* src/main.c: Add setlocale call to enable translation of "--help"

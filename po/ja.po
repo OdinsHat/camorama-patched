@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2003-08-25 00:35+0900\n"
-"PO-Revision-Date: 2003-08-25 00:20+0900\n"
-"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
+"POT-Creation-Date: 2003-09-17 01:17+0900\n"
+"PO-Revision-Date: 2003-09-16 02:35+0900\n"
+"Last-Translator: KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama ウェブカム・ビューア"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:515
+#: camorama.desktop.in.h:2 src/callbacks.c:510
 msgid "View, alter and save images from a webcam"
 msgstr "WebCam の画像の表示や保存を行います"
 
@@ -398,34 +398,42 @@ msgstr ""
 "FTP へアップロードした画像へタイムスタンプを付与するかどうかを設定します。"
 
 #: data/camorama.schemas.in.h:34
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "ビデオのフィルタを調整するボタンを使用するかどうかを設定します。"
+
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr "画像へ付与するタイムスタンプをカスタマイズするかどうかを設定します。"
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "ビデオのプロパティを調整するスライダを使用するかどうかを設定します。"
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the video adjustment sliders"
 msgstr "ビデオ調整スライダ"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
+msgid "Toggles the video effects buttons"
+msgstr "ビデオ効果ボタン"
+
+#: data/camorama.schemas.in.h:39
 msgid "Toggles timestamp for local captures"
 msgstr "ローカル・キャプチャのタイムスタンプ"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for remote captures"
 msgstr "リモート・キャプチャのタイムスタンプ"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:41
 msgid "Username for FTP server"
 msgstr "FTP サーバのユーザ名"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:42
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "キャプチャした画像をアップロードする FTP のユーザ名です。"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:43
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -433,7 +441,7 @@ msgstr ""
 "\"写真撮影\" ボタンもしくは自動キャプチャで画像をキャプチャした際に画像をロー"
 "カルに保存するかどうかを設定します。"
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:44
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -447,8 +455,12 @@ msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
 "Takeshi AIHANA <aihana@gnome.gr.jp>"
 
-#: src/callbacks.c:625 src/callbacks.c:696 src/callbacks.c:746
-#: src/callbacks.c:759
+#: src/callbacks.c:508
+msgid "Camorama"
+msgstr "Camorama"
+
+#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
+#: src/callbacks.c:756
 msgid "Unable to capture image."
 msgstr "画像をキャプチャできません。"
 
@@ -503,47 +515,47 @@ msgstr "フォルダ '%s' を作成できませんでした。"
 msgid "Could not change to directory '%s'."
 msgstr "フォルダ '%s' に移動できませんでした。"
 
-#: src/main.c:413
+#: src/main.c:423
 msgid "show version and exit"
 msgstr "バージョンを表示して終了する"
 
-#: src/main.c:415
+#: src/main.c:425
 msgid "v4l device to use"
 msgstr "v41 (Video for Linux) デバイスを利用する"
 
-#: src/main.c:417
+#: src/main.c:427
 msgid "enable debuging code"
 msgstr "デバッグコードを有効にする"
 
-#: src/main.c:418
+#: src/main.c:428
 msgid "capture width"
 msgstr "キャプチャする幅"
 
-#: src/main.c:420
+#: src/main.c:430
 msgid "capture height"
 msgstr "キャプチャする高さ"
 
-#: src/main.c:423
+#: src/main.c:433
 msgid "maximum capture size"
 msgstr "最大サイズ"
 
-#: src/main.c:425
+#: src/main.c:435
 msgid "minimum capture size"
 msgstr "最小サイズ"
 
-#: src/main.c:427
+#: src/main.c:437
 msgid "middle capture size"
 msgstr "中くらいのサイズ"
 
-#: src/main.c:429
+#: src/main.c:439
 msgid "use read() rather than mmap()"
 msgstr "mmap() ではなく read() を使って下さい。"
 
-#: src/main.c:451
+#: src/main.c:461
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:465
+#: src/main.c:475
 #, c-format
 msgid ""
 "\n"
@@ -555,7 +567,7 @@ msgstr ""
 "\n"
 "Camorama バージョン %s\n"
 
-#: src/main.c:597
+#: src/main.c:609
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Glade インタフェース・ファイル (camorama.glade) が見つかりませんでした。"

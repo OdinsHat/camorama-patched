@@ -31,7 +31,7 @@ AM_GCONF_SOURCE_2
 
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="am es no sv vi"
+ALL_LINGUAS="am es fr no sv vi"
 AM_GLIB_GNU_GETTEXT
 
 

@@ -1,3 +1,7 @@
+2003-02-01  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* configure.in: Added French (fr) to ALL_LINGUAS
+
 2003-01-28  Pablo Saratxaga  <pablo@mandrakesoft.com>
 
 	* configure.in: Added Vietnamese (vi) to ALL_LINGUAS

@@ -1,10 +1,11 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+camorama.desktop.in
 data/camorama.glade
 data/camorama.schemas.in
 src/callbacks.c
+src/eggtrayicon.c
 src/fileio.c
 src/main.c
-src/v4l.c
 src/support.c
-camorama.desktop.in
+src/v4l.c

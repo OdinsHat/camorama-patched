@@ -41,6 +41,7 @@ void rppm_func(GtkWidget *, cam *);
 void on_preferences1_activate(GtkMenuItem * menuitem, gpointer user_data);
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data);
 void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam *);
+void on_show_effects_activate(GtkMenuItem * menuitem, cam *);
 void prefs_func(GtkWidget *, cam *);
 gint io_func(cam *, gint, GdkInputCondition);
 void capture_func2(GtkWidget *, cam *);

@@ -157,8 +157,10 @@ void interval_change(GtkWidget * sb, cam * cam)
    client = gconf_client_get_default();
    cam->timeout_interval = gtk_spin_button_get_value((GtkSpinButton *) sb) * 60000;
    gconf_client_set_int(cam->gc, KEY21, cam->timeout_interval, NULL);
-   gtk_timeout_remove(cam->timeout_id);
-   cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, cam);
+   if(cam->acap == TRUE) {
+	  gtk_timeout_remove(cam->timeout_id);
+      cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, cam);
+   }
 }
 
 void rjpg_func(GtkWidget * rb, cam * cam)
@@ -307,22 +309,50 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam * cam)
    }
    gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
 }
+void on_show_effects_activate(GtkMenuItem * menuitem, cam * cam)
+{
+
+   if(GTK_WIDGET_VISIBLE(glade_xml_get_widget(cam->xml, "vbox37"))) {
+      gtk_widget_hide(glade_xml_get_widget(cam->xml, "vbox37"));
+      gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
+      cam->show_adjustments = FALSE;
+
+   } else {
+      gtk_widget_show(glade_xml_get_widget(cam->xml, "vbox37"));
+      cam->show_adjustments = TRUE;
+   }
+   gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
+}
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
-   GtkWidget *about1;
+   GtkWidget *about1 = NULL;
    const gchar *authors[] = { "Greg Jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>", NULL };
    const gchar *documenters[] = { NULL };
-   GdkPixbuf *logo = (GdkPixbuf *) create_pixbuf("camorama.png");
-   /* TRANSLATORS: Replace this string with your names, one name per line. */
-   gchar *translators = _("translator_credits");
+   GdkPixbuf *logo = (GdkPixbuf *) create_pixbuf(DATADIR "/pixmaps/camorama.png");
+   char *translators = _("translator_credits");
 
    if(!strcmp(translators, "translator_credits"))
       translators = NULL;
+   
+	if (about1 != NULL)
+	{
+		printf("before the old return\n");
+		gdk_window_raise (about1->window);
+		gdk_window_show (about1->window);
+		return;
+		printf("after the old return\n");
+	}
 
-   about1 = gnome_about_new("camorama", VERSION,
-                            "(C) 2002 greg jones",
+   about1 = gnome_about_new("Camorama", VERSION,
+                            "Copyright \xc2\xa9 2002 Greg Jones",
                             _("View, alter and save images from a webcam"), authors, documenters, translators, logo);
-   gtk_widget_show(about1);
+   
+	g_signal_connect (G_OBJECT (about1), "destroy", G_CALLBACK
+			(gtk_widget_destroyed), &about1);
+	g_object_add_weak_pointer (G_OBJECT (about1),
+			(void**)&(about1));
+
+	gtk_widget_show(about1);
 }
 
 /* get image from cam - does all the work ;) */

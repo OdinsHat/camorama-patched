@@ -2,15 +2,18 @@ AC_INIT(camorama,0.17, http://bugzilla.gnome.org/enter_bug.cgi?product=camorama)
 AC_CONFIG_SRCDIR(src/main.c)
 AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
 AM_CONFIG_HEADER(config.h)
+AC_PROG_INTLTOOL([0.21])
 
 AC_DEFINE(PACKAGE, AC_PACKAGE_NAME, [package name])
 AC_DEFINE(VERSION, AC_PACKAGE_VERSION, [package version])
-AC_DEFINE(GETTEXT_PACKAGE, "AC_PACKAGE_NAME", [foo])
+
+ALL_LINGUAS="am es fr nl no sv vi"
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
-
 AC_SUBST(GETTEXT_PACKAGE)
+AM_GLIB_GNU_GETTEXT
 
-AC_PROG_INTLTOOL([0.20])
+AC_DEFINE(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", "blah blah blah")
+
 
 AC_ISC_POSIX
 AC_PROG_CC
@@ -31,8 +34,6 @@ AM_GCONF_SOURCE_2
 
 
 dnl Add the languages which your application supports here.
-ALL_LINGUAS="am es fr nl no sv vi"
-AM_GLIB_GNU_GETTEXT
 
 
 

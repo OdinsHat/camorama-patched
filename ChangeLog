@@ -1,6 +1,10 @@
+2004-02-03 Alastair McKinstry <mckinstry@computer.org>
+
+	* configure.in: Added "ga" (Irish) to ALL_LINGUAS.
+
 2004-02-01  Robert Sedak  <robert.sedak@sk.htnet.hr>
 
-        * configure.in: Added "hr" (Croatian) to ALL_LINGUAS.
+	* configure.in: Added "hr" (Croatian) to ALL_LINGUAS.
 
 2004-01-13  Laurent Dhima  <laurenti@alblinux.net>
 
@@ -12,7 +16,7 @@
 
 2003-10-24  Hasbullah Bin Pit <sebol@ikhlas.com>
                                                                                 
-        * configure.in: Added ms (malay) to ALL_LINGUAS.
+	* configure.in: Added ms (malay) to ALL_LINGUAS.
 
 2003-09-01  Metin Amiroff  <metin@karegen.com>
 

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.16\n"
-"POT-Creation-Date: 2003-01-26 10:59+0100\n"
+"POT-Creation-Date: 2003-02-07 15:53-0500\n"
 "PO-Revision-Date: 2003-01-26 12:41-0300\n"
 "Last-Translator: Pablo Gonzalo del Campo <pablodc@bigfoot.com>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
@@ -253,11 +253,15 @@ msgstr "Agregar una marca de tiempo al nombre de archivo remoto"
 
 #: data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los nombres de archivos"
+msgstr ""
+"Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los "
+"nombres de archivos"
 
 #: data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los nombres de archivos remotos"
+msgstr ""
+"Agrega una marca de tiempo, en formato de tiempo UNIX, al final de los "
+"nombres de archivos remotos"
 
 #: data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
@@ -265,7 +269,8 @@ msgstr "Texto personalizado para la marca de tiempo"
 
 #: data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr "Define una cadena de texto personalizado para ser insertada en la imagen."
+msgstr ""
+"Define una cadena de texto personalizado para ser insertada en la imagen."
 
 #: data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
@@ -325,11 +330,15 @@ msgstr "Nombre de archivo para guardar remotamente"
 
 #: data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Especifica el formato de imagen a ser utilizado para las imágenes guardadas localmente"
+msgstr ""
+"Especifica el formato de imagen a ser utilizado para las imágenes guardadas "
+"localmente"
 
 #: data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Especifica el formato de imagen a ser utilizado para las imágenes guardadas remotamente"
+msgstr ""
+"Especifica el formato de imagen a ser utilizado para las imágenes guardadas "
+"remotamente"
 
 #: data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
@@ -365,7 +374,8 @@ msgstr "Activar la marca de fecha en las capturas"
 
 #: data/camorama.schemas.in.h:31
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "Activar el dibujado de la marca de fecha dentro de las imágenes capturadas"
+msgstr ""
+"Activar el dibujado de la marca de fecha dentro de las imágenes capturadas"
 
 #: data/camorama.schemas.in.h:32
 msgid "Toggles the insertion of a timestamp into local images"
@@ -373,15 +383,20 @@ msgstr "Activar la inserción de la marca de tiempo en las imágenes locales"
 
 #: data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Activar la inserción de la marca de tiempo en la imágenes a enviar al servidor FTP."
+msgstr ""
+"Activar la inserción de la marca de tiempo en la imágenes a enviar al "
+"servidor FTP."
 
 #: data/camorama.schemas.in.h:34
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "Activar el uso de la cadena personalizada para la marca de tiempo en las imágenes."
+msgstr ""
+"Activar el uso de la cadena personalizada para la marca de tiempo en las "
+"imágenes."
 
 #: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "Activar el uso de los deslizadores para ajustar las propiedades del vídeo"
+msgstr ""
+"Activar el uso de los deslizadores para ajustar las propiedades del vídeo"
 
 #: data/camorama.schemas.in.h:36
 msgid "Toggles the video adjustment sliders"
@@ -401,67 +416,92 @@ msgstr "Nombre de usuario para el servidor FTP"
 
 #: data/camorama.schemas.in.h:40
 msgid "Username to use for FTP uploads of captured pictures"
-msgstr "Nombre de usuario a utilizar para los envíos al FTP de las imágenes capturadas"
+msgstr ""
+"Nombre de usuario a utilizar para los envíos al FTP de las imágenes "
+"capturadas"
 
 #: data/camorama.schemas.in.h:41
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"Al capturar imágenes por medio del botón «Tomar fotografía», o con la captura "
-"automática, esta clave activa el guardado de las imágenes localmente."
+"Al capturar imágenes por medio del botón «Tomar fotografía», o con la "
+"captura automática, esta clave activa el guardado de las imágenes localmente."
 
 #: data/camorama.schemas.in.h:42
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"Al capturar imágenes por medio del botón «Tomar fotografía», o con la captura "
-"automática, esta clave activa el guardado de las imágenes en un servidor remoto."
+"Al capturar imágenes por medio del botón «Tomar fotografía», o con la "
+"captura automática, esta clave activa el guardado de las imágenes en un "
+"servidor remoto."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:340
+#: src/callbacks.c:317
 msgid "translator_credits"
 msgstr "Pablo Gonzalo del Campo <pablodc@bigfoot.com>, 2003"
 
-#: src/main.c:39
+#: src/callbacks.c:324
+msgid "View, alter and save images from a webcam"
+msgstr ""
+
+#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
+#: src/callbacks.c:465
+#, fuzzy
+msgid "Unable to capture image."
+msgstr "H_abilitar la captura local"
+
+#: src/main.c:32
 msgid "show version and exit"
 msgstr "muestra la versión y termina"
 
-#: src/main.c:40
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr "dispositivo v4l a utilizar"
 
-#: src/main.c:41
+#: src/main.c:34
 msgid "enable debuging code"
 msgstr "activar la depuración de código"
 
-#: src/main.c:42
+#: src/main.c:35
 msgid "capture width"
 msgstr "ancho de la captura"
 
-#: src/main.c:43
+#: src/main.c:36
 msgid "capture height"
 msgstr "altura de la captura"
 
-#: src/main.c:44
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "tamaño máximo de la captura"
 
-#: src/main.c:45
+#: src/main.c:38
 msgid "minimum capture size"
 msgstr "tamaño mínimo de la captura"
 
-#: src/main.c:46
+#: src/main.c:39
 msgid "middle capture size"
 msgstr "tamaño intermedio de la captura"
 
-#: src/main.c:62
+#: src/main.c:57
 msgid "camorama"
 msgstr "camorama"
 
-#: src/support.c:70
+#: src/main.c:71
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+
+#: src/main.c:174
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+
+#: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "No se ha podido encontrar el archivo de pixmap: %s"
-

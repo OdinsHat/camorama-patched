@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-01-06 05:49+0100\n"
+"POT-Creation-Date: 2003-02-07 15:53-0500\n"
 "PO-Revision-Date: 2003-01-24 11:45+EDT\n"
 "Last-Translator: Ge'ez Frontier Foundation <locales@geez.org>\n"
 "Language-Team: Amharic <locales@geez.org>\n"
@@ -25,7 +25,7 @@ msgstr "*"
 
 #: data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Effects</span>"
-msgstr"<span weight=\"bold\">ክንውኖች</span>"
+msgstr "<span weight=\"bold\">ክንውኖች</span>"
 
 #: data/camorama.glade.h:4
 msgid "<span weight=\"bold\">General</span>"
@@ -33,7 +33,7 @@ msgstr "<span weight=\"bold\">አጠቃላይ</span>"
 
 #: data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr"<span weight=\"bold\">የምስል ዓይነት</span>"
+msgstr "<span weight=\"bold\">የምስል ዓይነት</span>"
 
 #: data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Local Capture</span>"
@@ -416,47 +416,69 @@ msgid ""
 msgstr ""
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:340
+#: src/callbacks.c:317
 msgid "translator_credits"
 msgstr "ዘግዕዝ Frontier Foundation"
 
-#: src/main.c:39
+#: src/callbacks.c:324
+msgid "View, alter and save images from a webcam"
+msgstr ""
+
+#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
+#: src/callbacks.c:465
+msgid "Unable to capture image."
+msgstr ""
+
+#: src/main.c:32
 msgid "show version and exit"
 msgstr ""
 
-#: src/main.c:40
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr ""
 
-#: src/main.c:41
+#: src/main.c:34
 msgid "enable debuging code"
 msgstr ""
 
-#: src/main.c:42
+#: src/main.c:35
 msgid "capture width"
 msgstr ""
 
-#: src/main.c:43
+#: src/main.c:36
 msgid "capture height"
 msgstr ""
 
-#: src/main.c:44
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr ""
 
-#: src/main.c:45
+#: src/main.c:38
 msgid "minimum capture size"
 msgstr ""
 
-#: src/main.c:46
+#: src/main.c:39
 msgid "middle capture size"
 msgstr ""
 
-#: src/main.c:62
+#: src/main.c:57
 msgid "camorama"
 msgstr ""
 
-#: src/support.c:70
+#: src/main.c:71
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+
+#: src/main.c:174
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+
+#: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr ""

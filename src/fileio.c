@@ -121,7 +121,7 @@ void remote_save(cam * cam)
    strftime(timenow, sizeof(timenow) - 1, "%s", tm);
 
    filename = g_strdup_printf("camorama.%s", ext);
-   g_free(ext);
+   //g_free(ext);
    pb =
       gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8, cam->x, cam->y, cam->x * cam->vid_pic.depth / 8,
                                NULL, NULL);
@@ -186,6 +186,7 @@ void remote_save(cam * cam)
 
    gnome_vfs_close((GnomeVFSHandle *) write_handle);
    gnome_vfs_shutdown();
+   g_free(ext);
    free(tmp);
    g_thread_exit(NULL);
 }
@@ -250,8 +251,7 @@ int local_save(cam * cam)
    mkd = mkdir(cam->pixdir, 0777);
 
    if(cam->debug == TRUE) {
-
-      perror("create dir: ");
+     perror("create dir: ");
    }
 
    if(mkd != 0 && errno != EEXIST) {

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.17\n"
-"POT-Creation-Date: 2003-02-01 21:26+0100\n"
+"POT-Creation-Date: 2003-02-07 15:53-0500\n"
 "PO-Revision-Date: 2003-02-01 21:20+0100\n"
 "Last-Translator: Baptiste MILLE-MATHIAS <bmm80@ifrance.com>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -425,49 +425,72 @@ msgstr ""
 "serveur distant."
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: src/callbacks.c:340
+#: src/callbacks.c:317
 msgid "translator_credits"
 msgstr ""
 "Traducteurs :\n"
 "Mille-Mathias Baptiste <bmm80@ifrance.com>"
 
-#: src/main.c:35
+#: src/callbacks.c:324
+msgid "View, alter and save images from a webcam"
+msgstr ""
+
+#: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
+#: src/callbacks.c:465
+#, fuzzy
+msgid "Unable to capture image."
+msgstr "Activ_er les capture en local"
+
+#: src/main.c:32
 msgid "show version and exit"
 msgstr "affiche la version et quitte"
 
-#: src/main.c:36
+#: src/main.c:33
 msgid "v4l device to use"
 msgstr "périphérique v4l à utiliser"
 
-#: src/main.c:37
+#: src/main.c:34
 msgid "enable debuging code"
 msgstr "Activer le code de débugage"
 
-#: src/main.c:38
+#: src/main.c:35
 msgid "capture width"
 msgstr "largeur des captures"
 
-#: src/main.c:39
+#: src/main.c:36
 msgid "capture height"
 msgstr "hauteur des captures"
 
-#: src/main.c:40
+#: src/main.c:37
 msgid "maximum capture size"
 msgstr "taille maximum des captures"
 
-#: src/main.c:41
+#: src/main.c:38
 msgid "minimum capture size"
 msgstr "taille minimum des captures"
 
-#: src/main.c:42
+#: src/main.c:39
 msgid "middle capture size"
 msgstr "taille moyenne des captures"
 
-#: src/main.c:58
+#: src/main.c:57
 msgid "camorama"
 msgstr "camorama"
 
-#: src/support.c:70
+#: src/main.c:71
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+
+#: src/main.c:174
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+
+#: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Impossible de trouver le fichier pixmap : %s"

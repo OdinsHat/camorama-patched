@@ -251,7 +251,7 @@ int local_save(cam * cam)
    mkd = mkdir(cam->pixdir, 0777);
 
    if(cam->debug == TRUE) {
-     perror("create dir: ");
+      perror("create dir: ");
    }
 
    if(mkd != 0 && errno != EEXIST) {

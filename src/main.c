@@ -42,9 +42,10 @@ void load_interface(cam * cam)
    gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")), logo);
 
    glade_xml_signal_connect_data(cam->xml, "on_show_effects_activate", G_CALLBACK(on_show_effects_activate), cam);
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "togglebutton1"), cam->show_adjustments);
    glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),
                                  cam);
-
+   
    glade_xml_signal_connect_data(cam->xml, "on_large1_activate", G_CALLBACK(on_change_size_activate), cam);
    glade_xml_signal_connect_data(cam->xml, "on_medium1_activate", G_CALLBACK(on_change_size_activate), cam);
    glade_xml_signal_connect_data(cam->xml, "on_small1_activate", G_CALLBACK(on_change_size_activate), cam);
@@ -56,7 +57,7 @@ void load_interface(cam * cam)
    /* sliders */
    glade_xml_signal_connect_data(cam->xml, "on_scale1_drag_data_received", G_CALLBACK(on_scale1_drag_data_received),
                                  cam);
-
+   gtk_range_set_value((GtkRange *) glade_xml_get_widget(cam->xml, "slider1"),128);
    glade_xml_signal_connect_data(cam->xml, "contrast_change", G_CALLBACK(contrast_change), cam);
    gtk_range_set_value((GtkRange *) glade_xml_get_widget(cam->xml, "slider2"), (int) (cam->contrast / 256));
    glade_xml_signal_connect_data(cam->xml, "brightness_change", G_CALLBACK(brightness_change), cam);
@@ -281,7 +282,7 @@ int main(int argc, char *argv[])
    cam->acap = gconf_client_get_bool(cam->gc, KEY20, NULL);
    cam->timeout_interval = gconf_client_get_int(cam->gc, KEY21, NULL);
    cam->show_adjustments = gconf_client_get_bool(cam->gc, KEY22, NULL);
-
+   
    /* get desktop depth */
    display = (Display *) gdk_x11_get_default_xdisplay();
    screen_num = xlib_rgb_get_screen();

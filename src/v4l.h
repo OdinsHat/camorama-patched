@@ -42,11 +42,11 @@ typedef struct camera {
    unsigned char *pic;
    unsigned char *image;
    char *capturefile, *rcapturefile;
-   char pixdir[256], *rpixdir;
+   gchar *pixdir, *rpixdir;
    int savetype, rsavetype;
-   char *rhost, *rlogin, *rpw;
-   char *ts_string;
-   char *date_format;
+   gchar *rhost, *rlogin, *rpw;
+   gchar *ts_string;
+   gchar *date_format;
    gboolean debug;
    gboolean cap, rcap, acap, show_adjustments;
    gboolean timestamp, rtimestamp, usedate, usestring;

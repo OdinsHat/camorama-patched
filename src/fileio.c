@@ -11,371 +11,287 @@
 # define CHAR_WIDTH   6
 # define CHAR_START   4
 # include "font_6x11.h"
- #include <gnome.h>
+#include <gnome.h>
 
-static int print_error (GnomeVFSResult result, const char *uri_string);
+static int print_error(GnomeVFSResult result, const char *uri_string);
 
 //add timestamp/text to image - stolen from gspy
-int
-add_rgb_text (char *image, int width, int height, char *cstring, char *format,
-	      gboolean str, gboolean date)
+int add_rgb_text(char *image, int width, int height, char *cstring, char *format, gboolean str, gboolean date)
 {
-	time_t t;
-	struct tm *tm;
-	unsigned char line[128], *ptr;
-	int i, x, y, f, len;
-	int total;
-	//char *date = "%Y-%m-%d %H:%M:%S";
-	char *image_label;
+   time_t t;
+   struct tm *tm;
+   unsigned char line[128], *ptr;
+   int i, x, y, f, len;
+   int total;
+   gchar *image_label;
 
-	image_label = malloc (sizeof (char) * 256);
-	if (str == TRUE && date == TRUE)
-	{
-		sprintf (image_label, "%s - %s", cstring, format);
-	}
-	else if (str == TRUE && date == FALSE)
-	{
-		sprintf (image_label, "%s", cstring);
-	}
-	else if (str == FALSE && date == TRUE)
-	{
-		sprintf (image_label, "%s", format);
-	}
-	else if (str == FALSE && date == FALSE)
-	{
-		printf ("no text to add....\n");
-		return 0;
-	}
+   if(str == TRUE && date == TRUE) {
+      image_label = g_strdup_printf("%s - %s", cstring, format);
 
-	time (&t);
-	tm = localtime (&t);
-	len = strftime (line, 127, image_label, tm);
+   } else if(str == TRUE && date == FALSE) {
+      image_label = g_strdup_printf("%s", cstring);
+   } else if(str == FALSE && date == TRUE) {
+      image_label = g_strdup_printf("%s", format);
+   } else if(str == FALSE && date == FALSE) {
+      return 0;
+   }
 
-	for (y = 0; y < CHAR_HEIGHT; y++)
-	{
-		// locate text in lower left corner of image
-		ptr = image + 3 * width * (height - CHAR_HEIGHT - 2 + y) + 12;
+   time(&t);
+   tm = localtime(&t);
+   len = strftime(line, 127, image_label, tm);
 
-		// loop for each character in the string
-		for (x = 0; x < len; x++)
-		{
-			// locate the character in the fontdata array
-			f = fontdata[line[x] * CHAR_HEIGHT + y];
+   for(y = 0; y < CHAR_HEIGHT; y++) {
+      /* locate text in lower left corner of image */
+      ptr = image + 3 * width * (height - CHAR_HEIGHT - 2 + y) + 12;
 
-			// loop for each column of font data
-			for (i = CHAR_WIDTH - 1; i >= 0; i--)
-			{
-				// write a black background under text
-				// comment out the following block to get white letters on picture background
-				//ptr[0] = 0;
-				//ptr[1] = 0;
-				//ptr[2] = 0;
-				if (f & (CHAR_START << i))
-				{
+      /* loop for each character in the string */
+      for(x = 0; x < len; x++) {
+         /* locate the character in the fontdata array */
+         f = fontdata[line[x] * CHAR_HEIGHT + y];
 
-					// white text
+         /* loop for each column of font data */
+         for(i = CHAR_WIDTH - 1; i >= 0; i--) {
+            /* write a black background under text
+             * comment out the following block to get white letters on picture background */
+            /* ptr[0] = 0;
+             * ptr[1] = 0;
+             * ptr[2] = 0; */
+            if(f & (CHAR_START << i)) {
 
-					total = ptr[0] + ptr[1] + ptr[2];
-					if (total / 3 < 128)
-					{
-						ptr[0] = 255;
-						ptr[1] = 255;
-						ptr[2] = 255;
-					}
-					else
-					{
-						ptr[0] = 0;
-						ptr[1] = 0;
-						ptr[2] = 0;
-					}
+               /* white text */
 
-				}
-				ptr += 3;
-			}
-		}
-	}
-	return 1;
+               total = ptr[0] + ptr[1] + ptr[2];
+               if(total / 3 < 128) {
+                  ptr[0] = 255;
+                  ptr[1] = 255;
+                  ptr[2] = 255;
+               } else {
+                  ptr[0] = 0;
+                  ptr[1] = 0;
+                  ptr[2] = 0;
+               }
+            }
+            ptr += 3;
+         }
+      }
+   }
+   return 1;
 }
 
-
-//upload image to remote server via ftp
-void remote_save (cam * cam)
+void remote_save(cam * cam)
 {
-	GnomeVFSHandle **write_handle;
-	char *output_uri_string, *input_uri_string;
-	GnomeVFSFileSize bytes_written;
-	GnomeVFSURI *uri_1;
-	unsigned char *tmp;
-	GnomeVFSResult result = 0;
-	gboolean test;
-	char *filename, *error_message;
-	FILE *fp;
-	int bytes = 0;
-	time_t t;
-	char timenow[64], ext[12];
-	struct tm *tm;
-	gboolean pbs;
-	GdkPixbuf *pb;
-	
-	/* remember to initialize GnomeVFS! */
-	/*if(!gnome_vfs_init()) {
-	 * printf("Could not initialize GnomeVFS\n");
-	 * return 1;
-	 * } */
-     switch (cam->rsavetype){
-		case JPEG:
-			strcpy(ext,"jpeg");
-		break;
-		case PNG:
-			strcpy(ext,"png");
-		break;
-		
-		default:
-		strcpy(ext,"jpg");
-	}
-	//timestamp...
-	memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
-	if (cam->rtimestamp == TRUE)
-	{
-		add_rgb_text (cam->tmp, cam->x, cam->y, cam->ts_string,
-			      cam->date_format, cam->usestring, cam->usedate);
-	}
+   GnomeVFSHandle **write_handle;
+   char *output_uri_string, *input_uri_string;
+   GnomeVFSFileSize bytes_written;
+   GnomeVFSURI *uri_1;
+   unsigned char *tmp;
+   GnomeVFSResult result = 0;
+   gboolean test;
+   char *filename, *error_message;
+   FILE *fp;
+   int bytes = 0;
+   time_t t;
+   gchar *timenow, *ext;
+   struct tm *tm;
+   gboolean pbs;
+   GdkPixbuf *pb;
 
-	//save file in tmp dir....
-	if (chdir ("/tmp") != 0)
-	{
-		fprintf (stderr, "could not change to dir: '/tmp'\n");
-		error_dialog ("Could not write to /tmp");
-		g_thread_exit (NULL);
-	}
+   switch (cam->rsavetype) {
+   case JPEG:
+      ext = g_strdup((gchar *) "jpeg");
+      break;
+   case PNG:
+      ext = g_strdup((gchar *) "png");
+      break;
+   default:
+      ext = g_strdup((gchar *) "jpeg");
 
-	time (&t);
-	tm = localtime (&t);
-	strftime (timenow, sizeof (timenow) - 1, "%s", tm);
+   }
 
-	filename = g_strdup_printf ("camorama.%s", ext);
-	pb = gdk_pixbuf_new_from_data(cam->tmp,GDK_COLORSPACE_RGB,FALSE,8,cam->x,cam->y,cam->x*cam->vid_pic.depth/8,NULL,NULL);
-	if (pb == NULL){
-		
-		error_message = g_strdup_printf ("could not create image '%s'",
-			 filename);
-		print_error (result, filename);
-		error_dialog(error_message);
-		g_free (error_message);
-		
-		g_thread_exit (NULL);
-	}
-		pbs = gdk_pixbuf_save(pb,filename,ext,NULL,NULL);
-		g_free (filename);
-	
-	
-	//open tmp file and read it
-	input_uri_string = g_strdup_printf ("camorama.%s", ext);
+   memcpy(cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
+   if(cam->rtimestamp == TRUE) {
+      add_rgb_text(cam->tmp, cam->x, cam->y, cam->ts_string, cam->date_format, cam->usestring, cam->usedate);
+   }
 
-	if (!(fp = fopen (input_uri_string, "rb")))
-	{
-		perror ("file");
-		g_free (input_uri_string);
-		exit (0);
-	}
+   if(chdir("/tmp") != 0) {
+      error_dialog("Could not write to /tmp");
+      g_free(ext);
+      g_thread_exit(NULL);
+   }
 
-	tmp = malloc (sizeof (char) * cam->x * cam->y * cam->depth * 2);
-	while (!feof (fp))
-	{
-		bytes += fread (tmp, 1, cam->x * cam->y * cam->depth, fp);
-	}
-	fclose (fp);
-    //set output uri
-	time (&t);
-	tm = localtime (&t);
-	strftime (timenow, sizeof (timenow) - 1, "%s", tm);
-	if (cam->rtimefn == TRUE)
-	{
-		output_uri_string = g_strdup_printf ("ftp://%s/%s/%s-%s.%s",
-			 cam->rhost, cam->rpixdir, cam->rcapturefile, timenow,
-			 ext);
-	}
-	else
-	{
-		output_uri_string = g_strdup_printf ("ftp://%s/%s/%s.%s",
-				cam->rhost, cam->rpixdir, cam->rcapturefile,
-				ext);
-	}
-	uri_1 = gnome_vfs_uri_new (output_uri_string);
+   time(&t);
+   tm = localtime(&t);
+   strftime(timenow, sizeof(timenow) - 1, "%s", tm);
 
-	test = gnome_vfs_uri_exists (uri_1);
+   filename = g_strdup_printf("camorama.%s", ext);
+   g_free(ext);
+   pb =
+      gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8, cam->x, cam->y, cam->x * cam->vid_pic.depth / 8,
+                               NULL, NULL);
+   if(pb == NULL) {
 
-	gnome_vfs_uri_set_user_name (uri_1, cam->rlogin);
-	gnome_vfs_uri_set_password (uri_1, cam->rpw);
+      error_message = g_strdup_printf("could not create image '%s'", filename);
+      error_dialog(error_message);
+      g_free(error_message);
 
-	//url = gnome_vfs_uri_to_string(uri_1, 0x00);
-	
-	result = gnome_vfs_open_uri ((GnomeVFSHandle **)&write_handle, uri_1,
-				     GNOME_VFS_OPEN_WRITE);
-	if (result != GNOME_VFS_OK)
-	{
-		error_message = g_strdup_printf ("An error occured opening %s",
-			 output_uri_string);
-		print_error (result, output_uri_string);
-		error_dialog(error_message);
-		g_free (error_message);
-		//dialog = gnome_message_box_new(error_message, GNOME_MESSAGE_BOX_ERROR,GNOME_STOCK_BUTTON_OK, NULL);
-		//gnome_dialog_close(GNOME_DIALOG(dialog));
+      g_thread_exit(NULL);
+   }
+   pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
+   g_free(filename);
 
-		g_thread_exit (NULL);
-		// return -1;                //print_error(result, output_uri_string);
-	}
+   /* open tmp file and read it */
+   input_uri_string = g_strdup_printf("camorama.%s", ext);
 
-	/*  write the data */
-	result = gnome_vfs_write ((GnomeVFSHandle *)write_handle, tmp, bytes, &bytes_written);
-	if (result != GNOME_VFS_OK)
-	{
+   if(!(fp = fopen(input_uri_string, "rb"))) {
+      perror("file");
+      g_free(input_uri_string);
+      exit(0);
+   }
 
-		print_error (result, output_uri_string);
-        
-	}
+   tmp = malloc(sizeof(char) * cam->x * cam->y * cam->depth * 2);
+   while(!feof(fp)) {
+      bytes += fread(tmp, 1, cam->x * cam->y * cam->depth, fp);
+   }
+   fclose(fp);
 
-	gnome_vfs_close ((GnomeVFSHandle *)write_handle);
-	gnome_vfs_shutdown ();
-	free (tmp);
-	g_thread_exit (NULL);
+   time(&t);
+   tm = localtime(&t);
+   strftime(timenow, sizeof(timenow) - 1, "%s", tm);
+   if(cam->rtimefn == TRUE) {
+      output_uri_string = g_strdup_printf("ftp://%s/%s/%s-%s.%s",
+                                          cam->rhost, cam->rpixdir, cam->rcapturefile, timenow, ext);
+   } else {
+      output_uri_string = g_strdup_printf("ftp://%s/%s/%s.%s", cam->rhost, cam->rpixdir, cam->rcapturefile, ext);
+   }
+   uri_1 = gnome_vfs_uri_new(output_uri_string);
+
+   test = gnome_vfs_uri_exists(uri_1);
+
+   gnome_vfs_uri_set_user_name(uri_1, cam->rlogin);
+   gnome_vfs_uri_set_password(uri_1, cam->rpw);
+
+   result = gnome_vfs_open_uri((GnomeVFSHandle **) & write_handle, uri_1, GNOME_VFS_OPEN_WRITE);
+   if(result != GNOME_VFS_OK) {
+      error_message = g_strdup_printf("An error occured opening %s", output_uri_string);
+      error_dialog(error_message);
+      g_free(error_message);
+      g_thread_exit(NULL);
+   }
+
+   /*  write the data */
+   result = gnome_vfs_write((GnomeVFSHandle *) write_handle, tmp, bytes, &bytes_written);
+   if(result != GNOME_VFS_OK) {
+
+      print_error(result, output_uri_string);
+
+   }
+
+   gnome_vfs_close((GnomeVFSHandle *) write_handle);
+   gnome_vfs_shutdown();
+   free(tmp);
+   g_thread_exit(NULL);
 }
 
-//print gnomevfs error
-static int
-print_error (GnomeVFSResult result, const char *uri_string)
+static int print_error(GnomeVFSResult result, const char *uri_string)
 {
-	const char *error_string;
-	/* get the string corresponding to this GnomeVFSResult value */
-	error_string = gnome_vfs_result_to_string (result);
-	printf ("Error %s occured opening location %s\n", error_string,
-		uri_string);
-	return 1;
+   const char *error_string;
+   /* get the string corresponding to this GnomeVFSResult value */
+   error_string = gnome_vfs_result_to_string(result);
+   printf("Error %s occured opening location %s\n", error_string, uri_string);
+   return 1;
 }
 
-
-
-//save image locally
-int
-local_save (cam * cam)
+int local_save(cam * cam)
 {
-	int fc;
-	char filename[256], ext[12];
-	time_t t;
-	struct tm *tm;
-	char timenow[64], *error_message;
-	int len, mkd;
-	gboolean pbs;
-	GdkPixbuf *pb;
+   int fc;
+   gchar *filename, *ext;
+   time_t t;
+   struct tm *tm;
+   char timenow[64], *error_message;
+   int len, mkd;
+   gboolean pbs;
+   GdkPixbuf *pb;
 
-	// run gdk-pixbuf-query-loaders to get available image types
+   /* todo:
+    *   run gdk-pixbuf-query-loaders to get available image types*/
 
-	//set file extension
-	switch (cam->savetype){
-		case JPEG:
-			strcpy(ext,"jpeg");
-		break;
-		case PNG:
-			strcpy(ext,"png");
-		break;
-		
-		default:
-		strcpy(ext,"jpg");
-	}
-	//get image to save
-	memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
+   switch (cam->savetype) {
+   case JPEG:
+      ext = g_strdup((gchar *) "jpeg");
+      break;
+   case PNG:
+      ext = g_strdup((gchar *) "png");
+      break;
+   default:
+      ext = g_strdup((gchar *) "jpeg");
+   }
 
-	if (cam->timestamp == TRUE)
-	{
-		add_rgb_text (cam->tmp, cam->x, cam->y, cam->ts_string,
-			      cam->date_format, cam->usestring, cam->usedate);
-	}
+   memcpy(cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
 
-	time (&t);
-	tm = localtime (&t);
-	len = strftime (timenow, sizeof (timenow) - 1, "%s", tm);
+   if(cam->timestamp == TRUE) {
+      add_rgb_text(cam->tmp, cam->x, cam->y, cam->ts_string, cam->date_format, cam->usestring, cam->usedate);
+   }
 
-	if (cam->debug == TRUE)
-	{
-		fprintf (stderr, "time = %s\n", timenow);
-	}
+   time(&t);
+   tm = localtime(&t);
+   len = strftime(timenow, sizeof(timenow) - 1, "%s", tm);
 
-	if (cam->timefn == TRUE)
-	{
-		fc = sprintf (filename, "%s-%s.%s", cam->capturefile, timenow,
-			      ext);
-	}
-	else
-	{
-		fc = sprintf (filename, "%s.%s", cam->capturefile,
-			      ext);
-	}
+   if(cam->debug == TRUE) {
+      fprintf(stderr, "time = %s\n", timenow);
+   }
 
-	if (cam->debug == TRUE)
-	{
-		fprintf (stderr, "filename = %s\n", filename);
-	}
+   if(cam->timefn == TRUE) {
+      filename = g_strdup_printf("%s-%s.%s", cam->capturefile, timenow, ext);
+   } else {
+      filename = g_strdup_printf("%s.%s", cam->capturefile, ext);
+   }
 
-	//check to see if dir exists, and if not, create it...
-	mkd = mkdir (cam->pixdir, 0777);
+   if(cam->debug == TRUE) {
+      fprintf(stderr, "filename = %s\n", filename);
+   }
+   //check to see if dir exists, and if not, create it...
+   mkd = mkdir(cam->pixdir, 0777);
 
-	if (cam->debug == TRUE)
-	{
-		
-		perror ("create dir: ");
-	}
+   if(cam->debug == TRUE) {
 
-	if (mkd != 0 && errno != EEXIST)
-	{
-		error_message = g_strdup_printf (_("could not create directory - %s"),
-			 cam->pixdir);
-		//fprintf(stderr, "%s\n", error_message);
-		error_dialog (error_message);
-		g_free (error_message);
-		return -1;
-	}
+      perror("create dir: ");
+   }
 
-	if (chdir (cam->pixdir) != 0)
-	{
-		//fprintf(stderr, "could not change to dir: %s\n",cam->pixdir);
-		error_message = g_strdup_printf (_("could not change to directory - %s"),
-			 cam->pixdir);
-		error_dialog (error_message);
-		g_free (error_message);
-		return -1;
-	}
+   if(mkd != 0 && errno != EEXIST) {
+      error_message = g_strdup_printf(_("could not create directory - %s"), cam->pixdir);
+      //fprintf(stderr, "%s\n", error_message);
+      error_dialog(error_message);
+      g_free(filename);
+      g_free(error_message);
+      return -1;
+   }
 
-	
-	
-	/* (const guchar *data,
-                                             GdkColorspace colorspace,
-                                             gboolean has_alpha,
-                                             int bits_per_sample,
-                                             int width,
-                                             int height,
-                                             int rowstride,
-                                             GdkPixbufDestroyNotify destroy_fn,
-                                             gpointer destroy_fn_data);*/
-	
-	//stupid types:  jpeg, png
-     pb = gdk_pixbuf_new_from_data(cam->tmp,GDK_COLORSPACE_RGB,FALSE,8,cam->x,cam->y,cam->x*cam->vid_pic.depth/8,NULL,NULL);
-	pbs = gdk_pixbuf_save(pb,filename,ext,NULL,NULL);
-	
-	
-	if (pbs == FALSE)
-	{
-		error_message = g_strdup_printf (_("Could not save image:\n %s/%s"),cam->pixdir,
-			 filename);
-		error_dialog (error_message);
-		g_free (error_message);
-		return -1;
-		//pthread_exit(NULL);
-	}
+   if(chdir(cam->pixdir) != 0) {
+      //fprintf(stderr, "could not change to dir: %s\n",cam->pixdir);
+      error_message = g_strdup_printf(_("could not change to directory - %s"), cam->pixdir);
+      error_dialog(error_message);
+      g_free(filename);
+      g_free(error_message);
+      return -1;
+   }
 
-	if (cam->debug == TRUE)
-	{
-		fprintf (stderr, "bytes to file %s: %d\n", filename, fc);
-	}
+   pb =
+      gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8, cam->x, cam->y, cam->x * cam->vid_pic.depth / 8,
+                               NULL, NULL);
+   pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
 
-	return 0;
+   if(pbs == FALSE) {
+      error_message = g_strdup_printf(_("Could not save image:\n %s/%s"), cam->pixdir, filename);
+      error_dialog(error_message);
+      g_free(filename);
+      g_free(error_message);
+      return -1;
+      //pthread_exit(NULL);
+   }
+
+   if(cam->debug == TRUE) {
+      fprintf(stderr, "bytes to file %s: %d\n", filename, fc);
+   }
+   g_free(filename);
+   return 0;
 }

@@ -1,9 +1,10 @@
 #include "v4l.h"
 
-static inline void move_420_block(int yTL, int yTR, int yBL, int yBR, int u, int v, int rowPixels, unsigned char *rgb, int bits);
+static inline void move_420_block(int yTL, int yTR, int yBL, int yBR, int u, int v, int rowPixels, unsigned char *rgb,
+                                  int bits);
 
-//these two functions are borrowed from the ov511 driver, with the author, 
-//Mark McClelland's kind encoragement
+/*these two functions are borrowed from the ov511 driver, with the author, 
+ *Mark McClelland's kind encoragement*/
 
 /* LIMIT: convert a 16.16 fixed-point value to a byte, with clipping. */
 #define LIMIT(x) ((x)>0xffffff?0xff: ((x)<=0xffff?0:((x)>>16)))
@@ -167,30 +168,7 @@ void threshold_channel(unsigned char *image, int x, int y, int threshold_value)
       image += 3;
    }
 }
-/*void mirror(unsigned char *image, int x, int y, int z)
-{
-   int i, j;
-   unsigned char *image2;
-   unsigned char *image3;
 
-   image2 = (char *) malloc(sizeof(unsigned char) * x * y * z);
-   memcpy(image2, image, x * y * z);
-   image3 = image2;
-   image2 += (x * z);
-   for(i = 0; i < y; i++) {
-      for(j = 0; j < x; j++) {
-
-         image[0] = image2[0];
-         image[1] = image2[1];
-         image[2] = image2[2];
-         image += z;
-         image2 -= z;
-      }
-      image2 += (x * z * 2);
-
-   }
-   free(image3);
-}*/
 void mirror(unsigned char *image, int x, int y, int z)
 {
    int i, j, k;
@@ -202,7 +180,7 @@ void mirror(unsigned char *image, int x, int y, int z)
    for(i = 0; i < y; i++) {
       for(j = 0; j < x; j++) {
          for(k = 0; k < z; k++) {
-            //ow, my brain!
+            /*ow, my brain! */
             image[(i * x * z) + (j * z) + k] = image2[(i * x * z) - (j * z) + k];
          }
 
@@ -211,7 +189,7 @@ void mirror(unsigned char *image, int x, int y, int z)
    }
 
    free(image2);
-   
+
 }
 
 void wacky(unsigned char *image, int z, int x, int y)
@@ -229,7 +207,7 @@ void wacky(unsigned char *image, int z, int x, int y)
       neighbours = 0;
 
       if(i < x * z) {
-         //we are in the top row
+         /*we are in the top row */
       } else {
          image2 -= (x + 1) * z;
          total = total + ((1 / 6) * image2[0]);
@@ -241,7 +219,7 @@ void wacky(unsigned char *image, int z, int x, int y)
          image2 += (x - 1) * z;
       }
       if(i > x * (y - 1) * z) {
-         //we are in the bottom row
+         /*we are in the bottom row */
       } else {
          image2 += (x + 1) * z;
          total = total + ((1 / 6) * image2[0]);
@@ -252,28 +230,22 @@ void wacky(unsigned char *image, int z, int x, int y)
          image2 -= (x - 1) * z;
          neighbours = neighbours + z;
       }
-      //if( i%(640*3)==0){
-      //we are in the right column
-      //}else{
+
       image2 += z;
       total = total + ((4 / 6) * image2[0]);
       image2 -= z;
       neighbours++;
-      //}   
-      //if( (i-1)%(640*3)==0){
-      //we are in the left column
-      //}else{
+
       image2 -= z;
       total = total + ((4 / 6) * image2[0]);
       image2 += z;
       neighbours++;
-      //}   
+
       image[0] = image[0] * (-20 / 6);
       image[0] = image[0] + total;
       image[1] = image[0];
       image[2] = image[0];
-      image += z;               // bump to next triplet
-
+      image += z;
    }
    free(image2);
 }
@@ -297,18 +269,18 @@ void smooth(unsigned char *image, int z, int x, int y)
       neighbours = 0;
 
       if(i < x) {
-         //we are in the top row
+         /*we are in the top row */
          tr++;
       } else {
          image2 -= (x + 1) * z;
          total0 = total0 + image2[0];
          total1 = total1 + image2[1];
          total2 = total2 + image2[2];
-         //      image2 += 3;
+
          total0 = total0 + image2[3];
          total1 = total1 + image2[4];
          total2 = total2 + image2[5];
-         //image2 += 3;
+
          total0 = total0 + image2[6];
          total1 = total1 + image2[7];
          total2 = total2 + image2[8];
@@ -320,17 +292,17 @@ void smooth(unsigned char *image, int z, int x, int y)
       }
       if(i > x * (y - 1)) {
          br++;
-         //we are in the bottom row
+         /*we are in the bottom row */
       } else {
          image2 += (x - 1) * z;
          total0 = total0 + image2[0];
          total1 = total1 + image2[1];
          total2 = total2 + image2[2];
-         //image2 -= 3;
+
          total0 = total0 + image2[3];
          total1 = total1 + image2[4];
          total2 = total2 + image2[5];
-         //image2 -= 3;
+
          total0 = total0 + image2[6];
          total1 = total1 + image2[7];
          total2 = total2 + image2[8];
@@ -339,19 +311,14 @@ void smooth(unsigned char *image, int z, int x, int y)
 
          neighbours = neighbours + z;
       }
-      //   if( i%(640*3)==0){
-      //we are in the right column
-      // }else{
+
       image2 += 3;
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
       total2 = total2 + image2[2];
       image2 -= 3;
       neighbours++;
-      // }  
-      // if( (i-1)%(640*3)==0){
-      //we are in the left column
-      // }else{
+
       image2 -= 3;
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
@@ -363,14 +330,14 @@ void smooth(unsigned char *image, int z, int x, int y)
       image[1] = (int) (total1 / neighbours);
       image[2] = (int) (total2 / neighbours);
 
-      image += 3;               // bump to next triplet
+      image += 3;
       image2 += 3;
    }
    free(image3);
 
 }
 
-void edge3(unsigned char *image, int z, int x, int y)
+void laplace(unsigned char *image, int z, int x, int y)
 {
    int i;
    int neighbours;
@@ -391,47 +358,38 @@ void edge3(unsigned char *image, int z, int x, int y)
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
       total2 = total2 + image2[2];
-      //      image2 += 3;
+
       total0 = total0 + image2[3];
       total1 = total1 + image2[4];
       total2 = total2 + image2[5];
-      //image2 += 3;
+
       total0 = total0 + image2[6];
       total1 = total1 + image2[7];
       total2 = total2 + image2[8];
-      //neighbours = neighbours + 3;
+
       image2 += (x + 1) * 3;
 
       image2 += (x - 1) * 3;
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
       total2 = total2 + image2[2];
-      //image2 -= 3;
+
       total0 = total0 + image2[3];
       total1 = total1 + image2[4];
       total2 = total2 + image2[5];
-      //image2 -= 3;
+
       total0 = total0 + image2[6];
       total1 = total1 + image2[7];
       total2 = total2 + image2[8];
 
       image2 -= (x - 1) * 3;
 
-      //neighbours = neighbours + 3;
-
-      //   if( i%(640*3)==0){
-      //we are in the right column
-      // }else{
       image2 += 3;
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
       total2 = total2 + image2[2];
       image2 -= 3;
-      //neighbours++;
-      // }  
-      // if( (i-1)%(640*3)==0){
-      //we are in the left column
-      // }else{
+
       image2 -= 3;
       total0 = total0 + image2[0];
       total1 = total1 + image2[1];
@@ -454,11 +412,11 @@ void edge3(unsigned char *image, int z, int x, int y)
          image[2] = (image[2] * 8) - total2;
       }
 
-      image += 3;               // bump to next triplet
+      image += 3;
       image2 += 3;
    }
    free(image3);
-   //printf("tr = %d, br = %d\n",tr,br);
+
 }
 
 void bw(unsigned char *image, int x, int y)
@@ -473,7 +431,7 @@ void bw(unsigned char *image, int x, int y)
       image[0] = avg;
       image[1] = avg;
       image[2] = avg;
-      image += 3;               // bump to next triplet
+      image += 3;
    }
 }
 void bw2(unsigned char *image, int x, int y)
@@ -486,36 +444,11 @@ void bw2(unsigned char *image, int x, int y)
       image[0] = avg;
       image[1] = avg;
       image[2] = avg;
-      image += 3;               // bump to next triplet
+      image += 3;               /* bump to next triplet */
    }
 }
 
-void laplace(unsigned char *image, int x, int y)
-{
-   int i;
-   int delta;
-   unsigned char *image2;
-
-   image2 = (char *) malloc(sizeof(unsigned char) * (x * y * 3));
-
-   for(i = x; i < ((y - 1) * x * 3); i++) {
-      //printf("i = %d\n", i);
-      //delta = abs(4 * image[i] - image[i - 1] - image[i + 1] - image[i - x] - image[i + x]);
-      delta = abs(4 * image[i] - image[i - 3] - image[i + 3] - image[i - x * 3] - image[i + x * 3]);
-      //printf("delta = %d\n", delta);
-      if(delta > 255) {
-         image2[i] = 255;
-      } else {
-         image2[i] = (unsigned char) delta;
-      }
-
-   }
-   memcpy(image, image2, x * y * 3);
-   free(image2);
-
-}
-
-//cool, but not correct....
+/* fix this at some point, very slow */
 void sobel(unsigned char *image, int x, int y)
 {
    int i, j, grad[3];
@@ -535,13 +468,12 @@ void sobel(unsigned char *image, int x, int y)
             image[i - width - 1] + 2 * image[i - width] + image[i - width + 1] - image[i + width - 1] -
             2 * image[i + width] - image[i + width + 1];
          grad[j] = (abs(deltaX[j]) + abs(deltaY[j]));
-         grad[j] = grad[j] / 5.66;      // <<<<<------------------------ new line
+         grad[j] = grad[j] / 5.66;      /* <<<<<------------------------ new line */
          if(grad[j] > 255) {
             grad[j] = 255;
          }
          image2[i + j] = (unsigned char) grad[j];
-      }                         //image2[i + 1] = (unsigned char) grad;
-      //image2[i + 2] = (unsigned char) grad;
+      }
    }
 
    memcpy(image, image2, (x * y * 3));

@@ -24,13 +24,13 @@ int main(int argc, char *argv[])
    cam cam_object, *cam;
    Display *display;
    Screen *screen_num;
-   char *poopoo = NULL, title[256], *filename, *pixfilename;
+   char *poopoo = NULL, *title, *filename, *pixfilename;
    int x = -1, y = -1;
    gboolean buggery = FALSE;
-	GdkPixbuf *logo;
-	GConfClient *gc;
-   
-	//popt option array
+   GdkPixbuf *logo;
+   GConfClient *gc;
+
+   //popt option array
    const struct poptOption popt_options[] = {
       {"version", 'V', POPT_ARG_NONE, &ver, 0, N_("show version and exit"), NULL},
       {"device", 'd', POPT_ARG_STRING, &poopoo, 0, N_("v4l device to use"), NULL},
@@ -41,42 +41,38 @@ int main(int argc, char *argv[])
       {"min", 'm', POPT_ARG_NONE, &min, 0, N_("minimum capture size"), NULL},
       {"half", 'H', POPT_ARG_NONE, &half, 0, N_("middle capture size"), NULL},
       POPT_TABLEEND
-	  //{NULL, '\0', 0, NULL, 0, NULL, NULL}
    };
-   
+
    cam = &cam_object;
-   //some default values....
+   /* set some default values */
    cam->frame_number = 0;
    cam->pic = NULL;
    cam->pixmap = NULL;
    cam->size = PICHALF;
    cam->video_dev = NULL;
-   
+
    bindtextdomain(GETTEXT_PACKAGE, GNOMELOCALEDIR);
    bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
    textdomain(GETTEXT_PACKAGE);
 
-   //gnome_program_init  - initialize everything (gconf, threads, etc)..   
-   gnome_program_init(PACKAGE, VERSION, LIBGNOMEUI_MODULE, argc, argv, GNOME_PARAM_APP_DATADIR,DATADIR,GNOME_PARAM_POPT_TABLE, popt_options,
-                      GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
+   /* gnome_program_init  - initialize everything (gconf, threads, etc) */
+   gnome_program_init(PACKAGE, VERSION, LIBGNOMEUI_MODULE, argc, argv, GNOME_PARAM_APP_DATADIR, DATADIR,
+                      GNOME_PARAM_POPT_TABLE, popt_options, GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
 
    cam->debug = buggery;
-   cam->video_dev = malloc(sizeof(char) * 256);
-   
-   
+
    if(poopoo == NULL) {
-      
-      strcpy(cam->video_dev, "/dev/video0");
-   }else{
-	   strcpy(cam->video_dev, poopoo);
+      cam->video_dev = g_strdup("/dev/video0");
+   } else {
+      cam->video_dev = g_strdup(poopoo);
    }
    cam->x = x;
    cam->y = y;
    glade_gnome_init();
-   
+
    //popt stuff...
    if(ver) {
-      fprintf(stderr, "\n\ncamorama version %s\n\n", VERSION);
+      fprintf(stderr, "\n\nCamorama version %s\n\n", VERSION);
       exit(0);
    }
    if(max) {
@@ -88,54 +84,31 @@ int main(int argc, char *argv[])
    if(half) {
       cam->size = PICHALF;
    }
-   
-   //get stored prefs, via gconf
-   gc = gconf_client_get_default ();
+
+   gc = gconf_client_get_default();
    cam->gc = gc;
-   
+
    gconf_client_add_dir(cam->gc, PATH, GCONF_CLIENT_PRELOAD_NONE, NULL);
    gconf_client_notify_add(cam->gc, KEY1, (void *) gconf_notify_func, cam->pixdir, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY5, (void *) gconf_notify_func, cam->rhost, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY2, (void *) gconf_notify_func, cam->capturefile, NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY3, (void *) gconf_notify_func_int, GINT_TO_POINTER(cam->savetype), NULL, NULL);
    gconf_client_notify_add(cam->gc, KEY4, (void *) gconf_notify_func_bool, &cam->timestamp, NULL, NULL);
-   
-   //cam->pixdir = malloc(sizeof(char) * 256);
-   strncpy(cam->pixdir,gconf_client_get_string(cam->gc, KEY1, NULL),255);
-   
-   //cam->pixdir = gconf_client_get_string(cam->gc, KEY1, NULL);
-   cam->capturefile = malloc(sizeof(char) * 256);
-   strcpy(cam->capturefile, gconf_client_get_string(cam->gc, KEY2, NULL));
-   
-   cam->rhost = malloc(sizeof(char) * 256);
-   strcpy(cam->rhost, gconf_client_get_string(cam->gc, KEY5, NULL));
-   
-   cam->rlogin = malloc(sizeof(char) * 256);
-   strcpy(cam->rlogin, gconf_client_get_string(cam->gc, KEY6, NULL));
-   
-   cam->rpw = malloc(sizeof(char) * 32);
-   strcpy(cam->rpw, gconf_client_get_string(cam->gc, KEY7, NULL));
-   
 
-   cam->rpixdir = malloc(sizeof(char) * 256);
-   strcpy(cam->rpixdir, gconf_client_get_string(cam->gc, KEY8, NULL));
-
-   cam->rcapturefile = malloc(sizeof(char) * 256);
-   strcpy(cam->rcapturefile, gconf_client_get_string(cam->gc, KEY9, NULL));
-   
+   cam->pixdir = g_strdup(gconf_client_get_string(cam->gc, KEY1, NULL));
+   cam->capturefile = g_strdup(gconf_client_get_string(cam->gc, KEY2, NULL));
+   cam->rhost = g_strdup(gconf_client_get_string(cam->gc, KEY5, NULL));
+   cam->rlogin = g_strdup(gconf_client_get_string(cam->gc, KEY6, NULL));
+   cam->rpw = g_strdup(gconf_client_get_string(cam->gc, KEY7, NULL));
+   cam->rpixdir = g_strdup(gconf_client_get_string(cam->gc, KEY8, NULL));
+   cam->rcapturefile = g_strdup(gconf_client_get_string(cam->gc, KEY9, NULL));
    cam->savetype = gconf_client_get_int(cam->gc, KEY3, NULL);
    cam->rsavetype = gconf_client_get_int(cam->gc, KEY10, NULL);
-   
-
-   cam->ts_string = malloc(sizeof(char) * 128);
-   strcpy(cam->ts_string, gconf_client_get_string(cam->gc, KEY16, NULL));
-   
-
+   cam->ts_string = g_strdup(gconf_client_get_string(cam->gc, KEY16, NULL));
    cam->date_format = "%Y-%m-%d %H:%M:%S";
-   //gconf_client_get_string(cam->gc, KEY17, NULL);
    cam->timestamp = gconf_client_get_bool(cam->gc, KEY4, NULL);
    cam->rtimestamp = gconf_client_get_bool(cam->gc, KEY11, NULL);
-   
+
    cam->cap = gconf_client_get_bool(cam->gc, KEY12, NULL);
    cam->rcap = gconf_client_get_bool(cam->gc, KEY13, NULL);
    cam->timefn = gconf_client_get_bool(cam->gc, KEY14, NULL);
@@ -145,9 +118,8 @@ int main(int argc, char *argv[])
    cam->acap = gconf_client_get_bool(cam->gc, KEY20, NULL);
    cam->timeout_interval = gconf_client_get_int(cam->gc, KEY21, NULL);
    cam->show_adjustments = gconf_client_get_bool(cam->gc, KEY22, NULL);
-   
-   
-   //get desktop depth
+
+   /* get desktop depth */
    display = (Display *) gdk_x11_get_default_xdisplay();
    screen_num = xlib_rgb_get_screen();
    gdk_pixbuf_xlib_init(display, 0);
@@ -155,7 +127,7 @@ int main(int argc, char *argv[])
 
    func_state.wacky = 0;
    func_state.threshold = 0;
-   func_state.edge3 = 0;
+   func_state.laplace = 0;
    func_state.negative = 0;
    func_state.colour = 0;
    func_state.mirror = 0;
@@ -168,7 +140,8 @@ int main(int argc, char *argv[])
 
    camera_cap(cam);
    get_win_info(cam);
-//query/set window attributes
+
+   /* query/set window attributes */
    cam->vid_win.x = 0;
    cam->vid_win.y = 0;
    cam->vid_win.width = cam->x;
@@ -191,49 +164,41 @@ int main(int argc, char *argv[])
    cam->depth = cam->vid_pic.depth / 8;
    cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
    cam->tmp = malloc(cam->x * cam->y * cam->depth);
-   //set the buffer size
+
+   /* set the buffer size */
    set_buffer(cam);
 
-   //create the window
+   /* initialize cam and create the window */
    init_cam(NULL, cam);
    cam->pixmap = gdk_pixmap_new(NULL, cam->x, cam->y, cam->desk_depth);
-   if(cam->pixmap == NULL) {
-      printf("pixmap = NULL!\n%d %d %d\n", cam->x, cam->y, cam->desk_depth);
+
+   filename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "camorama/camorama.glade", TRUE, NULL);
+   if(filename == NULL) {
+      error_dialog(_("Couldn't find the main interface file (camorama.glade)"));
+      exit(1);
    }
-   
-   filename = gnome_program_locate_file (NULL,
-         GNOME_FILE_DOMAIN_APP_DATADIR,
-         "camorama/camorama.glade", TRUE, NULL);
-   if (filename == NULL){
-      printf("Couldn't find the main interface (camorama.glade)");
-      exit (1);
-   }
-   pixfilename = gnome_program_locate_file (NULL,
-         GNOME_FILE_DOMAIN_APP_DATADIR,
-         "pixmaps/camorama.png", TRUE, NULL);
-   if (pixfilename == NULL)
-   {
-      printf("Couldn't find the pixmap file");
-   }
-   
-   logo = (GdkPixbuf *) create_pixbuf(pixfilename);     
+   pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);
+
+   logo = (GdkPixbuf *) create_pixbuf(pixfilename);
    cam->xml = glade_xml_new(filename, NULL, NULL);
-   if(cam->show_adjustments == FALSE){
-	   gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
-	   gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),320,240);
-			   
+   if(cam->show_adjustments == FALSE) {
+      gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
+      gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
+
    }
-   /* connect the signals in the interface */
-   //glade_xml_signal_autoconnect(xml);
-   // this won't work, can't pass data to callbacks.  have to do it individually :(
-   
-   sprintf(title, "Camorama -- %s", cam->vid_cap.name);
+   /* connect the signals in the interface 
+    * glade_xml_signal_autoconnect(xml);
+    * this won't work, can't pass data to callbacks.  have to do it individually :(*/
+
+   title = g_strdup_printf("Camorama -- %s", cam->vid_cap.name);
    gtk_window_set_title(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), title);
-   
-   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),logo);
-   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")),logo);
-   
-   glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),cam);
+   g_free(title);
+
+   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), logo);
+   gtk_window_set_icon(GTK_WINDOW(glade_xml_get_widget(cam->xml, "prefswindow")), logo);
+
+   glade_xml_signal_connect_data(cam->xml, "on_show_adjustments1_activate", G_CALLBACK(on_show_adjustments1_activate),
+                                 cam);
    glade_xml_signal_connect_data(cam->xml, "capture_func", G_CALLBACK(capture_func), cam);
    glade_xml_signal_connect_data(cam->xml, "gtk_main_quit", G_CALLBACK(delete_event), NULL);
    //sliders
@@ -250,7 +215,7 @@ int main(int argc, char *argv[])
    gtk_range_set_value((GtkRange *) glade_xml_get_widget(cam->xml, "slider5"), (int) (cam->hue / 256));
    glade_xml_signal_connect_data(cam->xml, "wb_change", G_CALLBACK(wb_change), cam);
    gtk_range_set_value((GtkRange *) glade_xml_get_widget(cam->xml, "slider6"), (int) (cam->wb / 256));
-   
+
    //buttons
    glade_xml_signal_connect_data(cam->xml, "fix_colour_func", G_CALLBACK(fix_colour_func), (gpointer) poopoo);
    glade_xml_signal_connect_data(cam->xml, "threshold_func1", G_CALLBACK(threshold_func1), (gpointer) NULL);
@@ -263,7 +228,6 @@ int main(int argc, char *argv[])
    glade_xml_signal_connect_data(cam->xml, "colour_func", G_CALLBACK(colour_func), (gpointer) NULL);
    glade_xml_signal_connect_data(cam->xml, "smooth_func", G_CALLBACK(smooth_func), (gpointer) NULL);
    glade_xml_signal_connect_data(cam->xml, "edge_func1", G_CALLBACK(edge_func1), (gpointer) NULL);
-   
 
    glade_xml_signal_connect_data(cam->xml, "on_drawingarea1_expose_event", G_CALLBACK(on_drawingarea1_expose_event),
                                  (gpointer) cam);
@@ -276,26 +240,23 @@ int main(int argc, char *argv[])
    //prefs
    glade_xml_signal_connect_data(cam->xml, "prefs_func", G_CALLBACK(prefs_func), cam);
    //general
-   
+
    glade_xml_signal_connect_data(cam->xml, "cap_func", G_CALLBACK(cap_func), cam);
-   
+
    gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "captured_cb"), cam->cap);
-   
-   
+
    glade_xml_signal_connect_data(cam->xml, "rcap_func", G_CALLBACK(rcap_func), cam);
    gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "rcapture"), cam->rcap);
-   
+
    glade_xml_signal_connect_data(cam->xml, "acap_func", G_CALLBACK(acap_func), cam);
    gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "acapture"), cam->acap);
-   
+
    glade_xml_signal_connect_data(cam->xml, "interval_change", G_CALLBACK(interval_change), cam);
-   
+
    gtk_spin_button_set_value((GtkSpinButton *) glade_xml_get_widget(cam->xml, "interval_entry"),
                              (cam->timeout_interval / 60000));
 
-   
-   
-   //local
+   /* local */
    dentry = glade_xml_get_widget(cam->xml, "dentry");
    entry2 = glade_xml_get_widget(cam->xml, "entry2");
    gtk_entry_set_text(GTK_ENTRY(gnome_file_entry_gtk_entry(GNOME_FILE_ENTRY(dentry))), cam->pixdir);
@@ -303,8 +264,7 @@ int main(int argc, char *argv[])
    gtk_entry_set_text(GTK_ENTRY(entry2), cam->capturefile);
 
    glade_xml_signal_connect_data(cam->xml, "append_func", G_CALLBACK(append_func), cam);
-      gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "appendbutton"), cam->timefn);
-   
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "appendbutton"), cam->timefn);
 
    glade_xml_signal_connect_data(cam->xml, "jpg_func", G_CALLBACK(jpg_func), cam);
    if(cam->savetype == JPEG) {
@@ -314,11 +274,11 @@ int main(int argc, char *argv[])
    if(cam->savetype == PNG) {
       gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "pngb"), TRUE);
    }
-   
+
    glade_xml_signal_connect_data(cam->xml, "ts_func", G_CALLBACK(ts_func), cam);
-      gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tsbutton"), cam->timestamp);
-   
-   //remote
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tsbutton"), cam->timestamp);
+
+   /* remote */
    login_entry = glade_xml_get_widget(cam->xml, "login_entry");
    host_entry = glade_xml_get_widget(cam->xml, "host_entry");
    pw_entry = glade_xml_get_widget(cam->xml, "pw_entry");
@@ -332,7 +292,7 @@ int main(int argc, char *argv[])
 
    glade_xml_signal_connect_data(cam->xml, "rappend_func", G_CALLBACK(rappend_func), cam);
    gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "timecb"), cam->rtimefn);
-   
+
    glade_xml_signal_connect_data(cam->xml, "rjpg_func", G_CALLBACK(rjpg_func), cam);
    if(cam->rsavetype == JPEG) {
       gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "fjpgb"), TRUE);
@@ -341,38 +301,35 @@ int main(int argc, char *argv[])
    if(cam->rsavetype == PNG) {
       gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "fpngb"), TRUE);
    }
-   
+
    glade_xml_signal_connect_data(cam->xml, "rts_func", G_CALLBACK(rts_func), cam);
-      gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tsbutton2"), cam->rtimestamp);
- 
-   //timestamp
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tsbutton2"), cam->rtimestamp);
+
+   /* timestamp */
    glade_xml_signal_connect_data(cam->xml, "customstring_func", G_CALLBACK(customstring_func), cam);
-      gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "cscb"), cam->usestring);
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "cscb"), cam->usestring);
 
    string_entry = glade_xml_get_widget(cam->xml, "string_entry");
    gtk_entry_set_text(GTK_ENTRY(string_entry), cam->ts_string);
 
    glade_xml_signal_connect_data(cam->xml, "drawdate_func", G_CALLBACK(drawdate_func), cam);
-      gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tscb"), cam->usedate);
+   gtk_toggle_button_set_active((GtkToggleButton *) glade_xml_get_widget(cam->xml, "tscb"), cam->usedate);
 
    cam->status = glade_xml_get_widget(cam->xml, "status");
-   //cam->da = glade_xml_get_widget(cam->xml, "da");
    set_sensitive(cam);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "string_entry"), cam->usestring);
-   //prefs
+   /* prefs */
 
    gtk_widget_set_size_request(glade_xml_get_widget(cam->xml, "da"), cam->x, cam->y);
 
-   //prefswindow = (GtkWidget *) createPrefsWindow(cam);
    prefswindow = glade_xml_get_widget(cam->xml, "prefswindow");
-   
 
    gtk_idle_add((GSourceFunc) timeout_func, (gpointer) cam);
-   
+
    if(cam->acap == TRUE) {
       cam->timeout_id = gtk_timeout_add(cam->timeout_interval, (GSourceFunc) timeout_capture_func, (gpointer) cam);
    }
-   
+
    gtk_timeout_add(2000, (GSourceFunc) fps, cam->status);
    gdk_threads_enter();
    gtk_main();

@@ -6,7 +6,6 @@ typedef struct image_state {
    gboolean wacky;
    gboolean threshold;
    gboolean threshold_channel;
-   gboolean edge3;
    gboolean sobel;
    gboolean laplace;
    gboolean negative;

@@ -10,8 +10,6 @@
 #include <libgnomeui/gnome-window-icon.h>
 #include <pthread.h>
 
-//g-hoppa rulez!!!
-
 extern GtkWidget *main_window, *prefswindow;
 extern state func_state;
 extern int frames;
@@ -21,7 +19,7 @@ extern GtkWidget *dentry, *entry2, *string_entry;
 extern GtkWidget *host_entry, *directory_entry, *filename_entry, *login_entry, *pw_entry;
 int frame;
 
-//pref callbacks
+/*pref callbacks*/
 
 void ts_func(GtkWidget * rb, cam * cam)
 {
@@ -39,7 +37,7 @@ void customstring_func(GtkWidget * rb, cam * cam)
    client = gconf_client_get_default();
    cam->usestring = gtk_toggle_button_get_active((GtkToggleButton *) rb);
    gconf_client_set_bool(cam->gc, KEY18, cam->usestring, NULL);
-	gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "string_entry"), cam->usestring);
+   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "string_entry"), cam->usestring);
 }
 
 void drawdate_func(GtkWidget * rb, cam * cam)
@@ -100,30 +98,23 @@ void ppm_func(GtkWidget * rb, cam * cam)
    gconf_client_set_int(cam->gc, KEY3, cam->savetype, NULL);
 }
 
-
 void set_sensitive(cam * cam)
 {
-   //gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "dentry"), cam->cap);
-   //gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "entry2"), cam->cap);
-	gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "table4"), cam->cap);
-	
+   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "table4"), cam->cap);
+
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "appendbutton"), cam->cap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "tsbutton"), cam->cap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "jpgb"), cam->cap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "pngb"), cam->cap);
-   /*gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "host_entry"), cam->rcap);
-   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "login_entry"), cam->rcap);
-   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "pw_entry"), cam->rcap);
-   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "filename_entry"), cam->rcap);
-   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "directory_entry"), cam->rcap);*/
-	gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "table5"), cam->rcap);
+   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "table5"), cam->rcap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "timecb"), cam->rcap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "tsbutton2"), cam->rcap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "fjpgb"), cam->rcap);
    gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "fpngb"), cam->rcap);
-	gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "hbox20"), cam->acap);
-	
-	}
+   gtk_widget_set_sensitive(glade_xml_get_widget(cam->xml, "hbox20"), cam->acap);
+
+}
+
 void cap_func(GtkWidget * rb, cam * cam)
 {
    GConfClient *client;
@@ -131,7 +122,7 @@ void cap_func(GtkWidget * rb, cam * cam)
    client = gconf_client_get_default();
    cam->cap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
    gconf_client_set_bool(cam->gc, KEY12, cam->cap, NULL);
-	set_sensitive(cam);
+   set_sensitive(cam);
 
 }
 
@@ -143,8 +134,8 @@ void rcap_func(GtkWidget * rb, cam * cam)
    client = gconf_client_get_default();
    cam->rcap = gtk_toggle_button_get_active((GtkToggleButton *) rb);
    gconf_client_set_bool(cam->gc, KEY13, cam->rcap, NULL);
-	set_sensitive(cam);
-   
+   set_sensitive(cam);
+
 }
 
 //do automatic capture?
@@ -219,8 +210,8 @@ void gconf_notify_func(GConfClient * client, guint cnxn_id, GConfEntry * entry, 
    GConfValue *value;
 
    value = gconf_entry_get_value(entry);
-   str = malloc(sizeof(char) * (strlen(gconf_value_get_string(value)) + 1));
-   strcpy(str, gconf_value_get_string(value));
+
+   str = g_strdup(gconf_value_get_string(value));
 
 }
 
@@ -245,7 +236,7 @@ int delete_event(GtkWidget * widget, gpointer data)
    return FALSE;
 }
 
-//make it (prefs) so!
+/* apply preferences */
 void prefs_func(GtkWidget * okbutton, cam * cam)
 {
    GConfClient *client;
@@ -253,9 +244,8 @@ void prefs_func(GtkWidget * okbutton, cam * cam)
    client = gconf_client_get_default();
 
    if(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, TRUE) != NULL) {
-      //cam->pixdir =
-        // malloc(sizeof(char) * (strlen(gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE)) + 1));
-      strncpy(cam->pixdir, gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE),255);
+      cam->pixdir = g_strdup((gchar *) gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE));
+      //strncpy(cam->pixdir, gnome_file_entry_get_full_path((GnomeFileEntry *) dentry, FALSE),255);
       gconf_client_set_string(cam->gc, KEY1, cam->pixdir, NULL);
 
    } else {
@@ -263,41 +253,35 @@ void prefs_func(GtkWidget * okbutton, cam * cam)
          fprintf(stderr, "null directory\ndirectory unchanged.");
       }
    }
-   //this is stupid, even if the string is empty, it will not return NULL
+
+   /* this is stupid, even if the string is empty, it will not return NULL */
    if(strlen(gtk_entry_get_text((GtkEntry *) entry2)) > 0) {
-      cam->capturefile = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) entry2)) + 1));
-      strcpy(cam->capturefile, gtk_entry_get_text((GtkEntry *) entry2));
+      cam->capturefile = g_strdup(gtk_entry_get_text((GtkEntry *) entry2));
       gconf_client_set_string(cam->gc, KEY2, cam->capturefile, NULL);
    }
 
    if(strlen(gtk_entry_get_text((GtkEntry *) host_entry)) > 0) {
-      cam->rhost = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) host_entry)) + 1));
-      strcpy(cam->rhost, gtk_entry_get_text((GtkEntry *) host_entry));
+      cam->rhost = g_strdup(gtk_entry_get_text((GtkEntry *) host_entry));
       gconf_client_set_string(cam->gc, KEY5, cam->rhost, NULL);
    }
    if(strlen(gtk_entry_get_text((GtkEntry *) login_entry)) > 0) {
-      cam->rlogin = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) login_entry)) + 1));
-      strcpy(cam->rlogin, gtk_entry_get_text((GtkEntry *) login_entry));
+      cam->rlogin = g_strdup(gtk_entry_get_text((GtkEntry *) login_entry));
       gconf_client_set_string(cam->gc, KEY6, cam->rlogin, NULL);
    }
    if(strlen(gtk_entry_get_text((GtkEntry *) pw_entry)) > 0) {
-      cam->rpw = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) pw_entry)) + 1));
-      strcpy(cam->rpw, gtk_entry_get_text((GtkEntry *) pw_entry));
+      cam->rpw = g_strdup(gtk_entry_get_text((GtkEntry *) pw_entry));
       gconf_client_set_string(cam->gc, KEY7, cam->rpw, NULL);
    }
    if(strlen(gtk_entry_get_text((GtkEntry *) directory_entry)) > 0) {
-      cam->rpixdir = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) directory_entry)) + 1));
-      strcpy(cam->rpixdir, gtk_entry_get_text((GtkEntry *) directory_entry));
+      cam->rpixdir = g_strdup(gtk_entry_get_text((GtkEntry *) directory_entry));
       gconf_client_set_string(cam->gc, KEY8, cam->rpixdir, NULL);
    }
    if(strlen(gtk_entry_get_text((GtkEntry *) filename_entry)) > 0) {
-      cam->rcapturefile = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) filename_entry)) + 1));
-      strcpy(cam->rcapturefile, gtk_entry_get_text((GtkEntry *) filename_entry));
+      cam->rcapturefile = g_strdup(gtk_entry_get_text((GtkEntry *) filename_entry));
       gconf_client_set_string(cam->gc, KEY9, cam->rcapturefile, NULL);
    }
    if(strlen(gtk_entry_get_text((GtkEntry *) string_entry)) > 0) {
-      cam->ts_string = malloc(sizeof(char) * (strlen(gtk_entry_get_text((GtkEntry *) string_entry)) + 1));
-      strcpy(cam->ts_string, gtk_entry_get_text((GtkEntry *) string_entry));
+      cam->ts_string = g_strdup(gtk_entry_get_text((GtkEntry *) string_entry));
       gconf_client_set_string(cam->gc, KEY16, cam->ts_string, NULL);
    }
    if(cam->debug == TRUE) {
@@ -317,23 +301,24 @@ void on_preferences1_activate(GtkMenuItem * menuitem, gpointer user_data)
    gtk_widget_show(prefswindow);
 }
 
-void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam *cam){
-	
-	if(GTK_WIDGET_VISIBLE(glade_xml_get_widget(cam->xml, "table6"))){
-		gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
-		gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")),320,240);
-		cam->show_adjustments = FALSE;
-	   
-	}else{
-		gtk_widget_show(glade_xml_get_widget(cam->xml, "table6"));
-		cam->show_adjustments = TRUE;
-	}
-	gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
+void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam * cam)
+{
+
+   if(GTK_WIDGET_VISIBLE(glade_xml_get_widget(cam->xml, "table6"))) {
+      gtk_widget_hide(glade_xml_get_widget(cam->xml, "table6"));
+      gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "window2")), 320, 240);
+      cam->show_adjustments = FALSE;
+
+   } else {
+      gtk_widget_show(glade_xml_get_widget(cam->xml, "table6"));
+      cam->show_adjustments = TRUE;
+   }
+   gconf_client_set_bool(cam->gc, KEY22, cam->show_adjustments, NULL);
 }
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
    GtkWidget *about1;
-   const gchar *authors[] = { "greg jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>",NULL };
+   const gchar *authors[] = { "greg jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>", NULL };
    const gchar *documenters[] = { NULL };
    GdkPixbuf *logo = (GdkPixbuf *) create_pixbuf("camorama.png");
    /* TRANSLATORS: Replace this string with your names, one name per line. */
@@ -344,11 +329,11 @@ void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 
    about1 = gnome_about_new("camorama", VERSION,
                             "(C) 2002 greg jones",
-                            "View, alter and save images from a webcam", authors, documenters, translators, logo);
+                            _("View, alter and save images from a webcam"), authors, documenters, translators, logo);
    gtk_widget_show(about1);
 }
 
-//get image from cam - does all the work ;)
+/* get image from cam - does all the work ;) */
 gint timeout_func(cam * cam)
 {
    int i, count = 0;
@@ -363,7 +348,7 @@ gint timeout_func(cam * cam)
          continue;
       }
       if(i < 0) {
-         perror("VIDIOCSYNC");
+         error_dialog(_("Unable to capture image (VIDIOCSYNC)"));
          exit(-1);
       }
       break;
@@ -387,10 +372,8 @@ gint timeout_func(cam * cam)
       threshold(cam->pic_buf, cam->x, cam->y, cam->dither);
    }
 
-   if(func_state.edge3 == TRUE) {
-      edge3(cam->pic_buf, cam->depth, cam->x, cam->y);
-      //laplace(cam->pic_buf, cam->x, cam->y);
-      //sobel(cam->pic_buf, cam->x, cam->y);
+   if(func_state.laplace == TRUE) {
+      laplace(cam->pic_buf, cam->depth, cam->x, cam->y);
    }
 
    if(func_state.sobel == TRUE) {
@@ -418,21 +401,17 @@ gint timeout_func(cam * cam)
    }
 
    gc = gdk_gc_new(cam->pixmap);
-   /*gdk_draw_rgb_image(cam->pixmap,
-    * main_window->style->fg_gc[GTK_STATE_NORMAL], 0, 0,
-    * cam->vid_win.width, cam->vid_win.height, GDK_RGB_DITHER_NORMAL,
-    * cam->pic_buf, cam->vid_win.width * cam->depth); */
+
    gdk_draw_rgb_image(cam->pixmap,
                       gc, 0, 0,
                       cam->vid_win.width, cam->vid_win.height, GDK_RGB_DITHER_NORMAL,
                       cam->pic_buf, cam->vid_win.width * cam->depth);
-   //cam->da
+
    gtk_widget_queue_draw_area(glade_xml_get_widget(cam->xml, "da"), 0, 0, cam->x, cam->y);
-   //gtk_widget_queue_draw_area(cam->da, 0, 0, cam->x, cam->y);
-   //gtk_widget_queue_draw_area(da, 0, 0, cam->x, cam->y);
+
    cam->vid_map.frame = frame;
    if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
-      perror("-/-VIDIOCMCAPTURE");
+      error_dialog(_("Unable to capture image (VIDIOCMCAPTURE)"));
       exit(-1);
    }
 
@@ -451,11 +430,13 @@ gint timeout_func(cam * cam)
 //calculate and draw fps
 gint fps(GtkWidget * sb)
 {
-   const gchar stat[128];
+   gchar *stat;
 
    seconds++;
-   sprintf((char *) stat, "%.2f fps - current     %.2f fps - average",
-           (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));
+   stat = g_strdup_printf("%.2f fps - current     %.2f fps - average",
+                          (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));
+/*sprintf((char *) stat, "%.2f fps - current     %.2f fps - average",
+           (float) frames / (float) (2), (float) frames2 / (float) (seconds * 2));*/
    frames = 0;
    gnome_appbar_push(GNOME_APPBAR(sb), stat);
    return 1;
@@ -463,8 +444,6 @@ gint fps(GtkWidget * sb)
 
 void on_status_show(GtkWidget * sb, cam * cam)
 {
-
-   printf("show statusbar\n");
    cam->status = sb;
 }
 
@@ -568,7 +547,7 @@ void threshold_ch_func(GtkToggleButton * tb, gpointer data)
 
 void edge_func3(GtkToggleButton * tb, gpointer data)
 {
-   func_state.edge3 = gtk_toggle_button_get_active(tb);
+   func_state.laplace = gtk_toggle_button_get_active(tb);
 }
 
 void negative_func(GtkToggleButton * tb, gpointer data)

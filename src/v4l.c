@@ -75,13 +75,13 @@ void print_palette(int p)
 
 void camera_cap(cam * cam)
 {
-	char *msg;
+   char *msg;
    if(ioctl(cam->dev, VIDIOCGCAP, &cam->vid_cap) == -1) {
       fprintf(stderr, "VIDIOCGCAP  --  could not get camera capabilities, exiting.....\n");
-      msg = g_strdup_printf(_("Could not get camera capabilities:\n%s"),cam->video_dev);
-	   error_dialog (msg);
-	   g_free (msg);
-	   exit(0);
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      g_free(msg);
+      exit(0);
    }
    if(cam->x > 0 && cam->y > 0) {
       if(cam->vid_cap.maxwidth < cam->x) {
@@ -133,13 +133,13 @@ void camera_cap(cam * cam)
 }
 void set_pic_info(cam * cam)
 {
-	char *msg;
+   char *msg;
    if(ioctl(cam->dev, VIDIOCSPICT, &cam->vid_pic) == -1) {
       fprintf(stderr, "VIDIOCSPICT  --  could not set picture info, exiting....\n");
-      msg = g_strdup_printf(_("Could not set picture attributes:\n%s"),cam->video_dev);
-	   error_dialog (msg);
-	   g_free (msg);
-	   exit(0);
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      g_free(msg);
+      exit(0);
    }
 
 }
@@ -147,11 +147,11 @@ void set_pic_info(cam * cam)
 void get_pic_info(cam * cam)
 {
    char *msg;
-	if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
-		msg = g_strdup_printf(_("Could not get picture attributes:\n%s"),cam->video_dev);
-		error_dialog (msg);
-		fprintf(stderr, "VIDIOCGPICT  --  could not get picture info, exiting....\n");
-		g_free (msg);
+   if(ioctl(cam->dev, VIDIOCGPICT, &cam->vid_pic) == -1) {
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      fprintf(stderr, "VIDIOCGPICT  --  could not get picture info, exiting....\n");
+      g_free(msg);
       exit(0);
    }
    if(cam->debug == TRUE) {
@@ -163,16 +163,16 @@ void get_pic_info(cam * cam)
       printf("whiteness = %d\n", cam->vid_pic.whiteness);
       printf("colour depth = %d\n", cam->vid_pic.depth);
       print_palette(cam->vid_pic.palette);
-      //printf("palette = %d\n", cam->vid_pic.palette);
    }
 }
 
 void get_win_info(cam * cam)
 {
    char *msg;
-	if(ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
-      msg = g_strdup_printf(_("Could not get window attributes:\n%s"),cam->video_dev);
-	   error_dialog (msg);fprintf(stderr, "VIDIOCGWIN  --  could not get window info, exiting....\n");
+   if(ioctl(cam->dev, VIDIOCGWIN, &cam->vid_win) == -1) {
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      fprintf(stderr, "VIDIOCGWIN  --  could not get window info, exiting....\n");
       exit(0);
    }
    if(cam->debug == TRUE) {
@@ -183,17 +183,16 @@ void get_win_info(cam * cam)
       printf("height = %d\n", cam->vid_win.height);
       printf("chromakey = %d\n", cam->vid_win.chromakey);
       printf("flags = %d\n", cam->vid_win.flags);
-      //printf("clips = %d\n",cam.vid_win.clips[0]);
-      //printf("clip count = %d\n",cam.vid_win.clipcount);
    }
 }
 void set_win_info(cam * cam)
 {
    char *msg;
-	if(ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
-      msg = g_strdup_printf(_("Could not set windown attributes:\n%s"),cam->video_dev);
-	   error_dialog (msg);fprintf(stderr, "VIDIOCSWIN  --  could not set window info, exiting....\nerrno = %d", errno);
-	   g_free (msg);
+   if(ioctl(cam->dev, VIDIOCSWIN, &cam->vid_win) == -1) {
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      fprintf(stderr, "VIDIOCSWIN  --  could not set window info, exiting....\nerrno = %d", errno);
+      g_free(msg);
       exit(0);
    }
 
@@ -202,10 +201,11 @@ void set_win_info(cam * cam)
 void set_buffer(cam * cam)
 {
    char *msg;
-	if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
-      msg = g_strdup_printf(_("Could not get buffer attributes:\n%s"),cam->video_dev);
-	   error_dialog (msg);fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
-	   g_free (msg);
+   if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
+      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
+      error_dialog(msg);
+      fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
+      g_free(msg);
       exit(0);
    }
    if(cam->debug == TRUE) {

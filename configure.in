@@ -33,10 +33,6 @@ AC_PATH_PROG(GCONFTOOL, gconftool-2)
 AM_GCONF_SOURCE_2
 
 
-dnl Add the languages which your application supports here.
-
-
-
 AC_OUTPUT([
 Makefile
 src/Makefile

@@ -1,4 +1,3 @@
-//#include "v4l.h"
 #define PATH "/apps/camorama/preferences"
 #define KEY1 "/apps/camorama/preferences/save_dir"
 #define KEY2 "/apps/camorama/preferences/save_file"
@@ -22,7 +21,5 @@
 #define KEY20 "/apps/camorama/preferences/auto_capture"
 #define KEY21 "/apps/camorama/preferences/auto_capture_interval"
 #define KEY22 "/apps/camorama/preferences/show_adjustments"
-
-//void init_gui(cam *cam);
 
 

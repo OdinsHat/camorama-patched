@@ -1,0 +1,40 @@
+0.16
+----
+brand new gui!
+switch from gdk-imlib to gdk-pixbuf (can only save as jpg/png now).
+switch to libglade
+
+0.15
+----
+
+can save images locally or remotely
+customizable timestamp on saved images - "borrowed" directly from gspy
+can set a timer for capturing images
+now supports YUV - thanks to Mark McClelland
+fixed configure problems
+
+0.14
+----
+images now saved as either jpeg, png or ppm.
+added a couple filters.
+code clean up.
+
+0.13
+----
+big fps increase.
+minor gui redesign.
+added slider for white balance.
+gconf support for saving prefs.
+got rid of most of those annoying gnome warnings.
+
+0.12
+----
+fixed error limiting number of cameras it would run on.
+added directory/file selection dialog for image saves.
+more command line options.
+better documentation.
+
+0.11
+----
+
+Initial release.

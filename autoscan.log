@@ -1,0 +1,13 @@
+autoscan: warning: missing AC_PROG_AWK wanted by: 
+	Makefile.in:183
+	Makefile.in:198
+	src/Makefile.in:162
+	src/Makefile.in:172
+autoscan: warning: missing AC_PROG_CXX wanted by: 
+	macros/autogen.sh:83
+autoscan: warning: missing AC_PROG_LN_S wanted by: 
+	Makefile.in:261
+	macros/Makefile.in:204
+	src/Makefile.in:202
+autoscan: warning: missing AC_PROG_RANLIB wanted by: 
+	macros/Makefile.in:104

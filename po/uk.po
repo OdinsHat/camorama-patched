@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
-"POT-Creation-Date: 2003-02-21 16:17+0200\n"
-"PO-Revision-Date: 2003-02-21 06:43--500\n"
+"POT-Creation-Date: 2003-03-01 23:29+0200\n"
+"PO-Revision-Date: 2003-03-01 12:47--500\n"
 "Last-Translator: Yuriy Syrota <yuri@renome.rovno.ua>\n"
 "Language-Team: Ukrainian <linux@linux.org.ua>\n"
 "MIME-Version: 1.0\n"
@@ -416,8 +416,9 @@ msgid "translator_credits"
 msgstr "Юрій Сирота <yuriy@beer.com>"
 
 #: src/callbacks.c:324
+#: camorama.desktop.in.h:2
 msgid "View, alter and save images from a webcam"
-msgstr "Показати, змінити і зберегти всі зображення з веб-камери"
+msgstr "Показ, зміна і збереження зображень з веб-камери"
 
 #: src/callbacks.c:346
 #: src/callbacks.c:412
@@ -425,6 +426,45 @@ msgstr "Показати, змінити і зберегти всі зображ
 #: src/callbacks.c:465
 msgid "Unable to capture image."
 msgstr "Неможливо зробити знімок."
+
+#: src/fileio.c:114
+msgid "Could save temporary image file in /tmp."
+msgstr "Не вдалося зберегти тимчасовий файл зображення в /tmp."
+
+#: src/fileio.c:129
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "Не вдалося створити зображення \"%s\"."
+
+#: src/fileio.c:142
+#, c-format
+msgid "Unable to open temorary image file '%s'."
+msgstr "Не вдалося відкрити тимчасовий файл зображення \"%s\"."
+
+#: src/fileio.c:173
+#, c-format
+msgid "An error occured opening %s."
+msgstr "Сталася помилка під час відкриття \"%s\"."
+
+#: src/fileio.c:182
+#, c-format
+msgid "An error occured writing to %s."
+msgstr "Сталася помилка запису в \"%s\"."
+
+#: src/fileio.c:258
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "Не вдалося створити каталог \"%s\"."
+
+#: src/fileio.c:266
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "Не вдалося відкрити каталог \"%s\"."
+
+#: src/fileio.c:279
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "Не вдалося зберегти зображення \"%s/%s\"."
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -479,8 +519,24 @@ msgstr ""
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Не вдалось віднайти основний інтерфейсний файл (camorama.glade)."
 
+#: src/v4l.c:83
+#: src/v4l.c:143
+#: src/v4l.c:155
+#: src/v4l.c:179
+#: src/v4l.c:200
+#: src/v4l.c:215
+#, c-format
+msgid "Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr "Не вдалося встановити з'єднання з відеопристроєм (%s).\n"
+"Будь ласка, перевірте з'єднання."
+
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Не вдалось віднайти файл зображення: %s"
+
+#: camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "Робота з веб-камерою"
 

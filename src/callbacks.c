@@ -310,7 +310,7 @@ void on_show_adjustments1_activate(GtkMenuItem * menuitem, cam * cam)
 void on_about1_activate(GtkMenuItem * menuitem, gpointer user_data)
 {
    GtkWidget *about1;
-   const gchar *authors[] = { "greg jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>", NULL };
+   const gchar *authors[] = { "Greg Jones  <greg@fixedgear.org>", "Jens Knutson  <tempest@magusbooks.com>", NULL };
    const gchar *documenters[] = { NULL };
    GdkPixbuf *logo = (GdkPixbuf *) create_pixbuf("camorama.png");
    /* TRANSLATORS: Replace this string with your names, one name per line. */
@@ -340,7 +340,10 @@ gint timeout_func(cam * cam)
          continue;
       }
       if(i < 0) {
-         error_dialog(_("Unable to capture image (VIDIOCSYNC)"));
+         if(cam->debug == TRUE) {
+            fprintf(stderr, "Unable to capture image (VIDIOCSYNC)\n");
+         }
+         error_dialog(_("Unable to capture image."));
          exit(-1);
       }
       break;
@@ -403,7 +406,10 @@ gint timeout_func(cam * cam)
 
    cam->vid_map.frame = frame;
    if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
-      error_dialog(_("Unable to capture image (VIDIOCMCAPTURE)"));
+      if(cam->debug == TRUE) {
+         fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE)\n");
+      }
+      error_dialog(_("Unable to capture image."));
       exit(-1);
    }
 
@@ -441,7 +447,10 @@ void init_cam(GtkWidget * capture, cam * cam)
    cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
 
    if((unsigned char *) -1 == (unsigned char *) cam->pic) {
-      fprintf(stderr, "mmap() failed \n");
+      if(cam->debug == TRUE) {
+         fprintf(stderr, "Unable to capture image (mmap).\n");
+      }
+      error_dialog(_("Unable to capture image."));
       exit(-1);
    }
    cam->vid_map.height = cam->y;
@@ -450,7 +459,10 @@ void init_cam(GtkWidget * capture, cam * cam)
    for(frame = 0; frame < cam->vid_buf.frames; frame++) {
       cam->vid_map.frame = frame;
       if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
-         perror("--VIDIOCMCAPTURE");
+         if(cam->debug == TRUE) {
+            fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE).\n");
+         }
+         error_dialog(_("Unable to capture image."));
          exit(-1);
       }
    }
@@ -462,14 +474,11 @@ void capture_func(GtkWidget * capture, cam * cam)
    GThread *remote_thread;
 
    if(cam->cap == TRUE) {
-      if(local_save(cam) < 0) {
-         fprintf(stderr, "save failed\n");
-      }
+      local_save(cam);
    }
    if(cam->rcap == TRUE) {
       remote_thread = g_thread_create((GThreadFunc) remote_save, cam, FALSE, NULL);
    }
-
 }
 
 gint timeout_capture_func(cam * cam)
@@ -477,14 +486,10 @@ gint timeout_capture_func(cam * cam)
    pthread_t mythread;
 
    if(cam->cap == TRUE) {
-      if(local_save(cam) < 0) {
-         fprintf(stderr, "save failed\n");
-      }
+      local_save(cam);
    }
    if(cam->rcap == TRUE) {
-
       if(pthread_create(&mythread, NULL, (void *) remote_save, cam)) {
-         printf("error creating thread.");
          abort();
       }
    }

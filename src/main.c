@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
    glade_gnome_init();
 
    if(ver) {
-      fprintf(stderr, "\n\nCamorama version %s\n\n", VERSION);
+      fprintf(stderr, _("\n\nCamorama version %s\n\n"), VERSION);
       exit(0);
    }
    if(max) {
@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
 
    filename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "camorama/camorama.glade", TRUE, NULL);
    if(filename == NULL) {
-      error_dialog(_("Couldn't find the main interface file (camorama.glade)"));
+      error_dialog(_("Couldn't find the main interface file (camorama.glade)."));
       exit(1);
    }
    pixfilename = gnome_program_locate_file(NULL, GNOME_FILE_DOMAIN_APP_DATADIR, "pixmaps/camorama.png", TRUE, NULL);

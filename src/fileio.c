@@ -103,7 +103,6 @@ void remote_save(cam * cam)
       break;
    default:
       ext = g_strdup((gchar *) "jpeg");
-
    }
 
    memcpy(cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
@@ -112,7 +111,7 @@ void remote_save(cam * cam)
    }
 
    if(chdir("/tmp") != 0) {
-      error_dialog("Could not write to /tmp");
+      error_dialog(_("Could save temporary image file in /tmp."));
       g_free(ext);
       g_thread_exit(NULL);
    }
@@ -127,13 +126,12 @@ void remote_save(cam * cam)
       gdk_pixbuf_new_from_data(cam->tmp, GDK_COLORSPACE_RGB, FALSE, 8, cam->x, cam->y, cam->x * cam->vid_pic.depth / 8,
                                NULL, NULL);
    if(pb == NULL) {
-
-      error_message = g_strdup_printf("could not create image '%s'", filename);
+      error_message = g_strdup_printf(_("Unable to create image '%s'."), filename);
       error_dialog(error_message);
       g_free(error_message);
-
       g_thread_exit(NULL);
    }
+
    pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
    g_free(filename);
 
@@ -141,8 +139,10 @@ void remote_save(cam * cam)
    input_uri_string = g_strdup_printf("camorama.%s", ext);
 
    if(!(fp = fopen(input_uri_string, "rb"))) {
-      perror("file");
+      error_message = g_strdup_printf(_("Unable to open temorary image file '%s'."), filename);
+      error_dialog(error_message);
       g_free(input_uri_string);
+      g_free(error_message);
       exit(0);
    }
 
@@ -170,7 +170,7 @@ void remote_save(cam * cam)
 
    result = gnome_vfs_open_uri((GnomeVFSHandle **) & write_handle, uri_1, GNOME_VFS_OPEN_WRITE);
    if(result != GNOME_VFS_OK) {
-      error_message = g_strdup_printf("An error occured opening %s", output_uri_string);
+      error_message = g_strdup_printf(_("An error occured opening %s."), output_uri_string);
       error_dialog(error_message);
       g_free(error_message);
       g_thread_exit(NULL);
@@ -179,9 +179,9 @@ void remote_save(cam * cam)
    /*  write the data */
    result = gnome_vfs_write((GnomeVFSHandle *) write_handle, tmp, bytes, &bytes_written);
    if(result != GNOME_VFS_OK) {
-
-      print_error(result, output_uri_string);
-
+      error_message = g_strdup_printf(_("An error occured writing to %s."), output_uri_string);
+      error_dialog(error_message);
+      g_free(error_message);
    }
 
    gnome_vfs_close((GnomeVFSHandle *) write_handle);
@@ -255,7 +255,7 @@ int local_save(cam * cam)
    }
 
    if(mkd != 0 && errno != EEXIST) {
-      error_message = g_strdup_printf(_("could not create directory - %s"), cam->pixdir);
+      error_message = g_strdup_printf(_("Could not create directory '%s'."), cam->pixdir);
       error_dialog(error_message);
       g_free(filename);
       g_free(error_message);
@@ -263,7 +263,7 @@ int local_save(cam * cam)
    }
 
    if(chdir(cam->pixdir) != 0) {
-      error_message = g_strdup_printf(_("could not change to directory - %s"), cam->pixdir);
+      error_message = g_strdup_printf(_("Could not change to directory '%s'."), cam->pixdir);
       error_dialog(error_message);
       g_free(filename);
       g_free(error_message);
@@ -276,7 +276,7 @@ int local_save(cam * cam)
    pbs = gdk_pixbuf_save(pb, filename, ext, NULL, NULL);
 
    if(pbs == FALSE) {
-      error_message = g_strdup_printf(_("Could not save image:\n %s/%s"), cam->pixdir, filename);
+      error_message = g_strdup_printf(_("Could not save image '%s/%s'."), cam->pixdir, filename);
       error_dialog(error_message);
       g_free(filename);
       g_free(error_message);

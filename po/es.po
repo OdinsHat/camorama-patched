@@ -6,14 +6,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Camorama 0.16\n"
-"POT-Creation-Date: 2003-02-07 15:53-0500\n"
-"PO-Revision-Date: 2003-01-26 12:41-0300\n"
+"POT-Creation-Date: 2003-02-12 03:56+0100\n"
+"PO-Revision-Date: 2003-02-12 12:21-0300\n"
 "Last-Translator: Pablo Gonzalo del Campo <pablodc@bigfoot.com>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 0.9.6\n"
+"X-Generator: KBabel 1.1\n"
 
 #: data/camorama.glade.h:1
 msgid "     "
@@ -269,8 +269,7 @@ msgstr "Texto personalizado para la marca de tiempo"
 
 #: data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr ""
-"Define una cadena de texto personalizado para ser insertada en la imagen."
+msgstr "Define una cadena de texto personalizado para ser insertada en la imagen."
 
 #: data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
@@ -374,8 +373,7 @@ msgstr "Activar la marca de fecha en las capturas"
 
 #: data/camorama.schemas.in.h:31
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr ""
-"Activar el dibujado de la marca de fecha dentro de las imágenes capturadas"
+msgstr "Activar el dibujado de la marca de fecha dentro de las imágenes capturadas"
 
 #: data/camorama.schemas.in.h:32
 msgid "Toggles the insertion of a timestamp into local images"
@@ -395,8 +393,7 @@ msgstr ""
 
 #: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr ""
-"Activar el uso de los deslizadores para ajustar las propiedades del vídeo"
+msgstr "Activar el uso de los deslizadores para ajustar las propiedades del vídeo"
 
 #: data/camorama.schemas.in.h:36
 msgid "Toggles the video adjustment sliders"
@@ -444,13 +441,12 @@ msgstr "Pablo Gonzalo del Campo <pablodc@bigfoot.com>, 2003"
 
 #: src/callbacks.c:324
 msgid "View, alter and save images from a webcam"
-msgstr ""
+msgstr "Ver, alterar y guardar imagenes desde una cámara web"
 
 #: src/callbacks.c:346 src/callbacks.c:412 src/callbacks.c:453
 #: src/callbacks.c:465
-#, fuzzy
 msgid "Unable to capture image."
-msgstr "H_abilitar la captura local"
+msgstr "No se puede capturar la imagen"
 
 #: src/main.c:32
 msgid "show version and exit"
@@ -496,12 +492,17 @@ msgid ""
 "Camorama version %s\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"Camorama versión %s\n"
+"\n"
 
-#: src/main.c:174
+#: src/main.c:173
 msgid "Couldn't find the main interface file (camorama.glade)."
-msgstr ""
+msgstr "No se ha podido encontrar el archivo principal de la interfase (camorama.glade)"
 
 #: src/support.c:66
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "No se ha podido encontrar el archivo de pixmap: %s"
+

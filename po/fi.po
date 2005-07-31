@@ -455,7 +455,7 @@ msgid "translator_credits"
 msgstr ""
 "Ilkka Tuohela, 2004\n"
 "\n"
-"http://gnome-fi.org/"
+"http://gnome.fi/"
 
 #: src/callbacks.c:508
 msgid "Camorama"

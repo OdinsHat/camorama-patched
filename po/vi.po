@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: camorama Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-28 02:50+0000\n"
-"PO-Revision-Date: 2005-08-28 20:41+0930\n"
+"PO-Revision-Date: 2005-09-16 15:58+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -299,19 +299,19 @@ msgstr "Tên tập tin khi lưu ảnh đã bắt một cách địa phương."
 
 #: ../data/camorama.schemas.in.h:9
 msgid "Folder for local captures"
-msgstr "Danh mục khi bắt cục bộ"
+msgstr "thư mục khi bắt cục bộ"
 
 #: ../data/camorama.schemas.in.h:10
 msgid "Folder for remote captures"
-msgstr "Danh mục khi bắt từ xa"
+msgstr "thư mục khi bắt từ xa"
 
 #: ../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr "Danh mục nơi cần lưu ảnh đã bắt từ xa."
+msgstr "thư mục nơi cần lưu ảnh đã bắt từ xa."
 
 #: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "Danh mục nơi cần lưu ảnh đã bắt một cách địa phương."
+msgstr "thư mục nơi cần lưu ảnh đã bắt một cách địa phương."
 
 #: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"

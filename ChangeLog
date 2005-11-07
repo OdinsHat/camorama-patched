@@ -1,5 +1,10 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* COPYING,
+	* INSTALL: removed automatically copied files
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* .cvsignore: cvs is silent now
 	* .tm_project.cache: exlude local files
 	* MAINTAINERS: removed, the information is in the authors file too

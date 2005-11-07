@@ -1,4 +1,5 @@
 #define PATH "/apps/camorama/preferences"
+#define KEY_DEVICE PATH "/device"
 #define KEY1 "/apps/camorama/preferences/save_dir"
 #define KEY2 "/apps/camorama/preferences/save_file"
 #define KEY3 "/apps/camorama/preferences/file_type"

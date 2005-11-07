@@ -403,8 +403,8 @@ void load_interface (cam * cam)
     prefswindow = glade_xml_get_widget (cam->xml, "prefswindow");
 }
 
-int main (int argc, char *argv[])
-{
+int
+main(int argc, char *argv[]) {
     cam cam_object, *cam;
     Display *display;
     Screen *screen_num;
@@ -460,11 +460,6 @@ int main (int argc, char *argv[])
 
     cam->debug = buggery;
 
-    if (poopoo == NULL) {
-        cam->video_dev = g_strdup ("/dev/video0");
-    } else {
-        cam->video_dev = g_strdup (poopoo);
-    }
     cam->x = x;
     cam->y = y;
     glade_gnome_init ();
@@ -502,6 +497,17 @@ int main (int argc, char *argv[])
     gconf_client_notify_add (cam->gc, KEY4,
                              (void *) gconf_notify_func_bool,
                              &cam->timestamp, NULL, NULL);
+
+    if (!poopoo) {
+	gchar const* gconf_device = gconf_client_get_string(cam->gc, KEY_DEVICE, NULL);
+	if(gconf_device) {
+		cam->video_dev = g_strdup(gconf_device);
+	} else {
+		cam->video_dev = g_strdup ("/dev/video0");
+	}
+    } else {
+        cam->video_dev = g_strdup (poopoo);
+    }
 
     cam->pixdir = g_strdup (gconf_client_get_string (cam->gc, KEY1, NULL));
     cam->capturefile =

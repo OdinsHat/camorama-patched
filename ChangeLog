@@ -1,5 +1,12 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* data/camorama.schemas.in: added the device path to the schema
+	* src/interface.h: added a key for the device path
+	* src/main.c: try to read the device path from gconf
+	This commit fixes bug 315992
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* src/fileio.c: fix "occured" => "occurred"
 	* src/main.c: fix "debuging" => "debugging"
 	Patch from Thierry Moisan fixes bug 314766

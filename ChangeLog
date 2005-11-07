@@ -1,5 +1,10 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* src/eggtrayicon.c,
+	* src/eggtrayicon.h: update to the current libegg version
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* COPYING,
 	* INSTALL: removed automatically copied files
 

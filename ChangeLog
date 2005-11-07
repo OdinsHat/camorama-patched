@@ -1,5 +1,11 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* AUTHORS: added information about current maintainership
+	* src/filter.c: removed some unwanted output
+	* src/v4l.c: removed some unwanted output
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* data/camorama.schemas.in: added the device path to the schema
 	* src/interface.h: added a key for the device path
 	* src/main.c: try to read the device path from gconf

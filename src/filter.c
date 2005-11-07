@@ -178,13 +178,13 @@ threshold_channel (unsigned char *image, int x, int y, int threshold_value)
     }
 }
 
-void mirror (unsigned char *image, int x, int y, int z)
-{
+void
+mirror(guchar *image, int x, int y, int z) {
     int i, j, k;
-    unsigned char *image2;
+    guchar *image2;
 
-    image2 = (char *) malloc (sizeof (unsigned char) * x * y * z);
-    memcpy (image2, image, x * y * z);
+    image2 = (guchar *) malloc (sizeof (guchar) * x * y * z);
+    memcpy (image2, image, sizeof(guchar) * x * y * z);
 
     for (i = 0; i < y; i++) {
         for (j = 0; j < x; j++) {
@@ -199,7 +199,6 @@ void mirror (unsigned char *image, int x, int y, int z)
     }
 
     free (image2);
-
 }
 
 void wacky (unsigned char *image, int z, int x, int y)
@@ -466,9 +465,9 @@ void sobel (unsigned char *image, int x, int y)
     int i, j, grad[3];
     int deltaX[3], deltaY[3];
     int width = x * 3;
-    unsigned char *image2;
+    guchar *image2;
 
-    image2 = (char *) malloc (sizeof (unsigned char) * (x * y * 3));
+    image2 = (guchar *) malloc (sizeof (guchar) * (x * y * 3));
 
     for (i = width; i < (y - 1) * width; i++) {
         for (j = 0; j <= 2; j++) {

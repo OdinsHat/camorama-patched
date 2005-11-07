@@ -1,5 +1,13 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* src/fileio.c,
+	* src/fileio.h,
+	* src/filter.c,
+	* src/filter.h,
+	* src/v4l.h: fix type warnings
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* src/eggtrayicon.c,
 	* src/eggtrayicon.h: update to the current libegg version
 

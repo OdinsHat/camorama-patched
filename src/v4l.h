@@ -52,10 +52,11 @@ typedef struct camera {
     gboolean cap, rcap, acap, show_adjustments, show_effects;
     gboolean timestamp, rtimestamp, usedate, usestring;
     gboolean rtimefn, timefn;
-    GdkPixmap *pixmap;
+	GdkPixmap *pixmap;
 	GdkWindow *window;
-    GtkWidget *da, *tooltips, *tray_tooltip, *status;
-    unsigned char *pic_buf, *tmp;
+	GtkWidget *da, *tray_tooltip, *status;
+	GtkTooltips *tooltips;
+	unsigned char *pic_buf, *tmp;
     guint timeout_id, idle_id;
     guint32 timeout_interval;
     GConfClient *gc;

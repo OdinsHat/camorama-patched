@@ -1,5 +1,5 @@
 void yuv420p_to_rgb(unsigned char *image, unsigned char *temp, int x, int y, int z);
-void fix_colour(char *image, int x, int y);
+void fix_colour(guchar *image, int x, int y);
 void negative(unsigned char *image, int x, int y, int z);
 void threshold(unsigned char *image, int x, int y, int threshold_value);
 void threshold_channel(unsigned char *image, int x, int y, int threshold_value);

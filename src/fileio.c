@@ -15,12 +15,13 @@ static int print_error (GnomeVFSResult result, const char *uri_string);
 
 /* add timestamp/text to image - "borrowed" from gspy */
 int
-add_rgb_text (char *image, int width, int height, char *cstring, char *format,
+add_rgb_text (guchar *image, int width, int height, char *cstring, char *format,
               gboolean str, gboolean date)
 {
     time_t t;
     struct tm *tm;
-    unsigned char line[128], *ptr;
+    gchar line[128];
+    guchar *ptr;
     int i, x, y, f, len;
     int total;
     gchar *image_label;

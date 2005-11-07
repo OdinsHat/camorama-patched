@@ -1,5 +1,13 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* .cvsignore: cvs is silent now
+	* .tm_project.cache: exlude local files
+	* MAINTAINERS: removed, the information is in the authors file too
+	* Makefile.am: make distcheck works now
+	* data/Makefile.am: make distcheck works now
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* AUTHORS: added information about current maintainership
 	* src/filter.c: removed some unwanted output
 	* src/v4l.c: removed some unwanted output

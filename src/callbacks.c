@@ -362,9 +362,10 @@ void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data)
 
 void on_change_size_activate (GtkWidget * widget, cam * cam)
 {
-    gchar *name, *title;
+    gchar const *name;
+    gchar       *title;
 
-    (G_CONST_RETURN) name = gtk_widget_get_name (widget);
+    name = gtk_widget_get_name (widget);
     printf("name = %s\n",name);
     if (strcmp (name, "small") == 0) {
         cam->x = cam->vid_cap.minwidth;

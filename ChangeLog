@@ -1,3 +1,9 @@
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
+	* src/callbacks.c: fix invalid lvalue cast
+	* src/callbacks.h: fix "unsigned gint" to "guint"
+	* src/main.c: fix invalid lvalue cast by deleting the cast for now
+
 2005-11-01  Alexander Shopov  <ash@contact.bg>
 
 	* configure.in: Added "bg" (Bulgarian) to ALL_LINGUAS

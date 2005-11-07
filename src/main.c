@@ -85,7 +85,7 @@ void load_interface (cam * cam)
     GtkWidget *eventbox = NULL, *image = NULL;
     gint width, height;
 
-    (GtkTooltips *) cam->tooltips = gtk_tooltips_new ();
+    cam->tooltips = gtk_tooltips_new ();
     logo = (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");

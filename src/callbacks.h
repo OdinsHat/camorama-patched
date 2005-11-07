@@ -4,18 +4,18 @@
 
 
 
-static const unsigned gint WACKY =  1<<0;
-static const unsigned gint THRESHOLD =  1<<1;
-static const unsigned gint  THRESHOLD_CHANNEL =  1<<2;
-static const unsigned gint  SOBEL =  1<<3;
-static const unsigned gint  LAPLACE =  1<<4;
-static const unsigned gint  NEGATIVE =  1<<5;
-static const unsigned gint  MIRROR =  1<<6;
-static const unsigned gint  COLOUR =  1<<7;
-static const unsigned gint  SMOOTH =  1<<8;
-static const unsigned gint  FIX_COLOUR =  1<<9;
+static const guint WACKY =  1<<0;
+static const guint THRESHOLD =  1<<1;
+static const guint  THRESHOLD_CHANNEL =  1<<2;
+static const guint  SOBEL =  1<<3;
+static const guint  LAPLACE =  1<<4;
+static const guint  NEGATIVE =  1<<5;
+static const guint  MIRROR =  1<<6;
+static const guint  COLOUR =  1<<7;
+static const guint  SMOOTH =  1<<8;
+static const guint  FIX_COLOUR =  1<<9;
 
-static unsigned gint effect_mask = 0;
+static guint effect_mask = 0;
 
 void on_change_size_activate (GtkWidget * widget, cam * cam);
 void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data);

@@ -35,10 +35,10 @@ AM_GCONF_SOURCE_2
 
 
 AC_OUTPUT([
-Makefile
-src/Makefile
-data/Makefile
-pixmaps/Makefile
-po/Makefile.in
+	Makefile
+	src/Makefile
+	data/Makefile
+	pixmaps/Makefile
+	po/Makefile.in
 ])
 

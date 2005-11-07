@@ -1,5 +1,11 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* configure.in: starting to clean up
+	* src/filter.h: cleaned up the file for the first significant
+	improvement
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* src/fileio.c,
 	* src/fileio.h,
 	* src/filter.c,

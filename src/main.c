@@ -422,7 +422,7 @@ int main (int argc, char *argv[])
         {"device", 'd', POPT_ARG_STRING, &poopoo, 0,
          N_("v4l device to use"), NULL},
         {"debug", 'D', POPT_ARG_NONE, &buggery, 0,
-         N_("enable debuging code"), NULL},
+         N_("enable debugging code"), NULL},
         {"width", 'x', POPT_ARG_INT, &x, 0, N_("capture width"),
          NULL},
         {"height", 'y', POPT_ARG_INT, &y, 0, N_("capture height"),

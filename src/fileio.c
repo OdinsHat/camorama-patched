@@ -207,7 +207,7 @@ void remote_save (cam * cam)
     /* start here? */
     /*result = gnome_vfs_open_uri((GnomeVFSHandle **) & write_handle, uri_1, GNOME_VFS_OPEN_WRITE);
      * if(result != GNOME_VFS_OK) {
-     * error_message = g_strdup_printf(_("An error occured opening %s."), output_uri_string);
+     * error_message = g_strdup_printf(_("An error occurred opening %s."), output_uri_string);
      * error_dialog(error_message);
      * g_free(error_message);
      * g_thread_exit(NULL);
@@ -216,7 +216,7 @@ void remote_save (cam * cam)
     /*  write the data */
     /*result = gnome_vfs_write((GnomeVFSHandle *) write_handle, tmp, bytes, &bytes_written);
      * if(result != GNOME_VFS_OK) {
-     * error_message = g_strdup_printf(_("An error occured writing to %s."), output_uri_string);
+     * error_message = g_strdup_printf(_("An error occurred writing to %s."), output_uri_string);
      * error_dialog(error_message);
      * g_free(error_message);
      * } */
@@ -308,7 +308,7 @@ void save_thread (cam * cam)
                                  uri_1, GNOME_VFS_OPEN_WRITE);
     if (result != GNOME_VFS_OK) {
         error_message =
-            g_strdup_printf (_("An error occured opening %s."),
+            g_strdup_printf (_("An error occurred opening %s."),
                              output_uri_string);
         error_dialog (error_message);
         g_free (error_message);
@@ -320,7 +320,7 @@ void save_thread (cam * cam)
                               &bytes_written);
     if (result != GNOME_VFS_OK) {
         error_message =
-            g_strdup_printf (_("An error occured writing to %s."),
+            g_strdup_printf (_("An error occurred writing to %s."),
                              output_uri_string);
         error_dialog (error_message);
         g_free (error_message);
@@ -336,7 +336,7 @@ static int print_error (GnomeVFSResult result, const char *uri_string)
     const char *error_string;
     /* get the string corresponding to this GnomeVFSResult value */
     error_string = gnome_vfs_result_to_string (result);
-    printf ("Error %s occured opening location %s\n", error_string,
+    printf ("Error %s occurred opening location %s\n", error_string,
             uri_string);
     return 1;
 }

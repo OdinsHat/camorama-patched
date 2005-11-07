@@ -1,5 +1,11 @@
 2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
 
+	* src/fileio.c: fix "occured" => "occurred"
+	* src/main.c: fix "debuging" => "debugging"
+	Patch from Thierry Moisan fixes bug 314766
+
+2005-11-07  Sven Herzberg  <herzi@gnome-de.org>
+
 	* src/callbacks.c: fix invalid lvalue cast
 	* src/callbacks.h: fix "unsigned gint" to "guint"
 	* src/main.c: fix invalid lvalue cast by deleting the cast for now

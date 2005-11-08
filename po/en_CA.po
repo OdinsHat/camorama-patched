@@ -1,14 +1,14 @@
 # English/Canada translation of camorama.
-# Copyright (C) 2004 Adam Weinberger and the GNOME Foundation
+# Copyright (C) 2004-2005 Adam Weinberger and the GNOME Foundation
 # This file is distributed under the same licence as the camorama package.
-# Adam Weinberger <adamw@gnome.org>, 2004.
+# Adam Weinberger <adamw@gnome.org>, 2004, 2005.
 # 
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-11 14:59-0400\n"
+"POT-Creation-Date: 2005-11-08 12:27-0500\n"
 "PO-Revision-Date: 2004-09-11 02:24-0400\n"
 "Last-Translator: Adam Weinberger <adamw@gnome.org>\n"
 "Language-Team: Canadian English <adamw@gnome.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama Webcam Viewer"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:510
+#: camorama.desktop.in.h:2 src/callbacks.c:512
 msgid "View, alter and save images from a webcam"
 msgstr "View, alter and save images from a webcam"
 
@@ -361,86 +361,94 @@ msgid "The password for the FTP account for remote captures."
 msgstr "The password for the FTP account for remote captures."
 
 #: data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assinged to your camera."
+msgstr "The unix file system path to the device that is assinged to your camera."
+
+#: data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
 msgstr "Toggles auto-capture"
 
-#: data/camorama.schemas.in.h:26
+#: data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
 msgstr "Toggles automatic capturing of pictures."
 
-#: data/camorama.schemas.in.h:27
+#: data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
 msgstr "Toggles local capture"
 
-#: data/camorama.schemas.in.h:28
+#: data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
 msgstr "Toggles remote capture"
 
-#: data/camorama.schemas.in.h:29
+#: data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
 msgstr "Toggles the custom string"
 
-#: data/camorama.schemas.in.h:30
+#: data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
 msgstr "Toggles the datestamp in captures"
 
-#: data/camorama.schemas.in.h:31
+#: data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
 msgstr "Toggles the drawing of a datestamp within the captured pictures"
 
-#: data/camorama.schemas.in.h:32
+#: data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
 msgstr "Toggles the insertion of a timestamp into local images"
 
-#: data/camorama.schemas.in.h:33
+#: data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Toggles the insertion of a timestamp into the images for FTP upload."
 
-#: data/camorama.schemas.in.h:34
+#: data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "Toggles the use of the buttons to adjust the video filters"
 
-#: data/camorama.schemas.in.h:35
+#: data/camorama.schemas.in.h:36
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr "Toggles the use of the custom string for the timestamp in images."
 
-#: data/camorama.schemas.in.h:36
+#: data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Toggles the use of the sliders to adjust the video properties"
 
-#: data/camorama.schemas.in.h:37
+#: data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
 msgstr "Toggles the video adjustment sliders"
 
-#: data/camorama.schemas.in.h:38
+#: data/camorama.schemas.in.h:39
 msgid "Toggles the video effects buttons"
 msgstr "Toggles the video effects buttons"
 
-#: data/camorama.schemas.in.h:39
+#: data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
 msgstr "Toggles timestamp for local captures"
 
-#: data/camorama.schemas.in.h:40
+#: data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
 msgstr "Toggles timestamp for remote captures"
 
-#: data/camorama.schemas.in.h:41
+#: data/camorama.schemas.in.h:42
 msgid "Username for FTP server"
 msgstr "Username for FTP server"
 
-#: data/camorama.schemas.in.h:42
+#: data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Username to use for FTP uploads of captured pictures"
 
-#: data/camorama.schemas.in.h:43
-msgid ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-msgstr ""
-"When capturing pictures via the \"Take Picture\" button, or with auto "
-"capture, this key toggles the saving of pictures locally."
-
 #: data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "Video device"
+
+#: data/camorama.schemas.in.h:45
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+
+#: data/camorama.schemas.in.h:46
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -448,42 +456,42 @@ msgstr ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 
-#: src/callbacks.c:499
+#: src/callbacks.c:501
 msgid "translator_credits"
 msgstr "Adam Weinberger <adamw@gnome.org>"
 
-#: src/callbacks.c:508
+#: src/callbacks.c:510
 msgid "Camorama"
 msgstr "Camorama"
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
+#: src/callbacks.c:621 src/callbacks.c:683 src/callbacks.c:733
+#: src/callbacks.c:746
 msgid "Unable to capture image."
 msgstr "Unable to capture image."
 
-#: src/eggtrayicon.c:118
+#: src/eggtrayicon.c:127
 msgid "Orientation"
 msgstr "Orientation"
 
-#: src/eggtrayicon.c:119
+#: src/eggtrayicon.c:128
 msgid "The orientation of the tray."
 msgstr "The orientation of the tray."
 
-#: src/fileio.c:119 src/fileio.c:265
+#: src/fileio.c:120 src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Could not save temporary image file in /tmp."
 
-#: src/fileio.c:137
+#: src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Unable to create image '%s'."
 
-#: src/fileio.c:146 src/fileio.c:429
+#: src/fileio.c:147 src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Could not save image '%s/%s'."
 
-#: src/fileio.c:273
+#: src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -492,67 +500,67 @@ msgstr ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 
-#: src/fileio.c:311
+#: src/fileio.c:312
 #, c-format
-msgid "An error occured opening %s."
-msgstr "An error occured opening %s."
+msgid "An error occurred opening %s."
+msgstr "An error occurred opening %s."
 
-#: src/fileio.c:323
+#: src/fileio.c:324
 #, c-format
-msgid "An error occured writing to %s."
-msgstr "An error occured writing to %s."
+msgid "An error occurred writing to %s."
+msgstr "An error occurred writing to %s."
 
-#: src/fileio.c:403
+#: src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Could not create directory '%s'."
 
-#: src/fileio.c:414
+#: src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Could not change to directory '%s'."
 
-#: src/main.c:423
+#: src/main.c:421
 msgid "show version and exit"
 msgstr "show version and exit"
 
-#: src/main.c:425
+#: src/main.c:423
 msgid "v4l device to use"
 msgstr "v4l device to use"
 
-#: src/main.c:427
-msgid "enable debuging code"
-msgstr "enable debuging code"
+#: src/main.c:425
+msgid "enable debugging code"
+msgstr "enable debugging code"
 
-#: src/main.c:428
+#: src/main.c:426
 msgid "capture width"
 msgstr "capture width"
 
-#: src/main.c:430
+#: src/main.c:428
 msgid "capture height"
 msgstr "capture height"
 
-#: src/main.c:433
+#: src/main.c:431
 msgid "maximum capture size"
 msgstr "maximum capture size"
 
-#: src/main.c:435
+#: src/main.c:433
 msgid "minimum capture size"
 msgstr "minimum capture size"
 
-#: src/main.c:437
+#: src/main.c:435
 msgid "middle capture size"
 msgstr "middle capture size"
 
-#: src/main.c:439
+#: src/main.c:437
 msgid "use read() rather than mmap()"
 msgstr "use read() rather than mmap()"
 
-#: src/main.c:461
+#: src/main.c:459
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:475
+#: src/main.c:468
 #, c-format
 msgid ""
 "\n"
@@ -565,7 +573,7 @@ msgstr ""
 "Camorama version %s\n"
 "\n"
 
-#: src/main.c:609
+#: src/main.c:605
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Could not find the main interface file (camorama.glade)."
 
@@ -574,8 +582,8 @@ msgstr "Could not find the main interface file (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Could not find pixmap file: %s"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: src/v4l.c:94 src/v4l.c:168 src/v4l.c:180 src/v4l.c:205 src/v4l.c:226
+#: src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

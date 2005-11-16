@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-01 09:11+0200\n"
-"PO-Revision-Date: 2005-11-01 09:11+0200\n"
+"POT-Creation-Date: 2005-11-16 17:37+0200\n"
+"PO-Revision-Date: 2005-11-16 17:37+0200\n"
 "Last-Translator: Vladimir Gerdjikov <gerdjikov@gerdjikovs.net>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama - програма за уеб камера"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:512
 msgid "View, alter and save images from a webcam"
 msgstr "Преглед, промяна и запис на изображения от уеб камера "
 
@@ -362,80 +362,88 @@ msgid "The password for the FTP account for remote captures."
 msgstr "Парола за FTP при отдалечени снимки"
 
 #: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assinged to your camera."
+msgstr "Системен път в Unix формат, присвоен на уеб камерата"
+
+#: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
 msgstr "Превключване на автоматични снимки"
 
-#: ../data/camorama.schemas.in.h:26
+#: ../data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
 msgstr "Превключване на автоматични снимки"
 
-#: ../data/camorama.schemas.in.h:27
+#: ../data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
 msgstr "Превключване на локални снимки"
 
-#: ../data/camorama.schemas.in.h:28
+#: ../data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
 msgstr "Превключване на отдалечени снимки"
 
-#: ../data/camorama.schemas.in.h:29
+#: ../data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
 msgstr "Превключване на свободен текст"
 
-#: ../data/camorama.schemas.in.h:30
+#: ../data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
 msgstr "Превключване на маркер за време в снимките"
 
-#: ../data/camorama.schemas.in.h:31
+#: ../data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
 msgstr "Превключване на изчертаването на маркер за време в снимките"
 
-#: ../data/camorama.schemas.in.h:32
+#: ../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
 msgstr "Превключване на вмъкването на маркер за време в локалните снимки"
 
-#: ../data/camorama.schemas.in.h:33
+#: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "Превключване на вмъкването на маркер за време в снимките за FTP"
 
-#: ../data/camorama.schemas.in.h:34
+#: ../data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr ""
 "Превключване на използването на бутоните за настройка на видео филтрите"
 
-#: ../data/camorama.schemas.in.h:35
+#: ../data/camorama.schemas.in.h:36
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr ""
 "Превключване на използването на свободен текст за маркер време в снимките"
 
-#: ../data/camorama.schemas.in.h:36
+#: ../data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "Превключване на използването на плъзгачи при настройката на видеото"
 
-#: ../data/camorama.schemas.in.h:37
+#: ../data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
 msgstr "Превключване на плъзгачите за видео настройките"
 
-#: ../data/camorama.schemas.in.h:38
+#: ../data/camorama.schemas.in.h:39
 msgid "Toggles the video effects buttons"
 msgstr "Превключване на бутоните за визуални ефекти"
 
-#: ../data/camorama.schemas.in.h:39
+#: ../data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
 msgstr "Превключване на маркер за време за локалните заснемания"
 
-#: ../data/camorama.schemas.in.h:40
+#: ../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
 msgstr "Превключване на маркер за време за отдалечените заснемания"
 
-#: ../data/camorama.schemas.in.h:41
+#: ../data/camorama.schemas.in.h:42
 msgid "Username for FTP server"
 msgstr "Потребителско име за сървъра за FTP"
 
-#: ../data/camorama.schemas.in.h:42
+#: ../data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "Потребителско име за сървъра за FTP при качване на изображения"
 
-#: ../data/camorama.schemas.in.h:43
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "Видео устройство"
+
+#: ../data/camorama.schemas.in.h:45
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
@@ -443,7 +451,7 @@ msgstr ""
 "Когато използвате бутона „Снимка“ или функцията за автоматично заснемане, "
 "този клавиш превключва дали изображението да се записва локално."
 
-#: ../data/camorama.schemas.in.h:44
+#: ../data/camorama.schemas.in.h:46
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
@@ -451,7 +459,7 @@ msgstr ""
 "Когато използвате бутона „Снимка“ или функцията за автоматично заснемане, "
 "този клавиш превключва дали изображението да се записва на отдалечен сървър."
 
-#: ../src/callbacks.c:500
+#: ../src/callbacks.c:501
 msgid "translator_credits"
 msgstr ""
 "Владимир Герджиков <gerdjikov@gerdjikovs.net>\n"
@@ -460,38 +468,38 @@ msgstr ""
 "Научете повече за нас на http://gnome.cult.bg\n"
 "Докладвайте за грешки на http://gnome.cult.bg/bugs"
 
-#: ../src/callbacks.c:509
+#: ../src/callbacks.c:510
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:620 ../src/callbacks.c:682 ../src/callbacks.c:732
-#: ../src/callbacks.c:745
+#: ../src/callbacks.c:621 ../src/callbacks.c:683 ../src/callbacks.c:733
+#: ../src/callbacks.c:746
 msgid "Unable to capture image."
 msgstr "Заснемането е невъзможно"
 
-#: ../src/eggtrayicon.c:118
+#: ../src/eggtrayicon.c:127
 msgid "Orientation"
 msgstr "Ориентация"
 
-#: ../src/eggtrayicon.c:119
+#: ../src/eggtrayicon.c:128
 msgid "The orientation of the tray."
 msgstr "Ориентация на тавата"
 
-#: ../src/fileio.c:119 ../src/fileio.c:265
+#: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Временното изображение може да се запише в /tmp"
 
-#: ../src/fileio.c:137
+#: ../src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "Не може да се създаде изображение „%s“."
 
-#: ../src/fileio.c:146 ../src/fileio.c:429
+#: ../src/fileio.c:147 ../src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Не може да се запише изображение „%s/%s“."
 
-#: ../src/fileio.c:273
+#: ../src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -500,22 +508,22 @@ msgstr ""
 "Невъзможно е да се отвори временен файл за изображение „%s“.\n"
 "Изображението не може да се качи на отдалечен сървър."
 
-#: ../src/fileio.c:311
+#: ../src/fileio.c:312
 #, c-format
-msgid "An error occured opening %s."
+msgid "An error occurred opening %s."
 msgstr "Грешка при отваряне на %s."
 
-#: ../src/fileio.c:323
+#: ../src/fileio.c:324
 #, c-format
-msgid "An error occured writing to %s."
+msgid "An error occurred writing to %s."
 msgstr "Грешка при запис в %s"
 
-#: ../src/fileio.c:403
+#: ../src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Не може да се създаде папка „%s“."
 
-#: ../src/fileio.c:414
+#: ../src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Не може да се влезе в папка „%s“."
@@ -529,7 +537,7 @@ msgid "v4l device to use"
 msgstr "кое устройство v4l да се използва"
 
 #: ../src/main.c:425
-msgid "enable debuging code"
+msgid "enable debugging code"
 msgstr "включване кода за изчистване на грешки"
 
 #: ../src/main.c:426
@@ -560,7 +568,7 @@ msgstr "използване на read(), вместо mmap()"
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:473
+#: ../src/main.c:468
 #, c-format
 msgid ""
 "\n"
@@ -573,7 +581,7 @@ msgstr ""
 "Версия на Camorama %s\n"
 "\n"
 
-#: ../src/main.c:599
+#: ../src/main.c:605
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Основният файл с описание на интерфейса не може да се открие (camorama."
@@ -584,8 +592,8 @@ msgstr ""
 msgid "Couldn't find pixmap file: %s"
 msgstr "Не може да се открие файл pixmap: %s"
 
-#: ../src/v4l.c:94 ../src/v4l.c:164 ../src/v4l.c:177 ../src/v4l.c:202
-#: ../src/v4l.c:223 ../src/v4l.c:238
+#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#: ../src/v4l.c:226 ../src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

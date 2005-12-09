@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.17\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-07-13 18:51+0000\n"
-"PO-Revision-Date: 2005-07-15 07:01+0800\n"
+"POT-Creation-Date: 2005-11-26 18:09+0100\n"
+"PO-Revision-Date: 2005-12-03 20:51+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional) <community@linuxhall.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgid "Camorama Webcam Viewer"
 msgstr "Camorama 網路攝影機檢視器"
 
 #: ../camorama.desktop.in.h:2
-#: ../src/callbacks.c:511
+#: ../src/callbacks.c:512
 msgid "View, alter and save images from a webcam"
 msgstr "檢視、交換與儲存網路攝影機的影像"
 
@@ -367,86 +367,94 @@ msgid "The password for the FTP account for remote captures."
 msgstr "遠端擷取的 FTP 帳號密碼"
 
 #: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assinged to your camera."
+msgstr "該裝置的 unix 檔案系統路徑並未指派給您的攝影機。"
+
+#: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
 msgstr "切換自動擷取"
 
-#: ../data/camorama.schemas.in.h:26
+#: ../data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
 msgstr "切換自動擷取相片"
 
-#: ../data/camorama.schemas.in.h:27
+#: ../data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
 msgstr "切換本地端擷取"
 
-#: ../data/camorama.schemas.in.h:28
+#: ../data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
 msgstr "切換遠端擷取"
 
-#: ../data/camorama.schemas.in.h:29
+#: ../data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
 msgstr "切換自訂字串"
 
-#: ../data/camorama.schemas.in.h:30
+#: ../data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
 msgstr "切換擷取中的日期戳記"
 
-#: ../data/camorama.schemas.in.h:31
+#: ../data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
 msgstr "切換擷取的相片中繪出的日期戳記"
 
-#: ../data/camorama.schemas.in.h:32
+#: ../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
 msgstr "切換插入時間戳記至本地端影像"
 
-#: ../data/camorama.schemas.in.h:33
+#: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
 msgstr "切換插入時間戳記至 FTP 上傳的影像"
 
-#: ../data/camorama.schemas.in.h:34
+#: ../data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
 msgstr "切換使用影像過濾器調整鈕"
 
-#: ../data/camorama.schemas.in.h:35
+#: ../data/camorama.schemas.in.h:36
 msgid "Toggles the use of the custom string for the timestamp in images."
 msgstr "切換使用影像中時間戳記的自訂字串。"
 
-#: ../data/camorama.schemas.in.h:36
+#: ../data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
 msgstr "切換使用視訊屬性調整滑動鈕"
 
-#: ../data/camorama.schemas.in.h:37
+#: ../data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
 msgstr "切換視訊調整滑動鈕"
 
-#: ../data/camorama.schemas.in.h:38
+#: ../data/camorama.schemas.in.h:39
 msgid "Toggles the video effects buttons"
 msgstr "切換視訊效果按鈕"
 
-#: ../data/camorama.schemas.in.h:39
+#: ../data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
 msgstr "切換本地端擷取時間戳記"
 
-#: ../data/camorama.schemas.in.h:40
+#: ../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
 msgstr "切換遠端擷取時間戳記"
 
-#: ../data/camorama.schemas.in.h:41
+#: ../data/camorama.schemas.in.h:42
 msgid "Username for FTP server"
 msgstr "FTP 伺服器使用者名稱"
 
-#: ../data/camorama.schemas.in.h:42
+#: ../data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
 msgstr "用於 FTP 上傳擷取的照片的使用者名稱"
 
-#: ../data/camorama.schemas.in.h:43
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "視訊裝置"
+
+#: ../data/camorama.schemas.in.h:45
 msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
 msgstr "當透過“照相”按鈕或自動擷取來擷取相片時，此選項會切換使用本地端儲存相片。"
 
-#: ../data/camorama.schemas.in.h:44
+#: ../data/camorama.schemas.in.h:46
 msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
 msgstr "當透過“照相”按鈕或自動擷取來擷取相片時，此選項會切換使用遠端伺服器儲存相片。"
 
-#: ../src/callbacks.c:500
+#: ../src/callbacks.c:501
 msgid "translator_credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -455,42 +463,42 @@ msgstr ""
 "\n"
 "Chao-Hsiung Liao <pesder.liao@msa.hinet.net>, 2005"
 
-#: ../src/callbacks.c:509
+#: ../src/callbacks.c:510
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:620
-#: ../src/callbacks.c:682
-#: ../src/callbacks.c:732
-#: ../src/callbacks.c:745
+#: ../src/callbacks.c:621
+#: ../src/callbacks.c:683
+#: ../src/callbacks.c:733
+#: ../src/callbacks.c:746
 msgid "Unable to capture image."
 msgstr "無法擷取影像"
 
-#: ../src/eggtrayicon.c:118
+#: ../src/eggtrayicon.c:127
 msgid "Orientation"
 msgstr "方向"
 
-#: ../src/eggtrayicon.c:119
+#: ../src/eggtrayicon.c:128
 msgid "The orientation of the tray."
 msgstr "系統匣的方向"
 
-#: ../src/fileio.c:119
-#: ../src/fileio.c:265
+#: ../src/fileio.c:120
+#: ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "無法在 /tmp 中儲存暫存影像檔案。"
 
-#: ../src/fileio.c:137
+#: ../src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
 msgstr "無法建立影像‘%s’。"
 
-#: ../src/fileio.c:146
-#: ../src/fileio.c:429
+#: ../src/fileio.c:147
+#: ../src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "無法儲存影像‘%s/%s’。"
 
-#: ../src/fileio.c:273
+#: ../src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
@@ -499,22 +507,22 @@ msgstr ""
 "無法開啟暫存影像檔案‘%s’。\n"
 "不能上傳影像。"
 
-#: ../src/fileio.c:311
+#: ../src/fileio.c:312
 #, c-format
-msgid "An error occured opening %s."
+msgid "An error occurred opening %s."
 msgstr "開啟 %s 時發生錯誤。"
 
-#: ../src/fileio.c:323
+#: ../src/fileio.c:324
 #, c-format
-msgid "An error occured writing to %s."
-msgstr "寫入 %s 時發生錯誤。"
+msgid "An error occurred writing to %s."
+msgstr "寫入至 %s 時發生錯誤。"
 
-#: ../src/fileio.c:403
+#: ../src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "無法建立目錄‘%s’。"
 
-#: ../src/fileio.c:414
+#: ../src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "無法變更至目錄‘%s’。"
@@ -528,8 +536,8 @@ msgid "v4l device to use"
 msgstr "要使用的 v4l 裝置"
 
 #: ../src/main.c:425
-msgid "enable debuging code"
-msgstr "啟用除錯模式"
+msgid "enable debugging code"
+msgstr "啟用除錯碼"
 
 #: ../src/main.c:426
 msgid "capture width"
@@ -559,7 +567,7 @@ msgstr "使用 read() 而非 mmap()"
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:473
+#: ../src/main.c:468
 #, c-format
 msgid ""
 "\n"
@@ -572,7 +580,7 @@ msgstr ""
 "Camorama 版本 %s\n"
 "\n"
 
-#: ../src/main.c:599
+#: ../src/main.c:605
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "找不到主要介面檔案 (camorama.glade)。"
 
@@ -582,11 +590,11 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "找不到點陣檔：%s"
 
 #: ../src/v4l.c:94
-#: ../src/v4l.c:164
-#: ../src/v4l.c:177
-#: ../src/v4l.c:202
-#: ../src/v4l.c:223
-#: ../src/v4l.c:238
+#: ../src/v4l.c:168
+#: ../src/v4l.c:180
+#: ../src/v4l.c:205
+#: ../src/v4l.c:226
+#: ../src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"

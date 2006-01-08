@@ -12,27 +12,23 @@ static inline void move_420_block (int yTL, int yTR, int yBL, int yBR, int u,
 
 void
 yuv420p_to_rgb (unsigned char *image, unsigned char *temp, int x, int y, int z) {
-	const int numpix = x * y;
-	const int bytes = z;        /* (z*8) >> 3; */
-	int i, j, y00, y01, y10, y11, u, v;
-	unsigned char *pY = image;
-	unsigned char *pU = pY + numpix;
-	unsigned char *pV = pU + numpix / 4;
-	unsigned char *image2 = temp;
-	
-#warning "FIXME: enable debugging here"
-/*	if(cam->debug) {
-		g_message("yuv420p->rgb\n");
-	}*/
-	
-	for (j = 0; j <= y - 2; j += 2) {
-            for (i = 0; i <= x - 2; i += 2) {
-                y00 = *pY;
-                y01 = *(pY + 1);
-                y10 = *(pY + x);
-                y11 = *(pY + x + 1);
-                u = (*pU++) - 128;
-                v = (*pV++) - 128;
+    const int numpix = x * y;
+    const int bytes = z;        /* (z*8) >> 3; */
+    int i, j, y00, y01, y10, y11, u, v;
+    unsigned char *pY = image;
+    unsigned char *pU = pY + numpix;
+    unsigned char *pV = pU + numpix / 4;
+    unsigned char *image2 = temp;
+    if(FALSE) // FIXME: make TRUE to add debugging in here
+	g_print("%s\n", "yuv420p->rgb");
+    for (j = 0; j <= y - 2; j += 2) {
+        for (i = 0; i <= x - 2; i += 2) {
+            y00 = *pY;
+            y01 = *(pY + 1);
+            y10 = *(pY + x);
+            y11 = *(pY + x + 1);
+            u = (*pU++) - 128;
+            v = (*pV++) - 128;
 
                 move_420_block (y00, y01, y10, y11, u, v, x, image2, z * 8);
 

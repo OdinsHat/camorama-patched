@@ -1,3 +1,17 @@
+2006-01-08  Sven Herzberg  <herzi@gnome-de.org>
+
+	* pixmaps/Makefile.am: clean up, added new files
+	* pixmaps/camorama-webcam-16.png,
+	* pixmaps/camorama-webcam-24.png: webcam icons
+	* src/Makefile.am: cleanup
+	* src/callbacks.c: whitespace
+	* src/callbacks.h: added ifndef condition
+	* src/camorama-stock-items.c,
+	* src/camorama-stock-items.h: added camorama stock icon
+	* src/filter.c: disable full debugging
+	* src/filters.h: for later
+	* src/main.c: some icon cleanup
+
 2005-12-06  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.in: Add nb to ALL_LINGUAS.

@@ -1,8 +1,11 @@
+#ifndef CAMORAMA_CALLBACKS_H
+#define CAMORAMA_CALLBACKS_H
+
 #include <gtk/gtk.h>
 #include "fileio.h"
 #include <gconf/gconf-client.h>
 
-
+G_BEGIN_DECLS
 
 static const guint WACKY =  1<<0;
 static const guint THRESHOLD =  1<<1;
@@ -77,3 +80,8 @@ void hue_change (GtkHScale *, cam *);
 void wb_change (GtkHScale *, cam *);
 gboolean on_drawingarea_expose_event (GtkWidget *, GdkEventExpose *, cam *);
 void update_tooltip (cam * cam);
+
+G_END_DECLS
+
+#endif /* !CAMORAMA_CALLBACKS_H */
+

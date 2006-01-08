@@ -10,6 +10,8 @@
 #include <gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h>
 #include <locale.h>
 
+#include "camorama-stock-items.h"
+
 GtkWidget *main_window, *prefswindow;
 int frames, frames2, seconds;
 GtkWidget *dentry, *entry2, *string_entry, *format_selection;
@@ -81,23 +83,18 @@ tray_clicked_callback (GtkWidget * widget, GdkEventButton * event, cam * cam){
 void load_interface (cam * cam)
 {
     gchar *title;
-    GdkPixbuf *logo = NULL, *scaled = NULL;
+    GdkPixbuf *logo = NULL;
     GtkWidget *eventbox = NULL, *image = NULL;
-    gint width, height;
 
-    cam->tooltips = gtk_tooltips_new ();
+    cam->tooltips = gtk_tooltips_new();
+    logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(glade_xml_get_widget(cam->xml, "main_window"))), CAMORAMA_STOCK_WEBCAM, 24, 0, NULL);
+    gtk_window_set_default_icon(logo);
     logo = (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");
     }
 
-    gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, &width, &height);
-    scaled =
-        gdk_pixbuf_scale_simple (logo, width, height, GDK_INTERP_BILINEAR);
-
-    image = gtk_image_new_from_pixbuf (scaled);
-
-    //image = gtk_image_new_from_stock (GNOME_STOCK_TRASH, GTK_ICON_SIZE_MENU);
+    image = gtk_image_new_from_stock (CAMORAMA_STOCK_WEBCAM, GTK_ICON_SIZE_MENU);
 
     if (cam->show_adjustments == FALSE) {
         gtk_widget_hide (glade_xml_get_widget
@@ -457,6 +454,9 @@ main(int argc, char *argv[]) {
                         GNOME_PARAM_APP_DATADIR, DATADIR,
                         GNOME_PARAM_POPT_TABLE, popt_options,
                         GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
+
+    /* gtk is initialized now */
+    camorama_stock_init();
 
     cam->debug = buggery;
 

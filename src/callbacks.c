@@ -452,7 +452,6 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
                           (glade_xml_get_widget (cam->xml, "main_window")),
                           title);
     g_free (title);
-
 }
 
 void on_show_adjustments_activate (GtkMenuItem * menuitem, cam * cam)

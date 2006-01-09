@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2003 Greg Jones
  * Copyright (C) 2003 Bastien Nocera
- * Copyright (C) 2005 Sven Herzberg
+ * Copyright (C) 2005,2006 Sven Herzberg
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -28,23 +28,45 @@
 #ifndef CAMORAMA_FILTER_H
 #define CAMORAMA_FILTER_H
 
-#include <glib/gtypes.h>
+#include <glib-object.h>
 
 G_BEGIN_DECLS
 
-void yuv420p_to_rgb	(guchar *image, guchar *temp, gint x, gint y, gint z);
-void fix_colour		(guchar *image, gint x, gint y);
-void negative		(guchar *image, gint x, gint y, gint z);
-void threshold		(guchar *image, gint x, gint y, gint threshold_value);
-void threshold_channel	(guchar *image, gint x, gint y, gint threshold_value);
-void mirror		(guchar *image, gint x, gint y, gint z);
-void wacky		(guchar *image, gint z, gint x, gint y);
-void smooth		(guchar *image, gint z, gint x, gint y);
+typedef struct _CamoramaFilter      CamoramaFilter;
+typedef struct _CamoramaFilterClass CamoramaFilterClass;
 
-void bw			(guchar *image, gint x, gint y);
-void bw2		(guchar *image, gint x, gint y);
-void laplace		(guchar *image, gint z, gint x, gint y);
-void sobel		(guchar *image, gint x, gint y);
+#define CAMORAMA_TYPE_FILTER         (camorama_filter_get_type())
+#define CAMORAMA_FILTER(i)           (G_TYPE_CHECK_INSTANCE_CAST((i), CAMORAMA_TYPE_FILTER, CamoramaFilter))
+#define CAMORAMA_FILTER_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST((c), CAMORAMA_TYPE_FILTER, CamoramaFilterClass))
+#define CAMORAMA_IS_FILTER(i)        (G_TYPE_CHECK_INSTANCE_TYPE((i), CAMORAMA_TYPE_FILTER))
+#define CAMORAMA_IS_FILTER_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE((c), CAMORAMA_TYPE_FILTER))
+#define CAMORAMA_FILTER_GET_CLASS(i) (G_TYPE_INSTANCE_GET_CLASS((i), CAMORAMA_TYPE_FILTER, CamoramaFilterClass))
+
+GType camorama_filter_get_type(void);
+
+void         camorama_filters_init   (void);
+gchar const* camorama_filter_get_name(CamoramaFilter* self);
+void         camorama_filter_apply   (CamoramaFilter* self,
+				      guchar*         image,
+				      gint            width,
+				      gint            height);
+
+struct _CamoramaFilter {
+	GObject base_instance;
+};
+
+struct _CamoramaFilterClass {
+	GObjectClass base_class;
+
+	gchar const* name;
+
+	void (*filter) (CamoramaFilter* self,
+			guchar        * image,
+			gint            width,
+			gint            height);
+};
+
+void yuv420p_to_rgb	(guchar *image, guchar *temp, gint x, gint y, gint z);
 
 G_END_DECLS
 

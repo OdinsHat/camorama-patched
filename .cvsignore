@@ -24,3 +24,6 @@ config.h.in
 depcomp
 stamp-h1
 
+COPYING
+INSTALL
+autom4te.cache

@@ -7,19 +7,6 @@
 
 G_BEGIN_DECLS
 
-static const guint WACKY =  1<<0;
-static const guint THRESHOLD =  1<<1;
-static const guint  THRESHOLD_CHANNEL =  1<<2;
-static const guint  SOBEL =  1<<3;
-static const guint  LAPLACE =  1<<4;
-static const guint  NEGATIVE =  1<<5;
-static const guint  MIRROR =  1<<6;
-static const guint  COLOUR =  1<<7;
-static const guint  SMOOTH =  1<<8;
-static const guint  FIX_COLOUR =  1<<9;
-
-static guint effect_mask = 0;
-
 void on_change_size_activate (GtkWidget * widget, cam * cam);
 void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data);
 void gconf_notify_func (GConfClient * client, guint cnxn_id,

@@ -393,19 +393,19 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
 
     /*
      * if(cam->read == FALSE) {
-     * * cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
-     * * 
-     * * if((unsigned char *) -1 == (unsigned char *) cam->pic) {
-     * * if(cam->debug == TRUE) {
-     * * fprintf(stderr, "Unable to capture image (mmap).\n");
-     * * }
-     * * error_dialog(_("Unable to capture image."));
-     * * exit(-1);
-     * * }
-     * * }else{
-     * * cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
-     * * read(cam->dev,cam->pic,(cam->x * cam->y * 3));
-     * * } 
+     *  cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
+     *  
+     *  if((unsigned char *) -1 == (unsigned char *) cam->pic) {
+     *   if(cam->debug == TRUE) {
+     *   fprintf(stderr, "Unable to capture image (mmap).\n");
+     *   }
+     *   error_dialog(_("Unable to capture image."));
+     *   exit(-1);
+     *  }
+     *  }else{
+     *   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
+     *   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
+     *  } 
      */
 
     cam->vid_win.x = 0;
@@ -471,28 +471,28 @@ void on_show_adjustments_activate (GtkMenuItem * menuitem, cam * cam)
     gconf_client_set_bool (cam->gc, KEY22, cam->show_adjustments, NULL);
 }
 
-void on_show_effects_activate (GtkMenuItem * menuitem, cam * cam)
-{
+void
+on_show_effects_activate(GtkMenuItem* menuitem, cam* cam) {
+	GtkWidget* effects = glade_xml_get_widget(cam->xml, "scrolledwindow_effects");
+	cam->show_effects = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
+	
+	if(!cam->show_effects) {
+		gtk_widget_hide(effects);
+		gtk_window_resize(GTK_WINDOW(glade_xml_get_widget(cam->xml, "main_window")), 320, 240);
+	} else {
+		gtk_widget_show(effects);
+	}
 
-    if (GTK_WIDGET_VISIBLE (glade_xml_get_widget (cam->xml, "effects_box"))) {
-        gtk_widget_hide (glade_xml_get_widget (cam->xml, "effects_box"));
-        gtk_window_resize (GTK_WINDOW
-                           (glade_xml_get_widget
-                            (cam->xml, "main_window")), 320, 240);
-        cam->show_effects = FALSE;
-
-    } else {
-        gtk_widget_show (glade_xml_get_widget (cam->xml, "effects_box"));
-        cam->show_effects = TRUE;
-    }
-    gconf_client_set_bool (cam->gc, KEY23, cam->show_effects, NULL);
+	gconf_client_set_bool(cam->gc, KEY23, cam->show_effects, NULL);
 }
 
 void on_about_activate (GtkMenuItem * menuitem, cam * cam)
 {
     static GtkWidget *about = NULL;
-    const gchar *authors[] = { "Greg Jones  <greg@fixedgear.org>",
-        "Jens Knutson  <tempest@magusbooks.com>", NULL
+    const gchar *authors[] = {
+	"Greg Jones  <greg@fixedgear.org>",
+        "Jens Knutson  <tempest@magusbooks.com>",
+	NULL
     };
     const gchar *documenters[] = { NULL };
     GdkPixbuf *logo =
@@ -520,11 +520,46 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
     gtk_widget_show (about);
 }
 
+static void
+apply_filters(cam* cam) {
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y);
+#warning "FIXME: enable color correction filter"
+//	if( (effect_mask & CAMORAMA_FILTER_FIX_COLOR)  != 0)
+//		fix_colour (cam->pic_buf, cam->x, cam->y);
+#warning "FIXME: enable the threshold channel filter"
+//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
+//		threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
+#warning "FIXME: enable the threshold filter"
+//	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
+//		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
+#warning "FIXME: enable  filter"
+//	if((effect_mask & CAMORAMA_FILTER_LAPLACE) != 0) 
+//		laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
+#warning "FIXME: enable  filter" 
+//	if((effect_mask & CAMORAMA_FILTER_SOBEL) != 0)
+//		sobel (cam->pic_buf, cam->x, cam->y);
+#warning "FIXME: enable  filter" 
+//	if((effect_mask & CAMORAMA_FILTER_WACKY)  != 0)
+//		wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
+#warning "FIXME: enable the invert filter"
+//	if((effect_mask & CAMORAMA_FILTER_NEGATIVE)  != 0)
+//		negative (cam->pic_buf, cam->x, cam->y, cam->depth);
+#warning "FIXME: enable  filter"
+//	if((effect_mask & CAMORAMA_FILTER_MIRROR) != 0)
+//		mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
+#warning "FIXME: enable  filter"
+//	if((effect_mask & CAMORAMA_FILTER_COLOR)  != 0) 
+//		bw (cam->pic_buf, cam->x, cam->y);
+#warning "FIXME: enable  filter"
+//	if((effect_mask & CAMORAMA_FILTER_SMOOTH)  != 0) 
+//		smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
+}
+
 /*
  * get image from cam - does all the work ;) 
  */
-gint read_timeout_func (cam * cam)
-{
+gint
+read_timeout_func(cam* cam) {
     int i, count = 0;
     GdkGC *gc;
 
@@ -532,9 +567,9 @@ gint read_timeout_func (cam * cam)
     frames2++;
     /*
      * update_rec.x = 0;
-     * * update_rec.y = 0;
-     * * update_rec.width = cam->x;
-     * * update_rec.height = cam->y; 
+     * update_rec.y = 0;
+     * update_rec.width = cam->x;
+     * update_rec.height = cam->y; 
      */
     count++;
     /*
@@ -547,43 +582,7 @@ gint read_timeout_func (cam * cam)
         cam->pic_buf = cam->tmp;
     }
 
-    if( (effect_mask & FIX_COLOUR)  != 0)
-		fix_colour (cam->pic_buf, cam->x, cam->y);
-    
-	if((effect_mask & THRESHOLD_CHANNEL)  != 0) 
-        threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
-    
-
-	if((effect_mask & THRESHOLD)  != 0) 
-        threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-    
-
-	if((effect_mask & LAPLACE) != 0) 
-		laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    
-
-	if((effect_mask & SOBEL) != 0)
-        sobel (cam->pic_buf, cam->x, cam->y);
-    
-
-	if((effect_mask & WACKY)  != 0)
-        wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-    
-
-	if((effect_mask & NEGATIVE)  != 0)
-        negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-    
-
-	if((effect_mask & MIRROR) != 0)
-        mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-    
-
-	if((effect_mask & COLOUR)  != 0) 
-        bw (cam->pic_buf, cam->x, cam->y);
-    
-
-	if((effect_mask & SMOOTH)  != 0) 
-        smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
+	apply_filters(cam);
 
     gc = gdk_gc_new (cam->pixmap);
     gdk_draw_rgb_image (cam->pixmap,
@@ -632,37 +631,9 @@ gint timeout_func (cam * cam)
         cam->pic_buf = cam->tmp;
     }
 
-	if( (effect_mask & FIX_COLOUR)  != 0) 
-		fix_colour (cam->pic_buf, cam->x, cam->y);
- 
-	if((effect_mask & THRESHOLD_CHANNEL)  != 0) 
-        threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
+	apply_filters(cam);
 
-	if((effect_mask & THRESHOLD)  != 0) 
-		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
 
-	if((effect_mask & LAPLACE) != 0) 
-        laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-    
-	if((effect_mask & SOBEL) != 0) 
-        sobel (cam->pic_buf, cam->x, cam->y);
-
-	if((effect_mask & WACKY)  != 0) 
-        wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-
-	if((effect_mask & NEGATIVE)  != 0) 
-        negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-
-	if((effect_mask & MIRROR) != 0)
-        mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-
-	if((effect_mask & COLOUR)  != 0) 
-        bw (cam->pic_buf, cam->x, cam->y);
-   
-	if((effect_mask & SMOOTH)  != 0) 
-        smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
- 
- 
     gc = gdk_gc_new (cam->pixmap);
 
     gdk_draw_rgb_image (cam->pixmap,
@@ -810,90 +781,6 @@ on_drawingarea_expose_event (GtkWidget * widget, GdkEventExpose * event,
 
     frames++;
     return FALSE;
-}
-
-void fix_colour_func (GtkToggleButton * tb, char *data){
-    if(gtk_toggle_button_get_active (tb))
-		effect_mask |= FIX_COLOUR;
-	 else
-	 	effect_mask &= (~FIX_COLOUR);
-}
-
-void edge_func1 (GtkToggleButton * tb, gpointer data)
-{
-    if(gtk_toggle_button_get_active (tb))
-		effect_mask |= WACKY;
-	 else
-	 	effect_mask &= (~WACKY);
-}
-
-void sobel_func (GtkToggleButton * tb, gpointer data)
-{
-    if(gtk_toggle_button_get_active (tb))
-		effect_mask |= SOBEL;
-	 else
-	 	effect_mask &= (~SOBEL);
-}
-
-void threshold_func1 (GtkToggleButton * tb, gpointer data)
-{
-     if(gtk_toggle_button_get_active (tb))
-		effect_mask |= THRESHOLD;
-	  else
-	 	effect_mask &= (~THRESHOLD);
-}
-
-void threshold_ch_func (GtkToggleButton * tb, gpointer data)
-{
-    if(gtk_toggle_button_get_active (tb))
-		effect_mask |= THRESHOLD_CHANNEL;
-	 else
-	 	effect_mask &= (~THRESHOLD_CHANNEL);
-}
-
-void edge_func3 (GtkToggleButton * tb, gpointer data)
-{
-     if(gtk_toggle_button_get_active (tb))
-		effect_mask |= LAPLACE;
-	  else
-	 	effect_mask &= (~LAPLACE);
-}
-
-void negative_func (GtkToggleButton * tb, gpointer data)
-{
-    if(gtk_toggle_button_get_active (tb))
-		effect_mask |= NEGATIVE;
-	 else
-	 	effect_mask &= (~NEGATIVE);
-}
-
-void mirror_func (GtkToggleButton * tb, gpointer data)
-{
-     if(gtk_toggle_button_get_active (tb))
-		effect_mask |= MIRROR;
-	 else
-	 	effect_mask &= (~MIRROR);
-}
-
-void smooth_func (GtkToggleButton * tb, gpointer data)
-{
-     if(gtk_toggle_button_get_active (tb))
-		effect_mask |= SMOOTH;
-	  else
-	 	effect_mask &= (~SMOOTH);
-}
-
-void colour_func (GtkToggleButton * tb, gpointer data)
-{
-     if(gtk_toggle_button_get_active (tb))
-		effect_mask |= COLOUR;
-	  else
-	 	effect_mask &= (~COLOUR);
-}
-
-void on_scale1_drag_data_received (GtkHScale * sc1, cam * cam)
-{
-    cam->dither = (int) gtk_range_get_value ((GtkRange *) sc1);
 }
 
 void contrast_change (GtkHScale * sc1, cam * cam)

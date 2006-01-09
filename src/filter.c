@@ -1,3 +1,34 @@
+#include "filter.h"
+
+#ifdef HAVE_CONFIG_H
+# include <config.h>
+#endif
+
+#include <glib/gi18n.h>
+
+gchar const*
+camorama_filter_get_name(CamoramaFilter* self) {
+	gchar const* name = CAMORAMA_FILTER_GET_CLASS(self)->name;
+	g_return_val_if_fail(name, G_OBJECT_TYPE_NAME(self));
+	return _(name);
+}
+
+void
+camorama_filter_apply(CamoramaFilter* self, guchar* image, gint width, gint height) {
+	g_return_if_fail(CAMORAMA_FILTER_GET_CLASS(self)->filter);
+
+	CAMORAMA_FILTER_GET_CLASS(self)->filter(self, image, width, height);
+}
+
+/* GType stuff ifor CamoramaFilter */
+G_DEFINE_ABSTRACT_TYPE(CamoramaFilter, camorama_filter, G_TYPE_OBJECT);
+
+static void
+camorama_filter_init(CamoramaFilter* self) {}
+
+static void
+camorama_filter_class_init(CamoramaFilterClass* self_class) {}
+
 #include "v4l.h"
 
 static inline void move_420_block (int yTL, int yTR, int yBL, int yBR, int u,
@@ -111,33 +142,81 @@ move_420_block (int yTL, int yTR, int yBL, int yBR, int u, int v,
     }
 }
 
-void fix_colour (char *image, int x, int y)
-{
-    int i;
-    char tmp;
-    i = x * y;
-    while (--i) {
-        tmp = image[0];
-        image[0] = image[2];
-        image[2] = tmp;
-        image += 3;
-    }
+/* GType stuff for CamoramaFilterColor */
+typedef struct _CamoramaFilter      CamoramaFilterColor;
+typedef struct _CamoramaFilterClass CamoramaFilterColorClass;
+
+G_DEFINE_TYPE(CamoramaFilterColor, camorama_filter_color, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_color_init(CamoramaFilterColor* self) {}
+
+static void
+camorama_filter_color_filter(CamoramaFilterColor* filter, guchar *image, int x, int y) {
+	int i;
+	char tmp;
+	i = x * y;
+	while (--i) {
+		tmp = image[0];
+		image[0] = image[2];
+		image[2] = tmp;
+		image += 3;
+	}
 }
 
-void negative (unsigned char *image, int x, int y, int z)
-{
-    int i;
-    for (i = 0; i < x * y * z; i++) {
-        image[i] = 255 - image[i];
-
-    }
+static void
+camorama_filter_color_class_init(CamoramaFilterColorClass* self_class) {
+	self_class->filter = camorama_filter_color_filter;
+	self_class->name   = N_("Color");
 }
 
-void threshold (unsigned char *image, int x, int y, int threshold_value)
-{
+/* GType stuff for CamoramaFilterInvert */
+typedef struct _CamoramaFilterInvert {
+	CamoramaFilter base_instance;
+	gint z;
+} CamoramaFilterInvert;
+typedef struct _CamoramaFilterClass CamoramaFilterInvertClass;
+
+G_DEFINE_TYPE(CamoramaFilterInvert, camorama_filter_invert, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_invert_init(CamoramaFilterInvert* self) {}
+
+static void
+camorama_filter_invert_filter(CamoramaFilter* filter, guchar *image, int x, int y) {
+#warning "FIXME: add a checking cast here"
+	CamoramaFilterInvert* self = (CamoramaFilterInvert*)filter;
+	int i;
+	for (i = 0; i < x * y * self->z; i++) {
+		image[i] = 255 - image[i];
+	}
+}
+
+static void
+camorama_filter_invert_class_init(CamoramaFilterClass* self_class) {
+	self_class->filter = camorama_filter_invert_filter;
+}
+
+/* GType stuff for CamoramaFilterThreshold */
+typedef struct _CamoramaFilterThreshold {
+	CamoramaFilter base_instance;
+	gint threshold;
+} CamoramaFilterThreshold;
+typedef struct _CamoramaFilterClass CamoramaFilterThresholdClass;
+
+G_DEFINE_TYPE(CamoramaFilterThreshold, camorama_filter_threshold, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_threshold_init(CamoramaFilterThreshold* self) {
+}
+
+static void
+camorama_filter_threshold_filter(CamoramaFilter* filter, guchar *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterThreshold* self = (CamoramaFilterThreshold*)filter;
     int i;
     for (i = 0; i < x * y; i++) {
-        if ((image[0] + image[1] + image[2]) > (threshold_value * 3)) {
+        if ((image[0] + image[1] + image[2]) > (self->threshold * 3)) {
             image[0] = 255;
             image[1] = 255;
             image[2] = 255;
@@ -150,22 +229,38 @@ void threshold (unsigned char *image, int x, int y, int threshold_value)
     }
 }
 
-void
-threshold_channel (unsigned char *image, int x, int y, int threshold_value)
-{
+static void
+camorama_filter_threshold_class_init(CamoramaFilterThresholdClass* self_class) {
+	self_class->filter = camorama_filter_threshold_filter;
+}
+
+/* GType stuff for CamoramaFilterThresholdChannel */
+#warning "FIXME: inherit from CamoramaFilterThreshold?"
+typedef struct _CamoramaFilterThreshold CamoramaFilterThresholdChannel;
+typedef struct _CamoramaFilterClass     CamoramaFilterThresholdChannelClass;
+
+G_DEFINE_TYPE(CamoramaFilterThresholdChannel, camorama_filter_threshold_channel, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_threshold_channel_init(CamoramaFilterThresholdChannel* self) {}
+
+static void
+camorama_filter_threshold_channel_filter(CamoramaFilter* filter, unsigned char *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterThresholdChannel* self = (CamoramaFilterThresholdChannel*)filter;
     int i;
     for (i = 0; i < x * y; i++) {
-        if (image[0] > threshold_value) {
+        if (image[0] > self->threshold) {
             image[0] = 255;
         } else {
             image[0] = 0;
         }
-        if (image[1] > threshold_value) {
+        if (image[1] > self->threshold) {
             image[1] = 255;
         } else {
             image[1] = 0;
         }
-        if (image[2] > threshold_value) {
+        if (image[2] > self->threshold) {
             image[2] = 255;
         } else {
             image[2] = 0;
@@ -174,20 +269,39 @@ threshold_channel (unsigned char *image, int x, int y, int threshold_value)
     }
 }
 
-void
-mirror(guchar *image, int x, int y, int z) {
+static void
+camorama_filter_threshold_channel_class_init(CamoramaFilterThresholdChannelClass* self_class) {
+	self_class->filter = camorama_filter_threshold_channel_filter;
+}
+
+/* GType stuff for CamoramaFilterMirror */
+typedef struct _CamoramaFilterMirror {
+	CamoramaFilter base_instance;
+	guint z;
+} CamoramaFilterMirror;
+typedef struct _CamoramaFilterClass CamoramaFilterMirrorClass;
+
+G_DEFINE_TYPE(CamoramaFilterMirror, camorama_filter_mirror, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_mirror_init(CamoramaFilterMirror* self) {}
+
+static void
+camorama_filter_mirror_filter(CamoramaFilter* filter, guchar *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterMirror* self = (CamoramaFilterMirror*)filter;
     int i, j, k;
     guchar *image2;
 
-    image2 = (guchar *) malloc (sizeof (guchar) * x * y * z);
-    memcpy (image2, image, sizeof(guchar) * x * y * z);
+    image2 = (guchar *) malloc (sizeof (guchar) * x * y * self->z);
+    memcpy (image2, image, sizeof(guchar) * x * y * self->z);
 
     for (i = 0; i < y; i++) {
         for (j = 0; j < x; j++) {
-            for (k = 0; k < z; k++) {
+            for (k = 0; k < self->z; k++) {
                 /*ow, my brain! */
-                image[(i * x * z) + (j * z) + k] =
-                    image2[(i * x * z) - (j * z) + k];
+                image[(i * x * self->z) + (j * self->z) + k] =
+                    image2[(i * x * self->z) - (j * self->z) + k];
             }
 
         }
@@ -197,74 +311,109 @@ mirror(guchar *image, int x, int y, int z) {
     free (image2);
 }
 
-void wacky (unsigned char *image, int z, int x, int y)
-{
+static void
+camorama_filter_mirror_class_init(CamoramaFilterMirrorClass* self_class) {
+	self_class->filter = camorama_filter_mirror_filter;
+}
+
+/* GType stuff for CamoramaFilterWacky */
+typedef struct _CamoramaFilterWacky {
+	CamoramaFilter base_instance;
+	guint z;
+} CamoramaFilterWacky;
+typedef struct _CamoramaFilterClass CamoramaFilterWackyClass;
+
+G_DEFINE_TYPE(CamoramaFilterWacky, camorama_filter_wacky, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_wacky_init(CamoramaFilterWacky* self) {}
+
+static void
+camorama_filter_wacky_filter(CamoramaFilter* filter, unsigned char *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterWacky* self = (CamoramaFilterWacky*)filter;
     int i;
     int neighbours;
     int total;
     unsigned char *image2, *image3;
-    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * z);
-    memcpy (image2, image, x * y * z);
+    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * self->z);
+    memcpy (image2, image, x * y * self->z);
     image3 = image2;
 
     for (i = 0; i < x * y; i++) {
         total = 0;
         neighbours = 0;
 
-        if (i < x * z) {
+        if (i < x * self->z) {
             /*we are in the top row */
         } else {
-            image2 -= (x + 1) * z;
+            image2 -= (x + 1) * self->z;
             total = total + ((1 / 6) * image2[0]);
-            image2 += z;
+            image2 += self->z;
             total = total + ((4 / 6) * image2[0]);
-            image2 += z;
+            image2 += self->z;
             total = total + ((1 / 6) * image2[0]);
-            neighbours = neighbours + z;
-            image2 += (x - 1) * z;
+            neighbours = neighbours + self->z;
+            image2 += (x - 1) * self->z;
         }
-        if (i > x * (y - 1) * z) {
+        if (i > x * (y - 1) * self->z) {
             /*we are in the bottom row */
         } else {
-            image2 += (x + 1) * z;
+            image2 += (x + 1) * self->z;
             total = total + ((1 / 6) * image2[0]);
-            image2 -= z;
+            image2 -= self->z;
             total = total + ((4 / 6) * image2[0]);
-            image2 -= z;
+            image2 -= self->z;
             total = total + ((1 / 6) * image2[0]);
-            image2 -= (x - 1) * z;
-            neighbours = neighbours + z;
+            image2 -= (x - 1) * self->z;
+            neighbours = neighbours + self->z;
         }
 
-        image2 += z;
+        image2 += self->z;
         total = total + ((4 / 6) * image2[0]);
-        image2 -= z;
+        image2 -= self->z;
         neighbours++;
 
-        image2 -= z;
+        image2 -= self->z;
         total = total + ((4 / 6) * image2[0]);
-        image2 += z;
+        image2 += self->z;
         neighbours++;
 
         image[0] = image[0] * (-20 / 6);
         image[0] = image[0] + total;
         image[1] = image[0];
         image[2] = image[0];
-        image += z;
+        image += self->z;
     }
     free (image2);
 }
 
-void smooth (unsigned char *image, int z, int x, int y)
-{
+static void
+camorama_filter_wacky_class_init(CamoramaFilterWackyClass* self_class) {
+	self_class->filter = camorama_filter_wacky_filter;
+}
+
+/* GType stuff for CamoramaFilterSmotth */
+typedef struct _CamoramaFilterWacky CamoramaFilterSmooth;
+typedef struct _CamoramaFilterClass CamoramaFilterSmoothClass;
+
+G_DEFINE_TYPE(CamoramaFilterSmooth, camorama_filter_smooth, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_smooth_init(CamoramaFilterSmooth* self) {}
+
+static void
+camorama_filter_smooth_filter(CamoramaFilter* filter, guchar *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterSmooth* self = (CamoramaFilterSmooth*)filter;
     int i;
     int neighbours;
     int total0, total1, total2;
     unsigned char *image2, *image3;
     int tr = 0, br = 0;
 
-    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * z);
-    memcpy (image2, image, x * y * z);
+    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * self->z);
+    memcpy (image2, image, x * y * self->z);
     image3 = image2;
 
     for (i = 0; i < x * y; i++) {
@@ -277,7 +426,7 @@ void smooth (unsigned char *image, int z, int x, int y)
             /*we are in the top row */
             tr++;
         } else {
-            image2 -= (x + 1) * z;
+            image2 -= (x + 1) * self->z;
             total0 = total0 + image2[0];
             total1 = total1 + image2[1];
             total2 = total2 + image2[2];
@@ -289,17 +438,17 @@ void smooth (unsigned char *image, int z, int x, int y)
             total0 = total0 + image2[6];
             total1 = total1 + image2[7];
             total2 = total2 + image2[8];
-            neighbours = neighbours + z;
+            neighbours = neighbours + self->z;
             if (tr > 1) {
                 tr = 0;
             }
-            image2 += (x + 1) * z;
+            image2 += (x + 1) * self->z;
         }
         if (i > x * (y - 1)) {
             br++;
             /*we are in the bottom row */
         } else {
-            image2 += (x - 1) * z;
+            image2 += (x - 1) * self->z;
             total0 = total0 + image2[0];
             total1 = total1 + image2[1];
             total2 = total2 + image2[2];
@@ -312,9 +461,9 @@ void smooth (unsigned char *image, int z, int x, int y)
             total1 = total1 + image2[7];
             total2 = total2 + image2[8];
 
-            image2 -= (x - 1) * z;
+            image2 -= (x - 1) * self->z;
 
-            neighbours = neighbours + z;
+            neighbours = neighbours + self->z;
         }
 
         image2 += 3;
@@ -339,18 +488,33 @@ void smooth (unsigned char *image, int z, int x, int y)
         image2 += 3;
     }
     free (image3);
-
 }
 
-void laplace (unsigned char *image, int z, int x, int y)
-{
+static void
+camorama_filter_smooth_class_init(CamoramaFilterSmoothClass* self_class) {
+	self_class->filter = camorama_filter_smooth_filter;
+}
+
+/* GType stuff for CamoramaFilterLaplace */
+typedef struct _CamoramaFilterWacky CamoramaFilterLaplace;
+typedef struct _CamoramaFilterClass CamoramaFilterLaplaceClass;
+
+G_DEFINE_TYPE(CamoramaFilterLaplace, camorama_filter_laplace, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_laplace_init(CamoramaFilterLaplace* self) {}
+
+static void
+camorama_filter_laplace_filter(CamoramaFilter* filter, guchar *image, int x, int y) {
+#warning "FIXME: cast"
+    CamoramaFilterLaplace* self = (CamoramaFilterLaplace*)filter;
     int i;
     int neighbours;
     int total0, total1, total2;
     unsigned char *image2, *image3;
 	
-    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * z);
-    memcpy (image2, image, x * y * z);
+    image2 = (unsigned char *) malloc (sizeof (unsigned char) * x * y * self->z);
+    memcpy (image2, image, x * y * self->z);
     image3 = image2;
 
     for (i = 1; i < x * (y - 1); i++) {
@@ -422,11 +586,24 @@ void laplace (unsigned char *image, int z, int x, int y)
     }
 
     free (image3);
-
 }
 
-void bw (unsigned char *image, int x, int y)
-{
+static void
+camorama_filter_laplace_class_init(CamoramaFilterLaplaceClass* self_class) {
+	self_class->filter = camorama_filter_laplace_filter;
+}
+
+/* GType for CamoramaFilterMono */
+typedef struct _CamoramaFilter      CamoramaFilterMono;
+typedef struct _CamoramaFilterClass CamoramaFilterMonoClass;
+
+G_DEFINE_TYPE(CamoramaFilterMono, camorama_filter_mono, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_mono_init(CamoramaFilterMono* self) {}
+
+static void
+camorama_filter_mono_filter(CamoramaFilter* filter, unsigned char *image, int x, int y) {
     int i;
     int total, avg;
 
@@ -440,8 +617,23 @@ void bw (unsigned char *image, int x, int y)
         image += 3;
     }
 }
-void bw2 (unsigned char *image, int x, int y)
-{
+
+static void
+camorama_filter_mono_class_init(CamoramaFilterMonoClass* self_class) {
+	self_class->filter = camorama_filter_mono_filter;
+}
+
+/* GType for CamoramaFilterMonoWeight */
+typedef struct _CamoramaFilter      CamoramaFilterMonoWeight;
+typedef struct _CamoramaFilterClass CamoramaFilterMonoWeightClass;
+
+G_DEFINE_TYPE(CamoramaFilterMonoWeight, camorama_filter_mono_weight, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_mono_weight_init(CamoramaFilterMonoWeight* self) {}
+
+static void
+camorama_filter_mono_weight_filter(CamoramaFilter* filter, unsigned char *image, int x, int y) {
     int i;
     int avg;
     for (i = 0; i < x * y; i++) {
@@ -455,9 +647,23 @@ void bw2 (unsigned char *image, int x, int y)
     }
 }
 
+static void
+camorama_filter_mono_weight_class_init(CamoramaFilterMonoWeightClass* self_class) {
+	self_class->filter = camorama_filter_mono_weight_filter;
+}
+
+/* GType stuff for CamoramaFilterSobel */
+typedef struct _CamoramaFilter      CamoramaFilterSobel;
+typedef struct _CamoramaFilterClass CamoramaFilterSobelClass;
+
+G_DEFINE_TYPE(CamoramaFilterSobel, camorama_filter_sobel, CAMORAMA_TYPE_FILTER);
+
+static void
+camorama_filter_sobel_init(CamoramaFilterSobel* self) {}
+
 /* fix this at some point, very slow */
-void sobel (unsigned char *image, int x, int y)
-{
+static void
+camorama_filter_sobel_filter(CamoramaFilter* filter, unsigned char *image, int x, int y) {
     int i, j, grad[3];
     int deltaX[3], deltaY[3];
     int width = x * 3;
@@ -490,3 +696,25 @@ void sobel (unsigned char *image, int x, int y)
     memcpy (image, image2, (x * y * 3));
     free (image2);
 }
+
+static void
+camorama_filter_sobel_class_init(CamoramaFilterSobelClass* self_class) {
+	self_class->filter = camorama_filter_sobel_filter;
+}
+
+/* general filter initialization */
+void
+camorama_filters_init(void) {
+	camorama_filter_color_get_type();
+	camorama_filter_invert_get_type();
+	camorama_filter_threshold_get_type();
+	camorama_filter_threshold_channel_get_type();
+	camorama_filter_mirror_get_type();
+	camorama_filter_wacky_get_type();
+	camorama_filter_smooth_get_type();
+	camorama_filter_laplace_get_type();
+	camorama_filter_mono_get_type();
+	camorama_filter_mono_weight_get_type();
+	camorama_filter_sobel_get_type();
+}
+

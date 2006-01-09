@@ -1,3 +1,6 @@
+#ifndef CAMORAMA_V4L_H
+#define CAMORAMA_V4L_H
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,6 +20,8 @@
 #include <gconf/gconf-client.h>
 #include "eggtrayicon.h"
 
+#include "camorama-filter-chain.h"
+
 #define PICMAX 0
 #define PICMIN 1
 #define PICHALF 2
@@ -31,7 +36,6 @@ typedef struct camera {
     int depth;
     int desk_depth;
     int size;
-    int dither;
     int contrast, brightness, colour, hue, wb;
     int frame_number;
     struct video_capability vid_cap;
@@ -62,6 +66,8 @@ typedef struct camera {
     GConfClient *gc;
     GladeXML *xml;
     EggTrayIcon *tray_icon;
+
+    CamoramaFilterChain* filter_chain;
 } cam;
 
 void camera_cap (cam *);
@@ -70,3 +76,6 @@ void get_pic_info (cam *);
 void set_pic_info (cam *);
 void get_win_info (cam *);
 void set_buffer (cam *);
+
+#endif /* !CAMORAMA_V4L_H */
+

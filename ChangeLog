@@ -1,3 +1,27 @@
+2006-01-09  Sven Herzberg  <herzi@gnome-de.org>
+
+	* .cvsignore: updated
+	* data/camorama.glade: made the "show effects" and "show adjustments"
+	menu items GtkCheckMenuItems; added a frame around the drawing area;
+	exchanged the box with filter check boxes by a tree view
+	* src/Makefile.am: updated
+	* src/callbacks.c: implemented the "show ..." toggle functions a bit
+	cleaner; aligned the authors better; extracted filter application from
+	read_timeout_func() and timeout_func(), re-implemented with the new
+	filter framework; removed the callbacks for removed widgets
+	* src/callbacks.h: removed the filter constants; removed the filter
+	mask
+	* src/camorama-filter-chain.c,
+	* src/camorama-filter-chain.h: new
+	* src/camorama-globals.h: new
+	* src/camorama-window.c: extracted some code from main.c, implemented
+	the new filter GUI
+	* src/camorama-window.h: extracted from main.c
+	* src/filter.c,
+	* src/filter.h: filters are GObjects now
+	* src/main.c: extracted some code into camorama-window.c
+	* src/v4l.h: added the filter chain
+
 2006-01-08  Sven Herzberg  <herzi@gnome-de.org>
 
 	* pixmaps/Makefile.am: clean up, added new files

@@ -10,13 +10,18 @@ bin_PROGRAMS = camorama
 
 BUILT_SOURCES    = camorama-stock-images.h
 camorama_SOURCES = \
-	camorama-stock-items.c	\
-	camorama-stock-items.h	\
-	main.c		\
-	v4l.c		\
-	filter.c	\
-	callbacks.c	\
-	support.c	\
+	callbacks.c \
+	camorama-filter-chain.c \
+	camorama-filter-chain.h \
+	camorama-globals.h \
+	camorama-stock-items.c \
+	camorama-stock-items.h \
+	camorama-window.c \
+	camorama-window.h \
+	filter.c \
+	main.c \
+	support.c \
+	v4l.c \
 	fileio.c	\
 	eggtrayicon.c	\
 	v4l.h		\

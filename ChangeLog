@@ -1,3 +1,9 @@
+2006-02-14  Sven Herzberg  <herzi@gnome-de.org>
+
+	* data/camorama.schemas.in: fix a type (fixes bug 325500) patch
+	provided by Thierry Moisan
+	* src/.cvsignore: silence
+
 2006-01-09  Sven Herzberg  <herzi@gnome-de.org>
 
 	* .cvsignore: updated

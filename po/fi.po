@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-11-13 10:34+0200\n"
-"PO-Revision-Date: 2005-11-13 10:40+0200\n"
+"POT-Creation-Date: 2006-02-15 06:26+0200\n"
+"PO-Revision-Date: 2006-02-15 06:45+0200\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama Webikameran katselin"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:512
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "Katsele, muuta ja tallenna kuvia webikamerasta"
 
@@ -29,238 +29,190 @@ msgid "     "
 msgstr "     "
 
 #: ../data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: ../data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Tehosteet</span>"
-
-#: ../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Yleistä</span>"
 
-#: ../data/camorama.glade.h:5
+#: ../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Kuvan tyyppi</span>"
 
-#: ../data/camorama.glade.h:6
+#: ../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Paikallinen kuvankaappaus</span>"
 
-#: ../data/camorama.glade.h:7
+#: ../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Etäkuvankaappaus</span>"
 
-#: ../data/camorama.glade.h:8
+#: ../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Aikaleima</span>"
 
-#: ../data/camorama.glade.h:9
+#: ../data/camorama.glade.h:7
 msgid "Add a timestamp to captured images"
 msgstr "Lisää aikaleima kaapattuihin kuviin"
 
-#: ../data/camorama.glade.h:10
+#: ../data/camorama.glade.h:8
 msgid "Append time to filename"
 msgstr "Lisää aika tiedostonimeen"
 
-#: ../data/camorama.glade.h:11
+#: ../data/camorama.glade.h:9
 msgid "Automatic Capture"
 msgstr "Automaattinen kuvankaappaus"
 
-#: ../data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Mustavalkoinen"
-
-#: ../data/camorama.glade.h:13
+#: ../data/camorama.glade.h:10
 msgid "Brightness:"
 msgstr "Kirkkaus:"
 
-#: ../data/camorama.glade.h:14
+#: ../data/camorama.glade.h:11
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: ../data/camorama.glade.h:15
+#: ../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
 msgstr "Kaapausten väli (minuutteja):"
 
-#: ../data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Värinkorjaus"
-
-#: ../data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Värin herkkyys"
-
-#: ../data/camorama.glade.h:18
+#: ../data/camorama.glade.h:13
 msgid "Color:"
 msgstr "Väri:"
 
-#: ../data/camorama.glade.h:19
+#: ../data/camorama.glade.h:14
 msgid "Contrast:"
 msgstr "Kontrasti:"
 
-#: ../data/camorama.glade.h:20
+#: ../data/camorama.glade.h:15
 msgid "Draw date and time"
 msgstr "Piirrä päiväys ja aika"
 
-#: ../data/camorama.glade.h:21
+#: ../data/camorama.glade.h:16
 msgid "FTP server: "
 msgstr "FTP-palvelin: "
 
-#: ../data/camorama.glade.h:22
+#: ../data/camorama.glade.h:17
 msgid "Filename"
 msgstr "Tiedostonimi"
 
-#: ../data/camorama.glade.h:23
+#: ../data/camorama.glade.h:18
 msgid "General"
 msgstr "Yleistä"
 
-#: ../data/camorama.glade.h:24
+#: ../data/camorama.glade.h:19
 msgid "Hue:"
 msgstr "Kylläisyys:"
 
-#: ../data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#: ../data/camorama.glade.h:26
+#: ../data/camorama.glade.h:20
 msgid "Large"
 msgstr "Suuri"
 
-#: ../data/camorama.glade.h:27
+#: ../data/camorama.glade.h:21
 msgid "Local Capture"
 msgstr "Paikallinen kuvankaappaus"
 
-#: ../data/camorama.glade.h:28
+#: ../data/camorama.glade.h:22
 msgid "Medium"
 msgstr "Kesimääräinen"
 
-#: ../data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Peilaa kuva"
-
-#: ../data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Negatiivi"
-
-#: ../data/camorama.glade.h:31
+#: ../data/camorama.glade.h:23
 msgid "Password:"
 msgstr "Salasana:"
 
-#: ../data/camorama.glade.h:32
+#: ../data/camorama.glade.h:24
 msgid "Preferences"
 msgstr "Asetukset"
 
-#: ../data/camorama.glade.h:33
+#: ../data/camorama.glade.h:25
 msgid "Remote Capture"
 msgstr "Etäkuvankaappaus"
 
-#: ../data/camorama.glade.h:34
+#: ../data/camorama.glade.h:26
 msgid "Save directory:"
 msgstr "Tallennushakemisto:"
 
-#: ../data/camorama.glade.h:35
+#: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
 msgstr "Tallenna tiedostot jpeg-muodossa"
 
-#: ../data/camorama.glade.h:36
+#: ../data/camorama.glade.h:28
 msgid "Save files in png format"
 msgstr "Tallenna tiedostot png-muodossa"
 
-#: ../data/camorama.glade.h:37
+#: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
 msgstr "Näytä säädöt"
 
-#: ../data/camorama.glade.h:38
+#: ../data/camorama.glade.h:30
 msgid "Show Effects"
 msgstr "Näytä tehosteet"
 
-#: ../data/camorama.glade.h:39
+#: ../data/camorama.glade.h:31
 msgid "Small"
 msgstr "Pieni"
 
-#: ../data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Pehmennys"
-
-#: ../data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#: ../data/camorama.glade.h:42
+#: ../data/camorama.glade.h:32
 msgid "String:"
 msgstr "Merkkijono:"
 
-#: ../data/camorama.glade.h:43
+#: ../data/camorama.glade.h:33
 msgid "Take Picture"
 msgstr "Ota kuva"
 
-#: ../data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Herkkyys:"
-
-#: ../data/camorama.glade.h:45
+#: ../data/camorama.glade.h:34
 msgid "Timestamp"
 msgstr "Aikaleima"
 
-#: ../data/camorama.glade.h:46
+#: ../data/camorama.glade.h:35
 msgid "Use custom string"
 msgstr "käytä omaa merkkijonoa"
 
-#: ../data/camorama.glade.h:47
+#: ../data/camorama.glade.h:36
 msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
-#: ../data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Wacky"
-
-#: ../data/camorama.glade.h:49
+#: ../data/camorama.glade.h:37
 msgid "White Balance:"
 msgstr "Valkotasapaino:"
 
-#: ../data/camorama.glade.h:50
+#: ../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
 msgstr "_Hakemisto kaapatuille kuville:"
 
-#: ../data/camorama.glade.h:51
+#: ../data/camorama.glade.h:39
 msgid "_Enable local capture"
 msgstr "_Käytä paikallista kaappausta"
 
-#: ../data/camorama.glade.h:52
+#: ../data/camorama.glade.h:40
 msgid "_Enable remote capture"
 msgstr "_Käytä etäkaappausta"
 
-#: ../data/camorama.glade.h:53
+#: ../data/camorama.glade.h:41
 msgid "_Filename for pictures:"
 msgstr "_Tiedostonimi kuville:"
 
-#: ../data/camorama.glade.h:54
+#: ../data/camorama.glade.h:42
 msgid "ftp.yourdomain.org"
 msgstr "ftp.omaosoite.org"
 
-#: ../data/camorama.glade.h:55
+#: ../data/camorama.glade.h:43
 msgid "path/to/save/to"
 msgstr "polku/jonne/tallennetaan"
 
-#: ../data/camorama.glade.h:56
+#: ../data/camorama.glade.h:44
 msgid "webcam-capture"
 msgstr "webikameran-kaappaus"
 
-#: ../data/camorama.glade.h:57
+#: ../data/camorama.glade.h:45
 msgid "webcamshot"
 msgstr "webikamerankuva"
 
-#: ../data/camorama.glade.h:58
+#: ../data/camorama.glade.h:46
 msgid "your-password"
 msgstr "salasanasi"
 
-#: ../data/camorama.glade.h:59
+#: ../data/camorama.glade.h:47
 msgid "your-username"
 msgstr "käyttäjätunnuksesi"
 
-#: ../data/camorama.glade.h:60
+#: ../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
 msgstr "~/.gnome-desktop"
 
@@ -365,8 +317,8 @@ msgid "The password for the FTP account for remote captures."
 msgstr "Salasana FTP-tunnukselle, jota käytetään etäkuvankaappauksissa"
 
 #: ../data/camorama.schemas.in.h:25
-msgid "The unix file system path to the device that's assinged to your camera."
-msgstr "Kameraasi liittyvän laitetiedoston polku tiedostojärjestelmässä."
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "Kameraasi liittyvän unix-laitetiedoston polku tiedostojärjestelmässä."
 
 #: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
@@ -460,19 +412,19 @@ msgstr ""
 "Kun kuvia kaapataan \"Ota Kuva\" napilla tai automaattisesti, tämä näppäin "
 "vaihtelee tallennetaanko kuvat etäpalvelimelle."
 
-#: ../src/callbacks.c:501
+#: ../src/callbacks.c:500
 msgid "translator_credits"
 msgstr ""
 "Ilkka Tuohela, 2004-2005\n"
 "\n"
 "http://gnome.fi/"
 
-#: ../src/callbacks.c:510
+#: ../src/callbacks.c:509
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:621 ../src/callbacks.c:683 ../src/callbacks.c:733
-#: ../src/callbacks.c:746
+#: ../src/callbacks.c:619 ../src/callbacks.c:653 ../src/callbacks.c:703
+#: ../src/callbacks.c:716
 msgid "Unable to capture image."
 msgstr "Kuvaa ei voitu kaapata."
 
@@ -527,47 +479,47 @@ msgstr "Hakemistoa '%s' ei voitu luoda."
 msgid "Could not change to directory '%s'."
 msgstr "Hakemistoon '%s' ei voitu siirtyä."
 
-#: ../src/main.c:421
+#: ../src/main.c:53
 msgid "show version and exit"
 msgstr "näytä versio ja lopeta"
 
-#: ../src/main.c:423
+#: ../src/main.c:55
 msgid "v4l device to use"
 msgstr "v4l-laite on käytössä"
 
-#: ../src/main.c:425
+#: ../src/main.c:57
 msgid "enable debugging code"
 msgstr "ota virheenselvityskoodi käyttöön"
 
-#: ../src/main.c:426
+#: ../src/main.c:58
 msgid "capture width"
 msgstr "kaappauksen leveys"
 
-#: ../src/main.c:428
+#: ../src/main.c:60
 msgid "capture height"
 msgstr "kaappauksen korkeus"
 
-#: ../src/main.c:431
+#: ../src/main.c:63
 msgid "maximum capture size"
 msgstr "kaappauksen maksimikoko"
 
-#: ../src/main.c:433
+#: ../src/main.c:65
 msgid "minimum capture size"
 msgstr "kaappauksen minimikoko"
 
-#: ../src/main.c:435
+#: ../src/main.c:67
 msgid "middle capture size"
 msgstr "kaapauksen keskikoko"
 
-#: ../src/main.c:437
+#: ../src/main.c:69
 msgid "use read() rather than mmap()"
 msgstr "käytä read():ia mmap():in sijasta"
 
-#: ../src/main.c:459
+#: ../src/main.c:91
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:468
+#: ../src/main.c:104
 #, c-format
 msgid ""
 "\n"
@@ -580,7 +532,7 @@ msgstr ""
 "Camorama versio %s\n"
 "\n"
 
-#: ../src/main.c:605
+#: ../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Camoraman käyttöliittymätiedostoa (camorama.glade) ei voitu avata."
 
@@ -598,3 +550,39 @@ msgid ""
 msgstr ""
 "Videolaitteeseen %s ei saatu yhteyttä.\n"
 "Tarkista yhteys kameraan."
+
+#~ msgid "*"
+#~ msgstr "*"
+
+#~ msgid "<span weight=\"bold\">Effects</span>"
+#~ msgstr "<span weight=\"bold\">Tehosteet</span>"
+
+#~ msgid "Black & white"
+#~ msgstr "Mustavalkoinen"
+
+#~ msgid "Color correction"
+#~ msgstr "Värinkorjaus"
+
+#~ msgid "Color threshold"
+#~ msgstr "Värin herkkyys"
+
+#~ msgid "Laplace"
+#~ msgstr "Laplace"
+
+#~ msgid "Mirror image"
+#~ msgstr "Peilaa kuva"
+
+#~ msgid "Negative"
+#~ msgstr "Negatiivi"
+
+#~ msgid "Smoothing"
+#~ msgstr "Pehmennys"
+
+#~ msgid "Sobel"
+#~ msgstr "Sobel"
+
+#~ msgid "Threshold:"
+#~ msgstr "Herkkyys:"
+
+#~ msgid "Wacky"
+#~ msgstr "Wacky"

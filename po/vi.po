@@ -1,27 +1,27 @@
 # Vietnamese translation for Camorama.
-# Copyright © 2005 Gnome i18n Project for Vietnamese.
+# Copyright © 2003-2006 Gnome i18n Project for Vietnamese.
 # T.M.Thanh <tmthanh@yahoo.com>, 2003.
-# Clytie Siddall <clytie@riverland.net.au>, 2005.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2006.
 # 
 msgid ""
 ""
 msgstr "Project-Id-Version: camorama Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-01-01 10:04+0100\n"
-"PO-Revision-Date: 2006-01-01 20:54+1030\n"
+"POT-Creation-Date: 2006-02-16 00:50+0100\n"
+"PO-Revision-Date: 2006-02-16 18:11+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: LocFactoryEditor 1.5.1b\n"
+"X-Generator: LocFactoryEditor 1.6b36\n"
 
 #:../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
 msgstr "Bộ xem máy ảnh Mạng Camorama"
 
-#:../camorama.desktop.in.h:2 ../src/callbacks.c:512
+#:../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "Xem, sửa đổi và lưu ảnh từ máy ảnh Mạng."
 
@@ -30,238 +30,190 @@ msgid "     "
 msgstr "     "
 
 #:../data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#:../data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">Hiệu ứng</span>"
-
-#:../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">Tổng quát</span>"
 
-#:../data/camorama.glade.h:5
+#:../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">Kiểu ảnh</span>"
 
-#:../data/camorama.glade.h:6
+#:../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
 msgstr "<span weight=\"bold\">Bắt ảnh cục bộ</span>"
 
-#:../data/camorama.glade.h:7
+#:../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
 msgstr "<span weight=\"bold\">Bắt ảnh ở xa</span>"
 
-#:../data/camorama.glade.h:8
+#:../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
 msgstr "<span weight=\"bold\">Ghi thời</span>"
 
-#:../data/camorama.glade.h:9
+#:../data/camorama.glade.h:7
 msgid "Add a timestamp to captured images"
 msgstr "Thêm nhãn thời gian vào ảnh mới bắt."
 
-#:../data/camorama.glade.h:10
+#:../data/camorama.glade.h:8
 msgid "Append time to filename"
 msgstr "Phụ thêm thời gian vào tên tập tin."
 
-#:../data/camorama.glade.h:11
+#:../data/camorama.glade.h:9
 msgid "Automatic Capture"
 msgstr "Tự động bắt"
 
-#:../data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "Đen trắng"
-
-#:../data/camorama.glade.h:13
+#:../data/camorama.glade.h:10
 msgid "Brightness:"
 msgstr "Độ sáng:"
 
-#:../data/camorama.glade.h:14
+#:../data/camorama.glade.h:11
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#:../data/camorama.glade.h:15
+#:../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
 msgstr "Thời gian giữa hai lần bắt (theo phút):"
 
-#:../data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "Hiệu chỉnh màu"
-
-#:../data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "Ngưỡng màu"
-
-#:../data/camorama.glade.h:18
+#:../data/camorama.glade.h:13
 msgid "Color:"
 msgstr "Màu :"
 
-#:../data/camorama.glade.h:19
+#:../data/camorama.glade.h:14
 msgid "Contrast:"
 msgstr "Độ tương phản:"
 
-#:../data/camorama.glade.h:20
+#:../data/camorama.glade.h:15
 msgid "Draw date and time"
 msgstr "Vẽ ngày giờ"
 
-#:../data/camorama.glade.h:21
+#:../data/camorama.glade.h:16
 msgid "FTP server: "
 msgstr "Máy phục vụ FTP: "
 
-#:../data/camorama.glade.h:22
+#:../data/camorama.glade.h:17
 msgid "Filename"
 msgstr "Tên tập tin"
 
-#:../data/camorama.glade.h:23
+#:../data/camorama.glade.h:18
 msgid "General"
 msgstr "Tổng quát"
 
-#:../data/camorama.glade.h:24
+#:../data/camorama.glade.h:19
 msgid "Hue:"
 msgstr "Sắc màu :"
 
-#:../data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#:../data/camorama.glade.h:26
+#:../data/camorama.glade.h:20
 msgid "Large"
 msgstr "Lớn"
 
-#:../data/camorama.glade.h:27
+#:../data/camorama.glade.h:21
 msgid "Local Capture"
 msgstr "Bắt ảnh cục bộ"
 
-#:../data/camorama.glade.h:28
+#:../data/camorama.glade.h:22
 msgid "Medium"
 msgstr "Vừa"
 
-#:../data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "Ảnh phản chiếu"
-
-#:../data/camorama.glade.h:30
-msgid "Negative"
-msgstr "Âm bản"
-
-#:../data/camorama.glade.h:31
+#:../data/camorama.glade.h:23
 msgid "Password:"
 msgstr "Mật khẩu:"
 
-#:../data/camorama.glade.h:32
+#:../data/camorama.glade.h:24
 msgid "Preferences"
 msgstr "Tùy thích"
 
-#:../data/camorama.glade.h:33
+#:../data/camorama.glade.h:25
 msgid "Remote Capture"
 msgstr "Bắt ảnh ở xa"
 
-#:../data/camorama.glade.h:34
+#:../data/camorama.glade.h:26
 msgid "Save directory:"
 msgstr "Thư mục lưu :"
 
-#:../data/camorama.glade.h:35
+#:../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
 msgstr "Lưu tập tin dạng JPEG"
 
-#:../data/camorama.glade.h:36
+#:../data/camorama.glade.h:28
 msgid "Save files in png format"
 msgstr "Lưu tập tin dạng PNG"
 
-#:../data/camorama.glade.h:37
+#:../data/camorama.glade.h:29
 msgid "Show Adjustments"
 msgstr "Hiện cách điều chỉnh"
 
-#:../data/camorama.glade.h:38
+#:../data/camorama.glade.h:30
 msgid "Show Effects"
 msgstr "Hiện hiệu ứng"
 
-#:../data/camorama.glade.h:39
+#:../data/camorama.glade.h:31
 msgid "Small"
 msgstr "Nhỏ"
 
-#:../data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "Làm mịn"
-
-#:../data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#:../data/camorama.glade.h:42
+#:../data/camorama.glade.h:32
 msgid "String:"
 msgstr "Chuỗi :"
 
-#:../data/camorama.glade.h:43
+#:../data/camorama.glade.h:33
 msgid "Take Picture"
 msgstr "Chụp ảnh"
 
-#:../data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "Ngưỡng:"
-
-#:../data/camorama.glade.h:45
+#:../data/camorama.glade.h:34
 msgid "Timestamp"
 msgstr "Ghi giờ"
 
-#:../data/camorama.glade.h:46
+#:../data/camorama.glade.h:35
 msgid "Use custom string"
 msgstr "Dùng chuỗi tự chọn"
 
-#:../data/camorama.glade.h:47
+#:../data/camorama.glade.h:36
 msgid "Username:"
 msgstr "Tên người dùng:"
 
-#:../data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "Tàng tàng"
-
-#:../data/camorama.glade.h:49
+#:../data/camorama.glade.h:37
 msgid "White Balance:"
 msgstr "Cân bằng trắng:"
 
-#:../data/camorama.glade.h:50
+#:../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
 msgstr "Th_ư mục chứa ảnh đã bắt:"
 
-#:../data/camorama.glade.h:51
+#:../data/camorama.glade.h:39
 msgid "_Enable local capture"
 msgstr "_Bật bắt ảnh cục bộ"
 
-#:../data/camorama.glade.h:52
+#:../data/camorama.glade.h:40
 msgid "_Enable remote capture"
 msgstr "_Bật bắt ảnh từ xa"
 
-#:../data/camorama.glade.h:53
+#:../data/camorama.glade.h:41
 msgid "_Filename for pictures:"
 msgstr "T_ên tập tin của ảnh:"
 
-#:../data/camorama.glade.h:54
+#:../data/camorama.glade.h:42
 msgid "ftp.yourdomain.org"
 msgstr "ftp.miềnbạn.org"
 
-#:../data/camorama.glade.h:55
+#:../data/camorama.glade.h:43
 msgid "path/to/save/to"
 msgstr "đường/dẫn/lưu"
 
-#:../data/camorama.glade.h:56
+#:../data/camorama.glade.h:44
 msgid "webcam-capture"
 msgstr "bắt ảnh Mạng"
 
-#:../data/camorama.glade.h:57
+#:../data/camorama.glade.h:45
 msgid "webcamshot"
 msgstr "chụp ảnh Mạng"
 
-#:../data/camorama.glade.h:58
+#:../data/camorama.glade.h:46
 msgid "your-password"
 msgstr "mật khẩu của bạn"
 
-#:../data/camorama.glade.h:59
+#:../data/camorama.glade.h:47
 msgid "your-username"
 msgstr "tên người dùng của bạn"
 
-#:../data/camorama.glade.h:60
+#:../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
 msgstr "<~/.gnome-desktop>"
 
@@ -362,7 +314,8 @@ msgid "The password for the FTP account for remote captures."
 msgstr "Mật khẩu cho tài khoản FTP khi bắt ảnh từ xa."
 
 #:../data/camorama.schemas.in.h:25
-msgid "The unix file system path to the device that's assinged to your camera."
+#,fuzzy
+msgid "The unix file system path to the device that's assigned to your camera."
 msgstr "Đường dẫn hệ thống tập tin UNIX đến thiết bị được gán cho máy ảnh của bạn."
 
 #:../data/camorama.schemas.in.h:26
@@ -455,16 +408,16 @@ msgid ""
 msgstr "Khi bắt ảnh dùng cái nút « Chụp ảnh », hoặc thông qua khả năng tự động bắt, "
 "phím này bật/tắt lưu ảnh vào máy phục vụ ở xa."
 
-#:../src/callbacks.c:501
+#:../src/callbacks.c:500
 msgid "translator_credits"
 msgstr "Nhóm Việt hóa Gnome <gnomevi-list@lists.sourceforge.net>"
 
-#:../src/callbacks.c:510
+#:../src/callbacks.c:509
 msgid "Camorama"
 msgstr "Camorama"
 
-#:../src/callbacks.c:621 ../src/callbacks.c:683 ../src/callbacks.c:733
-#:../src/callbacks.c:746
+#:../src/callbacks.c:619 ../src/callbacks.c:653 ../src/callbacks.c:703
+#:../src/callbacks.c:716
 msgid "Unable to capture image."
 msgstr "Không thể bắt ảnh."
 
@@ -518,47 +471,47 @@ msgstr "Không thể tạo thư mục « %s »."
 msgid "Could not change to directory '%s'."
 msgstr "Không thể chuyển đổi sang thư mục « %s »."
 
-#:../src/main.c:421
+#:../src/main.c:53
 msgid "show version and exit"
 msgstr "hiện phiên bản rồi thoát"
 
-#:../src/main.c:423
+#:../src/main.c:55
 msgid "v4l device to use"
 msgstr "thiết bị v4l cần dùng"
 
-#:../src/main.c:425
+#:../src/main.c:57
 msgid "enable debugging code"
 msgstr "bật mã gỡ lỗi"
 
-#:../src/main.c:426
+#:../src/main.c:58
 msgid "capture width"
 msgstr "rộng bắt"
 
-#:../src/main.c:428
+#:../src/main.c:60
 msgid "capture height"
 msgstr "cao bắt"
 
-#:../src/main.c:431
+#:../src/main.c:63
 msgid "maximum capture size"
 msgstr "kích cỡ bắt tối đa"
 
-#:../src/main.c:433
+#:../src/main.c:65
 msgid "minimum capture size"
 msgstr "kích cỡ bắt tối thiểu"
 
-#:../src/main.c:435
+#:../src/main.c:67
 msgid "middle capture size"
 msgstr "kích cỡ bắt vừa"
 
-#:../src/main.c:437
+#:../src/main.c:69
 msgid "use read() rather than mmap()"
 msgstr "dùng « read() » hơn là « mmap() »"
 
-#:../src/main.c:459
+#:../src/main.c:91
 msgid "camorama"
 msgstr "camorama"
 
-#:../src/main.c:468
+#:../src/main.c:104
 #,c-format
 msgid ""
 "\n"
@@ -570,7 +523,7 @@ msgstr "\n"
 "Camorama phiên bản %s\n"
 "\n"
 
-#:../src/main.c:605
+#:../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Không thể tìm tập tin giao diện chính (camorama.glade)."
 

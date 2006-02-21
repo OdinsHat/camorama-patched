@@ -7,8 +7,8 @@ msgid ""
 ""
 msgstr "Project-Id-Version: camorama Gnome HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-16 00:50+0100\n"
-"PO-Revision-Date: 2006-02-16 18:11+1030\n"
+"POT-Creation-Date: 2006-02-21 02:11+0100\n"
+"PO-Revision-Date: 2006-02-21 17:46+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <gnomevi-list@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -314,7 +314,6 @@ msgid "The password for the FTP account for remote captures."
 msgstr "Mật khẩu cho tài khoản FTP khi bắt ảnh từ xa."
 
 #:../data/camorama.schemas.in.h:25
-#,fuzzy
 msgid "The unix file system path to the device that's assigned to your camera."
 msgstr "Đường dẫn hệ thống tập tin UNIX đến thiết bị được gán cho máy ảnh của bạn."
 

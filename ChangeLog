@@ -1,5 +1,9 @@
 2006-03-16  Sven Herzberg  <herzi@gnome-de.org>
 
+	* autogen.sh: updated to pass distcheck
+
+2006-03-16  Sven Herzberg  <herzi@gnome-de.org>
+
 	* configure.in:
 	* data/camorama.glade: fixed wrong initial activation of the radio
 	buttons; updated the horizintal scroll policy of the effects box;

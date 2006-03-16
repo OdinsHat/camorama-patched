@@ -1,3 +1,24 @@
+2006-03-16  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in:
+	* data/camorama.glade: fixed wrong initial activation of the radio
+	buttons; updated the horizintal scroll policy of the effects box;
+	updated the expand policy for the horizontal separator
+	* src/Makefile.am: added new source files, cleaned up the file a bit
+	* src/callbacks.c: updated configured paths; removed the comments for
+	completely migrated filters; added depth to new filters
+	* src/camorama-filter-chain.c,
+	* src/camorama-filter-chain.h: added image depth to filters
+	* src/camorama-filter-laplace.c,
+	* src/camorama-filter-mirror.c: extracted filters into their own files
+	* src/camorama-window.c: added filter deletion; updated configure
+	paths
+	* src/filter.c,
+	* src/filter.h: added depth to filter classes, extracted some filters;
+	added some filter names
+	* src/glib-helpers.h: new
+	* src/main.c: updated configures paths
+
 2006-03-01  Daniel Nylander  <po@danielnylander.se>
 
         * po/sv.po: Updated Swedish translation.

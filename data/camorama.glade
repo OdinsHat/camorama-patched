@@ -1877,7 +1877,7 @@
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Small</property>
 			  <property name="use_underline">True</property>
-			  <property name="active">True</property>
+			  <property name="active">False</property>
 			  <signal name="activate" handler="on_small_activate" last_modification_time="Tue, 26 Aug 2003 03:09:34 GMT"/>
 			</widget>
 		      </child>
@@ -1898,7 +1898,7 @@
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Large</property>
 			  <property name="use_underline">True</property>
-			  <property name="active">True</property>
+			  <property name="active">False</property>
 			  <property name="group">small</property>
 			  <signal name="activate" handler="on_large_activate" last_modification_time="Tue, 26 Aug 2003 03:09:55 GMT"/>
 			</widget>
@@ -1979,7 +1979,7 @@
 		<widget class="GtkScrolledWindow" id="scrolledwindow_effects">
 		  <property name="visible">True</property>
 		  <property name="can_focus">True</property>
-		  <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+		  <property name="hscrollbar_policy">GTK_POLICY_NEVER</property>
 		  <property name="vscrollbar_policy">GTK_POLICY_ALWAYS</property>
 		  <property name="shadow_type">GTK_SHADOW_IN</property>
 		  <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
@@ -2018,8 +2018,8 @@
 	    </widget>
 	    <packing>
 	      <property name="padding">0</property>
-	      <property name="expand">True</property>
-	      <property name="fill">True</property>
+	      <property name="expand">False</property>
+	      <property name="fill">False</property>
 	    </packing>
 	  </child>
 
@@ -2581,8 +2581,8 @@
 	    </widget>
 	    <packing>
 	      <property name="padding">0</property>
-	      <property name="expand">True</property>
-	      <property name="fill">True</property>
+	      <property name="expand">False</property>
+	      <property name="fill">False</property>
 	    </packing>
 	  </child>
 	</widget>
@@ -2590,8 +2590,8 @@
     </widget>
     <packing>
       <property name="padding">0</property>
-      <property name="expand">True</property>
-      <property name="fill">True</property>
+      <property name="expand">False</property>
+      <property name="fill">False</property>
     </packing>
   </child>
 

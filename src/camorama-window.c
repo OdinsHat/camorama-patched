@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <herzi@gnome-de.org>
@@ -35,6 +35,7 @@
 #include "camorama-globals.h"
 #include "camorama-stock-items.h"
 #include "filter.h"
+#include "glib-helpers.h"
 
 static GQuark menu_item_filter_type = 0;
 
@@ -42,6 +43,37 @@ static void
 add_filter_clicked(GtkMenuItem* menuitem, CamoramaFilterChain* chain) {
 	GType filter_type = GPOINTER_TO_INT(g_object_get_qdata(G_OBJECT(menuitem), menu_item_filter_type));
 	camorama_filter_chain_append(chain, filter_type);
+}
+
+struct weak_target {
+	GtkTreeModel* model;
+	GList       * list;
+};
+
+static void
+reference_path(GtkTreePath* path, struct weak_target* target) {
+	target->list = g_list_prepend(target->list, gtk_tree_row_reference_new(target->model, path));
+}
+
+static void
+delete_filter(GtkTreeRowReference* ref, GtkTreeModel* model) {
+	GtkTreeIter iter;
+	GtkTreePath* path = gtk_tree_row_reference_get_path(ref);
+	gtk_tree_model_get_iter(model, &iter, path);
+	gtk_list_store_remove(GTK_LIST_STORE(model), &iter);
+}
+
+static void
+delete_filter_clicked(GtkTreeSelection* sel, GtkMenuItem* menuitem) {
+	GtkTreeModel* model;
+	GList* paths = gtk_tree_selection_get_selected_rows(sel, &model);
+	struct weak_target target = {model, NULL};
+	g_list_foreach(paths, G_FUNC(reference_path), &target);
+	g_list_foreach(target.list, G_FUNC(delete_filter), model);
+	g_list_foreach(target.list, G_FUNC(gtk_tree_row_reference_free), NULL);
+	g_list_free(target.list);
+	g_list_foreach(paths, G_FUNC(gtk_tree_path_free), NULL);
+	g_list_free(paths);
 }
 
 static void
@@ -57,31 +89,44 @@ menu_position_func(GtkMenu* menu, gint* x, gint* y, gboolean *push_in, gpointer 
 
 static void
 show_popup(cam* cam, GtkTreeView* treeview, GdkEventButton* ev) {
-	// FIXME: build the menu with the ui manager
 	GtkMenu* menu = GTK_MENU(gtk_menu_new());
-	GtkWidget* add = gtk_menu_item_new_with_mnemonic(_("_Add Filter"));
+	GtkWidget* item;
 	GtkWidget* add_filters = gtk_menu_new();
 	GType* filters;
 	guint n_filters, i;
 	GtkTreeModel* model = gtk_tree_view_get_model(treeview);
-	gtk_menu_item_set_submenu(GTK_MENU_ITEM(add), add_filters);
-	gtk_container_add(GTK_CONTAINER(menu), add);
+	GtkTreeSelection* sel = gtk_tree_view_get_selection(treeview);
+
+	gtk_tree_selection_set_mode(sel, GTK_SELECTION_MULTIPLE);
+
+	item = gtk_menu_item_new_with_mnemonic("_Delete");
+	g_signal_connect_swapped(item, "activate",
+				 G_CALLBACK(delete_filter_clicked), sel);
+	gtk_container_add(GTK_CONTAINER(menu), item);
+	gtk_container_add(GTK_CONTAINER(menu), gtk_separator_menu_item_new());
+	
+	if(!gtk_tree_selection_count_selected_rows(sel)) {
+		gtk_widget_set_sensitive(item, FALSE);
+	}
+
+	item = gtk_menu_item_new_with_mnemonic(_("_Add Filter"));
+	gtk_menu_item_set_submenu(GTK_MENU_ITEM(item), add_filters);
+	gtk_container_add(GTK_CONTAINER(menu), item);
 
 	filters = g_type_children(CAMORAMA_TYPE_FILTER, &n_filters);
 	for(i = 0; i < n_filters; i++) {
 		CamoramaFilterClass* filter_class = g_type_class_ref(filters[i]);
 		gchar const* filter_name = filter_class->name;
-		GtkWidget* menuitem;
 
 		if(!filter_name) {
 			filter_name = g_type_name(filters[i]);
 		}
 
-		menuitem = gtk_menu_item_new_with_label(filter_name);
-		g_object_set_qdata(G_OBJECT(menuitem), menu_item_filter_type, GINT_TO_POINTER(filters[i]));
-		g_signal_connect(menuitem, "activate",
+		item = gtk_menu_item_new_with_label(filter_name);
+		g_object_set_qdata(G_OBJECT(item), menu_item_filter_type, GINT_TO_POINTER(filters[i]));
+		g_signal_connect(item, "activate",
 				 G_CALLBACK(add_filter_clicked), model);
-		gtk_container_add(GTK_CONTAINER(add_filters), menuitem);
+		gtk_container_add(GTK_CONTAINER(add_filters), item);
 		g_type_class_unref(filter_class);
 	}
 	g_free(filters);
@@ -156,12 +201,16 @@ load_interface(cam* cam) {
     GdkPixbuf *logo = NULL;
     GtkWidget *eventbox = NULL, *image = NULL;
     GtkTreeView* treeview = GTK_TREE_VIEW(glade_xml_get_widget(cam->xml, "treeview_effects"));
+    GtkCellRenderer* cell;
 
     menu_item_filter_type = g_quark_from_static_string("camorama-menu-item-filter-type");
 
     /* set up the tree view */
+    cell = gtk_cell_renderer_text_new();
+    g_object_set(cell, "ellipsize", PANGO_ELLIPSIZE_END, NULL);
+    gtk_cell_renderer_text_set_fixed_height_from_font(GTK_CELL_RENDERER_TEXT(cell), 1);
     gtk_tree_view_insert_column_with_attributes(treeview, -1,
-		    				_("Effects"), gtk_cell_renderer_text_new(),
+		    				_("Effects"), cell,
 						"text", CAMORAMA_FILTER_CHAIN_COL_NAME,
 						NULL);
     cam->filter_chain = camorama_filter_chain_new();
@@ -175,7 +224,7 @@ load_interface(cam* cam) {
     cam->tooltips = gtk_tooltips_new();
     logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(glade_xml_get_widget(cam->xml, "main_window"))), CAMORAMA_STOCK_WEBCAM, 24, 0, NULL);
     gtk_window_set_default_icon(logo);
-    logo = (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
+    logo = (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");
     }

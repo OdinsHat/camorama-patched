@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <herzi@gnome-de.org>
@@ -41,7 +41,8 @@ void                 camorama_filter_chain_append(CamoramaFilterChain* self,
 void                 camorama_filter_chain_apply (CamoramaFilterChain* self,
 					          guchar*              image,
 					          gint                 width,
-					          gint                 height);
+					          gint                 height,
+						  gint                 depth);
 
 struct _CamoramaFilterChain {
 	GtkListStore base_instance;

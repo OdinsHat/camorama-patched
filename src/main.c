@@ -86,7 +86,7 @@ main(int argc, char *argv[]) {
 
     /* gnome_program_init  - initialize everything (gconf, threads, etc) */
     gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE, argc, argv,
-                        GNOME_PARAM_APP_DATADIR, DATADIR,
+                        GNOME_PARAM_APP_DATADIR, PACKAGE_DATA_DIR,
                         GNOME_PARAM_POPT_TABLE, popt_options,
                         GNOME_PARAM_HUMAN_READABLE_NAME, _("camorama"), NULL);
 

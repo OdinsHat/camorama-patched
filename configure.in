@@ -15,6 +15,17 @@ AM_GLIB_GNU_GETTEXT
 
 AC_DEFINE(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", "blah blah blah")
 
+AC_MSG_CHECKING(prefix)
+
+if test "x${prefix}" = "xNONE"; then
+  PACKAGE_PREFIX="${ac_default_prefix}"
+else
+  PACKAGE_PREFIX="${prefix}"
+fi
+AC_MSG_RESULT($PACKAGE_PREFIX)
+
+AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${PACKAGE_PREFIX}/${DATADIRNAME}", "the data dir")
+AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${PACKAGE_PREFIX}/${DATADIRNAME}/locale", "the locale dir")
 
 AC_ISC_POSIX
 AC_PROG_CC

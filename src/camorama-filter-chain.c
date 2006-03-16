@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <herzi@gnome-de.org>
@@ -29,6 +29,7 @@ struct CamoramaImage {
 	guchar* buf;
 	gint    width;
 	gint    height;
+	gint    depth;
 };
 
 CamoramaFilterChain*
@@ -60,12 +61,14 @@ camorama_filter_chain_apply_filter(GtkTreeModel* model, GtkTreePath* path, GtkTr
 	gtk_tree_model_get(model, iter,
 			   CAMORAMA_FILTER_CHAIN_COL_FILTER, &filter,
 			   -1);
-	camorama_filter_apply(filter, img->buf, img->width, img->height);
+	camorama_filter_apply(filter, img->buf, img->width, img->height, img->depth);
+
+	return FALSE;
 }
 
 void
-camorama_filter_chain_apply(CamoramaFilterChain* self, guchar* image, gint width, gint height) {
-	struct CamoramaImage img = {image, width, height};
+camorama_filter_chain_apply(CamoramaFilterChain* self, guchar* image, gint width, gint height, gint depth) {
+	struct CamoramaImage img = {image, width, height, depth};
 	
 	gtk_tree_model_foreach(GTK_TREE_MODEL(self), camorama_filter_chain_apply_filter, &img);
 }

@@ -42,14 +42,17 @@ typedef struct _CamoramaFilterClass CamoramaFilterClass;
 #define CAMORAMA_IS_FILTER_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE((c), CAMORAMA_TYPE_FILTER))
 #define CAMORAMA_FILTER_GET_CLASS(i) (G_TYPE_INSTANCE_GET_CLASS((i), CAMORAMA_TYPE_FILTER, CamoramaFilterClass))
 
-GType camorama_filter_get_type(void);
+GType camorama_filter_get_type        (void);
+GType camorama_filter_mirror_get_type (void);
+GType camorama_filter_laplace_get_type(void);
 
 void         camorama_filters_init   (void);
 gchar const* camorama_filter_get_name(CamoramaFilter* self);
 void         camorama_filter_apply   (CamoramaFilter* self,
 				      guchar*         image,
 				      gint            width,
-				      gint            height);
+				      gint            height,
+				      gint            depth);
 
 struct _CamoramaFilter {
 	GObject base_instance;
@@ -63,7 +66,8 @@ struct _CamoramaFilterClass {
 	void (*filter) (CamoramaFilter* self,
 			guchar        * image,
 			gint            width,
-			gint            height);
+			gint            height,
+			gint            depth);
 };
 
 void yuv420p_to_rgb	(guchar *image, guchar *temp, gint x, gint y, gint z);

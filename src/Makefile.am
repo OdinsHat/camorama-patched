@@ -1,9 +1,8 @@
 NULL=
-INCLUDES = \
-   -DPACKAGE_DATA_DIR=\""$(datadir)"\" \
-	-DDATADIR=\""$(datadir)"\"    \
-	-DPACKAGE_LOCALE_DIR=\""$(datadir)/locale"\" \
-		   $(PACKAGE_CFLAGS)
+AM_CPPFLAGS=\
+	$(PACKAGE_CFLAGS) \
+	-g \
+	$(NULL)
 			
 
 bin_PROGRAMS = camorama
@@ -13,12 +12,15 @@ camorama_SOURCES = \
 	callbacks.c \
 	camorama-filter-chain.c \
 	camorama-filter-chain.h \
+	camorama-filter-laplace.c \
+	camorama-filter-mirror.c \
 	camorama-globals.h \
 	camorama-stock-items.c \
 	camorama-stock-items.h \
 	camorama-window.c \
 	camorama-window.h \
 	filter.c \
+	glib-helpers.h \
 	main.c \
 	support.c \
 	v4l.c \

@@ -496,7 +496,7 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
     };
     const gchar *documenters[] = { NULL };
     GdkPixbuf *logo =
-        (GdkPixbuf *) create_pixbuf (DATADIR "/pixmaps/camorama.png");
+        (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
     char *translators = _("translator_credits");
 
     if (!strcmp (translators, "translator_credits"))
@@ -522,37 +522,13 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
 
 static void
 apply_filters(cam* cam) {
-	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y);
-#warning "FIXME: enable color correction filter"
-//	if( (effect_mask & CAMORAMA_FILTER_FIX_COLOR)  != 0)
-//		fix_colour (cam->pic_buf, cam->x, cam->y);
+	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y, cam->depth);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
 //		threshold_channel (cam->pic_buf, cam->x, cam->y, cam->dither);
 #warning "FIXME: enable the threshold filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
 //		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-#warning "FIXME: enable  filter"
-//	if((effect_mask & CAMORAMA_FILTER_LAPLACE) != 0) 
-//		laplace (cam->pic_buf, cam->depth, cam->x, cam->y);
-#warning "FIXME: enable  filter" 
-//	if((effect_mask & CAMORAMA_FILTER_SOBEL) != 0)
-//		sobel (cam->pic_buf, cam->x, cam->y);
-#warning "FIXME: enable  filter" 
-//	if((effect_mask & CAMORAMA_FILTER_WACKY)  != 0)
-//		wacky (cam->pic_buf, cam->depth, cam->x, cam->y);
-#warning "FIXME: enable the invert filter"
-//	if((effect_mask & CAMORAMA_FILTER_NEGATIVE)  != 0)
-//		negative (cam->pic_buf, cam->x, cam->y, cam->depth);
-#warning "FIXME: enable  filter"
-//	if((effect_mask & CAMORAMA_FILTER_MIRROR) != 0)
-//		mirror (cam->pic_buf, cam->x, cam->y, cam->depth);
-#warning "FIXME: enable  filter"
-//	if((effect_mask & CAMORAMA_FILTER_COLOR)  != 0) 
-//		bw (cam->pic_buf, cam->x, cam->y);
-#warning "FIXME: enable  filter"
-//	if((effect_mask & CAMORAMA_FILTER_SMOOTH)  != 0) 
-//		smooth (cam->pic_buf, cam->depth, cam->x, cam->y);
 }
 
 /*

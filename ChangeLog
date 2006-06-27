@@ -1,3 +1,7 @@
+2006-06-27  Raivis Dejus  <orvils@gmail.co>
+
+	* configure.in: Add lv to ALL_LINGUAS.
+
 2006-04-17  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.in: Remove obsolete Norwegian entry.

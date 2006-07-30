@@ -25,7 +25,6 @@ camorama_SOURCES = \
 	support.c \
 	v4l.c \
 	fileio.c	\
-	eggtrayicon.c	\
 	v4l.h		\
 	callbacks.h	\
 	support.h	\
@@ -33,7 +32,6 @@ camorama_SOURCES = \
 	fileio.h	\
 	font_6x11.h	\
 	filter.h	\
-	eggtrayicon.h	\
 	$(BUILT_SOURCES)\
 	$(NULL)
 camorama_LDADD = $(PACKAGE_LIBS)

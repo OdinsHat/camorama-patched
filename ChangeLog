@@ -1,3 +1,14 @@
+2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
+
+	* configure.in: depend on GTK+ 2.10 for GtkStatusIcon
+	* src/Makefile.am: updated
+	* src/callbacks.c,
+	* src/main.c: compile fixes
+	* src/eggtrayicon.c,
+	* src/eggtrayicon.h: removed deprecated EggTrayIcon code
+	* src/camorama-window.c,
+	* src/v4l.h: use GtkStatusIcon instead of EggTrayIcon
+
 2006-06-27  Raivis Dejus  <orvils@gmail.co>
 
 	* configure.in: Add lv to ALL_LINGUAS.

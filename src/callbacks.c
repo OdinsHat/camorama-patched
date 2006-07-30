@@ -506,7 +506,7 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
         return;
     }
 
-    about = gnome_about_new (_("Camorama"), VERSION,
+    about = gnome_about_new (_("Camorama"), PACKAGE_VERSION,
                              "Copyright \xc2\xa9 2002 Greg Jones",
                              _("View, alter and save images from a webcam"),
                              (const char **) authors,

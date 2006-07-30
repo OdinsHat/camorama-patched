@@ -18,7 +18,6 @@
 #include <png.h>
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
-#include "eggtrayicon.h"
 
 #include "camorama-filter-chain.h"
 
@@ -65,7 +64,7 @@ typedef struct camera {
     guint32 timeout_interval;
     GConfClient *gc;
     GladeXML *xml;
-    EggTrayIcon *tray_icon;
+    GtkStatusIcon *tray_icon;
 
     CamoramaFilterChain* filter_chain;
 } cam;

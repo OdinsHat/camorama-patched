@@ -253,7 +253,7 @@ load_interface(cam* cam) {
 
     gtk_widget_show (eventbox);
 
-    cam->tray_icon = egg_tray_icon_new ("Our cool tray icon");
+    cam->tray_icon = gtk_status_icon_new ();
     update_tooltip (cam);
     /* add the status to the plug */
     g_object_set_data (G_OBJECT (cam->tray_icon), "image", image);

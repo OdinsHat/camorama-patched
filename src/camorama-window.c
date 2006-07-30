@@ -156,50 +156,36 @@ treeview_clicked_cb(cam* cam, GdkEventButton* ev, GtkTreeView* treeview) {
 	return retval;
 }
 
-static gint
-tray_clicked_callback (GtkWidget * widget, GdkEventButton * event, cam * cam){
-    GdkEventButton *event_button = NULL;
-
-    if (event->type == GDK_BUTTON_PRESS) {
-
-        event_button = (GdkEventButton *) event;
-
-        //change to switch
-        if (event_button->button == 1) {
+static void
+tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time, cam * cam){
+        // FIXME: change to switch
+        if (button == 1) {
             if (GTK_WIDGET_VISIBLE
                 (glade_xml_get_widget (cam->xml, "main_window"))) {
                 cam->hidden = TRUE;
                 gtk_idle_remove (cam->idle_id);
                 gtk_widget_hide (glade_xml_get_widget
                                  (cam->xml, "main_window"));
-
             } else {
                 cam->idle_id =
                     gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
                 gtk_widget_show (glade_xml_get_widget
                                  (cam->xml, "main_window"));
                 cam->hidden = FALSE;
-
             }
-            return TRUE;
-        } else if (event_button->button == 3) {
+        } else if (button == 3) {
 
             //gw = MyApp->GetMainWindow ();
 
             //gnomemeeting_component_view (NULL, (gpointer) gw->ldap_window);
 
-            return TRUE;
         }
-    }
-
-    return FALSE;
 }
 
 void
 load_interface(cam* cam) {
     gchar *title;
     GdkPixbuf *logo = NULL;
-    GtkWidget *eventbox = NULL, *image = NULL;
     GtkTreeView* treeview = GTK_TREE_VIEW(glade_xml_get_widget(cam->xml, "treeview_effects"));
     GtkCellRenderer* cell;
 
@@ -221,15 +207,12 @@ load_interface(cam* cam) {
     g_signal_connect_swapped(treeview, "popup-menu",
 		    	     G_CALLBACK(treeview_popup_menu_cb), cam);
 
-    cam->tooltips = gtk_tooltips_new();
     logo = gtk_icon_theme_load_icon(gtk_icon_theme_get_for_screen(gtk_widget_get_screen(glade_xml_get_widget(cam->xml, "main_window"))), CAMORAMA_STOCK_WEBCAM, 24, 0, NULL);
     gtk_window_set_default_icon(logo);
     logo = (GdkPixbuf *) create_pixbuf (PACKAGE_DATA_DIR "/pixmaps/camorama.png");
     if (logo == NULL) {
         printf ("\n\nLOGO NO GO\n\n");
     }
-
-    image = gtk_image_new_from_stock (CAMORAMA_STOCK_WEBCAM, GTK_ICON_SIZE_MENU);
 
     if (cam->show_adjustments == FALSE) {
         gtk_widget_hide (glade_xml_get_widget
@@ -247,31 +230,17 @@ load_interface(cam* cam) {
                             (cam->xml, "main_window")), 320, 240);
     }
     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(glade_xml_get_widget(cam->xml, "show_effects")), cam->show_effects);
-    eventbox = gtk_event_box_new();
 
-    gtk_widget_show (image);
-
-    gtk_widget_show (eventbox);
-
-    cam->tray_icon = gtk_status_icon_new ();
+    cam->tray_icon = gtk_status_icon_new_from_stock (CAMORAMA_STOCK_WEBCAM);
     update_tooltip (cam);
     /* add the status to the plug */
-    g_object_set_data (G_OBJECT (cam->tray_icon), "image", image);
     g_object_set_data (G_OBJECT (cam->tray_icon), "available",
                        GINT_TO_POINTER (1));
     g_object_set_data (G_OBJECT (cam->tray_icon), "embedded",
                        GINT_TO_POINTER (0));
-    gtk_container_add (GTK_CONTAINER (eventbox), image);
-    gtk_container_add ((GtkContainer *) cam->tray_icon, eventbox);
 
-    g_signal_connect (G_OBJECT (eventbox), "button_press_event",
+    g_signal_connect (cam->tray_icon, "popup-menu",
                       G_CALLBACK (tray_clicked_callback), cam);
-
-    //button = gtk_button_new_with_label ("This is a cool\ntray icon");
-    /*g_signal_connect (button, "clicked",
-     * G_CALLBACK (capture_func), cam);
-     * gtk_container_add (GTK_CONTAINER (cam->tray_icon), button); */
-    gtk_widget_show_all (GTK_WIDGET (cam->tray_icon));
 
     /* connect the signals in the interface 
      * glade_xml_signal_autoconnect(xml);

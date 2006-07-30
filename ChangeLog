@@ -1,5 +1,11 @@
 2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
 
+	* src/callbacks.c,
+	* src/camorama-window.c,
+	* src/v4l.h: fix the status icon code
+
+2006-07-30  Sven Herzberg  <herzi@gnome-de.org>
+
 	* configure.in: depend on GTK+ 2.10 for GtkStatusIcon
 	* src/Makefile.am: updated
 	* src/callbacks.c,

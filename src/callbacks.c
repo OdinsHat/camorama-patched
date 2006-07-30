@@ -820,7 +820,7 @@ void update_tooltip (cam * cam)
     if (cam->acap == TRUE) {
         tooltip_text =
             g_strdup_printf
-            ("Local Capture: %d\nRemote Capture: %d\nCapture Interval: %d",
+            (_("Local Capture: %d\nRemote Capture: %d\nCapture Interval: %d"),
              cam->cap, cam->rcap, cam->timeout_interval / 60000);
         if (cam->debug == TRUE) {
             printf ("tip - acap on\n");
@@ -829,10 +829,8 @@ void update_tooltip (cam * cam)
         if (cam->debug == TRUE) {
             printf ("tip - acap off\n");
         }
-        tooltip_text = g_strdup_printf ("Automatic Capture Disabled");
+        tooltip_text = g_strdup_printf (_("Automatic Capture Disabled"));
     }
-    gtk_tooltips_set_tip ((GtkTooltips *) cam->tooltips,
-                          (GtkWidget *) cam->tray_icon, tooltip_text,
-                          "private");
+    gtk_status_icon_set_tooltip(cam->tray_icon, tooltip_text);
     g_free (tooltip_text);
 }

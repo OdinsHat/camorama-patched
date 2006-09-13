@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-03-09 14:37+0100\n"
-"PO-Revision-Date: 2006-03-09 14:52+0100\n"
+"POT-Creation-Date: 2006-09-13 13:33+0200\n"
+"PO-Revision-Date: 2006-09-13 13:36+0200\n"
 "Last-Translator: Øivind Hoel <oivind.hoel@gmail.com>\n"
 "Language-Team: Norwegian <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -18,8 +18,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "Camorama webkamera-visning"
 
-#: ../camorama.desktop.in.h:2
-#: ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
 msgstr "Vis, endre og lagre bilder fra et webkamera"
 
@@ -197,11 +196,11 @@ msgstr "/sti/for/lagring"
 
 #: ../data/camorama.glade.h:44
 msgid "webcam-capture"
-msgstr ""
+msgstr "opptak med nettkamera"
 
 #: ../data/camorama.glade.h:45
 msgid "webcamshot"
-msgstr ""
+msgstr "nettkamerabilde"
 
 #: ../data/camorama.glade.h:46
 msgid "your-password"
@@ -249,23 +248,23 @@ msgstr ""
 
 #: ../data/camorama.schemas.in.h:9
 msgid "Folder for local captures"
-msgstr ""
+msgstr "Mappe for lokale opptak"
 
 #: ../data/camorama.schemas.in.h:10
 msgid "Folder for remote captures"
-msgstr ""
+msgstr "Mappe for eksterne opptak"
 
 #: ../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr ""
+msgstr "Mappe for lagring av opptak eksternt"
 
 #: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr ""
+msgstr "Mappe for lagring av opptak lokalt"
 
 #: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
-msgstr ""
+msgstr "Vertsnavn for FTP-tjener"
 
 #: ../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
@@ -281,7 +280,7 @@ msgstr "Bildeformat for lokale opptak"
 
 #: ../data/camorama.schemas.in.h:17
 msgid "Name for the filename of uploaded images."
-msgstr ""
+msgstr "Filnavn for bilder som skal lastes opp."
 
 #: ../data/camorama.schemas.in.h:18
 msgid "Password for FTP server"
@@ -349,7 +348,8 @@ msgstr "Veksler innsetting av tidsstempel i lokale bilder"
 
 #: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "Veksler innsetting av tidsstempel i bildene som skal lastes opp via FTP."
+msgstr ""
+"Veksler innsetting av tidsstempel i bildene som skal lastes opp via FTP."
 
 #: ../data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
@@ -392,12 +392,20 @@ msgid "Video device"
 msgstr "Videoutstyr"
 
 #: ../data/camorama.schemas.in.h:45
-msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
-msgstr "Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår denne nøkkelen på/av lagring av bilder lokalt på denne datamaskinen."
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr ""
+"Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår "
+"denne nøkkelen på/av lagring av bilder lokalt på denne datamaskinen."
 
 #: ../data/camorama.schemas.in.h:46
-msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
-msgstr "Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår denne nøkkelen på/av lagring av bilder til en ekstern tjener."
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"Ved opptak av bilder via \"Ta bilde\"-knappen, eller ved autoopptak, slår "
+"denne nøkkelen på/av lagring av bilder til en ekstern tjener."
 
 #: ../src/callbacks.c:500
 msgid "translator_credits"
@@ -407,23 +415,27 @@ msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:619
-#: ../src/callbacks.c:653
-#: ../src/callbacks.c:703
-#: ../src/callbacks.c:716
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
 msgid "Unable to capture image."
 msgstr "Kan ikke ta opp bilde."
 
-#: ../src/eggtrayicon.c:127
-msgid "Orientation"
-msgstr "Orientering"
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"Lokalt opptak: %d\n"
+"Eksternt opptak: %d\n"
+"Opptaksintervall: %d"
 
-#: ../src/eggtrayicon.c:128
-msgid "The orientation of the tray."
-msgstr "Orientering for trauet."
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "Automatisk opptak deaktivert"
 
-#: ../src/fileio.c:120
-#: ../src/fileio.c:266
+#: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Kan ikke lagre mellomlagerbilde i /tmp."
 
@@ -432,8 +444,7 @@ msgstr "Kan ikke lagre mellomlagerbilde i /tmp."
 msgid "Unable to create image '%s'."
 msgstr "Kan ikke opprette bilde «%s»."
 
-#: ../src/fileio.c:147
-#: ../src/fileio.c:430
+#: ../src/fileio.c:147 ../src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Kunne ikke lagre bilde «%s/%s»."
@@ -496,9 +507,8 @@ msgid "minimum capture size"
 msgstr "minimum opptaksstørrelse"
 
 #: ../src/main.c:67
-#, fuzzy
 msgid "middle capture size"
-msgstr "medianopptaksstørrelse"
+msgstr "middels opptaksstørrelse"
 
 #: ../src/main.c:69
 msgid "use read() rather than mmap()"
@@ -530,12 +540,8 @@ msgstr "Fant ikke grensesnittfilen (camorama.glade)."
 msgid "Couldn't find pixmap file: %s"
 msgstr "Kunne ikke finne bildefil: %s"
 
-#: ../src/v4l.c:94
-#: ../src/v4l.c:168
-#: ../src/v4l.c:180
-#: ../src/v4l.c:205
-#: ../src/v4l.c:226
-#: ../src/v4l.c:241
+#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#: ../src/v4l.c:226 ../src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -544,26 +550,41 @@ msgstr ""
 "Kan ikke koble til videoutstyret %s.\n"
 "Vennligst sjekk tilkoblingen."
 
+#~ msgid "Orientation"
+#~ msgstr "Orientering"
+
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orientering for trauet."
+
 #~ msgid "*"
 #~ msgstr "*"
+
 #~ msgid "<span weight=\"bold\">Effects</span>"
 #~ msgstr "<span weight=\"bold\">Effekter</span>"
+
 #~ msgid "Black & white"
 #~ msgstr "Sort/hvitt"
+
 #~ msgid "Color correction"
 #~ msgstr "Fargekorreksjon"
+
 #~ msgid "Color threshold"
 #~ msgstr "Fargeterskel"
+
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
+
 #~ msgid "Mirror image"
 #~ msgstr "Speilvend bilde"
+
 #~ msgid "Negative"
 #~ msgstr "Negativ"
+
 #~ msgid "Smoothing"
 #~ msgstr "Utjevning"
+
 #~ msgid "Sobel"
 #~ msgstr "Sobel"
+
 #~ msgid "Threshold:"
 #~ msgstr "Terskel:"
-

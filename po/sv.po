@@ -1,8 +1,8 @@
 # Swedish messages for camorama.
 # Copyright (C) 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # This file is distributed under the same license as the camorama package.
-# Christian Rose <menthos@menthos.com>, 2003.
 # Daniel Nylander <po@danielnylander.se>, 2006.
+# Christian Rose <menthos@menthos.com>, 2003.
 #
 # $Id$
 #
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-04-12 18:06+0200\n"
-"PO-Revision-Date: 2006-04-12 22:38+0100\n"
+"POT-Creation-Date: 2006-09-14 10:12+0200\n"
+"PO-Revision-Date: 2006-09-14 13:36+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "MIME-Version: 1.0\n"
@@ -408,7 +408,9 @@ msgid "translator_credits"
 msgstr ""
 "Daniel Nylander\n"
 "Christian Rose\n"
-"Skicka synpunkter på översättningen till tp-sv@listor.tp-sv.se"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"tp-sv@listor.tp-sv.se"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"
@@ -421,13 +423,20 @@ msgstr "Camorama"
 msgid "Unable to capture image."
 msgstr "Kan inte ta bild."
 
-#: ../src/eggtrayicon.c:127
-msgid "Orientation"
-msgstr "Orientering"
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"Lokal tagning: %d\n"
+"Fjärrtagning: %d\n"
+"TagningsIntervall: %d"
 
-#: ../src/eggtrayicon.c:128
-msgid "The orientation of the tray."
-msgstr "Orienteringen för lådan."
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "Automatisk tagning inaktiverat"
 
 #: ../src/fileio.c:120
 #: ../src/fileio.c:266
@@ -550,6 +559,10 @@ msgstr ""
 "Kunde inte ansluta till videoenheten (%s).\n"
 "Kontrollera anslutningen."
 
+#~ msgid "Orientation"
+#~ msgstr "Orientering"
+#~ msgid "The orientation of the tray."
+#~ msgstr "Orienteringen för lådan."
 #~ msgid "*"
 #~ msgstr "*"
 #~ msgid "<span weight=\"bold\">Effects</span>"

@@ -1,0 +1,686 @@
+# Arabic translations for PACKAGE package.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-17 21:14+0000\n"
+"PO-Revision-Date: 2006-11-17 22:49+0100\n"
+"Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n == 0 ? 0 : n == 1 ? 1 : n == 2 ? 2 : n >= 3 && n <= 10 ? 3 : n >= 11 && n <= 99 ? 4 : 5;\n"
+"X-Poedit-Language: Arabic\n"
+
+#: ../camorama.desktop.in.h:1
+#, fuzzy
+msgid "Camorama Webcam Viewer"
+msgstr "معاين مستندات جنوم"
+
+#: ../camorama.desktop.in.h:2
+#: ../src/callbacks.c:511
+msgid "View, alter and save images from a webcam"
+msgstr ""
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr ""
+
+#: ../data/camorama.glade.h:2
+#, fuzzy
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">عام</span>"
+
+#: ../data/camorama.glade.h:3
+#, fuzzy
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">إعدادات الصور</span>"
+
+#: ../data/camorama.glade.h:4
+#, fuzzy
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">اسم الملف</span>"
+
+#: ../data/camorama.glade.h:5
+#, fuzzy
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">اسم الملف</span>"
+
+#: ../data/camorama.glade.h:6
+#, fuzzy
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">ألوان</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "Add a timestamp to captured images"
+msgstr ""
+
+#: ../data/camorama.glade.h:8
+#, fuzzy
+msgid "Append time to filename"
+msgstr "لا يوجد اسم ملف لحفظه"
+
+#: ../data/camorama.glade.h:9
+#, fuzzy
+msgid "Automatic Capture"
+msgstr "تسجيل الصوت:"
+
+#: ../data/camorama.glade.h:10
+#, fuzzy
+msgid "Brightness:"
+msgstr "سطوع"
+
+#: ../data/camorama.glade.h:11
+msgid "Camorama-libglade"
+msgstr ""
+
+#: ../data/camorama.glade.h:12
+#, fuzzy
+msgid "Capture Interval (in minutes):"
+msgstr "إنهاء الحفظ الآلي لالدقيقة"
+
+#: ../data/camorama.glade.h:13
+#, fuzzy
+msgid "Color:"
+msgstr "اللّون"
+
+#: ../data/camorama.glade.h:14
+#, fuzzy
+msgid "Contrast:"
+msgstr "إضبط التباين"
+
+#: ../data/camorama.glade.h:15
+#, fuzzy
+msgid "Draw date and time"
+msgstr "تاريخ ولحظة التغيير"
+
+#: ../data/camorama.glade.h:16
+#, fuzzy
+msgid "FTP server: "
+msgstr "نادل STUN"
+
+#: ../data/camorama.glade.h:17
+#, fuzzy
+msgid "Filename"
+msgstr "اسم الملف"
+
+#: ../data/camorama.glade.h:18
+#, fuzzy
+msgid "General"
+msgstr "عامّ"
+
+#: ../data/camorama.glade.h:19
+#, fuzzy
+msgid "Hue:"
+msgstr "ال_فارق بين الألوان:"
+
+#: ../data/camorama.glade.h:20
+#, fuzzy
+msgid "Large"
+msgstr "عريض"
+
+#: ../data/camorama.glade.h:21
+#, fuzzy
+msgid "Local Capture"
+msgstr "تسجيل الصوت:"
+
+#: ../data/camorama.glade.h:22
+#, fuzzy
+msgid "Medium"
+msgstr "متوسط"
+
+#: ../data/camorama.glade.h:23
+#, fuzzy
+msgid "Password:"
+msgstr "كلمة المرور:"
+
+#: ../data/camorama.glade.h:24
+#, fuzzy
+msgid "Preferences"
+msgstr "تفضيلات"
+
+#: ../data/camorama.glade.h:25
+#, fuzzy
+msgid "Remote Capture"
+msgstr "تسجيل الصوت:"
+
+#: ../data/camorama.glade.h:26
+#, fuzzy
+msgid "Save directory:"
+msgstr "دليل المستخدمين"
+
+#: ../data/camorama.glade.h:27
+msgid "Save files in jpeg format"
+msgstr ""
+
+#: ../data/camorama.glade.h:28
+msgid "Save files in png format"
+msgstr ""
+
+#: ../data/camorama.glade.h:29
+#, fuzzy
+msgid "Show Adjustments"
+msgstr "اظهار التفاصيل"
+
+#: ../data/camorama.glade.h:30
+#, fuzzy
+msgid "Show Effects"
+msgstr "<b>العروض المرئية</b>"
+
+#: ../data/camorama.glade.h:31
+#, fuzzy
+msgid "Small"
+msgstr "صغير"
+
+#: ../data/camorama.glade.h:32
+#, fuzzy
+msgid "String:"
+msgstr "نصّ"
+
+#: ../data/camorama.glade.h:33
+#, fuzzy
+msgid "Take Picture"
+msgstr "أخذ صورة للشّاشة"
+
+#: ../data/camorama.glade.h:34
+#, fuzzy
+msgid "Timestamp"
+msgstr "خواتم وقتية للملفات الجديدة"
+
+#: ../data/camorama.glade.h:35
+#, fuzzy
+msgid "Use custom string"
+msgstr "ا_ستعمل امرا مخصصا"
+
+#: ../data/camorama.glade.h:36
+#, fuzzy
+msgid "Username:"
+msgstr "اسم المستخدم:"
+
+#: ../data/camorama.glade.h:37
+#, fuzzy
+msgid "White Balance:"
+msgstr "<b>ضبط الألوان</b>"
+
+#: ../data/camorama.glade.h:38
+#, fuzzy
+msgid "_Directory for captured pics:"
+msgstr "هيكل الدلائل للملفات"
+
+#: ../data/camorama.glade.h:39
+#, fuzzy
+msgid "_Enable local capture"
+msgstr "القطعة %s: تسجيل الصوت"
+
+#: ../data/camorama.glade.h:40
+#, fuzzy
+msgid "_Enable remote capture"
+msgstr "تمكين إسترجاع الأمكنة البعيدة"
+
+#: ../data/camorama.glade.h:41
+#, fuzzy
+msgid "_Filename for pictures:"
+msgstr "اختر اسم ملف لصورة القرص المدمج"
+
+#: ../data/camorama.glade.h:42
+#, fuzzy
+msgid "ftp.yourdomain.org"
+msgstr "FTP (مع تسجيل دخول)"
+
+#: ../data/camorama.glade.h:43
+#, fuzzy
+msgid "path/to/save/to"
+msgstr "احف_ظ للقرص"
+
+#: ../data/camorama.glade.h:44
+#, fuzzy
+msgid "webcam-capture"
+msgstr "تسجيل الصوت:"
+
+#: ../data/camorama.glade.h:45
+msgid "webcamshot"
+msgstr ""
+
+#: ../data/camorama.glade.h:46
+#, fuzzy
+msgid "your-password"
+msgstr "الرجاء إدخال كلمة المرور:"
+
+#: ../data/camorama.glade.h:47
+#, fuzzy
+msgid "your-username"
+msgstr "الرجاء إدخال إسم المستخدم:"
+
+#: ../data/camorama.glade.h:48
+#, fuzzy
+msgid "~/.gnome-desktop"
+msgstr "مدير سطح المكتب لجنوم"
+
+#: ../data/camorama.schemas.in.h:1
+#, fuzzy
+msgid "Append timestamp to filename"
+msgstr "لا يوجد اسم ملف لحفظه"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:5
+#, fuzzy
+msgid "Custom text for the timestamp"
+msgstr "أشرطة مخصصة لهذا النص"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:7
+#, fuzzy
+msgid "Filename for local captures"
+msgstr "اختر اسم ملف لصورة القرص المدمج"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:9
+#, fuzzy
+msgid "Folder for local captures"
+msgstr "جاري تحضير المجلّد '%s' لنسق عدم الإتّصال"
+
+#: ../data/camorama.schemas.in.h:10
+#, fuzzy
+msgid "Folder for remote captures"
+msgstr "الإتصال بمجلّد عن بعد"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:13
+#, fuzzy
+msgid "Hostname for FTP server"
+msgstr "لا اسم خادم محدّد لخادم قواميس"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:16
+#, fuzzy
+msgid "Local capture image format"
+msgstr "تهيئة ملف صورة لا بمكن تمييزها"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:18
+#, fuzzy
+msgid "Password for FTP server"
+msgstr "%s أدخل كلمة السّر لـ %s·(المستخدم %s)"
+
+#: ../data/camorama.schemas.in.h:19
+#, fuzzy
+msgid "Remote capture image format"
+msgstr "تهيئة ملف صورة لا بمكن تمييزها"
+
+#: ../data/camorama.schemas.in.h:20
+#, fuzzy
+msgid "Remote save filename"
+msgstr "لا يوجد اسم ملف لحفظه"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:26
+#, fuzzy
+msgid "Toggles auto-capture"
+msgstr "القطعة %s: تسجيل الصوت"
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles automatic capturing of pictures."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:28
+#, fuzzy
+msgid "Toggles local capture"
+msgstr "القطعة %s: تسجيل الصوت"
+
+#: ../data/camorama.schemas.in.h:29
+#, fuzzy
+msgid "Toggles remote capture"
+msgstr "القطعة %s: تسجيل الصوت"
+
+#: ../data/camorama.schemas.in.h:30
+#, fuzzy
+msgid "Toggles the custom string"
+msgstr "سلسلة هندسة غير سليمة \"%s\"\n"
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the datestamp in captures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video adjustment sliders"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for local captures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Toggles timestamp for remote captures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:42
+#, fuzzy
+msgid "Username for FTP server"
+msgstr "%s: أمر خادم فارغ للعرض %s"
+
+#: ../data/camorama.schemas.in.h:43
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:44
+#, fuzzy
+msgid "Video device"
+msgstr "جهاز دخل الفيديو"
+
+#: ../data/camorama.schemas.in.h:45
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
+msgstr ""
+
+#: ../data/camorama.schemas.in.h:46
+msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+
+#: ../src/callbacks.c:500
+#, fuzzy
+msgid "translator_credits"
+msgstr "جهاد عفيفي (Djihed Afifi) <djihed@gmail.com> /n عرفات المديني، تونس <lumina@silverpen.de>"
+
+#: ../src/callbacks.c:509
+msgid "Camorama"
+msgstr ""
+
+#: ../src/callbacks.c:595
+#: ../src/callbacks.c:629
+#: ../src/callbacks.c:679
+#: ../src/callbacks.c:692
+#, fuzzy
+msgid "Unable to capture image."
+msgstr ""
+"لا يمكن تحميل صورة:\n"
+"%s"
+
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+
+#: ../src/callbacks.c:832
+#, fuzzy
+msgid "Automatic Capture Disabled"
+msgstr "تم تعطيل H.245 Tunnelling"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr ""
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr ""
+
+#: ../src/camorama-stock-items.c:14
+#, fuzzy
+msgid "Webcam"
+msgstr "أدات وابكام تستخدم %s"
+
+#: ../src/camorama-window.c:112
+#, fuzzy
+msgid "_Add Filter"
+msgstr "إضافة قاعدة مصفاة"
+
+#: ../src/camorama-window.c:199
+#, fuzzy
+msgid "Effects"
+msgstr "مؤثرات"
+
+#: ../src/fileio.c:120
+#: ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr ""
+
+#: ../src/fileio.c:138
+#, fuzzy, c-format
+msgid "Unable to create image '%s'."
+msgstr ""
+"لا يمكن تحميل صورة:\n"
+"%s"
+
+#: ../src/fileio.c:147
+#: ../src/fileio.c:430
+#, fuzzy, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "لم يمكن حفظ الملخّص: %s: %s"
+
+#: ../src/fileio.c:274
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+
+#: ../src/fileio.c:312
+#, fuzzy, c-format
+msgid "An error occurred opening %s."
+msgstr "حدث خطأ خلال فتح %s."
+
+#: ../src/fileio.c:324
+#, fuzzy, c-format
+msgid "An error occurred writing to %s."
+msgstr "خطأ أثناء الكتابة ل '%s'"
+
+#: ../src/fileio.c:404
+#, fuzzy, c-format
+msgid "Could not create directory '%s'."
+msgstr ""
+"لم يمكن إنشاء الدّليل %s:\n"
+"%s"
+
+#: ../src/fileio.c:415
+#, fuzzy, c-format
+msgid "Could not change to directory '%s'."
+msgstr "لم يمكن فتح دليل الذّاكرة المخبّأة: %s"
+
+#: ../src/filter.c:170
+#, fuzzy
+msgid "Color Correction"
+msgstr "إضبط الألوان"
+
+#: ../src/filter.c:195
+#, fuzzy
+msgid "Invert"
+msgstr "_إعكس"
+
+#: ../src/filter.c:234
+#, fuzzy
+msgid "Threshold (Overall)"
+msgstr "عتبة الطّول"
+
+#: ../src/filter.c:276
+#, fuzzy
+msgid "Threshold (Per Channel)"
+msgstr "شدة الصوت ل %s في قناة %s"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr ""
+
+#: ../src/filter.c:450
+#, fuzzy
+msgid "Smooth"
+msgstr "_تفعيل التحديث المرن"
+
+#: ../src/filter.c:481
+#, fuzzy
+msgid "Monochrome"
+msgstr "_أسود و أبيض"
+
+#: ../src/filter.c:511
+#, fuzzy
+msgid "Monochrome (Weight)"
+msgstr "وزن الخط"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr ""
+
+#: ../src/main.c:53
+#, fuzzy
+msgid "show version and exit"
+msgstr "اطبع الإصدار و اخرج"
+
+#: ../src/main.c:55
+#, fuzzy
+msgid "v4l device to use"
+msgstr "جهاز القرص المدمج للاستعمال"
+
+#: ../src/main.c:57
+#, fuzzy
+msgid "enable debugging code"
+msgstr "مكّن التنقيح"
+
+#: ../src/main.c:58
+#, fuzzy
+msgid "capture width"
+msgstr "_عرض ثابت:"
+
+#: ../src/main.c:60
+#, fuzzy
+msgid "capture height"
+msgstr "ارتفاع القصاصة"
+
+#: ../src/main.c:63
+#, fuzzy
+msgid "maximum capture size"
+msgstr "الحجم الأقصى للمسطرة"
+
+#: ../src/main.c:65
+#, fuzzy
+msgid "minimum capture size"
+msgstr "الحد الأدنى لحجم خط"
+
+#: ../src/main.c:67
+#, fuzzy
+msgid "middle capture size"
+msgstr "_حجم خط داشر"
+
+#: ../src/main.c:69
+msgid "use read() rather than mmap()"
+msgstr ""
+
+#: ../src/main.c:91
+msgid "camorama"
+msgstr ""
+
+#: ../src/main.c:104
+#, fuzzy, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr "اصدارة الرزمة"
+
+#: ../src/main.c:238
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr ""
+
+#: ../src/support.c:69
+#, fuzzy, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "لا يوجد ملف البكسمب '%s'"
+
+#: ../src/v4l.c:94
+#: ../src/v4l.c:168
+#: ../src/v4l.c:180
+#: ../src/v4l.c:205
+#: ../src/v4l.c:226
+#: ../src/v4l.c:241
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+

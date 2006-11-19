@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-29 12:43+0200\n"
-"PO-Revision-Date: 2006-09-29 12:43+0200 \n"
+"POT-Creation-Date: 2006-11-19 21:22+0100\n"
+"PO-Revision-Date: 2006-11-19 21:22+0100 \n"
 "Last-Translator: Wouter Bolsterlee <uws+gnome@xs4all.nl>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -454,6 +454,26 @@ msgstr ""
 msgid "Automatic Capture Disabled"
 msgstr "Automatische opname uitgeschakeld"
 
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "Laplace (4 buren)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "Spiegelen"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "Webcam"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "Filter toe_voegen"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "Effecten"
+
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
 msgstr "Kan geen tijdelijk afbeeldingsbestand opslaan in /tmp."
@@ -496,6 +516,42 @@ msgstr "Kan map '%s' niet aanmaken."
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "De map '%s' kan niet geopend worden."
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "Kleurcorrectie"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "Omkeren"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "Drempelwaarde (totaal):"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "Drempelwaarde (per kanaal):"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Idioot"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "Vloeiend"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "Monochroom"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "Monochrome (gewicht)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "Sobel"
 
 #: ../src/main.c:53
 msgid "show version and exit"
@@ -579,32 +635,14 @@ msgstr ""
 #~ msgid "Black & white"
 #~ msgstr "Zwart-wit"
 
-#~ msgid "Color correction"
-#~ msgstr "Kleurcorrectie"
-
 #~ msgid "Color threshold"
 #~ msgstr "Kleurdrempel"
 
 #~ msgid "Laplace"
 #~ msgstr "Laplace"
 
-#~ msgid "Mirror image"
-#~ msgstr "Beeld spiegelen"
-
 #~ msgid "Negative"
 #~ msgstr "Negatief"
-
-#~ msgid "Smoothing"
-#~ msgstr "Vloeiend"
-
-#~ msgid "Sobel"
-#~ msgstr "Sobel"
-
-#~ msgid "Threshold:"
-#~ msgstr "Drempel:"
-
-#~ msgid "Wacky"
-#~ msgstr "Idioot"
 
 #~ msgid "Orientation"
 #~ msgstr "Oriëntatie"

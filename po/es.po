@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-terminal-doc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-12-06 22:54+0100\n"
-"PO-Revision-Date: 2006-12-06 22:56+0100\n"
+"POT-Creation-Date: 2006-12-11 17:57+0100\n"
+"PO-Revision-Date: 2006-12-11 17:58+0100\n"
 "Last-Translator: Francisco Javier F. Serrador <serrador@cvs.gnome.org>\n"
 "Language-Team: Spanish <traductores@es.gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -542,7 +542,7 @@ msgstr "Umbral (por canal)"
 
 #: ../src/filter.c:349
 msgid "Wacky"
-msgstr ""
+msgstr "Chiflado"
 
 #: ../src/filter.c:450
 msgid "Smooth"

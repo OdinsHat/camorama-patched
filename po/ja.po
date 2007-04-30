@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 21:53+0900\n"
-"PO-Revision-Date: 2007-04-30 21:53+0900\n"
-"Last-Translator: Takeshi AIHANA <aihana@gnome.gr.jp>\n"
+"POT-Creation-Date: 2007-04-30 22:12+0900\n"
+"PO-Revision-Date: 2007-04-30 22:11+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,7 @@ msgstr "ファイル名の末尾に時刻を付与する"
 
 #: ../data/camorama.glade.h:9
 msgid "Automatic Capture"
-msgstr "自動キャプチャ"
+msgstr "自動キャプチャを有効にする"
 
 #: ../data/camorama.glade.h:10
 msgid "Brightness:"
@@ -126,7 +126,7 @@ msgstr "リモート・キャプチャ"
 
 #: ../data/camorama.glade.h:26
 msgid "Save directory:"
-msgstr "保存するフォルダ:"
+msgstr "保存先のフォルダ:"
 
 #: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
@@ -162,7 +162,7 @@ msgstr "タイムスタンプ"
 
 #: ../data/camorama.glade.h:35
 msgid "Use custom string"
-msgstr "カスタム文字列を使う"
+msgstr "タイムスタンプの文字列を指定する"
 
 #: ../data/camorama.glade.h:36
 msgid "Username:"
@@ -174,7 +174,7 @@ msgstr "ホワイト・バランス:"
 
 #: ../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
-msgstr "キャプチャした画像のフォルダ(_D)"
+msgstr "保存先のフォルダ(_D):"
 
 #: ../data/camorama.glade.h:39
 msgid "_Enable local capture"
@@ -194,7 +194,7 @@ msgstr "使用する FTP ドメイン"
 
 #: ../data/camorama.glade.h:43
 msgid "path/to/save/to"
-msgstr "保存するフォルダ"
+msgstr "保存先のフォルダ"
 
 #: ../data/camorama.glade.h:44
 msgid "webcam-capture"
@@ -413,7 +413,9 @@ msgstr ""
 msgid "translator_credits"
 msgstr ""
 "KAMAGASAKO Masatoshi <emerald@gnome.gr.jp>\n"
-"Takeshi AIHANA <aihana@gnome.gr.jp>"
+"相花 毅 <takeshi.aihana@gmail.com>\n"
+"\n"
+"日本GNOMEユーザー会 http://www.gnome.gr.jp"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"

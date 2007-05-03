@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-30 22:12+0900\n"
-"PO-Revision-Date: 2007-04-30 22:11+0900\n"
+"POT-Creation-Date: 2007-05-03 15:21+0900\n"
+"PO-Revision-Date: 2007-05-03 15:21+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "MIME-Version: 1.0\n"
@@ -138,11 +138,11 @@ msgstr "PNG 形式で保存する"
 
 #: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
-msgstr "調整エントリの表示"
+msgstr "調整エントリ"
 
 #: ../data/camorama.glade.h:30
 msgid "Show Effects"
-msgstr "効果の表示"
+msgstr "画像の効果"
 
 #: ../data/camorama.glade.h:31
 msgid "Small"
@@ -459,7 +459,7 @@ msgstr "フィルタの追加(_A)"
 
 #: ../src/camorama-window.c:199
 msgid "Effects"
-msgstr "効果"
+msgstr "画像の効果"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -514,19 +514,19 @@ msgstr "反転"
 
 #: ../src/filter.c:234
 msgid "Threshold (Overall)"
-msgstr "閾値 (全体)"
+msgstr "境界値変動 (全体)"
 
 #: ../src/filter.c:276
 msgid "Threshold (Per Channel)"
-msgstr "しきい値 (チャンネル単位)"
+msgstr "境界値変動 (チャンネル単位)"
 
 #: ../src/filter.c:349
 msgid "Wacky"
-msgstr "風変り"
+msgstr "ワッキー効果"
 
 #: ../src/filter.c:450
 msgid "Smooth"
-msgstr "スムージング"
+msgstr "平滑化"
 
 #: ../src/filter.c:481
 msgid "Monochrome"

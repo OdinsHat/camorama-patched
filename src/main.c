@@ -177,7 +177,7 @@ main(int argc, char *argv[]) {
     /* get desktop depth */
     display = (Display *) gdk_x11_get_default_xdisplay ();
     screen_num = xlib_rgb_get_screen ();
-    gdk_pixbuf_xlib_init (display, 0);
+    gdk_pixbuf_xlib_init (display, screen_num);
     cam->desk_depth = xlib_rgb_get_depth ();
 
     cam->dev = open (cam->video_dev, O_RDWR);

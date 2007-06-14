@@ -21,12 +21,17 @@
 
 #include "camorama-filter-chain.h"
 
-#define PICMAX 0
-#define PICMIN 1
-#define PICHALF 2
-#define JPEG 0
-#define PNG 1
-#define PPM 2
+enum {
+	PICMAX = 0,
+	PICMIN = 1,
+	PICHALF = 2
+};
+
+enum {
+	JPEG = 0,
+	PNG = 1,
+	PPM = 2
+};
 
 typedef struct camera {
     int dev;

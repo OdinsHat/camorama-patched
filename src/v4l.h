@@ -21,11 +21,11 @@
 
 #include "camorama-filter-chain.h"
 
-enum {
+typedef enum {
 	PICMAX = 0,
 	PICMIN = 1,
 	PICHALF = 2
-};
+} CamoImageSize;
 
 enum {
 	JPEG = 0,
@@ -39,7 +39,7 @@ typedef struct camera {
     int y;
     int depth;
     int desk_depth;
-    int size;
+    CamoImageSize size;
     int contrast, brightness, colour, hue, wb;
     int frame_number;
     struct video_capability vid_cap;

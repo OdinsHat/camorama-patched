@@ -93,9 +93,6 @@ display_expose_event (GtkWidget     * widget,
 {
 	CamoDisplay* self = CAMO_DISPLAY (widget);
 
-#warning "FIXME: do we really need this window"
-	self->_private->camera->window = widget->window;
-
 	gdk_draw_drawable (widget->window,
 			   widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
 			   self->_private->camera->pixmap,

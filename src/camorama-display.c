@@ -23,18 +23,30 @@
 
 #include "camorama-display.h"
 
+struct _CamoDisplayPrivate {
+	cam* camera;
+};
+
+enum {
+	PROP_0,
+	PROP_CAMERA
+};
+
 G_DEFINE_TYPE (CamoDisplay, camo_display, GTK_TYPE_DRAWING_AREA);
 
 GtkWidget*
-camo_display_new (void)
+camo_display_new (cam* camera)
 {
 	return g_object_new (CAMO_TYPE_DISPLAY,
+			     "camera", camera,
 			     NULL);
 }
 
 static void
 camo_display_init (CamoDisplay* self)
-{}
+{
+	self->_private = G_TYPE_INSTANCE_GET_PRIVATE (self, CAMO_TYPE_DISPLAY, CamoDisplayPrivate);
+}
 
 static void
 display_get_property (GObject   * object,
@@ -45,6 +57,9 @@ display_get_property (GObject   * object,
 	CamoDisplay* self = CAMO_DISPLAY (object);
 
 	switch (prop_id) {
+	case PROP_CAMERA:
+		g_value_set_pointer (value, self->_private->camera);
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -60,6 +75,10 @@ display_set_property (GObject     * object,
 	CamoDisplay* self = CAMO_DISPLAY (object);
 
 	switch (prop_id) {
+	case PROP_CAMERA:
+		self->_private->camera = g_value_get_pointer (value);
+		g_object_notify (object, "camera");
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -73,5 +92,15 @@ camo_display_class_init (CamoDisplayClass* self_class)
 
 	object_class->get_property = display_get_property;
 	object_class->set_property = display_set_property;
+
+	g_object_class_install_property (object_class,
+					 PROP_CAMERA,
+#warning "FIXME: use a camera object here"
+					 g_param_spec_pointer ("camera",
+							       "camera",
+							       "camera",
+							       G_PARAM_READWRITE));
+
+	g_type_class_add_private (self_class, sizeof (CamoDisplayPrivate));
 }
 

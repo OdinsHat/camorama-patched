@@ -26,6 +26,8 @@
 
 #include <gtk/gtkdrawingarea.h>
 
+#include "v4l.h"
+
 G_BEGIN_DECLS
 
 typedef struct _CamoDisplay        CamoDisplay;
@@ -40,7 +42,7 @@ typedef struct _CamoDisplayClass   CamoDisplayClass;
 #define CAMO_DISPLAY_GET_CLASS(i) (G_TYPE_INSTANCE_GET_CLASS ((i), CAMO_TYPE_DISPLAY, CamoDisplayClass))
 
 GType      camo_display_get_type (void);
-GtkWidget* camo_display_new      (void);
+GtkWidget* camo_display_new      (cam* camera);
 
 struct _CamoDisplay {
 	GtkDrawingArea      base_instance;

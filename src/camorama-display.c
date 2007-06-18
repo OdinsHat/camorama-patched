@@ -23,11 +23,19 @@
 
 #include "camorama-display.h"
 
-#include <gtk/gtkdrawingarea.h>
+G_DEFINE_TYPE (CamoDisplay, camo_display, GTK_TYPE_DRAWING_AREA);
 
 GtkWidget*
 camo_display_new (void)
 {
 	return g_object_new (GTK_TYPE_DRAWING_AREA, NULL);
 }
+
+static void
+camo_display_init (CamoDisplay* self)
+{}
+
+static void
+camo_display_class_init (CamoDisplayClass* self_class)
+{}
 

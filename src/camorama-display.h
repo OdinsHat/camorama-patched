@@ -24,11 +24,32 @@
 #ifndef CAMORAMA_DISPLAY_H
 #define CAMORAMA_DISPLAY_H
 
-#include <gtk/gtkwidget.h>
+#include <gtk/gtkdrawingarea.h>
 
 G_BEGIN_DECLS
 
-GtkWidget* camo_display_new (void);
+typedef struct _CamoDisplay        CamoDisplay;
+typedef struct _CamoDisplayPrivate CamoDisplayPrivate;
+typedef struct _CamoDisplayClass   CamoDisplayClass;
+
+#define CAMO_TYPE_DISPLAY         (camo_display_get_type ())
+#define CAMO_DISPLAY(i)           (G_TYPE_CHECK_INSTANCE_CAST ((i), CAMO_TYPE_DISPLAY, CamoDisplay))
+#define CAMO_DISPLAY_CLASS(c)     (G_TYPE_CHECK_CLASS_CAST ((c), CAMO_TYPE_DISPLAY, CamoDisplayClass))
+#define CAMO_IS_DISPLAY(i)        (G_TYPE_CHECK_INSTANCE_TYPE ((i), CAMO_TYPE_DISPLAY))
+#define CAMO_IS_DISPLAY_CLASS(c)  (G_TYPE_CHECK_CLASS_TYPE ((c), CAMO_TYPE_DISPLAY))
+#define CAMO_DISPLAY_GET_CLASS(i) (G_TYPE_INSTANCE_GET_CLASS ((i), CAMO_TYPE_DISPLAY, CamoDisplayClass))
+
+GType      camo_display_get_type (void);
+GtkWidget* camo_display_new      (void);
+
+struct _CamoDisplay {
+	GtkDrawingArea      base_instance;
+	CamoDisplayPrivate* _private;
+};
+
+struct _CamoDisplayClass {
+	GtkDrawingAreaClass base_class;
+};
 
 G_END_DECLS
 

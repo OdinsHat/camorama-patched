@@ -23,6 +23,8 @@
 
 #include "camorama-display.h"
 
+#include "camorama-globals.h" // frames
+
 struct _CamoDisplayPrivate {
 	cam* camera;
 };
@@ -90,7 +92,19 @@ display_expose_event (GtkWidget     * widget,
 		      GdkEventExpose* event)
 {
 	CamoDisplay* self = CAMO_DISPLAY (widget);
-	return on_drawingarea_expose_event (widget, event, self->_private->camera);
+
+#warning "FIXME: do we really need this window"
+	self->_private->camera->window = widget->window;
+
+	gdk_draw_drawable (widget->window,
+			   widget->style->fg_gc[GTK_WIDGET_STATE (widget)],
+			   self->_private->camera->pixmap,
+			   event->area.x, event->area.y, event->area.x,
+			   event->area.y, event->area.width, event->area.height);
+
+	frames++;
+
+	return FALSE;
 }
 
 static void

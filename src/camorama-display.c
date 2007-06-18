@@ -37,6 +37,41 @@ camo_display_init (CamoDisplay* self)
 {}
 
 static void
+display_get_property (GObject   * object,
+		      guint       prop_id,
+		      GValue    * value,
+		      GParamSpec* pspec)
+{
+	CamoDisplay* self = CAMO_DISPLAY (object);
+
+	switch (prop_id) {
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
+
+static void
+display_set_property (GObject     * object,
+		      guint         prop_id,
+		      GValue const* value,
+		      GParamSpec  * pspec)
+{
+	CamoDisplay* self = CAMO_DISPLAY (object);
+
+	switch (prop_id) {
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
+
+static void
 camo_display_class_init (CamoDisplayClass* self_class)
-{}
+{
+	GObjectClass* object_class = G_OBJECT_CLASS (self_class);
+
+	object_class->get_property = display_get_property;
+	object_class->set_property = display_set_property;
+}
 

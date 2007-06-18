@@ -28,7 +28,8 @@ G_DEFINE_TYPE (CamoDisplay, camo_display, GTK_TYPE_DRAWING_AREA);
 GtkWidget*
 camo_display_new (void)
 {
-	return g_object_new (GTK_TYPE_DRAWING_AREA, NULL);
+	return g_object_new (CAMO_TYPE_DISPLAY,
+			     NULL);
 }
 
 static void

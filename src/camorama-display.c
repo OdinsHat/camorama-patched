@@ -85,10 +85,19 @@ display_set_property (GObject     * object,
 	}
 }
 
+static gboolean
+display_expose_event (GtkWidget     * widget,
+		      GdkEventExpose* event)
+{
+	CamoDisplay* self = CAMO_DISPLAY (widget);
+	return on_drawingarea_expose_event (widget, event, self->_private->camera);
+}
+
 static void
 camo_display_class_init (CamoDisplayClass* self_class)
 {
-	GObjectClass* object_class = G_OBJECT_CLASS (self_class);
+	GObjectClass*   object_class = G_OBJECT_CLASS (self_class);
+	GtkWidgetClass* widget_class = GTK_WIDGET_CLASS (self_class);
 
 	object_class->get_property = display_get_property;
 	object_class->set_property = display_set_property;
@@ -100,6 +109,8 @@ camo_display_class_init (CamoDisplayClass* self_class)
 							       "camera",
 							       "camera",
 							       G_PARAM_READWRITE));
+
+	widget_class->expose_event = display_expose_event;
 
 	g_type_class_add_private (self_class, sizeof (CamoDisplayPrivate));
 }

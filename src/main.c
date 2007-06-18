@@ -51,8 +51,6 @@ camorama_glade_handler (GladeXML* xml,
 	if (string1 && !strcmp (string1, "CamoDisplay")) {
 		GtkWidget* widget = camo_display_new ((cam*)data);
 		gtk_widget_show (widget);
-		g_signal_connect (widget, "expose_event",
-				  G_CALLBACK (on_drawingarea_expose_event), data);
 		return widget;
 	}
 

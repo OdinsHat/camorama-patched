@@ -408,8 +408,7 @@ msgstr ""
 #: ../src/callbacks.c:500
 msgid "translator_credits"
 msgstr ""
-"La còla occitana de revirada d'Ubuntu, 2006 - ubuntu-l10n-"
-"oci@lists.ubuntu.com"
+"La còla occitana de revirada d'Ubuntu, 2007 - ubuntu-l10n-oci@lists.ubuntu.com"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"

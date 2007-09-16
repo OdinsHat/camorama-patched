@@ -1,3 +1,12 @@
+2007-09-16  Sven Herzberg  <herzi@gnome-de.org>
+
+	Fix a few translation issues:
+	http://bugzilla.gnome.org/show_bug.cgi?id=476004
+
+	* data/camorama.glade: don't mark empty strings as translatable
+	* src/camorama-filter-mirror.c,
+	* src/filter.c: added translator comments
+
 2007-06-14  Sven Herzberg  <herzi@gnome-de.org>
 
 	* src/main.c: replaced GNOMELOCALEDIR by PACKAGE_LOCALE_DIR

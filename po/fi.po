@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-16 11:30+0300\n"
+"POT-Creation-Date: 2007-09-16 17:39+0300\n"
 "PO-Revision-Date: 2006-09-15 15:34+0300\n"
 "Last-Translator: Ilkka Tuohela <hile@iki.fi>\n"
 "Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
-msgstr "Camorama Webikameran katselin"
+msgstr "Camorama-webikameraohjelma"
 
 #: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
@@ -30,7 +30,7 @@ msgstr "     "
 
 #: ../data/camorama.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
-msgstr "<span weight=\"bold\">Yleistä</span>"
+msgstr "<span weight=\"bold\">Yleisasetukset</span>"
 
 #: ../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
@@ -70,7 +70,7 @@ msgstr "Camorama-libglade"
 
 #: ../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
-msgstr "Kaapausten väli (minuutteja):"
+msgstr "Kaapausten aikaväli (minuutteja):"
 
 #: ../data/camorama.glade.h:13
 msgid "Color:"
@@ -415,7 +415,7 @@ msgstr ""
 #: ../src/callbacks.c:500
 msgid "translator_credits"
 msgstr ""
-"Ilkka Tuohela, 2004-2005\n"
+"Ilkka Tuohela, 2004-2007\n"
 "\n"
 "http://gnome.fi/"
 
@@ -593,7 +593,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Camorama versio %s\n"
+"Camoraman versio %s\n"
 "\n"
 
 #: ../src/main.c:264
@@ -614,27 +614,3 @@ msgid ""
 msgstr ""
 "Videolaitteeseen %s ei saatu yhteyttä.\n"
 "Tarkista yhteys kameraan."
-
-#~ msgid "Orientation"
-#~ msgstr "Suunta"
-
-#~ msgid "The orientation of the tray."
-#~ msgstr "Hyllyn suunta."
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<span weight=\"bold\">Effects</span>"
-#~ msgstr "<span weight=\"bold\">Tehosteet</span>"
-
-#~ msgid "Black & white"
-#~ msgstr "Mustavalkoinen"
-
-#~ msgid "Color threshold"
-#~ msgstr "Värin herkkyys"
-
-#~ msgid "Laplace"
-#~ msgstr "Laplace"
-
-#~ msgid "Negative"
-#~ msgstr "Negatiivi"

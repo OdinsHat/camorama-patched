@@ -1,23 +1,24 @@
-# translation of webcam.po to Afar
+# translation of webcam.po to Punjabi
 # KBST Punjab translation of punlinux.
 # Copyright (C) 2004 THE CAMORAMA_HEAD'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the CAMORAMA_HEAD package.
 #
 #
 # jaswinder singh <jaswindersinghra@yahoo.com>, 2004.
-# ASB <apbrar@gmail.com>, 2007.
+# ASB <aalam@users.sf.net>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: webcam\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-01-02 04:29+0000\n"
-"PO-Revision-Date: 2007-09-26 07:37+0530\n"
-"Last-Translator: ASB <apbrar@gmail.com>\n"
-"Language-Team: Afar <pa@li.org>\n"
+"PO-Revision-Date: 2007-09-26 07:45+0530\n"
+"Last-Translator: ASB <aalam@users.sf.net>\n"
+"Language-Team: Punjabi <punjabi-l10n@users.sf.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"

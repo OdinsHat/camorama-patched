@@ -1,559 +1,587 @@
+# translation of webcam.po to Afar
 # KBST Punjab translation of punlinux.
 # Copyright (C) 2004 THE CAMORAMA_HEAD'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the CAMORAMA_HEAD package.
+#
+#
 # jaswinder singh <jaswindersinghra@yahoo.com>, 2004.
-# jaswinder singh <jaswindersinghra@yahoo.com>, 2004.
-# 
-# 
+# ASB <apbrar@gmail.com>, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: carmorama.HEAD\n"
+"Project-Id-Version: webcam\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-03-20 16:56+0530\n"
-"PO-Revision-Date: 2004-03-15 20:19+0530\n"
-"Last-Translator: Jaswinder Singh Phulewala <jaswinderlinux@netscape.net>\n"
-"Language-Team: Punjabi\n"
+"POT-Creation-Date: 2007-01-02 04:29+0000\n"
+"PO-Revision-Date: 2007-09-26 07:37+0530\n"
+"Last-Translator: ASB <apbrar@gmail.com>\n"
+"Language-Team: Afar <pa@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 
-#: camorama.desktop.in.h:1
+#: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
-msgstr "ਵੇਖਣ ਵਾਲਾ Camorama Webcam"
+msgstr "ਕੈਮੋਰਾਮਾ ਵੈੱਬ ਵਿਊਰ"
 
-#: camorama.desktop.in.h:2 src/callbacks.c:510
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
 msgid "View, alter and save images from a webcam"
-msgstr "webcam ਤੋਂ ਚਿੱਤਰ ਵੇਖੋ,ਬਦਲੋ ਅਤੇ ਸੰਭਾਲੋ"
+msgstr "ਵੈੱਬਕੈਮ ਤੋਂ ਚਿੱਤਰ ਵੇਖੋ,ਬਦਲੋ ਅਤੇ ਸੰਭਾਲੋ"
 
-#: data/camorama.glade.h:1
+#: ../data/camorama.glade.h:1
 msgid "     "
 msgstr "     "
 
-#: data/camorama.glade.h:2
-msgid "*"
-msgstr "*"
-
-#: data/camorama.glade.h:3
-msgid "<span weight=\"bold\">Effects</span>"
-msgstr "<span weight=\"bold\">ਪ੍ਭਾਵ</span>"
-
-#: data/camorama.glade.h:4
+#: ../data/camorama.glade.h:2
 msgid "<span weight=\"bold\">General</span>"
 msgstr "<span weight=\"bold\">ਆਮ</span>"
 
-#: data/camorama.glade.h:5
+#: ../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
 msgstr "<span weight=\"bold\">ਚਿੱਤਰ ਕਿਸਮ</span>"
 
-#: data/camorama.glade.h:6
+#: ../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">ਸਥਾਨਿਕ ਪ੍ਾਪਤੀ</span>"
+msgstr "<span weight=\"bold\">ਲੋਕਲ ਕੈਪਚਰ</span>"
 
-#: data/camorama.glade.h:7
+#: ../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">ਰਿਮੋਟ ਪ੍ਾਪਤੀ</span>"
+msgstr "<span weight=\"bold\">ਰਿਮੋਟ ਕੈਪਚਰ</span>"
 
-#: data/camorama.glade.h:8
+#: ../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
-msgstr "<span weight=\"bold\">ਸਮ੾-ਸੰਕੇਤ</span>"
+msgstr "<span weight=\"bold\">ਟਾਈਮ-ਸਟੈਂਪ</span>"
 
-#: data/camorama.glade.h:9
+#: ../data/camorama.glade.h:7
 msgid "Add a timestamp to captured images"
-msgstr "ਪ੍ਾਪਤ ਚਿੱਤਰ ਨਾਲ ਸਮ੾-ਸੰਕੇਤ ਜੋੜੋ"
+msgstr "ਕੈਪਚਰ ਕੀਤੇ ਚਿੱਤਰ ਨਾਲ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.glade.h:10
+#: ../data/camorama.glade.h:8
 msgid "Append time to filename"
-msgstr "ਫਾਈਲ ਨਾਉਂ ਦੇ ਅੰਤ ਵਿਚ ਸਮਾਂ ਜੋੜੋ"
+msgstr "ਫਾਇਲ ਨਾਂ ਵਿੱਚ ਟਾਈਮ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.glade.h:11
+#: ../data/camorama.glade.h:9
 msgid "Automatic Capture"
-msgstr "ਸ੍ਵੈ ਪ੍ਾਪਤੀ"
+msgstr "ਆਟੋਮੈਟਿਕ ਕੈਪਚਰ"
 
-#: data/camorama.glade.h:12
-msgid "Black & white"
-msgstr "ਕਾਲਾ ਅਤੇ ਸਫੈਦ"
-
-#: data/camorama.glade.h:13
+#: ../data/camorama.glade.h:10
 msgid "Brightness:"
 msgstr "ਚਮਕ:"
 
-#: data/camorama.glade.h:14
+#: ../data/camorama.glade.h:11
 msgid "Camorama-libglade"
 msgstr "Camorama-libglade"
 
-#: data/camorama.glade.h:15
+#: ../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
-msgstr "ਵਕਫਾ ਪ੍ਾਪਤ ਕਰਨ ਦਾ(ਮਿੰਟਾਂ ਵਿਚ):"
+msgstr "ਕੈਪਚਰ ਇੰਟਰਵਲ (ਮਿੰਟਾਂ ਵਿੱਚ):"
 
-#: data/camorama.glade.h:16
-msgid "Color correction"
-msgstr "ਰੰਗ ਠੀਕ ਕਰਨਾ"
-
-#: data/camorama.glade.h:17
-msgid "Color threshold"
-msgstr "ਰੰਗ ਸ਼ੁਰੂਆਤ"
-
-#: data/camorama.glade.h:18
+#: ../data/camorama.glade.h:13
 msgid "Color:"
 msgstr "ਰੰਗ: "
 
-#: data/camorama.glade.h:19
+#: ../data/camorama.glade.h:14
 msgid "Contrast:"
 msgstr "ਗੂੜਾ: "
 
-#: data/camorama.glade.h:20
+#: ../data/camorama.glade.h:15
 msgid "Draw date and time"
-msgstr "ਤਰੀਕ ਅਤੇ ਸਮਾਂ ਉਲੀਕੋ"
+msgstr "ਮਿਤੀ ਅਤੇ ਟਾਈਮ ਖਿੱਚੋ"
 
-#: data/camorama.glade.h:21
+#: ../data/camorama.glade.h:16
 msgid "FTP server: "
 msgstr "FTP ਸਰਵਰ: "
 
-#: data/camorama.glade.h:22
+#: ../data/camorama.glade.h:17
 msgid "Filename"
-msgstr "ਫਾਈਲ ਨਾਉਂ"
+msgstr "ਫਾਈਲ ਨਾਂ"
 
-#: data/camorama.glade.h:23
+#: ../data/camorama.glade.h:18
 msgid "General"
 msgstr "ਆਮ"
 
-#: data/camorama.glade.h:24
+#: ../data/camorama.glade.h:19
 msgid "Hue:"
-msgstr "ਰੰਗ ਦਾ ਸ਼ੇਡ:"
+msgstr "ਆਭਾ:"
 
-#: data/camorama.glade.h:25
-msgid "Laplace"
-msgstr "Laplace"
-
-#: data/camorama.glade.h:26
+#: ../data/camorama.glade.h:20
 msgid "Large"
 msgstr "ਵੱਡਾ"
 
-#: data/camorama.glade.h:27
+#: ../data/camorama.glade.h:21
 msgid "Local Capture"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ"
 
-#: data/camorama.glade.h:28
+#: ../data/camorama.glade.h:22
 msgid "Medium"
-msgstr "ਮਾਧਿਅਮ"
+msgstr "ਮੀਡਿਅਮ"
 
-#: data/camorama.glade.h:29
-msgid "Mirror image"
-msgstr "ਦਰਪਣ ਚਿੱਤਰ"
-
-#: data/camorama.glade.h:30
-msgid "Negative"
-msgstr "ਨਾਹਵਾਚਕ"
-
-#: data/camorama.glade.h:31
+#: ../data/camorama.glade.h:23
 msgid "Password:"
-msgstr "ਗੁਪਤ ਕੋਡ:"
+msgstr "ਪਾਸਵਰਡ:"
 
-#: data/camorama.glade.h:32
+#: ../data/camorama.glade.h:24
 msgid "Preferences"
-msgstr "ਪਸੰਦ"
+msgstr "ਮੇਰੀ ਪਸੰਦ"
 
-#: data/camorama.glade.h:33
+#: ../data/camorama.glade.h:25
 msgid "Remote Capture"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ"
 
-#: data/camorama.glade.h:34
+#: ../data/camorama.glade.h:26
 msgid "Save directory:"
 msgstr "ਡਾਇਰੈਕਟਰੀ ਸੰਭਾਲੋ:"
 
-#: data/camorama.glade.h:35
+#: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
-msgstr "jpeg ਰੂਪ ਵਿਚ ਫਾਈਲਾਂ ਸੰਭਾਲੋ"
+msgstr "jpeg ਫਾਰਮੈਟ ਵਿੱਚ ਫਾਇਲਾਂ ਸੰਭਾਲੋ"
 
-#: data/camorama.glade.h:36
+#: ../data/camorama.glade.h:28
 msgid "Save files in png format"
-msgstr "png ਰੂਪ ਵਿਚ ਫਾਈਲਾਂ ਸੰਭਾਲੋ"
+msgstr "png ਫਾਰਮੈਟ ਵਿੱਚ ਫਾਇਲਾਂ ਸੰਭਾਲੋ"
 
-#: data/camorama.glade.h:37
+#: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
-msgstr "ਠੀਕ ਕੀਤਾ ਦਿਖਾਓ"
+msgstr "ਅਡਜੱਸਟਮੈਂਟ ਵੇਖਾਓ"
 
-#: data/camorama.glade.h:38
+#: ../data/camorama.glade.h:30
 msgid "Show Effects"
-msgstr "ਪ੍ਭਾਵ ਦਿਖਾਓ"
+msgstr "ਪਰਭਾਵ ਵੇਖਾਓ"
 
-#: data/camorama.glade.h:39
+#: ../data/camorama.glade.h:31
 msgid "Small"
 msgstr "ਛੋਟਾ"
 
-#: data/camorama.glade.h:40
-msgid "Smoothing"
-msgstr "ਮੁਲਾਇਮ ਕਰਨਾ"
-
-#: data/camorama.glade.h:41
-msgid "Sobel"
-msgstr "Sobel"
-
-#: data/camorama.glade.h:42
+#: ../data/camorama.glade.h:32
 msgid "String:"
-msgstr "ਸਤਰ:"
+msgstr "ਲਾਈਨ:"
 
-#: data/camorama.glade.h:43
+#: ../data/camorama.glade.h:33
 msgid "Take Picture"
 msgstr "ਤਸਵੀਰ ਲਓ"
 
-#: data/camorama.glade.h:44
-msgid "Threshold:"
-msgstr "ਮੁੱਢਲਾ:"
-
-#: data/camorama.glade.h:45
+#: ../data/camorama.glade.h:34
 msgid "Timestamp"
-msgstr "ਸਮ੾-ਸੰਕੇਤ"
+msgstr "ਟਾਈਮ-ਸਟੈਂਪ"
 
-#: data/camorama.glade.h:46
+#: ../data/camorama.glade.h:35
 msgid "Use custom string"
-msgstr "ਸੋਧੀ ਸਤਰ ਵਰਤੋ"
+msgstr "ਕਸਟਮ ਲਾਈਨ ਵਰਤੋਂ"
 
-#: data/camorama.glade.h:47
+#: ../data/camorama.glade.h:36
 msgid "Username:"
-msgstr "ਉਪਯੋਗੀ ਨਾਉਂਃ"
+msgstr "ਯੂਜ਼ਰ ਨਾਂ:"
 
-#: data/camorama.glade.h:48
-msgid "Wacky"
-msgstr "ਵਿਕਸੀ"
-
-#: data/camorama.glade.h:49
+#: ../data/camorama.glade.h:37
 msgid "White Balance:"
-msgstr "ਸਫੈਦ ਸੰਤੁਲਨ:"
+msgstr "ਸਫੈਦ ਬੈਂਲਨਸ:"
 
-#: data/camorama.glade.h:50
+#: ../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
-msgstr "ਪ੍ਾਪਤ ਕੀਤੀਅਾ ਤਸਵੀਰ੾ ਲਈ ਡਾਇਰੈਕਟਰੀ:"
+msgstr "ਕੈਪਚਰ ਕੀਤੀਆਂ ਤਸਵੀਰਾ ਲਈ ਡਾਇਰੈਕਟਰੀ(_D):"
 
-#: data/camorama.glade.h:51
+#: ../data/camorama.glade.h:39
 msgid "_Enable local capture"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀ ਨੂੰ ਯੋਗ ਕਰੋ "
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਯੋਗ(_E)"
 
-#: data/camorama.glade.h:52
+#: ../data/camorama.glade.h:40
 msgid "_Enable remote capture"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀ ਨੂੰ ਯੋਗ ਕਰੋ "
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਯੋਗ(_E)"
 
-#: data/camorama.glade.h:53
+#: ../data/camorama.glade.h:41
 msgid "_Filename for pictures:"
-msgstr "ਤਸਵੀਰਾਂ ਲਈ ਫਾਈਲ ਨਾਉਂ:"
+msgstr "ਤਸਵੀਰਾਂ ਲਈ ਫਾਇਲ-ਨਾਂ(_F):"
 
-#: data/camorama.glade.h:54
+#: ../data/camorama.glade.h:42
 msgid "ftp.yourdomain.org"
 msgstr "ftp.yourdomain.org"
 
-#: data/camorama.glade.h:55
+#: ../data/camorama.glade.h:43
 msgid "path/to/save/to"
-msgstr "ਰਾਹ/to/save/to"
+msgstr "path/to/save/to"
 
-#: data/camorama.glade.h:56
+#: ../data/camorama.glade.h:44
 msgid "webcam-capture"
-msgstr "webcam-ਪ੍ਾਪਤੀ"
+msgstr "ਵੈਬਕੈਮ-ਕੈਪਚਰ"
 
-#: data/camorama.glade.h:57
+#: ../data/camorama.glade.h:45
 msgid "webcamshot"
 msgstr "webcamshot"
 
-#: data/camorama.glade.h:58
+#: ../data/camorama.glade.h:46
 msgid "your-password"
-msgstr "ਤੁਹਾਡਾ ਗੁਪਤ-ਕੋਡ"
+msgstr "ਤੁਹਾਡਾ-ਪਾਸਵਰਡ"
 
-#: data/camorama.glade.h:59
+#: ../data/camorama.glade.h:47
 msgid "your-username"
-msgstr "ਤੁਹਾਡਾ ਉਪਯੋਗੀ ਨਾਉਂ"
+msgstr "ਤੁਹਾਡਾ-ਯੂਜ਼ਰ-ਨਾਂ"
 
-#: data/camorama.glade.h:60
+#: ../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
-msgstr "~/.ਗਨੋਮ-ਵਿਹੜਾ"
+msgstr "~/.gnome-desktop"
 
-#: data/camorama.schemas.in.h:1
+#: ../data/camorama.schemas.in.h:1
 msgid "Append timestamp to filename"
-msgstr "ਫਾਈਲ ਦੇ ਅੰਤ ਵਿਚ timestamp ਜੋੜੋ"
+msgstr "ਫਾਈਲ ਦੇ ਅੰਤ ਵਿੱਚ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.schemas.in.h:2
+#: ../data/camorama.schemas.in.h:2
 msgid "Append timestamp to remote filename"
-msgstr "ਰਿਮੋਟ ਫਾਈਲ ਦੇ ਅੰਤ ਵਿਚ timestamp ਜੋੜੋ"
+msgstr "ਰਿਮੋਟ ਫਾਈਲ ਦੇ ਅੰਤ ਵਿੱਚ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.schemas.in.h:3
+#: ../data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "ਫਾਈਲਾਂ ਦੇ ਨਾਉਂ ਦੇ ਅੰਤ ਤੇ,UNIX ਸਮੇਂ ਵਿਚ timestamp ਜੋੜਦਾ ਹੈ"
+msgstr "ਫਾਈਲਾਂ ਦੇ ਨਾਂ ਦੇ ਅੰਤ ਵਿੱਚ,UNIX ਸਮੇਂ ਅਨੁਸਾਰ,ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.schemas.in.h:4
+#: ../data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "ਰਿਮੋਟ ਫਾਈਲਾਂ ਦੇ ਨਾਉਂ ਦੇ ਅੰਤ ਤੇ,UNIX ਸਮੇਂ ਵਿਚ timestamp ਜੋੜਦਾ ਹੈ"
+msgstr "ਰਿਮੋਟ ਫਾਈਲਾਂ ਦੇ ਨਾਂ ਦੇ ਅੰਤ ਵਿੱਚ,UNIX ਸਮੇਂ ਵਿਚ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰੋ"
 
-#: data/camorama.schemas.in.h:5
+#: ../data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
-msgstr "ਸਮ੾-ਸੰਕੇਤ ਲਈ ਸੋਧਿਅਾ ਪਾਠ"
+msgstr "ਟਾਈਮ-ਸਟੈਂਪ ਲਈ ਕਸਟਮ ਟੈਕਸਟ"
 
-#: data/camorama.schemas.in.h:6
+#: ../data/camorama.schemas.in.h:6
 msgid "Defines a string of custom text to be inserted into the image."
-msgstr "ਚਿੱਤਰ ਵਿਚ ਦਿੱਤਾ ਹੋਣ ਵਾਲੇ ਸੋਧ ਪਾਠ ਦੀ ਸਤਰ ਨੂੰ ਪ੍ਭਾਸ਼ਿਤ ਕਰਦਾ ਹੈ।"
+msgstr "ਚਿੱਤਰ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਕਸਟਮ ਟੈਕਸਟ ਦੀ ਲਾਈਨ ਦਿੰਦਾ ਹੈ।"
 
-#: data/camorama.schemas.in.h:7
+#: ../data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਲਈ ਫਾਈਲ ਦਾ ਨਾਉਂ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਲਈ ਫਾਇਲ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:8
+#: ../data/camorama.schemas.in.h:8
 msgid "Filename for saving captured pictures to locally"
-msgstr "ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਸਥਾਨਿਕ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ ਦਾ ਨਾਉਂ"
+msgstr "ਕੈਪਚਰ ਕੀਤੀਆਂ ਤਸਵੀਰਾਂ ਲੋਕਲੀ ਹੀ ਸੰਭਾਲਣ ਲਈ ਫਾਇਲ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:9
+#: ../data/camorama.schemas.in.h:9
 msgid "Folder for local captures"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਆਂ ਲਈ ਫਾਈਲ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਲਈ ਫੋਲਡਰ"
 
-#: data/camorama.schemas.in.h:10
+#: ../data/camorama.schemas.in.h:10
 msgid "Folder for remote captures"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀਆਂ ਲਈ ਫਾਈਲ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਲਈ ਫੋਲਡਰ"
 
-#: data/camorama.schemas.in.h:11
+#: ../data/camorama.schemas.in.h:11
 msgid "Folder for saving captured pictures remotely"
-msgstr "ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਰਿਮੋਟ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ"
+msgstr "ਕੈਪਚਰ ਤਸਵੀਰਾਂ ਨੂੰ ਰਿਮੋਟ ਉੱਤੇ ਸੰਭਾਲਣ ਵਾਸਤੇ ਫੋਲਡਰ"
 
-#: data/camorama.schemas.in.h:12
+#: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਨੂੰ ਸਥਾਨਿਕ ਤੌਰ ਤੇ ਸੰਭਾਲਣ ਲਈ ਫਾਈਲ"
+msgstr "ਕੈਪਚਰ ਤਸਵੀਰਾਂ ਲੋਕਲੀ ਸੰਭਾਲਣ ਲਈ ਫੋਲਡਰ"
 
-#: data/camorama.schemas.in.h:13
+#: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
-msgstr "FTP ਸਰਵਰ ਲਈ ਮੇਜ਼ਬਾਨ ਦਾ ਨਾਉਂ।"
+msgstr "FTP ਸਰਵਰ ਲਈ ਹੋਸਟ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:14
+#: ../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਵਾਸਤੇ FTP ਸਰਵਰ ਲਈ ਮੇਜ਼ਬਾਨ ਦਾ ਨਾਉਂ।"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਲਈ FTP ਸਰਵਰ ਦਾ ਹੋਸਟ ਨਾਂ ਹੈ।"
 
-#: data/camorama.schemas.in.h:15
+#: ../data/camorama.schemas.in.h:15
 msgid "Interval for auto-capture"
-msgstr "ਸ੍ਵੈ ਪ੍ਾਪਤੀ ਲਈ ਅੰਤਰਾਲ"
+msgstr "ਆਟੋ-ਕੈਪਚਰ ਲਈ ਇੰਟਰਵਲ"
 
-#: data/camorama.schemas.in.h:16
+#: ../data/camorama.schemas.in.h:16
 msgid "Local capture image format"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤ ਚਿੱਤਰ ਫਾਰਮਿਟ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਚਿੱਤਰ ਫਾਰਮੈਟ"
 
-#: data/camorama.schemas.in.h:17
+#: ../data/camorama.schemas.in.h:17
 msgid "Name for the filename of uploaded images."
-msgstr "ਨਿਰਯਾਤ ਚਿੱਤਰਾਂ ਦੀ ਫਾਈਲ ਵਾਸਤੇ ਨਾਉਂ।"
+msgstr "ਅੱਪਲੋਡ ਕਰਨ ਲਈ ਚਿੱਤਰ ਦੇ ਫਾਇਲ-ਨਾਂ ਦਾ ਨਾਂ ਹੈ।"
 
-#: data/camorama.schemas.in.h:18
+#: ../data/camorama.schemas.in.h:18
 msgid "Password for FTP server"
-msgstr "FTP ਸਰਵਰ ਲਈ ਗੁਪਤ-ਕੋਡ"
+msgstr "FTP ਸਰਵਰ ਲਈ ਪਾਸਵਰਡ"
 
-#: data/camorama.schemas.in.h:19
+#: ../data/camorama.schemas.in.h:19
 msgid "Remote capture image format"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤ ਚਿੱਤਰ ਫਾਰਮਿਟ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਚਿੱਤਰ ਫਾਰਮੈਟ"
 
-#: data/camorama.schemas.in.h:20
+#: ../data/camorama.schemas.in.h:20
 msgid "Remote save filename"
-msgstr "ਰਿਮੋਟ ਸੰਭਾਲੀ ਫਾਈਲ ਦਾ ਨਾਉਂ"
+msgstr "ਰਿਮੋਟ ਸੰਭਾਲਣ ਫਾਇਲ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:21
+#: ../data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "ਸਥਾਨਿਕ ਸੰਭਾਲੀਅ੾ ਤਸਵੀਰਾਂ ਵਾਸਤੇ ਵਰਤੇ ਜਾਂਦੇ ਚਿੱਤਰ ਫਾਰਮਿਟ ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ"
+msgstr "ਲੋਕਲੀ ਸੰਭਾਲੀਆਂ ਤਸਵੀਰਾਂ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਚਿੱਤਰ ਫਾਰਮੈਟ ਦਿਓ"
 
-#: data/camorama.schemas.in.h:22
+#: ../data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "ਰਿਮੋਟ ਸੰਭਾਲੀਅ੾ ਤਸਵੀਰਾਂ ਵਾਸਤੇ ਵਰਤੇ ਜਾਂਦੇ ਚਿੱਤਰ ਫਾਰਮਿਟ ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ"
+msgstr "ਰਿਮੋਟਲੀ ਸੰਭਾਲੀਆਂ ਤਸਵੀਰਾਂ ਲਈ ਵਰਤਣ ਵਾਸਤੇ ਚਿੱਤਰ ਫਾਰਮੈਟ ਦਿਓ"
 
-#: data/camorama.schemas.in.h:23
+#: ../data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr "ਤਸਵੀਰਾਂ ਦੀ ਸ੍ਵੈ ਪ੍ਾਪਤੀ ਲਈ ਅੰਤਰਾਲ  ਨੂੰ ਬਿਆਨ ਕਰਦਾ ਹੈ। "
+msgstr "ਆਟੋਮੈਟਿਕ ਤਸਵੀਰਾਂ ਕੈਪਚਰ ਕਰਨ ਲਈ ਇੰਟਰਵਲ ਦਿਓ।"
 
-#: data/camorama.schemas.in.h:24
+#: ../data/camorama.schemas.in.h:24
 msgid "The password for the FTP account for remote captures."
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਵਾਸਤੇ FTP ਅਕਾਊਂਟ ਲਈ ਗੁਪਤ-ਕੋਡ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਲਈ FTP ਅਕਾਊਂਟ ਲਈ ਪਾਸਵਰਡ ਹੈ।"
 
-#: data/camorama.schemas.in.h:25
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "ਤੁਹਾਡੇ ਕੈਮਰੇ ਲਈ ਦਿੱਤੇ ਜੰਤਰ ਵਾਸਤੇ unix ਫਾਇਲ ਸਿਸਟਮ ਪਾਥ ਹੈ।"
+
+#: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
-msgstr "ਸ੍ਵੈ-ਪ੍ਾਪਤੀ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਆਟੋ-ਕੈਪਚਰ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:26
+#: ../data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
-msgstr "ਤਸਵੀਰਾਂ ਦੀ ਸ੍ਵੈ-ਪ੍ਾਪਤੀ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਤਸਵੀਰਾਂ ਲੈਣ ਵਾਸਤੇ ਆਟੋਮੈਟਿਕ ਕੈਪਚਰਿੰਗ ਬਦਲੋ।"
 
-#: data/camorama.schemas.in.h:27
+#: ../data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:28
+#: ../data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:29
+#: ../data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
-msgstr "ਸੋਧ ਸਤਰ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਕਸਟਮ ਲਾਈਨ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:30
+#: ../data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
-msgstr "ਪ੍ਾਪਤੀਅ੾ ਵਿਚ ਮਿਤੀ-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਕੈਪਚਰ ਵਿੱਚ ਮਿਤੀ-ਸਟੈਂਪ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:31
+#: ../data/camorama.schemas.in.h:32
 msgid "Toggles the drawing of a datestamp within the captured pictures"
-msgstr "ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਵਿਚ ਮਿਤੀ-ਸੰਕੇਤ ਦੇ ਉਲੀਕਣ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਕੈਪਚਰ ਕੀਤੀਆਂ ਤਸਵੀਰਾਂ ਨਾਲ ਮਿਤੀ-ਸਟੈਂਪ ਲਾਉਣਾ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:32
+#: ../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "ਸਥਾਨਿਕ ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਪ੍ਰਵੇਸ਼ ਕਰਨ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਲੋਕਲ ਚਿੱਤਰਾਂ ਵਿੱਚ ਇੱਕ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰਨ ਨੂੰ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:33
+#: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
-msgstr "FTP ਨਿਰਯਾਤ ਲਈ ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਪ੍ਰਵੇਸ਼ ਕਰਨ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "FTP ਅੱਪਲੋਡ ਵਾਸਤੇ ਚਿੱਤਰ ਵਿੱਚ ਇੱਕ ਟਾਈਮ-ਸਟੈਂਪ ਸ਼ਾਮਲ ਕਰਨਾ ਬਦਲੋ।"
 
-#: data/camorama.schemas.in.h:34
+#: ../data/camorama.schemas.in.h:35
 msgid "Toggles the use of the buttons to adjust the video filters"
-msgstr "ਆਵਾਜ਼ ਦੇ ਫਿਲਟਰ ਨੂੰ ਠੀਕ ਕਰਨ ਵਾਲੇ ਬਟਨਾਂ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਵੀਡਿਓ ਫਿਲਟਰ ਅਡਜੱਸਟ ਕਰਨ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਬਟਨ ਵਰਤਣੇ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:35
+#: ../data/camorama.schemas.in.h:36
 msgid "Toggles the use of the custom string for the timestamp in images."
-msgstr "ਚਿੱਤਰ ਵਿਚ ਸਮ੾-ਸੰਕੇਤ ਲਈ ਸੋਧ ਸਤਰ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਚਿੱਤਰਾਂ ਵਿੱਚ ਟਾਈਮ-ਸਟੈਂਪ ਲਈ ਕਸਟਮ ਲਾਈਨ ਵਰਤਣੀ ਬਦਲੋ।"
 
-#: data/camorama.schemas.in.h:36
+#: ../data/camorama.schemas.in.h:37
 msgid "Toggles the use of the sliders to adjust the video properties"
-msgstr "ਆਵਾਜ਼ ਦੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਠੀਕ ਕਰਨ ਵਾਲੇ ਸਲਾਈਡਰ ਦੀ ਵਰਤੋਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਵੀਡਿਓ ਵਿਸ਼ੇਸ਼ਤਾ ਅਡਜੱਸਟ ਕਰਨ ਲਈ ਸਲਾਈਡਰ ਵਰਤਣਾ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:37
+#: ../data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
-msgstr "ਆਵਾਜ਼ ਠੀਕ ਕਰਨ ਵਾਲੇ ਸਲਾਈਡਰ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਵੀਡਿਓ ਅਡਜੱਸਟ ਸਲਾਈਡਰ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:38
+#: ../data/camorama.schemas.in.h:39
 msgid "Toggles the video effects buttons"
-msgstr "ਆਵਾਜ਼ ਵਾਲੇ ਬਟਨਾਂ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਵੀਡਿਓ ਪਰਭਾਵ ਬਟਨ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:39
+#: ../data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
-msgstr "ਸਥਾਨਿਕ ਪ੍ਾਪਤੀਅ੾ ਲਈ  ਸਮ੾-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਲੋਕਲ ਕੈਪਚਰ ਲਈ ਟਾਈਮ-ਸਟੈਂਪ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:40
+#: ../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
-msgstr "ਰਿਮੋਟ ਪ੍ਾਪਤੀਅ੾ ਲਈ  ਸਮ੾-ਸੰਕੇਤ ਨੂੰ Toggle ਕਰਦਾ ਹੈ"
+msgstr "ਰਿਮੋਟ ਕੈਪਚਰ ਲਈ ਟਾਈਮ-ਸਟੈਂਪ ਬਦਲੋ"
 
-#: data/camorama.schemas.in.h:41
+#: ../data/camorama.schemas.in.h:42
 msgid "Username for FTP server"
-msgstr "FTP ਸਰਵਰ ਲਈ ਉਪਯੋਗੀ ਦਾ ਨਾਉਂ"
+msgstr "FTP ਸਰਵਰ ਲਈ ਯੂਜ਼ਰ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:42
+#: ../data/camorama.schemas.in.h:43
 msgid "Username to use for FTP uploads of captured pictures"
-msgstr "ਪ੍ਾਪਤ ਤਸਵੀਰਾਂ ਦਾ FTP ਨਿਰਯਾਤ ਕਰਨ ਲਈ ਵਰਤਣ ਵਾਲਾ ਉਪਯੋਗੀ ਦਾ ਨਾਉਂ"
+msgstr "ਕੈਪਚਰ ਤਸਵੀਰਾਂ ਲਈ FTP ਅੱਪਲੋਡ ਵਰਤਣ ਵਾਸਤੇ ਯੂਜ਼ਰ ਨਾਂ"
 
-#: data/camorama.schemas.in.h:43
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "ਵੀਡਿਓ ਜੰਤਰ"
+
+#: ../data/camorama.schemas.in.h:45
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures locally."
 msgstr ""
-"ਜਦੋਂ  \"ਤਸਵੀਰ ਲਓ\" ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਸਵੈ-ਪ੍ਾਪਤੀ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ  ਇਹ ਸਵਿੱਚ ਤਸਵੀਰਾਂ ਨੂੰ "
-"ਸਥਾਨਿਕ ਸੰਭਾਲਣ ਨੂੰ toggle ਕਰਦੀ ਹੈ।"
+"ਜਦੋਂ  \"ਤਸਵੀਰ ਲਓ\" ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਆਟੋ-ਕੈਪਚਰ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ ਇਹ ਸਵਿੱਚ "
+"ਤਸਵੀਰਾਂ ਨੂੰ ਲੋਕਲੀ ਤਸਵੀਰਾਂ ਸੰਭਾਲਣ ਲਈ ਬਦਲਦੀ ਹੈ।"
 
-#: data/camorama.schemas.in.h:44
+#: ../data/camorama.schemas.in.h:46
 msgid ""
 "When capturing pictures via the \"Take Picture\" button, or with auto "
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
-"ਜਦੋਂ  \"ਤਸਵੀਰ ਲਓ\" ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਸਵੈ-ਪ੍ਾਪਤੀ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ ਇਹ ਸਵਿਚ ਰੀਮੋਟ ਸਰਵਰ "
-"ਉਪਰ ਤਸਵੀਰ ਸੰਭਾਲਣ ਨੂੰ toggle ਕਰਦੀ ਹੈ।"
+"ਜਦੋਂ  \"ਤਸਵੀਰ ਲਓ\" ਬਟਨ ਰਾਹੀਂ ਜਾਂ ਆਟੋ-ਕੈਪਚਰ ਨਾਲ ਤਸਵੀਰ ਲੈਂਦੇ ਹਾਂ ਤਾਂ ਇਹ ਸਵਿੱਚ "
+"ਤਸਵੀਰਾਂ ਨੂੰ ਰਿਮੋਟ ਸਰਵਰ ਉੱਤੇ ਸੰਭਾਲਣ ਲਈ ਸਵਿੱਚ ਕਰਦੀ ਹੈ।"
 
-#: src/callbacks.c:499
+#: ../src/callbacks.c:500
 msgid "translator_credits"
-msgstr "ਜਸਵਿੰਦਰ ਸਿਘ ਫੂਲੇਵਾਲੀਅਾ(jaswinderlinux@netscape.net)"
+msgstr ""
+"ਜਸਵਿੰਦਰ ਸਿਘ ਫੂਲੇਵਾਲੀਆ\n"
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
+"http://www.satluj.org/"
 
-#: src/callbacks.c:508
+#: ../src/callbacks.c:509
 msgid "Camorama"
 msgstr "Camorama"
 
-#: src/callbacks.c:622 src/callbacks.c:693 src/callbacks.c:743
-#: src/callbacks.c:756
+#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
+#: ../src/callbacks.c:692
 msgid "Unable to capture image."
-msgstr "ਚਿੱਤਰ ਪ੍ਾਪਤ ਕਰਨ ਵਿਚ ਅਯੋਗ"
+msgstr "ਚਿੱਤਰ ਕੈਪਚਰ ਕਰਨ ਲਈ ਅਸਮਰੱਥ ਹੈ।"
 
-#: src/eggtrayicon.c:118
-msgid "Orientation"
-msgstr "ਤਰਤੀਬ"
+#: ../src/callbacks.c:823
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"ਲੋਕਲ ਕੈਪਚਰ: %d\n"
+"ਰਿਮੋਟ ਕੈਪਚਰ: %d\n"
+"ਕੈਪਚਰ ਇੰਟਰਵਲ: %d"
 
-#: src/eggtrayicon.c:119
-msgid "The orientation of the tray."
-msgstr "ਟ੍ਰੇ ਦੀ ਤਰਤੀਬ"
+#: ../src/callbacks.c:832
+msgid "Automatic Capture Disabled"
+msgstr "ਆਟੋਮੈਟਿਕ ਕੈਪਚਰ ਆਯੋਗ ਹੈ"
 
-#: src/fileio.c:119 src/fileio.c:265
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "ਲੈਪਲੇਸ (4 ਗੁਆਂਢੀ)"
+
+#: ../src/camorama-filter-mirror.c:66
+msgid "Mirror"
+msgstr "ਮਿਰਰ"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "ਵੈਬਕੈਮ"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "ਫਿਲਟਰ ਸ਼ਾਮਲ ਕਰੋ(_A)"
+
+#: ../src/camorama-window.c:199
+msgid "Effects"
+msgstr "ਪਰਭਾਵ"
+
+#: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
-msgstr " /tmp ਵਿਚ ਆਰਜੀ ਚਿੱਤਰ ਫਾਈਲ ਸੰਭਾਲ ਸਕਿਆ।"
+msgstr "/tmp ਵਿੱਚ ਆਰਜ਼ੀ ਚਿੱਤਰ ਫਾਇਲ ਸੰਭਾਲੀ ਜਾ ਸਕੀ ਹੈ।"
 
-#: src/fileio.c:137
+#: ../src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
-msgstr " ਚਿੱਤਰ '%s' ਪੈਦਾ ਕਰਨ ਵਿਚ ਅਯੋਗ।"
+msgstr "ਚਿੱਤਰ '%s' ਬਣਾਉਣ ਲਈ ਅਸਮਰੱਥ ਹੈ।"
 
-#: src/fileio.c:146 src/fileio.c:429
+#: ../src/fileio.c:147 ../src/fileio.c:430
 #, c-format
 msgid "Could not save image '%s/%s'."
-msgstr " ਚਿੱਤਰ '%s/%s' ਸੰਭਾਲ ਨਹੀਂ ਸਕਿਆ।"
+msgstr "ਚਿੱਤਰ '%s/%s' ਸੰਭਾਲਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।"
 
-#: src/fileio.c:273
+#: ../src/fileio.c:274
 #, c-format
 msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr ""
-"ਆਰਜੀ ਚਿੱਤਰ ਫਾਈਲ '%s' ਨੂੰ ਖੋਲਣ ਵਿਚ ਅਯੋਗ।\n"
-"ਚਿੱਤਰ ਨੂੰ ਨਿਰਯਾਤ ਨਹੀਂ ਕਰ ਸਕਦਾ।"
+"ਆਰਜ਼ੀ ਚਿੱਤਰ ਫਾਈਲ '%s' ਖੋਲ੍ਹਣ ਵਿੱਚ ਅਸਮਰੱਥ ਹੈ।\n"
+"ਚਿੱਤਰ ਅੱਪਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸ ਕਿਆ।"
 
-#: src/fileio.c:311
+#: ../src/fileio.c:312
 #, c-format
-msgid "An error occured opening %s."
-msgstr "%s ਨੂੰ ਖੋਲਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ। "
+msgid "An error occurred opening %s."
+msgstr "%s ਖੋਲ੍ਹਣ ਵਿੱਚ ਗਲਤੀ ਹੋਈ ਹੈ।"
 
-#: src/fileio.c:323
+#: ../src/fileio.c:324
 #, c-format
-msgid "An error occured writing to %s."
-msgstr "'%s' ਵਿੱਚ ਲਿਖਣ ਦੀ ਗਲਤੀ ਹੋਈ ਹੈ। "
+msgid "An error occurred writing to %s."
+msgstr "'%s' ਲਿਖਣ ਦੀ ਗਲਤੀ ਆਈ ਹੈ।"
 
-#: src/fileio.c:403
+#: ../src/fileio.c:404
 #, c-format
 msgid "Could not create directory '%s'."
-msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਨਹੀਂ ਬਣਾ ਸਕਿਆ।"
+msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕੀ ਹੈ।"
 
-#: src/fileio.c:414
+#: ../src/fileio.c:415
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਵਿਚ ਤਬਦੀਲੀ ਨਹੀਂ ਕਰ ਸਕਿਆ।"
+msgstr "'%s' ਡਾਇਰੈਕਟਰੀ ਬਦਲੀ ਨਹੀਂ ਜਾ ਸਕੀ।"
 
-#: src/main.c:423
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "ਰੰਗ ਸੋਧ"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "ਉਲਟ"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "ਥਰੈਸ਼ਹੋਲਡ (ਓਵਰਆਲ)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "ਥਰੈਸ਼ਹੋਲਡ (ਪ੍ਰਤੀ ਚੈਨਲ)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "Wacky"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "ਮੁਲਾਇਮ"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "ਮੋਨੋਕਰੋਮ"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "ਮੋਨੋਕਰੋਮ (ਵੇਟ)"
+
+#: ../src/filter.c:562
+msgid "Sobel"
+msgstr "ਸੋਬਿਲ"
+
+#: ../src/main.c:53
 msgid "show version and exit"
-msgstr "ਵਰਜਨ ਦਿਖਾਉ ਅਤੇ ਬਾਹਰ ਜਾਓ"
+msgstr "ਵਰਜਨ ਵੇਖਾ ਕੇ ਬੰਦ ਕਰੋ"
 
-#: src/main.c:425
+#: ../src/main.c:55
 msgid "v4l device to use"
-msgstr "ਵਰਤਣ ਲਈ v4l ਯੰਤਰ"
+msgstr "ਵਰਤਣ ਲਈ v4l ਜੰਤਰ"
 
-#: src/main.c:427
-msgid "enable debuging code"
-msgstr "ਡੀਬਗਿੰਗ ਨਿਯਮਾਂਵਲੀ ਯੋਗ ਕਰੋ"
+#: ../src/main.c:57
+msgid "enable debugging code"
+msgstr "ਡੀਬੱਗ ਕੋਡ ਯੋਗ"
 
-#: src/main.c:428
+#: ../src/main.c:58
 msgid "capture width"
-msgstr "ਪ੍ਾਪਤ ਕੀਤੀ ਚੌੜਾਈ"
+msgstr "ਕੈਪਚਰ ਚੌੜਾਈ"
 
-#: src/main.c:430
+#: ../src/main.c:60
 msgid "capture height"
-msgstr "ਪ੍ਾਪਤ ਕੀਤੀ ਉਚਾਈ"
+msgstr "ਕੈਪਚਰ ਉਚਾਈ"
 
-#: src/main.c:433
+#: ../src/main.c:63
 msgid "maximum capture size"
-msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
+msgstr "ਵੱਧੋ-ਵੱਧ ਕੈਪਚਰ ਅਕਾਰ"
 
-#: src/main.c:435
+#: ../src/main.c:65
 msgid "minimum capture size"
-msgstr "ਘੱਟ ਤੋਂ ਘੱਟ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
+msgstr "ਘੱਟੋ-ਘੱਟ ਕੈਪਚਰ ਅਕਾਰ"
 
-#: src/main.c:437
+#: ../src/main.c:67
 msgid "middle capture size"
 msgstr "ਵਿਚਕਾਰਲਾ ਪ੍ਾਪਤ ਕੀਤਾ ਆਕਾਰ"
 
-#: src/main.c:439
+#: ../src/main.c:69
 msgid "use read() rather than mmap()"
 msgstr " read()ਵਰਤੋ ਨਾ ਕਿ  mmap()"
 
-#: src/main.c:461
+#: ../src/main.c:91
 msgid "camorama"
 msgstr "camorama"
 
-#: src/main.c:475
+#: ../src/main.c:104
 #, c-format
 msgid ""
 "\n"
@@ -566,17 +594,17 @@ msgstr ""
 "Camorama ਵਰਜਨ %s\n"
 "\n"
 
-#: src/main.c:609
+#: ../src/main.c:238
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "ਮੁੱਖ ਸੰਬੰਧ ਫਾਈਲ(camorama.glade)ਨਹੀਂ ਲੱਭ ਸਕੀ"
 
-#: src/support.c:69
+#: ../src/support.c:69
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "pixmap ਫਾਈਲ: %s ਨਹੀਂ ਲੱਭ ਸਕੀ ਹੈ"
 
-#: src/v4l.c:94 src/v4l.c:161 src/v4l.c:174 src/v4l.c:199 src/v4l.c:220
-#: src/v4l.c:235
+#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
+#: ../src/v4l.c:226 ../src/v4l.c:241
 #, c-format
 msgid ""
 "Could not connect to video device (%s).\n"
@@ -584,3 +612,4 @@ msgid ""
 msgstr ""
 "ਆਵਾਜ ਯੰਤਰ (%s) ਨਾਲ ਸੰਬੰਧ ਨਹੀਂ ਬਣ ਸਕਿਆ।\n"
 "ਕਿਰਪਾ ਕਰਕੇ ਜੋੜ ਦੀ ਜਾਂਚ ਕਰੋ।"
+

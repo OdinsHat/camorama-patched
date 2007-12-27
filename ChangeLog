@@ -1,3 +1,8 @@
+2007-12-26  Jordi Mallach  <jordi@sindominio.net>
+
+	* configure.ac: use AC_DEFINE_UNQUOTED for GETTEXT_PACKAGE,
+	in order to get i18n back working.
+
 # version 0.19
 
 2007-10-06  Sven Herzberg  <herzi@gnome-de.org>

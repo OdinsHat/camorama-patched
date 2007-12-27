@@ -1,3 +1,12 @@
+2007-12-27  Jordi Mallach  <jordi@sindominio.net>
+
+	* configure.in: Move to po/LINGUAS.
+	Remove ALL_LINGUAS; the contents are now in po/LINGUAS.
+	Require intltool 0.35.0 via IT_PROG_INTLTOOL.
+
+	* camorama.desktop.in: Fix Categories and Terminal fields to
+	comply with freedesktop's Menu and Desktop file specifications.
+
 2007-12-26  Jordi Mallach  <jordi@sindominio.net>
 
 	* configure.ac: use AC_DEFINE_UNQUOTED for GETTEXT_PACKAGE,

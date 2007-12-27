@@ -2,10 +2,10 @@
 _Name=Camorama Webcam Viewer
 _Comment=View, alter and save images from a webcam
 Exec=camorama
-Terminal=0
+Terminal=false
 Type=Application
 Icon=camorama.png
-Categories=Application;Graphics
+Categories=AudioVideo;Video;Graphics;GTK;GNOME;
 StartupNotify=true
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=camorama

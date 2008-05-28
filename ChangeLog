@@ -1,5 +1,12 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	initialize the mmap() related parts of the cam structure properly
+
+	* src/capture-strategy-mmap.c: (mmap_constructed): call init_cam()
+	* src/main.c: (main): don't call init_cam() anymore
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	added a cam property to the mmap strategy; we're going to need this
 	property so we can properly initialize the "pic" buffer of it
 

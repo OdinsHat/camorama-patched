@@ -246,7 +246,6 @@ main(int argc, char *argv[]) {
     /* initialize cam and create the window */
     if (cam->read == FALSE) {
 	cam->capture = capture_strategy_mmap_new (cam);
-        init_cam (cam);
     } else {
 	cam->capture = capture_strategy_read_new ();
         printf ("using read()\n");

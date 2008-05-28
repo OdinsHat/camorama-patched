@@ -62,6 +62,8 @@ mmap_constructed (GObject* object)
 	}
 
 	g_return_if_fail (PRIV (object)->cam);
+
+	init_cam (PRIV (object)->cam);
 }
 
 static void

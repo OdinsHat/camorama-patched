@@ -54,6 +54,37 @@ capture_strategy_mmap_init (CaptureStrategyMmap* self)
 						  CaptureStrategyMmapPrivate);
 }
 
+static
+void init_cam (cam * cam)
+{
+    cam->pic =
+        mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
+              MAP_SHARED, cam->dev, 0);
+
+    if ((unsigned char *) -1 == (unsigned char *) cam->pic) {
+        if (cam->debug == TRUE) {
+            fprintf (stderr, "Unable to capture image (mmap).\n");
+        }
+        error_dialog (_("Unable to capture image."));
+        exit (-1);
+    }
+    cam->vid_map.height = cam->y;
+    cam->vid_map.width = cam->x;
+    cam->vid_map.format = cam->vid_pic.palette;
+    for (frame = 0; frame < cam->vid_buf.frames; frame++) {
+        cam->vid_map.frame = frame;
+        if (ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
+            if (cam->debug == TRUE) {
+                fprintf (stderr,
+                         "Unable to capture image (VIDIOCMCAPTURE).\n");
+            }
+            error_dialog (_("Unable to capture image."));
+            exit (-1);
+        }
+    }
+    frame = 0;
+}
+
 static void
 mmap_constructed (GObject* object)
 {

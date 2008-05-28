@@ -1,5 +1,13 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Moved init_cam() into the mmap() related code
+
+	* src/callbacks.c,
+	* src/callbacks.h: dropped init_cam()
+	* src/capture-strategy-mmap.c: (init_cam): moved init_cam() here
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	initialize the mmap() related parts of the cam structure properly
 
 	* src/capture-strategy-mmap.c: (mmap_constructed): call init_cam()

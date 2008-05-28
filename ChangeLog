@@ -1,3 +1,9 @@
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
+	Completed file information header
+
+	* src/camorama-globals.h: added "camorama"
+
 2008-05-27  Sven Herzberg  <sven@imendio.com>
 
 	dropped an unused parameter

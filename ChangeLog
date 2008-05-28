@@ -1,5 +1,13 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Some code improvements
+
+	* src/v4l.h: added G_BEGIN_DECLS and G_END_DECLS markers; added a note
+	for an upcoming field move; changed the order of the functions to be
+	more intuitive
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Moved set_buffer() into the mmap() based capture implementation
 
 	* src/capture-strategy-mmap.c: (set_buffer): landed here

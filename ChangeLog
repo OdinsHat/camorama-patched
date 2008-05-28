@@ -1,5 +1,11 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Small code cleanup
+
+	* src/main.c: (main): merged to if-trees with the same condition
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	manage the "pic" buffer in the strategies, not globally
 
 	* src/capture-strategy-mmap.c: (mmap_constructed), (mmap_finalize),

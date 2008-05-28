@@ -237,13 +237,12 @@ main(int argc, char *argv[]) {
     cam->tmp =
         malloc (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * cam->depth);
     //cam->tmp = NULL;
-    /* set the buffer size */
-    if (cam->read == FALSE) {
-        set_buffer (cam);
-    }
 
     /* initialize cam and create the window */
     if (cam->read == FALSE) {
+	/* set the buffer size */
+        set_buffer (cam);
+
 	cam->capture = capture_strategy_mmap_new (cam);
     } else {
 	cam->capture = capture_strategy_read_new (cam);

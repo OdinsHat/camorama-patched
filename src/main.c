@@ -285,5 +285,8 @@ main(int argc, char *argv[]) {
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
     gtk_main ();
+
+    gtk_idle_remove (cam->idle_id);
+
     return 0;
 }

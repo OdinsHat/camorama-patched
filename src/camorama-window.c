@@ -163,7 +163,9 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
             if (GTK_WIDGET_VISIBLE
                 (glade_xml_get_widget (cam->xml, "main_window"))) {
                 cam->hidden = TRUE;
+		// FIXME: connect the idle handler with the window's visibility
                 gtk_idle_remove (cam->idle_id);
+		cam->idle_id = 0;
                 gtk_widget_hide (glade_xml_get_widget
                                  (cam->xml, "main_window"));
             } else {

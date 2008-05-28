@@ -1,5 +1,14 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	properly manage the idle handler
+
+	* src/camorama-window.c: (tray_clicked_callback): set the idle_id to 0
+	if it's unset
+	* src/main.c: (main): unset the idle handler after running the main
+	loop
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Completed file information header
 
 	* src/camorama-globals.h: added "camorama"

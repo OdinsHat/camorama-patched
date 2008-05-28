@@ -54,9 +54,17 @@ capture_strategy_mmap_init (CaptureStrategyMmap* self)
 						  CaptureStrategyMmapPrivate);
 }
 
-static
-void init_cam (cam * cam)
+static void
+mmap_constructed (GObject* object)
 {
+	cam* cam = PRIV(object)->cam;
+
+	if (G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed) {
+		G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed (object);
+	}
+
+	g_return_if_fail (PRIV (object)->cam);
+
     cam->pic =
         mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
               MAP_SHARED, cam->dev, 0);
@@ -83,18 +91,6 @@ void init_cam (cam * cam)
         }
     }
     frame = 0;
-}
-
-static void
-mmap_constructed (GObject* object)
-{
-	if (G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed) {
-		G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed (object);
-	}
-
-	g_return_if_fail (PRIV (object)->cam);
-
-	init_cam (PRIV (object)->cam);
 }
 
 static void

@@ -1,5 +1,11 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	merged init_cam() and constructed()
+
+	* src/capture-strategy-mmap.c: (mmap_constructed):
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Moved the code to initialize cam->pic into the read strategy
 
 	* src/capture-strategy-read.c: (read_constructed): added the code

@@ -666,7 +666,7 @@ void on_status_show (GtkWidget * sb, cam * cam)
     cam->status = sb;
 }
 
-void init_cam (GtkWidget * capture, cam * cam)
+void init_cam (cam * cam)
 {
     cam->pic =
         mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,

@@ -1,5 +1,13 @@
 2008-05-27  Sven Herzberg  <sven@imendio.com>
 
+	dropped an unused parameter
+
+	* src/callbacks.c: (init_cam):
+	* src/callbacks.h:
+	* src/main.c: (main):
+
+2008-05-27  Sven Herzberg  <sven@imendio.com>
+
 	use updated signatures for the timeout functions
 
 	* src/callbacks.c: (read_timeout_func), (timeout_func):

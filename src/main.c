@@ -245,7 +245,7 @@ main(int argc, char *argv[]) {
 
     if (cam->read == FALSE) {
         pt2Function = timeout_func;
-        init_cam (NULL, cam);
+        init_cam (cam);
     } else {
         printf ("using read()\n");
         cam->pic =

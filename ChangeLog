@@ -15,6 +15,17 @@
 
 2008-05-27  Sven Herzberg  <sven@imendio.com>
 
+	added source files for the capture strategy refactoring
+
+	* src/capture-strategy-mmap.c:
+	* src/capture-strategy-mmap.h:
+	* src/capture-strategy-read.c:
+	* src/capture-strategy-read.h:
+	* src/capture-strategy.c:
+	* src/capture-strategy.h:
+
+2008-05-27  Sven Herzberg  <sven@imendio.com>
+
 	dropped an unused parameter
 
 	* src/callbacks.c: (init_cam):

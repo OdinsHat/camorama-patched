@@ -21,17 +21,23 @@ camorama_SOURCES = \
 	camorama-stock-items.h \
 	camorama-window.c \
 	camorama-window.h \
+	capture-strategy.c \
+	capture-strategy.h \
+	capture-strategy-read.c \
+	capture-strategy-read.h \
+	capture-strategy-mmap.c \
+	capture-strategy-mmap.h \
 	filter.c \
 	glib-helpers.h \
 	main.c \
 	support.c \
 	v4l.c \
-	fileio.c	\
-	v4l.h		\
-	callbacks.h	\
-	support.h	\
-	interface.h	\
-	fileio.h	\
+	fileio.c \
+	v4l.h \
+	callbacks.h \
+	support.h \
+	interface.h \
+	fileio.h \
 	font_6x11.h	\
 	filter.h	\
 	$(BUILT_SOURCES)\

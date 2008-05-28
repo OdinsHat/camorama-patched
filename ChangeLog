@@ -9,6 +9,13 @@
 
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Implemented the capture strategy interface
+
+	* src/capture-strategy.c: (capture_strategy_get_type):
+	* src/capture-strategy.h:
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Completed file information header
 
 	* src/camorama-globals.h: added "camorama"

@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -24,5 +24,32 @@
 #ifndef CAPTURE_STRATEGY_H
 #define CAPTURE_STRATEGY_H
 
+#include <glib-object.h>
+
+G_BEGIN_DECLS
+
+typedef struct _CaptureStrategy      CaptureStrategy;
+typedef struct _CaptureStrategyIface CaptureStrategyIface;
+
+G_END_DECLS
+
+#include "v4l.h"
+
+G_BEGIN_DECLS
+
+#define CAMORAMA_TYPE_CAPTURE_STRATEGY         (capture_strategy_get_type ())
+#define CAMORAMA_CAPTURE_STRATEGY(i)           (G_TYPE_CHECK_INSTANCE_CAST ((i), CAMORAMA_TYPE_CAPTURE_STRATEGY, CaptureStrategy))
+#define CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(i) (G_TYPE_INSTANCE_GET_INTERFACE ((i), CAMORAMA_TYPE_CAPTURE_STRATEGY, CaptureStrategyIface))
+
+GType capture_strategy_get_type (void);
+
+struct _CaptureStrategyIface {
+	GTypeInterface base_interfase;
+
+	/* vtable */
+	gboolean (*capture_timeout) (cam* cam);
+};
+
+G_END_DECLS
 
 #endif /* !CAPTURE_STRATEGY_H */

@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -22,4 +22,26 @@
  */
 
 #include "capture-strategy.h"
+
+GType
+capture_strategy_get_type (void)
+{
+	static GType type = 0;
+
+	if (G_UNLIKELY(!type)) {
+		static const GTypeInfo info = {
+			sizeof (CaptureStrategyIface),
+			NULL,
+			NULL,
+			(GClassInitFunc)NULL
+		};
+
+		type = g_type_register_static (G_TYPE_INTERFACE,
+					       "CaptureStrategy",
+					       &info,
+					       0);
+	}
+
+	return type;
+}
 

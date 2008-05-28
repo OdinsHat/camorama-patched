@@ -54,11 +54,17 @@ capture_strategy_read_init (CaptureStrategyRead* self)
 static void
 read_constructed (GObject* object)
 {
+	cam* cam = PRIV(object)->cam;
+
 	if (G_OBJECT_CLASS (capture_strategy_read_parent_class)->constructed) {
 		G_OBJECT_CLASS (capture_strategy_read_parent_class)->constructed (object);
 	}
 
 	g_return_if_fail (PRIV (object)->cam);
+
+        cam->pic =
+            realloc (cam->pic,
+                     (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3));
 }
 
 static void

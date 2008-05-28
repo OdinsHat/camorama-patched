@@ -249,9 +249,6 @@ main(int argc, char *argv[]) {
     } else {
 	cam->capture = capture_strategy_read_new (cam);
         printf ("using read()\n");
-        cam->pic =
-            realloc (cam->pic,
-                     (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3));
     }
     cam->pixmap = gdk_pixmap_new (NULL, cam->x, cam->y, cam->desk_depth);
 

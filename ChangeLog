@@ -1,5 +1,12 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Moved the code to initialize cam->pic into the read strategy
+
+	* src/capture-strategy-read.c: (read_constructed): added the code
+	* src/main.c: (main): dropped the code
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	added a cam property to the read strategy; we're going to need this
 	property so we can properly initialize the "pic" buffer of it
 

@@ -9,6 +9,14 @@
 
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Added the mmap() based strategy
+
+	* src/capture-strategy-mmap.c: (capture_strategy_mmap_init),
+	(capture_strategy_mmap_class_init), (capture_strategy_mmap_new):
+	* src/capture-strategy-mmap.h:
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Implemented the capture strategy interface
 
 	* src/capture-strategy.c: (capture_strategy_get_type):

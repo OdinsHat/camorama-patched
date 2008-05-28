@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -22,4 +22,25 @@
  */
 
 #include "capture-strategy-mmap.h"
+
+/* GType Implementation */
+
+G_DEFINE_TYPE (CaptureStrategyMmap, capture_strategy_mmap, G_TYPE_OBJECT);
+
+static void
+capture_strategy_mmap_init (CaptureStrategyMmap* self)
+{}
+
+static void
+capture_strategy_mmap_class_init (CaptureStrategyMmapClass* self_class)
+{}
+
+/* Public API */
+
+CaptureStrategy*
+capture_strategy_mmap_new (void)
+{
+	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP,
+			     NULL);
+}
 

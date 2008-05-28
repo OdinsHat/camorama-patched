@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -24,5 +24,29 @@
 #ifndef CAPTURE_STRATEGY_MMAP_H
 #define CAPTURE_STRATEGY_MMAP_H
 
+#include "capture-strategy.h"
+
+G_BEGIN_DECLS
+
+typedef struct _CaptureStrategyMmap        CaptureStrategyMmap;
+typedef struct _CaptureStrategyMmapPrivate CaptureStrategyMmapPrivate;
+typedef struct _CaptureStrategyMmapClass   CaptureStrategyMmapClass;
+
+#define CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP         (capture_strategy_mmap_get_type ())
+
+GType capture_strategy_mmap_get_type (void);
+
+CaptureStrategy* capture_strategy_mmap_new (void);
+
+struct _CaptureStrategyMmap {
+	GObject                     base_instance;
+	CaptureStrategyMmapPrivate* _private;
+};
+
+struct _CaptureStrategyMmapClass {
+	GObjectClass                base_class;
+};
+
+G_END_DECLS
 
 #endif /* !CAPTURE_STRATEGY_MMAP_H */

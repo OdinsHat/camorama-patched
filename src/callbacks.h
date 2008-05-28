@@ -47,7 +47,6 @@ void capture_func (GtkWidget *, cam *);
 void init_cam (cam * cam);
 gint timeout_capture_func (cam *);
 gint fps (GtkWidget *);
-gboolean timeout_func      (cam * application);
 void edge_func1 (GtkToggleButton *, gpointer);
 void sobel_func (GtkToggleButton *, gpointer);
 void fix_colour_func (GtkToggleButton *, char *);

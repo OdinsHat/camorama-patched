@@ -2,6 +2,15 @@
 
 	moved the read timeout
 
+	* src/callbacks.c: dropped the mmap timeout
+	* src/callbacks.h: dropped the mmap timeout
+	* src/camorama-globals.h: export frame
+	* src/capture-strategy-mmap.c: (timeout_func): added the timeout
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
+	moved the read timeout
+
 	* src/callbacks.c: (on_change_size_activate), (apply_filters): deleted
 	the read timeout; export apply_filters()
 	* src/callbacks.h: export apply_filters()

@@ -19,7 +19,7 @@ extern int seconds;
 extern GtkWidget *dentry, *entry2, *string_entry;
 extern GtkWidget *host_entry,
     *directory_entry, *filename_entry, *login_entry, *pw_entry;
-int frame;
+int frame = 0;
 
 /*
  * pref callbacks
@@ -499,81 +499,6 @@ apply_filters (cam* cam)
 #warning "FIXME: enable the threshold filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
 //		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-}
-
-gint
-timeout_func (cam * cam)
-{
-    int i, count = 0;
-    GdkGC *gc;
-
-    i = -1;
-    while (i < 0) {
-        i = ioctl (cam->dev, VIDIOCSYNC, &frame);
-
-        if (i < 0 && errno == EINTR) {
-            if (cam->debug == TRUE) {
-                printf ("i = %d\n", i);
-            }
-            continue;
-        }
-        if (i < 0) {
-            if (cam->debug == TRUE) {
-                fprintf (stderr, "Unable to capture image (VIDIOCSYNC)\n");
-            }
-            error_dialog (_("Unable to capture image."));
-            exit (-1);
-        }
-        break;
-    }
-    count++;
-    /*
-     * refer the frame 
-     */
-    cam->pic_buf = cam->pic + cam->vid_buf.offsets[frame];
-    if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
-        cam->pic_buf = cam->tmp;
-    }
-
-	apply_filters(cam);
-
-
-    gc = gdk_gc_new (cam->pixmap);
-
-    gdk_draw_rgb_image (cam->pixmap,
-                        gc, 0, 0,
-                        cam->vid_win.width, cam->vid_win.height,
-                        GDK_RGB_DITHER_NORMAL, cam->pic_buf,
-                        cam->vid_win.width * cam->depth);
-
-    gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
-                                0, cam->x, cam->y);
-
-    cam->vid_map.frame = frame;
-    if (ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
-        if (cam->debug == TRUE) {
-            fprintf (stderr, "Unable to capture image (VIDIOCMCAPTURE)\n");
-        }
-        error_dialog (_("Unable to capture image."));
-        exit (-1);
-    }
-
-    /*
-     * next frame 
-     */
-    frame++;
-
-    /*
-     * reset to the 1st frame 
-     */
-    if (frame >= cam->vid_buf.frames) {
-        frame = 0;
-    }
-
-    frames2++;
-    g_object_unref ((gpointer) gc);
-    return TRUE; /* call this function again */
 }
 
 gint fps (GtkWidget * sb)

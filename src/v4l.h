@@ -55,7 +55,6 @@ struct camera {
     struct video_capability vid_cap;
     struct video_picture vid_pic;
     struct video_window vid_win;
-    struct video_mbuf vid_buf; // FIXME: move into CaptureStrategyMmapPrivate
     struct video_mmap vid_map; // FIXME: could be moved into CaptureStrategyMmapPrivate
     char *video_dev;
     unsigned char *image;

@@ -1,5 +1,13 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Moved vid_buf into the mmap() capture implementation
+
+	* src/capture-strategy-mmap.c: (set_buffer), (mmap_constructed),
+	(mmap_finalize), (timeout_func): added vid_buf
+	* src/v4l.h: dropped vid_buf
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Some code improvements
 
 	* src/v4l.h: added G_BEGIN_DECLS and G_END_DECLS markers; added a note

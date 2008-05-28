@@ -28,9 +28,11 @@
 #include "camorama-globals.h"
 
 struct _CaptureStrategyMmapPrivate {
-	// FIXME: get rid of this
-	cam   * cam;
-	guchar* pic;
+	// FIXME: get rid of this one
+	cam              * cam;
+
+	guchar           * pic;
+	struct video_mbuf  vid_buf;
 };
 
 #define PRIV(i) (CAPTURE_STRATEGY_MMAP(i)->_private)
@@ -56,10 +58,11 @@ capture_strategy_mmap_init (CaptureStrategyMmap* self)
 }
 
 static
-void set_buffer(cam * cam)
+void set_buffer(CaptureStrategyMmap* self,
+		cam                * cam)
 {
    char *msg;
-   if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
+   if(ioctl(cam->dev, VIDIOCGMBUF, &PRIV(self)->vid_buf) == -1) {
       msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
       error_dialog(msg);
       if(cam->debug == TRUE) {
@@ -72,12 +75,12 @@ void set_buffer(cam * cam)
    
    if(cam->debug == TRUE) {
       printf("\nVIDIOCGMBUF\n");
-      printf("mb.size = %d\n", cam->vid_buf.size);
-      printf("mb.frames = %d\n", cam->vid_buf.frames);
-      printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
+      printf("mb.size = %d\n", PRIV(self)->vid_buf.size);
+      printf("mb.frames = %d\n", PRIV(self)->vid_buf.frames);
+      printf("mb.offset = %d\n", PRIV(self)->vid_buf.offsets[1]);
    }
-
 }
+
 static void
 mmap_constructed (GObject* object)
 {
@@ -90,9 +93,9 @@ mmap_constructed (GObject* object)
 	g_return_if_fail (PRIV (object)->cam);
 
 	/* set the buffer size */
-	set_buffer (PRIV(object)->cam);
+	set_buffer (CAPTURE_STRATEGY_MMAP(object), PRIV(object)->cam);
 
-	PRIV(object)->pic = mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
+	PRIV(object)->pic = mmap (0, PRIV(object)->vid_buf.size, PROT_READ | PROT_WRITE,
 				  MAP_SHARED, cam->dev, 0);
 
     if ((unsigned char *) -1 == (unsigned char *) PRIV(object)->pic) {
@@ -105,7 +108,7 @@ mmap_constructed (GObject* object)
     cam->vid_map.height = cam->y;
     cam->vid_map.width = cam->x;
     cam->vid_map.format = cam->vid_pic.palette;
-    for (frame = 0; frame < cam->vid_buf.frames; frame++) {
+    for (frame = 0; frame < PRIV(object)->vid_buf.frames; frame++) {
         cam->vid_map.frame = frame;
         if (ioctl (cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
             if (cam->debug == TRUE) {
@@ -122,7 +125,7 @@ mmap_constructed (GObject* object)
 static void
 mmap_finalize (GObject* object)
 {
-	munmap (PRIV (object)->pic, PRIV(object)->cam->vid_buf.size);
+	munmap (PRIV (object)->pic, PRIV(object)->vid_buf.size);
 	PRIV (object)->cam = NULL;
 
 	G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->finalize (object);
@@ -201,7 +204,7 @@ timeout_func (cam * cam)
     }
 
 	/* reference the frame */
-	cam->pic_buf = PRIV(cam->capture)->pic + cam->vid_buf.offsets[frame];
+	cam->pic_buf = PRIV(cam->capture)->pic + PRIV(cam->capture)->vid_buf.offsets[frame];
 	if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
 		yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
 		cam->pic_buf = cam->tmp;
@@ -237,7 +240,7 @@ timeout_func (cam * cam)
     /*
      * reset to the 1st frame 
      */
-    if (frame >= cam->vid_buf.frames) {
+    if (frame >= PRIV(cam->capture)->vid_buf.frames) {
         frame = 0;
     }
 

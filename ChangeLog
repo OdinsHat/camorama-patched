@@ -1,5 +1,13 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Moved set_buffer() into the mmap() based capture implementation
+
+	* src/capture-strategy-mmap.c: (set_buffer): landed here
+	* src/v4l.c: removed
+	* src/v4l.h: dropped declaration
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Moved the buffer initialization into the mmap() based capture
 	implementation
 

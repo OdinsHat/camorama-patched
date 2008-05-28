@@ -234,25 +234,3 @@ void set_win_info(cam * cam)
 
 }
 
-void set_buffer(cam * cam)
-{
-   char *msg;
-   if(ioctl(cam->dev, VIDIOCGMBUF, &cam->vid_buf) == -1) {
-      msg = g_strdup_printf(_("Could not connect to video device (%s).\nPlease check connection."), cam->video_dev);
-      error_dialog(msg);
-      if(cam->debug == TRUE) {
-         fprintf(stderr, "VIDIOCGMBF  --  could not set buffer info, exiting...\n");
-      }
-      g_free(msg);
-      exit(0);
-
-   }
-   
-   if(cam->debug == TRUE) {
-      printf("\nVIDIOCGMBUF\n");
-      printf("mb.size = %d\n", cam->vid_buf.size);
-      printf("mb.frames = %d\n", cam->vid_buf.frames);
-      printf("mb.offset = %d\n", cam->vid_buf.offsets[1]);
-   }
-
-}

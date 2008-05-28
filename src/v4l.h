@@ -80,7 +80,6 @@ void set_win_info (cam * cam);
 void get_pic_info (cam *);
 void set_pic_info (cam *);
 void get_win_info (cam *);
-void set_buffer (cam *);
 
 #endif /* !CAMORAMA_V4L_H */
 

@@ -250,7 +250,6 @@ main(int argc, char *argv[]) {
         init_cam (cam);
     } else {
 	cam->capture = capture_strategy_read_new ();
-	CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture = read_timeout_func;
         printf ("using read()\n");
         cam->pic =
             realloc (cam->pic,

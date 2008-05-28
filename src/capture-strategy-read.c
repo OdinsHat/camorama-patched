@@ -23,10 +23,14 @@
 
 #include "capture-strategy-read.h"
 
+#include "callbacks.h"
+
 /* GType Implementation */
 
+static void implement_capture_strategy (CaptureStrategyIface* iface);
 G_DEFINE_TYPE_WITH_CODE (CaptureStrategyRead, capture_strategy_read, G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY, NULL));
+			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY,
+						implement_capture_strategy));
 
 static void
 capture_strategy_read_init (CaptureStrategyRead* self)
@@ -43,5 +47,13 @@ capture_strategy_read_new (void)
 {
 	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_READ,
 			     NULL);
+}
+
+/* Capture Strategy Implementation */
+
+static void
+implement_capture_strategy (CaptureStrategyIface* iface)
+{
+	iface->capture = read_timeout_func;
 }
 

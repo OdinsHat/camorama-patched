@@ -2,6 +2,14 @@
 
 	Set the vfunc in the implementation
 
+	* src/capture-strategy-read.c: (implement_capture_strategy): set the
+	vfunc here
+	* src/main.c: (main): don't set the vfunc here
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
+	Set the vfunc in the implementation
+
 	* src/capture-strategy-mmap.c: (implement_capture_strategy): set the
 	vfunc here
 	* src/main.c: (main): don't set the vfunc here

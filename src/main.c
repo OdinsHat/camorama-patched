@@ -244,9 +244,11 @@ main(int argc, char *argv[]) {
     /* initialize cam and create the window */
 
     if (cam->read == FALSE) {
+	cam->capture = capture_strategy_mmap_new ();
         pt2Function = timeout_func;
         init_cam (cam);
     } else {
+	cam->capture = capture_strategy_read_new ();
         printf ("using read()\n");
         cam->pic =
             realloc (cam->pic,
@@ -287,6 +289,7 @@ main(int argc, char *argv[]) {
     gtk_main ();
 
     gtk_idle_remove (cam->idle_id);
+    g_object_unref (cam->capture);
 
     return 0;
 }

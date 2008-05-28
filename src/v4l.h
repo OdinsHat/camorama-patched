@@ -19,7 +19,10 @@
 #include <glade/glade.h>
 #include <gconf/gconf-client.h>
 
+typedef struct camera cam;
+
 #include "camorama-filter-chain.h"
+#include "capture-strategy.h"
 
 typedef enum {
 	PICMAX = 0,
@@ -33,7 +36,8 @@ enum {
 	PPM = 2
 };
 
-typedef struct camera {
+struct camera {
+	CaptureStrategy* capture;
     int dev;
     int x;
     int y;
@@ -70,7 +74,7 @@ typedef struct camera {
     GtkStatusIcon *tray_icon;
 
     CamoramaFilterChain* filter_chain;
-} cam;
+};
 
 void camera_cap (cam *);
 void set_win_info (cam * cam);

@@ -1,5 +1,12 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Added a capture strategy field to the application structure
+
+	* src/main.c: (main): assign a mmap or read based capture strategy
+	* src/v4l.h: added the field
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	properly manage the idle handler
 
 	* src/camorama-window.c: (tray_clicked_callback): set the idle_id to 0

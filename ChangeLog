@@ -1,5 +1,16 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	manage the "pic" buffer in the strategies, not globally
+
+	* src/capture-strategy-mmap.c: (mmap_constructed), (mmap_finalize),
+	(timeout_func): manage pic locally; fix memory usage
+	* src/capture-strategy-read.c: (read_constructed), (read_finalize),
+	(read_timeout_func): manage pic locally; fix memory usage
+	* src/main.c: (main): don't manage pic anymore
+	* src/v4l.h: drop the pic pointer
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	merged init_cam() and constructed()
 
 	* src/capture-strategy-mmap.c: (mmap_constructed):

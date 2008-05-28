@@ -29,7 +29,8 @@
 
 struct _CaptureStrategyMmapPrivate {
 	// FIXME: get rid of this
-	cam* cam;
+	cam   * cam;
+	guchar* pic;
 };
 
 #define PRIV(i) (CAPTURE_STRATEGY_MMAP(i)->_private)
@@ -65,11 +66,10 @@ mmap_constructed (GObject* object)
 
 	g_return_if_fail (PRIV (object)->cam);
 
-    cam->pic =
-        mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
-              MAP_SHARED, cam->dev, 0);
+	PRIV(object)->pic = mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
+				  MAP_SHARED, cam->dev, 0);
 
-    if ((unsigned char *) -1 == (unsigned char *) cam->pic) {
+    if ((unsigned char *) -1 == (unsigned char *) PRIV(object)->pic) {
         if (cam->debug == TRUE) {
             fprintf (stderr, "Unable to capture image (mmap).\n");
         }
@@ -96,6 +96,7 @@ mmap_constructed (GObject* object)
 static void
 mmap_finalize (GObject* object)
 {
+	munmap (PRIV (object)->pic, PRIV(object)->cam->vid_buf.size);
 	PRIV (object)->cam = NULL;
 
 	G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->finalize (object);
@@ -150,7 +151,7 @@ static
 gint
 timeout_func (cam * cam)
 {
-    int i, count = 0;
+    int i;
     GdkGC *gc;
 
     i = -1;
@@ -172,18 +173,15 @@ timeout_func (cam * cam)
         }
         break;
     }
-    count++;
-    /*
-     * refer the frame 
-     */
-    cam->pic_buf = cam->pic + cam->vid_buf.offsets[frame];
-    if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
-        cam->pic_buf = cam->tmp;
-    }
+
+	/* reference the frame */
+	cam->pic_buf = PRIV(cam->capture)->pic + cam->vid_buf.offsets[frame];
+	if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
+		yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
+		cam->pic_buf = cam->tmp;
+	}
 
 	apply_filters(cam);
-
 
     gc = gdk_gc_new (cam->pixmap);
 

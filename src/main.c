@@ -98,7 +98,6 @@ main(int argc, char *argv[]) {
     cam = &cam_object;
     /* set some default values */
     cam->frame_number = 0;
-    cam->pic = NULL;
     cam->pixmap = NULL;
     cam->size = PICHALF;
     cam->video_dev = NULL;

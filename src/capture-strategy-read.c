@@ -26,7 +26,8 @@
 #include "camorama-globals.h"
 
 struct _CaptureStrategyReadPrivate {
-	cam* cam;
+	cam   * cam;
+	guchar* pic;
 };
 
 enum {
@@ -62,15 +63,16 @@ read_constructed (GObject* object)
 
 	g_return_if_fail (PRIV (object)->cam);
 
-        cam->pic =
-            realloc (cam->pic,
-                     (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3));
+	PRIV(object)->pic = realloc (PRIV(object)->pic,
+				     cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3);
 }
 
 static void
 read_finalize (GObject* object)
 {
 	PRIV(object)->cam = NULL;
+
+	free (PRIV(object)->pic);
 
 	G_OBJECT_CLASS (capture_strategy_read_parent_class)->finalize (object);
 }
@@ -123,25 +125,23 @@ capture_strategy_read_new (cam* cam)
 /*
  * get image from cam - does all the work ;) 
  */
-static
-gboolean
-read_timeout_func(cam* cam) {
-    int i, count = 0;
+static gboolean
+read_timeout_func (cam* cam)
+{
+    int i;
     GdkGC *gc;
 
-    read (cam->dev, cam->pic, (cam->x * cam->y * 3));
+    read (cam->dev, PRIV(cam->capture)->pic, (cam->x * cam->y * 3));
     frames2++;
     /*
      * update_rec.x = 0;
      * update_rec.y = 0;
      * update_rec.width = cam->x;
-     * update_rec.height = cam->y; 
+     * update_rec.height = cam->y;
      */
-    count++;
-    /*
-     * refer the frame 
-     */
-    cam->pic_buf = cam->pic;    // + cam->vid_buf.offsets[frame];
+
+	/* reference the frame */
+	cam->pic_buf = PRIV(cam->capture)->pic;
 
     if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
         yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);

@@ -52,7 +52,6 @@ struct camera {
     struct video_mbuf vid_buf;
     struct video_mmap vid_map;
     char *video_dev;
-    unsigned char *pic;
     unsigned char *image;
     gchar *capturefile, *rcapturefile;
     gchar *pixdir, *rpixdir;

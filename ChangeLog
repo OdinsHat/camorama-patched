@@ -1,5 +1,14 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Added a private memory section to the read algorithm (to store the cam
+	the same way the mmap algorithm does).
+
+	* src/capture-strategy-read.c: (capture_strategy_read_init),
+	(capture_strategy_read_class_init): added a private memory section
+	* src/capture-strategy-read.h: added a casting macro
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Moved init_cam() into the mmap() related code
 
 	* src/callbacks.c,

@@ -25,6 +25,12 @@
 
 #include "camorama-globals.h"
 
+struct _CaptureStrategyReadPrivate {
+	cam* cam;
+};
+
+#define PRIV(i) (CAPTURE_STRATEGY_READ (i)->_private)
+
 /* GType Implementation */
 
 static void implement_capture_strategy (CaptureStrategyIface* iface);
@@ -34,11 +40,17 @@ G_DEFINE_TYPE_WITH_CODE (CaptureStrategyRead, capture_strategy_read, G_TYPE_OBJE
 
 static void
 capture_strategy_read_init (CaptureStrategyRead* self)
-{}
+{
+	PRIV(self) = G_TYPE_INSTANCE_GET_PRIVATE (self,
+						  CAMORAMA_TYPE_CAPTURE_STRATEGY_READ,
+						  CaptureStrategyReadPrivate);
+}
 
 static void
 capture_strategy_read_class_init (CaptureStrategyReadClass* self_class)
-{}
+{
+	g_type_class_add_private (self_class, sizeof (CaptureStrategyReadPrivate));
+}
 
 /* Public API */
 

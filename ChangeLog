@@ -1,5 +1,16 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	added a cam property to the read strategy; we're going to need this
+	property so we can properly initialize the "pic" buffer of it
+
+	* src/capture-strategy-read.c: (read_constructed), (read_finalize),
+	(read_set_property), (capture_strategy_read_class_init),
+	(capture_strategy_read_new): added the new property
+	* src/capture-strategy-read.h: added a cam parameter to new()
+	* src/main.c: (main): pass the cam parameter to new() for read
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Added a private memory section to the read algorithm (to store the cam
 	the same way the mmap algorithm does).
 

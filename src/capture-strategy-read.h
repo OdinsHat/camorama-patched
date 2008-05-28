@@ -35,7 +35,7 @@ typedef struct _CaptureStrategyReadClass   CaptureStrategyReadClass;
 #define CAMORAMA_TYPE_CAPTURE_STRATEGY_READ (capture_strategy_read_get_type ())
 #define CAPTURE_STRATEGY_READ(i)            (G_TYPE_CHECK_INSTANCE_CAST ((i), CAMORAMA_TYPE_CAPTURE_STRATEGY_READ, CaptureStrategyRead))
 
-CaptureStrategy* capture_strategy_read_new (void);
+CaptureStrategy* capture_strategy_read_new (cam* cam);
 
 struct _CaptureStrategyRead {
 	GObject                     base_instance;

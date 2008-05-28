@@ -247,7 +247,7 @@ main(int argc, char *argv[]) {
     if (cam->read == FALSE) {
 	cam->capture = capture_strategy_mmap_new (cam);
     } else {
-	cam->capture = capture_strategy_read_new ();
+	cam->capture = capture_strategy_read_new (cam);
         printf ("using read()\n");
         cam->pic =
             realloc (cam->pic,

@@ -29,6 +29,11 @@ struct _CaptureStrategyReadPrivate {
 	cam* cam;
 };
 
+enum {
+	PROP_0,
+	PROP_CAMORAMA
+};
+
 #define PRIV(i) (CAPTURE_STRATEGY_READ (i)->_private)
 
 /* GType Implementation */
@@ -47,17 +52,63 @@ capture_strategy_read_init (CaptureStrategyRead* self)
 }
 
 static void
+read_constructed (GObject* object)
+{
+	if (G_OBJECT_CLASS (capture_strategy_read_parent_class)->constructed) {
+		G_OBJECT_CLASS (capture_strategy_read_parent_class)->constructed (object);
+	}
+
+	g_return_if_fail (PRIV (object)->cam);
+}
+
+static void
+read_finalize (GObject* object)
+{
+	PRIV(object)->cam = NULL;
+
+	G_OBJECT_CLASS (capture_strategy_read_parent_class)->finalize (object);
+}
+
+static void
+read_set_property (GObject     * object,
+		   guint         prop_id,
+		   GValue const* value,
+		   GParamSpec  * pspec)
+{
+	switch (prop_id) {
+	case PROP_CAMORAMA:
+		PRIV (object)->cam = g_value_get_pointer (value);
+		g_object_notify (object, "cam");
+		break;
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
+
+static void
 capture_strategy_read_class_init (CaptureStrategyReadClass* self_class)
 {
+	GObjectClass* object_class = G_OBJECT_CLASS (self_class);
+
+	object_class->constructed  = read_constructed;
+	object_class->finalize     = read_finalize;
+	object_class->set_property = read_set_property;
+
+	g_object_class_install_property (object_class, PROP_CAMORAMA,
+					 g_param_spec_pointer ("cam", "", "",
+							       G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+
 	g_type_class_add_private (self_class, sizeof (CaptureStrategyReadPrivate));
 }
 
 /* Public API */
 
 CaptureStrategy*
-capture_strategy_read_new (void)
+capture_strategy_read_new (cam* cam)
 {
 	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_READ,
+			     "cam", cam,
 			     NULL);
 }
 

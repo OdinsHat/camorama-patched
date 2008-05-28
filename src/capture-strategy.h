@@ -47,7 +47,7 @@ struct _CaptureStrategyIface {
 	GTypeInterface base_interfase;
 
 	/* vtable */
-	gboolean (*capture_timeout) (cam* cam);
+	gboolean (*capture) (cam* cam);
 };
 
 G_END_DECLS

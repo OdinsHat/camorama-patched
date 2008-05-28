@@ -1,5 +1,9 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	* src/capture-strategy.h: renamed the vfunc to capture
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Added a capture strategy field to the application structure
 
 	* src/main.c: (main): assign a mmap or read based capture strategy

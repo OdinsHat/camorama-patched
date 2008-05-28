@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -24,5 +24,25 @@
 #ifndef CAPTURE_STRATEGY_READ_H
 #define CAPTURE_STRATEGY_READ_H
 
+#include "capture-strategy.h"
+
+G_BEGIN_DECLS
+
+typedef struct _CaptureStrategyRead        CaptureStrategyRead;
+typedef struct _CaptureStrategyReadPrivate CaptureStrategyReadPrivate;
+typedef struct _CaptureStrategyReadClass   CaptureStrategyReadClass;
+
+#define CAMORAMA_TYPE_CAPTURE_STRATEGY_READ         (capture_strategy_read_get_type ())
+
+struct _CaptureStrategyRead {
+	GObject                     base_instance;
+	CaptureStrategyReadPrivate* _private;
+};
+
+struct _CaptureStrategyReadClass {
+	GObjectClass                base_class;
+};
+
+G_END_DECLS
 
 #endif /* !CAPTURE_STRATEGY_READ_H */

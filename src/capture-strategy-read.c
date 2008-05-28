@@ -1,4 +1,4 @@
-/* This file is part of ...
+/* This file is part of camorama
  *
  * AUTHORS
  *     Sven Herzberg  <sven@imendio.com>
@@ -22,4 +22,25 @@
  */
 
 #include "capture-strategy-read.h"
+
+/* GType Implementation */
+
+G_DEFINE_TYPE (CaptureStrategyRead, capture_strategy_read, G_TYPE_OBJECT);
+
+static void
+capture_strategy_read_init (CaptureStrategyRead* self)
+{}
+
+static void
+capture_strategy_read_class_init (CaptureStrategyReadClass* self_class)
+{}
+
+/* Public API */
+
+CaptureStrategy*
+capture_strategy_read_new (void)
+{
+	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_READ,
+			     NULL);
+}
 

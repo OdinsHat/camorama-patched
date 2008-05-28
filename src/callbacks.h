@@ -33,7 +33,6 @@ void ppm_func (GtkWidget *, cam *);
 void rts_func (GtkWidget *, cam *);
 void rjpg_func (GtkWidget *, cam *);
 void rpng_func (GtkWidget *, cam *);
-gint (*pt2Function) (cam *);
 void rppm_func (GtkWidget *, cam *);
 void on_preferences1_activate (GtkMenuItem * menuitem, gpointer user_data);
 void on_about_activate (GtkMenuItem * menuitem, cam *cam);

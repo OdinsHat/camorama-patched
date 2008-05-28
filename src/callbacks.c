@@ -721,17 +721,15 @@ gint timeout_capture_func (cam * cam)
      * rect->x = 0; rect->y = 0;
      * rect->width = cam->x; rect->height = cam->y; */
 
-    /* need to return true, or the timeout will be destroyed - don't forget! :) */
     if (cam->hidden == TRUE) {
         /* call timeout_func to get a new picture.   stupid, but it works.
          * also need to add this to capture_func 
          * maybe add a "window_state_event" handler to do the same when window is iconified */
 
-        pt2Function (cam);
-        pt2Function (cam);
-        pt2Function (cam);
-        pt2Function (cam);
-
+        CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture (cam);
+        CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture (cam);
+        CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture (cam);
+        CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture (cam);
     }
     memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
 
@@ -741,6 +739,8 @@ gint timeout_capture_func (cam * cam)
     if (cam->rcap == TRUE) {
         remote_save (cam);
     }
+
+    /* need to return true, or the timeout will be destroyed - don't forget! :) */
     return 1;
 }
 

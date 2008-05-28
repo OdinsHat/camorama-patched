@@ -12,6 +12,8 @@
 
 #include "camorama-display.h"
 #include "camorama-stock-items.h"
+#include "capture-strategy-read.h"
+#include "capture-strategy-mmap.h"
 
 static gboolean ver = FALSE, max = FALSE, min = FALSE, half =
     FALSE, use_read = FALSE;
@@ -245,15 +247,15 @@ main(int argc, char *argv[]) {
 
     if (cam->read == FALSE) {
 	cam->capture = capture_strategy_mmap_new ();
-        pt2Function = timeout_func;
+	CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture = timeout_func;
         init_cam (cam);
     } else {
 	cam->capture = capture_strategy_read_new ();
+	CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture = read_timeout_func;
         printf ("using read()\n");
         cam->pic =
             realloc (cam->pic,
                      (cam->vid_cap.maxwidth * cam->vid_cap.maxheight * 3));
-        pt2Function = read_timeout_func;
     }
     cam->pixmap = gdk_pixmap_new (NULL, cam->x, cam->y, cam->desk_depth);
 
@@ -283,7 +285,7 @@ main(int argc, char *argv[]) {
      * gtk_widget_show_all (GTK_WIDGET (tray_icon)); */
     load_interface (cam);
 
-    cam->idle_id = gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+    cam->idle_id = gtk_idle_add ((GSourceFunc) CAMORAMA_CAPTURE_STRATEGY_GET_IFACE (cam->capture)->capture, cam);
 
     gtk_timeout_add (2000, (GSourceFunc) fps, cam->status);
     gtk_main ();

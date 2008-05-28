@@ -170,7 +170,7 @@ tray_clicked_callback (GtkStatusIcon* status, guint button, guint activate_time,
                                  (cam->xml, "main_window"));
             } else {
                 cam->idle_id =
-                    gtk_idle_add ((GSourceFunc) pt2Function, (gpointer) cam);
+                    gtk_idle_add ((GSourceFunc) CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture, cam);
                 gtk_widget_show (glade_xml_get_widget
                                  (cam->xml, "main_window"));
                 cam->hidden = FALSE;

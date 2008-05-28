@@ -1,5 +1,16 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Dropped pt2Function
+
+	* src/callbacks.c: (timeout_capture_func): call into the capture
+	interface
+	* src/callbacks.h: dropped pt2Function
+	* src/camorama-window.c: (tray_clicked_callback): call into the
+	capture interface
+	* src/main.c: (main): call into the capture interface
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Implement capture strategy
 
 	* src/capture-strategy-mmap.c,

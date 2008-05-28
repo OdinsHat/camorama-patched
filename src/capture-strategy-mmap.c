@@ -66,6 +66,9 @@ mmap_constructed (GObject* object)
 
 	g_return_if_fail (PRIV (object)->cam);
 
+	/* set the buffer size */
+	set_buffer (PRIV(object)->cam);
+
 	PRIV(object)->pic = mmap (0, cam->vid_buf.size, PROT_READ | PROT_WRITE,
 				  MAP_SHARED, cam->dev, 0);
 

@@ -1,5 +1,13 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Moved the buffer initialization into the mmap() based capture
+	implementation
+
+	* src/capture-strategy-mmap.c: (mmap_constructed): initialize buffers
+	* src/main.c: (main): don't initialize buffers here anymore
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Small code cleanup
 
 	* src/main.c: (main): merged to if-trees with the same condition

@@ -240,9 +240,6 @@ main(int argc, char *argv[]) {
 
     /* initialize cam and create the window */
     if (cam->read == FALSE) {
-	/* set the buffer size */
-        set_buffer (cam);
-
 	cam->capture = capture_strategy_mmap_new (cam);
     } else {
 	cam->capture = capture_strategy_read_new (cam);

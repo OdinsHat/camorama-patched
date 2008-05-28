@@ -23,10 +23,14 @@
 
 #include "capture-strategy-mmap.h"
 
+#include "callbacks.h"
+
 /* GType Implementation */
 
+static void implement_capture_strategy (CaptureStrategyIface* iface);
 G_DEFINE_TYPE_WITH_CODE (CaptureStrategyMmap, capture_strategy_mmap, G_TYPE_OBJECT,
-			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY, NULL));
+			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY,
+						implement_capture_strategy));
 
 static void
 capture_strategy_mmap_init (CaptureStrategyMmap* self)
@@ -43,5 +47,14 @@ capture_strategy_mmap_new (void)
 {
 	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP,
 			     NULL);
+}
+
+/* Capture Strategy Implementation */
+
+static void
+implement_capture_strategy (CaptureStrategyIface* iface)
+{
+	// FIXME: move timeout_func into this file
+	iface->capture = timeout_func;
 }
 

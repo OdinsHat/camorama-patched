@@ -247,7 +247,6 @@ main(int argc, char *argv[]) {
 
     if (cam->read == FALSE) {
 	cam->capture = capture_strategy_mmap_new ();
-	CAMORAMA_CAPTURE_STRATEGY_GET_IFACE(cam->capture)->capture = timeout_func;
         init_cam (cam);
     } else {
 	cam->capture = capture_strategy_read_new ();

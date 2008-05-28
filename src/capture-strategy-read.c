@@ -23,7 +23,7 @@
 
 #include "capture-strategy-read.h"
 
-#include "callbacks.h"
+#include "camorama-globals.h"
 
 /* GType Implementation */
 
@@ -50,6 +50,48 @@ capture_strategy_read_new (void)
 }
 
 /* Capture Strategy Implementation */
+
+/*
+ * get image from cam - does all the work ;) 
+ */
+static
+gboolean
+read_timeout_func(cam* cam) {
+    int i, count = 0;
+    GdkGC *gc;
+
+    read (cam->dev, cam->pic, (cam->x * cam->y * 3));
+    frames2++;
+    /*
+     * update_rec.x = 0;
+     * update_rec.y = 0;
+     * update_rec.width = cam->x;
+     * update_rec.height = cam->y; 
+     */
+    count++;
+    /*
+     * refer the frame 
+     */
+    cam->pic_buf = cam->pic;    // + cam->vid_buf.offsets[frame];
+
+    if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
+        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
+        cam->pic_buf = cam->tmp;
+    }
+
+	apply_filters(cam);
+
+    gc = gdk_gc_new (cam->pixmap);
+    gdk_draw_rgb_image (cam->pixmap,
+                        gc, 0, 0,
+                        cam->vid_win.width, cam->vid_win.height,
+                        GDK_RGB_DITHER_NORMAL, cam->pic_buf,
+                        cam->vid_win.width * cam->depth);
+
+    gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
+                                0, cam->x, cam->y);
+    return TRUE; /* call this function again */
+}
 
 static void
 implement_capture_strategy (CaptureStrategyIface* iface)

@@ -391,23 +391,6 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
     gtk_widget_set_size_request (glade_xml_get_widget (cam->xml, "da"),
                                  cam->x, cam->y);
 
-    /*
-     * if(cam->read == FALSE) {
-     *  cam->pic = mmap(0, cam->vid_buf.size, PROT_READ | PROT_WRITE, MAP_SHARED, cam->dev, 0);
-     *  
-     *  if((unsigned char *) -1 == (unsigned char *) cam->pic) {
-     *   if(cam->debug == TRUE) {
-     *   fprintf(stderr, "Unable to capture image (mmap).\n");
-     *   }
-     *   error_dialog(_("Unable to capture image."));
-     *   exit(-1);
-     *  }
-     *  }else{
-     *   cam->pic_buf = malloc(cam->x * cam->y * cam->depth);
-     *   read(cam->dev,cam->pic,(cam->x * cam->y * 3));
-     *  } 
-     */
-
     cam->vid_win.x = 0;
     cam->vid_win.y = 0;
     cam->vid_win.width = cam->x;
@@ -426,20 +409,6 @@ void on_change_size_activate (GtkWidget * widget, cam * cam)
      */
     cam->vid_map.format = cam->vid_pic.palette;
     // get_win_info(cam);
-    /*
-     * if(cam->read == FALSE) {
-     * * for(frame = 0; frame < cam->vid_buf.frames; frame++) {
-     * * cam->vid_map.frame = frame;
-     * * if(ioctl(cam->dev, VIDIOCMCAPTURE, &cam->vid_map) < 0) {
-     * * if(cam->debug == TRUE) {
-     * * fprintf(stderr, "Unable to capture image (VIDIOCMCAPTURE) during resize.\n");
-     * * }
-     * * //error_dialog(_("Unable to capture image."));
-     * * //exit(-1);
-     * * }
-     * * }
-     * * } 
-     */
     get_win_info (cam);
     frame = 0;
     gtk_window_resize (GTK_WINDOW
@@ -520,8 +489,9 @@ void on_about_activate (GtkMenuItem * menuitem, cam * cam)
     gtk_widget_show (about);
 }
 
-static void
-apply_filters(cam* cam) {
+void
+apply_filters (cam* cam)
+{
 	camorama_filter_chain_apply(cam->filter_chain, cam->pic_buf, cam->x, cam->y, cam->depth);
 #warning "FIXME: enable the threshold channel filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD_CHANNEL)  != 0) 
@@ -529,47 +499,6 @@ apply_filters(cam* cam) {
 #warning "FIXME: enable the threshold filter"
 //	if((effect_mask & CAMORAMA_FILTER_THRESHOLD)  != 0) 
 //		threshold (cam->pic_buf, cam->x, cam->y, cam->dither);
-}
-
-/*
- * get image from cam - does all the work ;) 
- */
-gboolean
-read_timeout_func(cam* cam) {
-    int i, count = 0;
-    GdkGC *gc;
-
-    read (cam->dev, cam->pic, (cam->x * cam->y * 3));
-    frames2++;
-    /*
-     * update_rec.x = 0;
-     * update_rec.y = 0;
-     * update_rec.width = cam->x;
-     * update_rec.height = cam->y; 
-     */
-    count++;
-    /*
-     * refer the frame 
-     */
-    cam->pic_buf = cam->pic;    // + cam->vid_buf.offsets[frame];
-
-    if (cam->vid_pic.palette == VIDEO_PALETTE_YUV420P) {
-        yuv420p_to_rgb (cam->pic_buf, cam->tmp, cam->x, cam->y, cam->depth);
-        cam->pic_buf = cam->tmp;
-    }
-
-	apply_filters(cam);
-
-    gc = gdk_gc_new (cam->pixmap);
-    gdk_draw_rgb_image (cam->pixmap,
-                        gc, 0, 0,
-                        cam->vid_win.width, cam->vid_win.height,
-                        GDK_RGB_DITHER_NORMAL, cam->pic_buf,
-                        cam->vid_win.width * cam->depth);
-
-    gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
-                                0, cam->x, cam->y);
-    return TRUE; /* call this function again */
 }
 
 gint

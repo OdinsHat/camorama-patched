@@ -1,5 +1,17 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	moved the read timeout
+
+	* src/callbacks.c: (on_change_size_activate), (apply_filters): deleted
+	the read timeout; export apply_filters()
+	* src/callbacks.h: export apply_filters()
+	* src/capture-strategy-read.c: (read_timeout_func): added the read
+	timeout
+	* src/fileio.c: (local_save): dropped unused code
+	* src/main.c: (main): small code cleanup
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	Set the vfunc in the implementation
 
 	* src/capture-strategy-read.c: (implement_capture_strategy): set the

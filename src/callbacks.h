@@ -7,6 +7,8 @@
 
 G_BEGIN_DECLS
 
+void apply_filters (cam* cam);
+
 void on_change_size_activate (GtkWidget * widget, cam * cam);
 void on_quit_activate (GtkMenuItem * menuitem, gpointer user_data);
 void gconf_notify_func (GConfClient * client, guint cnxn_id,
@@ -46,7 +48,6 @@ void init_cam (cam * cam);
 gint timeout_capture_func (cam *);
 gint fps (GtkWidget *);
 gboolean timeout_func      (cam * application);
-gboolean read_timeout_func (cam * application);
 void edge_func1 (GtkToggleButton *, gpointer);
 void sobel_func (GtkToggleButton *, gpointer);
 void fix_colour_func (GtkToggleButton *, char *);

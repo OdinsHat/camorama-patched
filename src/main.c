@@ -242,9 +242,8 @@ main(int argc, char *argv[]) {
     if (cam->read == FALSE) {
         set_buffer (cam);
     }
-    //cam->read = FALSE;
-    /* initialize cam and create the window */
 
+    /* initialize cam and create the window */
     if (cam->read == FALSE) {
 	cam->capture = capture_strategy_mmap_new ();
         init_cam (cam);

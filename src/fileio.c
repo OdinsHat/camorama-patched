@@ -366,8 +366,6 @@ int local_save (cam * cam)
     default:
         ext = g_strdup ((gchar *) "jpeg");
     }
-    //cam->tmp = NULL;
-    //memcpy (cam->tmp, cam->pic_buf, cam->x * cam->y * cam->depth);
 
     if (cam->timestamp == TRUE) {
         add_rgb_text (cam->tmp, cam->x, cam->y, cam->ts_string,

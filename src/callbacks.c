@@ -534,7 +534,7 @@ apply_filters(cam* cam) {
 /*
  * get image from cam - does all the work ;) 
  */
-gint
+gboolean
 read_timeout_func(cam* cam) {
     int i, count = 0;
     GdkGC *gc;
@@ -569,11 +569,11 @@ read_timeout_func(cam* cam) {
 
     gtk_widget_queue_draw_area (glade_xml_get_widget (cam->xml, "da"), 0,
                                 0, cam->x, cam->y);
-    return 1;
-
+    return TRUE; /* call this function again */
 }
 
-gint timeout_func (cam * cam)
+gint
+timeout_func (cam * cam)
 {
     int i, count = 0;
     GdkGC *gc;
@@ -644,7 +644,7 @@ gint timeout_func (cam * cam)
 
     frames2++;
     g_object_unref ((gpointer) gc);
-    return 1;
+    return TRUE; /* call this function again */
 }
 
 gint fps (GtkWidget * sb)

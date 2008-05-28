@@ -25,7 +25,8 @@
 
 /* GType Implementation */
 
-G_DEFINE_TYPE (CaptureStrategyRead, capture_strategy_read, G_TYPE_OBJECT);
+G_DEFINE_TYPE_WITH_CODE (CaptureStrategyRead, capture_strategy_read, G_TYPE_OBJECT,
+			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY, NULL));
 
 static void
 capture_strategy_read_init (CaptureStrategyRead* self)

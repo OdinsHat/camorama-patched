@@ -25,7 +25,8 @@
 
 /* GType Implementation */
 
-G_DEFINE_TYPE (CaptureStrategyMmap, capture_strategy_mmap, G_TYPE_OBJECT);
+G_DEFINE_TYPE_WITH_CODE (CaptureStrategyMmap, capture_strategy_mmap, G_TYPE_OBJECT,
+			 G_IMPLEMENT_INTERFACE (CAMORAMA_TYPE_CAPTURE_STRATEGY, NULL));
 
 static void
 capture_strategy_mmap_init (CaptureStrategyMmap* self)

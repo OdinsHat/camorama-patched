@@ -1,5 +1,12 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	Implement capture strategy
+
+	* src/capture-strategy-mmap.c,
+	* src/capture-strategy-read.c: implement capture strategy
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	* src/capture-strategy.h: renamed the vfunc to capture
 
 2008-05-28  Sven Herzberg  <sven@imendio.com>

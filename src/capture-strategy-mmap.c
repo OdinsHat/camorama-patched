@@ -27,6 +27,18 @@
 #include <glib/gi18n.h>
 #include "camorama-globals.h"
 
+struct _CaptureStrategyMmapPrivate {
+	// FIXME: get rid of this
+	cam* cam;
+};
+
+#define PRIV(i) (CAPTURE_STRATEGY_MMAP(i)->_private)
+
+enum {
+	PROP_0,
+	PROP_CAMORAMA
+};
+
 /* GType Implementation */
 
 static void implement_capture_strategy (CaptureStrategyIface* iface);
@@ -36,18 +48,70 @@ G_DEFINE_TYPE_WITH_CODE (CaptureStrategyMmap, capture_strategy_mmap, G_TYPE_OBJE
 
 static void
 capture_strategy_mmap_init (CaptureStrategyMmap* self)
-{}
+{
+	PRIV(self) = G_TYPE_INSTANCE_GET_PRIVATE (self,
+						  CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP,
+						  CaptureStrategyMmapPrivate);
+}
+
+static void
+mmap_constructed (GObject* object)
+{
+	if (G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed) {
+		G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->constructed (object);
+	}
+
+	g_return_if_fail (PRIV (object)->cam);
+}
+
+static void
+mmap_finalize (GObject* object)
+{
+	PRIV (object)->cam = NULL;
+
+	G_OBJECT_CLASS (capture_strategy_mmap_parent_class)->finalize (object);
+}
+
+static void
+mmap_set_property (GObject     * object,
+		   guint         prop_id,
+		   GValue const* value,
+		   GParamSpec  * pspec)
+{
+	switch (prop_id) {
+	case PROP_CAMORAMA:
+		PRIV (object)->cam = g_value_get_pointer (value);
+		g_object_notify (object, "cam");
+		break;
+	default:
+		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+		break;
+	}
+}
 
 static void
 capture_strategy_mmap_class_init (CaptureStrategyMmapClass* self_class)
-{}
+{
+	GObjectClass* object_class = G_OBJECT_CLASS (self_class);
+
+	object_class->constructed  = mmap_constructed;
+	object_class->finalize     = mmap_finalize;
+	object_class->set_property = mmap_set_property;
+
+	g_object_class_install_property (object_class, PROP_CAMORAMA,
+					 g_param_spec_pointer ("cam", "", "",
+							       G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+
+	g_type_class_add_private (self_class, sizeof (CaptureStrategyMmapPrivate));
+}
 
 /* Public API */
 
 CaptureStrategy*
-capture_strategy_mmap_new (void)
+capture_strategy_mmap_new (cam* cam)
 {
 	return g_object_new (CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP,
+			     "cam", cam,
 			     NULL);
 }
 

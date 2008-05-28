@@ -32,11 +32,12 @@ typedef struct _CaptureStrategyMmap        CaptureStrategyMmap;
 typedef struct _CaptureStrategyMmapPrivate CaptureStrategyMmapPrivate;
 typedef struct _CaptureStrategyMmapClass   CaptureStrategyMmapClass;
 
-#define CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP         (capture_strategy_mmap_get_type ())
+#define CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP (capture_strategy_mmap_get_type ())
+#define CAPTURE_STRATEGY_MMAP(i)            (G_TYPE_CHECK_INSTANCE_CAST ((i), CAMORAMA_TYPE_CAPTURE_STRATEGY_MMAP, CaptureStrategyMmap))
 
 GType capture_strategy_mmap_get_type (void);
 
-CaptureStrategy* capture_strategy_mmap_new (void);
+CaptureStrategy* capture_strategy_mmap_new (cam* cam);
 
 struct _CaptureStrategyMmap {
 	GObject                     base_instance;

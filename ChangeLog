@@ -1,5 +1,19 @@
 2008-05-28  Sven Herzberg  <sven@imendio.com>
 
+	added a cam property to the mmap strategy; we're going to need this
+	property so we can properly initialize the "pic" buffer of it
+
+	* src/capture-strategy-mmap.c: (capture_strategy_mmap_init),
+	(mmap_constructed), (mmap_finalize), (mmap_set_property),
+	(capture_strategy_mmap_class_init), (capture_strategy_mmap_new): added
+	the new property
+	* src/capture-strategy-mmap.h: changed the new() signature
+	* src/capture-strategy-read.h: declare the new() function
+	* src/main.c: (main): pass the cam pointer into the mmap's new()
+	function
+
+2008-05-28  Sven Herzberg  <sven@imendio.com>
+
 	moved the read timeout
 
 	* src/callbacks.c: dropped the mmap timeout

@@ -34,6 +34,8 @@ typedef struct _CaptureStrategyReadClass   CaptureStrategyReadClass;
 
 #define CAMORAMA_TYPE_CAPTURE_STRATEGY_READ         (capture_strategy_read_get_type ())
 
+CaptureStrategy* capture_strategy_read_new (void);
+
 struct _CaptureStrategyRead {
 	GObject                     base_instance;
 	CaptureStrategyReadPrivate* _private;

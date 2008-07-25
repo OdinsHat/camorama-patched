@@ -8,6 +8,7 @@ src/camorama-filter-laplace.c
 src/camorama-filter-mirror.c
 src/camorama-stock-items.c
 src/camorama-window.c
+src/capture-strategy-mmap.c
 src/fileio.c
 src/filter.c
 src/main.c

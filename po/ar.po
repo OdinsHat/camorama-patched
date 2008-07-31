@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arabic\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-21 10:46+0100\n"
+"POT-Creation-Date: 2008-07-31 11:05+0100\n"
 "PO-Revision-Date: 2007-04-14 18:49+0100\n"
 "Last-Translator: Djihed Afifi <djihed@gmail.com>\n"
 "Language-Team: Arabeyes <doc@arabeyes.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 msgid "Camorama Webcam Viewer"
 msgstr "عارض المعارِف"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:480
 msgid "View, alter and save images from a webcam"
 msgstr ""
 
@@ -468,23 +468,17 @@ msgid ""
 "capture, this key toggles the saving of pictures to a remote server."
 msgstr ""
 
-#: ../src/callbacks.c:500
+#: ../src/callbacks.c:469
 #, fuzzy
 msgid "translator_credits"
 msgstr "المترجمون:"
 
-#: ../src/callbacks.c:509
+#: ../src/callbacks.c:478
 #, fuzzy
 msgid "Camorama"
 msgstr "كامبراي"
 
-#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
-#: ../src/callbacks.c:692
-#, fuzzy
-msgid "Unable to capture image."
-msgstr "غير قادر على تحليل العنصر"
-
-#: ../src/callbacks.c:823
+#: ../src/callbacks.c:632
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -492,8 +486,8 @@ msgid ""
 "Capture Interval: %d"
 msgstr ""
 
-#: ../src/callbacks.c:832
-#, fuzzy
+#: ../src/callbacks.c:641
+#, fuzzy, c-format
 msgid "Automatic Capture Disabled"
 msgstr "فُعِّل النوم الآلي"
 
@@ -501,7 +495,8 @@ msgstr "فُعِّل النوم الآلي"
 msgid "Laplace (4 Neighbours)"
 msgstr ""
 
-#: ../src/camorama-filter-mirror.c:66
+#. TRANSLATORS: This is a noun
+#: ../src/camorama-filter-mirror.c:67
 #, fuzzy
 msgid "Mirror"
 msgstr "خطأ"
@@ -518,10 +513,26 @@ msgstr "ويب"
 msgid "_Add Filter"
 msgstr "أضف ملفات"
 
-#: ../src/camorama-window.c:199
+#: ../src/camorama-window.c:201
 #, fuzzy
 msgid "Effects"
 msgstr "مؤ_ثرات"
+
+#: ../src/capture-strategy-mmap.c:66 ../src/v4l.c:94 ../src/v4l.c:168
+#: ../src/v4l.c:180 ../src/v4l.c:205 ../src/v4l.c:226
+#, fuzzy, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"تعذّر الاتّصال بالخادم المحدّد.\n"
+"رجاء افحص اسم الخادم و حاوِل مرّة ثانية."
+
+#: ../src/capture-strategy-mmap.c:105 ../src/capture-strategy-mmap.c:118
+#: ../src/capture-strategy-mmap.c:200 ../src/capture-strategy-mmap.c:231
+#, fuzzy
+msgid "Unable to capture image."
+msgstr "غير قادر على تحليل العنصر"
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 #, fuzzy
@@ -533,7 +544,7 @@ msgstr "تعذّر فتح ملف البريد المؤقّت %s: %s"
 msgid "Unable to create image '%s'."
 msgstr "تعذّر جلب الرّسالة: %s"
 
-#: ../src/fileio.c:147 ../src/fileio.c:430
+#: ../src/fileio.c:147 ../src/fileio.c:428
 #, fuzzy, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "تعذّر تحميل الصورة '%s'."
@@ -555,12 +566,12 @@ msgstr "حدث خطأ أثناء تشغيل %s"
 msgid "An error occurred writing to %s."
 msgstr "حدث خطأ أثناء تشغيل %s"
 
-#: ../src/fileio.c:404
+#: ../src/fileio.c:402
 #, fuzzy, c-format
 msgid "Could not create directory '%s'."
 msgstr "لا يمكن إنشاء المجلّد %s:"
 
-#: ../src/fileio.c:415
+#: ../src/fileio.c:413
 #, fuzzy, c-format
 msgid "Could not change to directory '%s'."
 msgstr "لا يمكن إنشاء المجلّد %s:"
@@ -605,61 +616,62 @@ msgstr "أ_حادي اللون"
 msgid "Monochrome (Weight)"
 msgstr "أ_حادي اللون"
 
-#: ../src/filter.c:562
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: ../src/filter.c:563
 #, fuzzy
 msgid "Sobel"
 msgstr "ذاته"
 
-#: ../src/main.c:53
+#: ../src/main.c:78
 #, fuzzy
 msgid "show version and exit"
 msgstr "اطبع الإصدار و اخرج"
 
-#: ../src/main.c:55
+#: ../src/main.c:80
 #, fuzzy
 msgid "v4l device to use"
 msgstr "جهاز القرص المدمج للاستعمال"
 
-#: ../src/main.c:57
+#: ../src/main.c:82
 #, fuzzy
 msgid "enable debugging code"
 msgstr "مكّن التنقيح"
 
-#: ../src/main.c:58
+#: ../src/main.c:83
 #, fuzzy
 msgid "capture width"
 msgstr "عرض اللف"
 
-#: ../src/main.c:60
+#: ../src/main.c:85
 #, fuzzy
 msgid "capture height"
 msgstr "ارتفاع العمود"
 
-#: ../src/main.c:63
+#: ../src/main.c:88
 #, fuzzy
 msgid "maximum capture size"
 msgstr "الحجم اﻷ_كبر:"
 
-#: ../src/main.c:65
+#: ../src/main.c:90
 #, fuzzy
 msgid "minimum capture size"
 msgstr "الحد الأدنى لحجم خط"
 
-#: ../src/main.c:67
+#: ../src/main.c:92
 #, fuzzy
 msgid "middle capture size"
 msgstr "حجم نص أصغر"
 
-#: ../src/main.c:69
+#: ../src/main.c:94
 msgid "use read() rather than mmap()"
 msgstr ""
 
-#: ../src/main.c:91
+#: ../src/main.c:115
 #, fuzzy
 msgid "camorama"
 msgstr "جاما"
 
-#: ../src/main.c:104
+#: ../src/main.c:131
 #, fuzzy, c-format
 msgid ""
 "\n"
@@ -670,7 +682,7 @@ msgstr ""
 "%s إصدار %s\n"
 "\n"
 
-#: ../src/main.c:238
+#: ../src/main.c:256
 #, fuzzy
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "لم يمكن تحميل الواجهة الرئيسيّة"
@@ -679,14 +691,3 @@ msgstr "لم يمكن تحميل الواجهة الرئيسيّة"
 #, fuzzy, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "لا يوجد ملف البكسمب '%s'\n"
-
-#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
-#: ../src/v4l.c:226 ../src/v4l.c:241
-#, fuzzy, c-format
-msgid ""
-"Could not connect to video device (%s).\n"
-"Please check connection."
-msgstr ""
-"تعذّر الاتّصال بالخادم المحدّد.\n"
-"رجاء افحص اسم الخادم و حاوِل مرّة ثانية."
-

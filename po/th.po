@@ -1,0 +1,607 @@
+# Thai translation of camorama.
+# Copyright (C) 2008 Free Software Foundation, Inc.
+# This file is distributed under the same license as the camorama package.
+# Manatsawin Hanmongkolchai <manatsawin@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: camorama HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-28 13:30+0700\n"
+"PO-Revision-Date: 2008-09-28 14:52+0700\n"
+"Last-Translator: Manatsawin Hanmongkolchai <manatsawin@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../camorama.desktop.in.h:1
+msgid "Camorama Webcam Viewer"
+msgstr "โปรแกรมดูภาพเว็บแคม Camorama"
+
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:480
+msgid "View, alter and save images from a webcam"
+msgstr "ดู, แก้ไขและบันทึกภาพจากเว็บแคม"
+
+#: ../data/camorama.glade.h:1
+msgid "     "
+msgstr "     "
+
+#: ../data/camorama.glade.h:2
+msgid "<span weight=\"bold\">General</span>"
+msgstr "<span weight=\"bold\">ทั่วไป</span>"
+
+#: ../data/camorama.glade.h:3
+msgid "<span weight=\"bold\">Image Type</span>"
+msgstr "<span weight=\"bold\">ชนิดรูปภาพ</span>"
+
+#: ../data/camorama.glade.h:4
+msgid "<span weight=\"bold\">Local Capture</span>"
+msgstr "<span weight=\"bold\">จับภาพที่เครื่อง</span>"
+
+#: ../data/camorama.glade.h:5
+msgid "<span weight=\"bold\">Remote Capture</span>"
+msgstr "<span weight=\"bold\">จับภาพในเครือข่าย</span>"
+
+#: ../data/camorama.glade.h:6
+msgid "<span weight=\"bold\">Timestamp</span>"
+msgstr "<span weight=\"bold\">ลงบันทึกเวลา</span>"
+
+#: ../data/camorama.glade.h:7
+msgid "Add a timestamp to captured images"
+msgstr "ลงบันทึกเวลาในภาพที่จับได้"
+
+#: ../data/camorama.glade.h:8
+msgid "Append time to filename"
+msgstr "เพิ่มเวลาต่อท้ายชื่อแฟ้ม"
+
+#: ../data/camorama.glade.h:9
+msgid "Automatic Capture"
+msgstr "จับภาพอัตโนมัติ"
+
+#: ../data/camorama.glade.h:10
+msgid "Brightness:"
+msgstr "ความสว่าง:"
+
+#: ../data/camorama.glade.h:11
+msgid "Camorama-libglade"
+msgstr "Camorama-libglade"
+
+#: ../data/camorama.glade.h:12
+msgid "Capture Interval (in minutes):"
+msgstr "ระยะเวลาจับภาพ (เป็นนาที):"
+
+#: ../data/camorama.glade.h:13
+msgid "Color:"
+msgstr "สี:"
+
+#: ../data/camorama.glade.h:14
+msgid "Contrast:"
+msgstr "ความต่างระดับสี:"
+
+#: ../data/camorama.glade.h:15
+msgid "Draw date and time"
+msgstr "แสดงวันที่และเวลา"
+
+#: ../data/camorama.glade.h:16
+msgid "FTP server: "
+msgstr "เซิร์ฟเวอร์ FTP: "
+
+#: ../data/camorama.glade.h:17
+msgid "Filename"
+msgstr "ชื่อแฟ้ม"
+
+#: ../data/camorama.glade.h:18
+msgid "General"
+msgstr "ทั่วไป"
+
+#: ../data/camorama.glade.h:19
+msgid "Hue:"
+msgstr "ธาตุสี:"
+
+#: ../data/camorama.glade.h:20
+msgid "Large"
+msgstr "ใหญ่"
+
+#: ../data/camorama.glade.h:21
+msgid "Local Capture"
+msgstr "จับภาพที่เครื่อง"
+
+#: ../data/camorama.glade.h:22
+msgid "Medium"
+msgstr "ปานกลาง"
+
+#: ../data/camorama.glade.h:23
+msgid "Password:"
+msgstr "รหัสผ่าน:"
+
+#: ../data/camorama.glade.h:24
+msgid "Preferences"
+msgstr "ปรับแต่ง"
+
+#: ../data/camorama.glade.h:25
+msgid "Remote Capture"
+msgstr "จับภาพในเครือข่าย"
+
+#: ../data/camorama.glade.h:26
+msgid "Save directory:"
+msgstr "ไดเรกทอรีบันทึก:"
+
+#: ../data/camorama.glade.h:27
+msgid "Save files in jpeg format"
+msgstr "บันทึกแฟ้มในรูปแบบ jpeg"
+
+#: ../data/camorama.glade.h:28
+msgid "Save files in png format"
+msgstr "บันทึกแฟ้มในรูปแบบ png"
+
+#: ../data/camorama.glade.h:29
+msgid "Show Adjustments"
+msgstr "แสดงการปรับแต่ง"
+
+#: ../data/camorama.glade.h:30
+msgid "Show Effects"
+msgstr "แสดงลูกเล่น"
+
+#: ../data/camorama.glade.h:31
+msgid "Small"
+msgstr "เล็ก"
+
+#: ../data/camorama.glade.h:32
+msgid "String:"
+msgstr "ข้อความ:"
+
+#: ../data/camorama.glade.h:33
+msgid "Take Picture"
+msgstr "บันทึกภาพ"
+
+#: ../data/camorama.glade.h:34
+msgid "Timestamp"
+msgstr "บันทึกเวลา"
+
+#: ../data/camorama.glade.h:35
+msgid "Use custom string"
+msgstr "ใช้ข้อความกำหนดเอง"
+
+#: ../data/camorama.glade.h:36
+msgid "Username:"
+msgstr "ชื่อผู้ใช้:"
+
+#: ../data/camorama.glade.h:37
+msgid "White Balance:"
+msgstr "สมดุลแสงขาว:"
+
+#: ../data/camorama.glade.h:38
+msgid "_Directory for captured pics:"
+msgstr "_ไดเรกทอรีสำหรับภาพที่บันทึกไว้:"
+
+#: ../data/camorama.glade.h:39
+msgid "_Enable local capture"
+msgstr "_เปิดใช้การจับภาพลงในเครื่อง"
+
+#: ../data/camorama.glade.h:40
+msgid "_Enable remote capture"
+msgstr "_เปิดใช้การจับภาพลงในเครือข่าย"
+
+#: ../data/camorama.glade.h:41
+msgid "_Filename for pictures:"
+msgstr "_ชื่อแฟ้มภาพ:"
+
+#: ../data/camorama.glade.h:42
+msgid "ftp.yourdomain.org"
+msgstr "ftp.yourdomain.org"
+
+#: ../data/camorama.glade.h:43
+msgid "path/to/save/to"
+msgstr "path/to/save/to"
+
+#: ../data/camorama.glade.h:44
+msgid "webcam-capture"
+msgstr "webcam-capture"
+
+#: ../data/camorama.glade.h:45
+msgid "webcamshot"
+msgstr "webcamshot"
+
+#: ../data/camorama.glade.h:46
+msgid "your-password"
+msgstr "your-password"
+
+#: ../data/camorama.glade.h:47
+msgid "your-username"
+msgstr "your-username"
+
+#: ../data/camorama.glade.h:48
+msgid "~/.gnome-desktop"
+msgstr "~/.gnome-desktop"
+
+#: ../data/camorama.schemas.in.h:1
+msgid "Append timestamp to filename"
+msgstr "เติมบันทึกเวลาต่อท้ายชื่อแฟ้ม"
+
+#: ../data/camorama.schemas.in.h:2
+msgid "Append timestamp to remote filename"
+msgstr "เติมบันทึกเวลาต่อท้ายชื่อแฟ้มในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:3
+msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
+msgstr "เติมบันทึกเวลาในแบบเวลายูนิกซ์ต่อท้ายชื่อแฟ้ม"
+
+#: ../data/camorama.schemas.in.h:4
+msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
+msgstr "เติมบันทึกเวลาในแบบเวลายูนิกซ์ต่อท้ายชื่อแฟ้มในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:5
+msgid "Custom text for the timestamp"
+msgstr "ข้อความบันทึกเวลากำหนดเอง"
+
+#: ../data/camorama.schemas.in.h:6
+msgid "Defines a string of custom text to be inserted into the image."
+msgstr "กำหนดข้อความที่จะใส่ในรูปภาพ"
+
+#: ../data/camorama.schemas.in.h:7
+msgid "Filename for local captures"
+msgstr "ชื่อแฟ้มสำหรับการบันทึกภาพที่เครื่อง"
+
+#: ../data/camorama.schemas.in.h:8
+msgid "Filename for saving captured pictures to locally"
+msgstr "ชื่อแฟ้มในเครื่องสำหรับบันทึกภาพที่ถ่าย"
+
+#: ../data/camorama.schemas.in.h:9
+msgid "Folder for local captures"
+msgstr "โฟลเดอร์สำหรับบันทึกภาพที่เครื่อง"
+
+#: ../data/camorama.schemas.in.h:10
+msgid "Folder for remote captures"
+msgstr "โฟลเดอร์สำหรับบันทึกภาพในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:11
+msgid "Folder for saving captured pictures remotely"
+msgstr "โฟลเดอร์ในเครือข่ายสำหรับบันทึกภาพที่ถ่าย"
+
+#: ../data/camorama.schemas.in.h:12
+msgid "Folder for saving captured pictures to locally"
+msgstr "โฟลเดอร์ในเครื่องสำหรับบันทึกภาพที่ถ่าย"
+
+#: ../data/camorama.schemas.in.h:13
+msgid "Hostname for FTP server"
+msgstr "ชื่อโฮสต์ของเซิร์ฟเวอร์ FTP"
+
+#: ../data/camorama.schemas.in.h:14
+msgid "Hostname for the FTP server for remote captures."
+msgstr "ชื่อโฮสต์ของเซิร์ฟเวอร์ FTP สำหรับบันทึกภาพในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:15
+msgid "Interval for auto-capture"
+msgstr "ระยะเวลาสำหรับการจับภาพอัตโนมัติ"
+
+#: ../data/camorama.schemas.in.h:16
+msgid "Local capture image format"
+msgstr "รูปแบบแฟ้มภาพที่บันทึกลงในเครื่อง"
+
+#: ../data/camorama.schemas.in.h:17
+msgid "Name for the filename of uploaded images."
+msgstr "ชื่อแฟ้มสำหรับภาพที่อัปโหลด"
+
+#: ../data/camorama.schemas.in.h:18
+msgid "Password for FTP server"
+msgstr "รหัสผ่านของเซิร์ฟเวอร์ FTP"
+
+#: ../data/camorama.schemas.in.h:19
+msgid "Remote capture image format"
+msgstr "รูปแบบแฟ้มภาพที่บันทึกในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:20
+msgid "Remote save filename"
+msgstr "ชื่อแฟ้มสำหรับบันทึกในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:21
+msgid "Specifies the image format to be used for locally saved pictures"
+msgstr "ระบุรูปแบบสำหรับแฟ้มภาพที่บันทึกในเครื่อง"
+
+#: ../data/camorama.schemas.in.h:22
+msgid "Specifies the image format to be used for remotely saved pictures"
+msgstr "ระบุรูปแบบสำหรับแฟ้มภาพที่บันทึกในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:23
+msgid "Specifies the interval for automatic capture of pictures."
+msgstr "ระบุระยะเวลาที่จะถ่ายภาพโดยอัตโนมัติ"
+
+#: ../data/camorama.schemas.in.h:24
+msgid "The password for the FTP account for remote captures."
+msgstr "รหัสผ่านของบัญชี FTP สำหรับบันทึกในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:25
+msgid "The unix file system path to the device that's assigned to your camera."
+msgstr "พาธในระบบแฟ้มยูนิกซ์ของแฟ้มอุปกรณ์ที่แทนกล้องของคุณ"
+
+#: ../data/camorama.schemas.in.h:26
+msgid "Toggles auto-capture"
+msgstr "เปิด/ปิดการจับภาพอัตโนมัติ"
+
+#: ../data/camorama.schemas.in.h:27
+msgid "Toggles automatic capturing of pictures."
+msgstr "เปิด/ปิดการจับภาพโดยอัตโนมัติ"
+
+#: ../data/camorama.schemas.in.h:28
+msgid "Toggles local capture"
+msgstr "เปิด/ปิดการจับภาพที่เครื่อง"
+
+#: ../data/camorama.schemas.in.h:29
+msgid "Toggles remote capture"
+msgstr "เปิด/ปิดการจับภาพลงในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:30
+msgid "Toggles the custom string"
+msgstr "เปิด/ปิดข้อความกำหนดเอง"
+
+#: ../data/camorama.schemas.in.h:31
+msgid "Toggles the datestamp in captures"
+msgstr "เปิด/ปิดการลงวันที่ในภาพที่ถ่าย"
+
+#: ../data/camorama.schemas.in.h:32
+msgid "Toggles the drawing of a datestamp within the captured pictures"
+msgstr "เปิด/ปิดการแสดงบันทึกวันที่ลงในภาพที่ถ่าย"
+
+#: ../data/camorama.schemas.in.h:33
+msgid "Toggles the insertion of a timestamp into local images"
+msgstr "เปิด/ปิดการแทรกบันทึกเวลาลงในภาพในเครื่อง"
+
+#: ../data/camorama.schemas.in.h:34
+msgid "Toggles the insertion of a timestamp into the images for FTP upload."
+msgstr "เปิด/ปิดการแทรกบันทึกเวลาลงในภาพที่จะอัปโหลดผ่าน FTP"
+
+#: ../data/camorama.schemas.in.h:35
+msgid "Toggles the use of the buttons to adjust the video filters"
+msgstr "เปิด/ปิดการใช้ปุ่มปรับตัวกรองวีดิทัศน์"
+
+#: ../data/camorama.schemas.in.h:36
+msgid "Toggles the use of the custom string for the timestamp in images."
+msgstr "เปิด/ปิดการใช้ข้อความกำหนดเองสำหรับการลงบันทึกเวลาในภาพ"
+
+#: ../data/camorama.schemas.in.h:37
+msgid "Toggles the use of the sliders to adjust the video properties"
+msgstr "เปิด/ปิดการใช้ปุ่มรางเลื่อนปรับภาพวีดิทัศน์"
+
+#: ../data/camorama.schemas.in.h:38
+msgid "Toggles the video adjustment sliders"
+msgstr "เปิด/ปิดรางเลื่อนปรับภาพวีดิทัศน์"
+
+#: ../data/camorama.schemas.in.h:39
+msgid "Toggles the video effects buttons"
+msgstr "เปิด/ปิดปุ่มลูกเล่นวีดิทัศน์"
+
+#: ../data/camorama.schemas.in.h:40
+msgid "Toggles timestamp for local captures"
+msgstr "เปิด/ปิดการลงบันทึกเวลาสำหรับการถ่ายภาพในเครื่อง"
+
+#: ../data/camorama.schemas.in.h:41
+msgid "Toggles timestamp for remote captures"
+msgstr "เปิด/ปิดการลงบันทึกเวลาสำหรับการจับภาพลงในเครือข่าย"
+
+#: ../data/camorama.schemas.in.h:42
+msgid "Username for FTP server"
+msgstr "ชื่อผู้ใช้สำหรับเซิร์ฟเวอร์ FTP"
+
+#: ../data/camorama.schemas.in.h:43
+msgid "Username to use for FTP uploads of captured pictures"
+msgstr "ชื่อผู้ใช้ที่จะใช้ในการอัปโหลดภาพที่จับได้ผ่าน FTP"
+
+#: ../data/camorama.schemas.in.h:44
+msgid "Video device"
+msgstr "อุปกรณ์วีดิทัศน์"
+
+#: ../data/camorama.schemas.in.h:45
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures locally."
+msgstr "เมื่อจับภาพผ่านปุ่ม \"บันทึกภาพ\" หรือจับภาพอัตโนมัติ คีย์นี้จะเปิด/ปิดการบันทึกภาพลงในเครื่อง"
+
+#: ../data/camorama.schemas.in.h:46
+msgid ""
+"When capturing pictures via the \"Take Picture\" button, or with auto "
+"capture, this key toggles the saving of pictures to a remote server."
+msgstr ""
+"เมื่อจับภาพผ่านปุ่ม \"บันทึกภาพ\" หรือจับภาพอัตโนมัติ คีย์นี้จะเปิด/"
+"ปิดการบันทึกภาพไปยังเซิร์ฟเวอร์ในเครือข่าย"
+
+#: ../src/callbacks.c:469
+msgid "translator_credits"
+msgstr "มนัสวิน หาญมงคลชัย <manatsawin@gmail.com>"
+
+#: ../src/callbacks.c:478
+msgid "Camorama"
+msgstr "Camorama"
+
+#: ../src/callbacks.c:632
+#, c-format
+msgid ""
+"Local Capture: %d\n"
+"Remote Capture: %d\n"
+"Capture Interval: %d"
+msgstr ""
+"จับภาพที่เครื่อง: %d\n"
+"จับภาพลงเครือข่าย: %d\n"
+"ระยะเวลาจับภาพ: %d"
+
+#: ../src/callbacks.c:641
+#, c-format
+msgid "Automatic Capture Disabled"
+msgstr "ปิดใช้งานการจับภาพอัตโนมัติ"
+
+#: ../src/camorama-filter-laplace.c:128
+msgid "Laplace (4 Neighbours)"
+msgstr "ลาปลาซ (4 จุดข้างเคียง)"
+
+#. TRANSLATORS: This is a noun
+#: ../src/camorama-filter-mirror.c:67
+msgid "Mirror"
+msgstr "กระจก"
+
+#: ../src/camorama-stock-items.c:14
+msgid "Webcam"
+msgstr "เว็บแคม"
+
+#: ../src/camorama-window.c:112
+msgid "_Add Filter"
+msgstr "เ_พิ่มตัวกรอง"
+
+#: ../src/camorama-window.c:201
+msgid "Effects"
+msgstr "ลูกเล่น"
+
+#: ../src/capture-strategy-mmap.c:66 ../src/v4l.c:94 ../src/v4l.c:168
+#: ../src/v4l.c:180 ../src/v4l.c:205 ../src/v4l.c:226
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"ไม่สามารถเชื่อมต่อไปยังอุปกรณ์วีดิทัศน์ (%s)\n"
+"โปรดตรวจสอบการเชื่อมต่อ"
+
+#: ../src/capture-strategy-mmap.c:105 ../src/capture-strategy-mmap.c:118
+#: ../src/capture-strategy-mmap.c:200 ../src/capture-strategy-mmap.c:231
+msgid "Unable to capture image."
+msgstr "ไม่สามารถจับภาพ"
+
+#: ../src/fileio.c:120 ../src/fileio.c:266
+msgid "Could save temporary image file in /tmp."
+msgstr "ไม่สามารถบันทึกแฟ้มภาพชั่วคราวใน /tmp"
+
+#: ../src/fileio.c:138
+#, c-format
+msgid "Unable to create image '%s'."
+msgstr "ไม่สามารถสร้างแฟ้มภาพ '%s'"
+
+#: ../src/fileio.c:147 ../src/fileio.c:428
+#, c-format
+msgid "Could not save image '%s/%s'."
+msgstr "ไม่สามารถบันทึกภาพ '%s/%s'"
+
+#: ../src/fileio.c:274
+#, c-format
+msgid ""
+"Unable to open temporary image file '%s'.\n"
+"Cannot upload image."
+msgstr ""
+"ไม่สามารถเปิดแฟ้มภาพชั่วคราว '%s' ได้\n"
+"ไม่สามารถอัปโหลดรูปภาพ"
+
+#: ../src/fileio.c:312
+#, c-format
+msgid "An error occurred opening %s."
+msgstr "เกิดข้อผิดพลาดขึ้นขณะเปิด %s"
+
+#: ../src/fileio.c:324
+#, c-format
+msgid "An error occurred writing to %s."
+msgstr "เกิดข้อผิดพลาดขณะเขียนไปยัง %s"
+
+#: ../src/fileio.c:402
+#, c-format
+msgid "Could not create directory '%s'."
+msgstr "ไม่สามารถสร้างไดเรกทอรี '%s'"
+
+#: ../src/fileio.c:413
+#, c-format
+msgid "Could not change to directory '%s'."
+msgstr "ไม่สามารถเปลี่ยนไปยังไดเรกทอรี '%s'"
+
+#: ../src/filter.c:170
+msgid "Color Correction"
+msgstr "ปรับแก้สี"
+
+#: ../src/filter.c:195
+msgid "Invert"
+msgstr "กลับสี"
+
+#: ../src/filter.c:234
+msgid "Threshold (Overall)"
+msgstr "แบ่งเขตสี (รวมทุกสี)"
+
+#: ../src/filter.c:276
+msgid "Threshold (Per Channel)"
+msgstr "แบ่งเขตสี (แยกสี)"
+
+#: ../src/filter.c:349
+msgid "Wacky"
+msgstr "บ้า"
+
+#: ../src/filter.c:450
+msgid "Smooth"
+msgstr "นุ่มนวล"
+
+#: ../src/filter.c:481
+msgid "Monochrome"
+msgstr "ขาวดำ"
+
+#: ../src/filter.c:511
+msgid "Monochrome (Weight)"
+msgstr "ขาวดำ (ถ่วงน้ำหนักสี)"
+
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: ../src/filter.c:563
+msgid "Sobel"
+msgstr "Sobel"
+
+#: ../src/main.c:78
+msgid "show version and exit"
+msgstr "แสดงรุ่นแล้วออก"
+
+#: ../src/main.c:80
+msgid "v4l device to use"
+msgstr "อุปกรณ์ v4l ที่จะใช้"
+
+#: ../src/main.c:82
+msgid "enable debugging code"
+msgstr "เปิดใช้โค้ดส่วนดีบั๊ก"
+
+#: ../src/main.c:83
+msgid "capture width"
+msgstr "ความกว้างของการจับภาพ"
+
+#: ../src/main.c:85
+msgid "capture height"
+msgstr "ความสูงของการจับภาพ"
+
+#: ../src/main.c:88
+msgid "maximum capture size"
+msgstr "ขนาดจับภาพสูงสุด"
+
+#: ../src/main.c:90
+msgid "minimum capture size"
+msgstr "ขนาดจับภาพต่ำสุด"
+
+#: ../src/main.c:92
+msgid "middle capture size"
+msgstr "ขนาดจับภาพกลาง"
+
+#: ../src/main.c:94
+msgid "use read() rather than mmap()"
+msgstr "ใช้ read() แทน mmap()"
+
+#: ../src/main.c:115
+msgid "camorama"
+msgstr "camorama"
+
+#: ../src/main.c:131
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Camorama version %s\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Camorama รุ่น %s\n"
+"\n"
+
+#: ../src/main.c:256
+msgid "Couldn't find the main interface file (camorama.glade)."
+msgstr "หาแฟ้มส่วนติดต่อหลักไม่พบ (camorama.glade)"
+
+#: ../src/support.c:69
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "หาแฟ้ม pixmap ไม่พบ: %s"

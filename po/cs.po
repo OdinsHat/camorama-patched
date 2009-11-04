@@ -1,27 +1,31 @@
 # Translation of camorama to Czech.
 # This file is distributed under the same license as the Camorama package.
-# Copyright (C) 2003, 2008 Free Software Foundation.
+# Copyright (C) 2003, 2008, 2009 the author(s) of camorama.
 # Michal Bukovjan <bukm@centrum.cz>, 2003.
 # Lucas Lommer <llommer@svn.gnome.org>, 2008.
 # Petr Kovar <pknbe@volny.cz>, 2008.
+# Marek Černocký <marek@manet.cz>, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-04 22:00+0100\n"
-"PO-Revision-Date: 2008-03-04 21:56+0100\n"
-"Last-Translator: Petr Kovar <pknbe@volny.cz>\n"
+"POT-Creation-Date: 2009-11-04 20:01+0100\n"
+"PO-Revision-Date: 2009-11-04 12:36+0100\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
 msgstr "Prohlížeč webových kamer Camorama"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:480
 msgid "View, alter and save images from a webcam"
 msgstr "Prohlížení, úprava a ukládání obrázků z webové kamery"
 
@@ -409,23 +413,18 @@ msgstr ""
 "Při záznamu obrázků pomocí tlačítka \"Vyfotit\"nebo při automatickém "
 "záznamu, tento klíč přepíná ukládání obrázků na vzdálený server."
 
-#: ../src/callbacks.c:500
+#: ../src/callbacks.c:469
 msgid "translator_credits"
 msgstr ""
 "Michal Bukovjan <bukm@centrum.cz>\n"
 "Lucas Lommer <llommer@svn.gnome.org>\n"
 "Petr Kovář <pknbe@volny.cz>"
 
-#: ../src/callbacks.c:509
+#: ../src/callbacks.c:478
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
-#: ../src/callbacks.c:692
-msgid "Unable to capture image."
-msgstr "Nelze zaznamenat obrázek."
-
-#: ../src/callbacks.c:808
+#: ../src/callbacks.c:632
 #, c-format
 msgid ""
 "Local Capture: %d\n"
@@ -436,14 +435,14 @@ msgstr ""
 "Vzdálené snímání: %d\n"
 "Interval snímání: %d"
 
-#: ../src/callbacks.c:817
+#: ../src/callbacks.c:641
+#, c-format
 msgid "Automatic Capture Disabled"
 msgstr "Automatický záznam je vypnutý"
 
 #: ../src/camorama-filter-laplace.c:128
-#, fuzzy
 msgid "Laplace (4 Neighbours)"
-msgstr "Laplace (4 sousední)"
+msgstr "Laplaceův filtr (4 sousední)"
 
 #. TRANSLATORS: This is a noun
 #: ../src/camorama-filter-mirror.c:67
@@ -458,9 +457,24 @@ msgstr "Webová kamera"
 msgid "_Add Filter"
 msgstr "Přid_at filtr"
 
-#: ../src/camorama-window.c:199
+#: ../src/camorama-window.c:201
 msgid "Effects"
 msgstr "Efekty"
+
+#: ../src/capture-strategy-mmap.c:66 ../src/v4l.c:94 ../src/v4l.c:168
+#: ../src/v4l.c:180 ../src/v4l.c:205 ../src/v4l.c:226
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Nelze se připojit k video zařízení (%s).\n"
+"Zkontrolujte prosím připojení."
+
+#: ../src/capture-strategy-mmap.c:105 ../src/capture-strategy-mmap.c:118
+#: ../src/capture-strategy-mmap.c:200 ../src/capture-strategy-mmap.c:231
+msgid "Unable to capture image."
+msgstr "Nelze zaznamenat obrázek."
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -469,12 +483,12 @@ msgstr "Dočasný obrázek uložen do souboru v /tmp."
 #: ../src/fileio.c:138
 #, c-format
 msgid "Unable to create image '%s'."
-msgstr "Nelze vytvořit obrázek '%s'."
+msgstr "Nelze vytvořit obrázek „%s“."
 
-#: ../src/fileio.c:147 ../src/fileio.c:430
+#: ../src/fileio.c:147 ../src/fileio.c:428
 #, c-format
 msgid "Could not save image '%s/%s'."
-msgstr "Nelze uložit obrázek '%s/%s'."
+msgstr "Nelze uložit obrázek „%s/%s“."
 
 #: ../src/fileio.c:274
 #, c-format
@@ -482,7 +496,7 @@ msgid ""
 "Unable to open temporary image file '%s'.\n"
 "Cannot upload image."
 msgstr ""
-"Nelze otevřít dočasný soubor obrázku '%s'.\n"
+"Nelze otevřít dočasný soubor obrázku „%s“.\n"
 "Nelze přenést obrázek."
 
 #: ../src/fileio.c:312
@@ -495,15 +509,15 @@ msgstr "Při otevírání %s nastala chyba."
 msgid "An error occurred writing to %s."
 msgstr "Při zapisování %s nastala chyba."
 
-#: ../src/fileio.c:404
+#: ../src/fileio.c:402
 #, c-format
 msgid "Could not create directory '%s'."
-msgstr "Nelze vytvořit adresář '%s'."
+msgstr "Nelze vytvořit adresář „%s“."
 
-#: ../src/fileio.c:415
+#: ../src/fileio.c:413
 #, c-format
 msgid "Could not change to directory '%s'."
-msgstr "Nelze se přepnout do adresáře '%s'."
+msgstr "Nelze se přepnout do adresáře „%s“."
 
 #: ../src/filter.c:170
 msgid "Color Correction"
@@ -531,59 +545,58 @@ msgstr "Vyhlazování"
 
 #: ../src/filter.c:481
 msgid "Monochrome"
-msgstr "Monochromatický"
+msgstr "Jednobarevně"
 
 #: ../src/filter.c:511
-#, fuzzy
 msgid "Monochrome (Weight)"
-msgstr "Monochromatický (míra)"
+msgstr "Jednobarevně (vážené)"
 
 #. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
 #: ../src/filter.c:563
 msgid "Sobel"
 msgstr "Sobel"
 
-#: ../src/main.c:76
+#: ../src/main.c:78
 msgid "show version and exit"
 msgstr "zobrazit verzi a skončit"
 
-#: ../src/main.c:78
+#: ../src/main.c:80
 msgid "v4l device to use"
 msgstr "zařízení v4l, které se má použít"
 
-#: ../src/main.c:80
+#: ../src/main.c:82
 msgid "enable debugging code"
 msgstr "povolit ladící kód"
 
-#: ../src/main.c:81
+#: ../src/main.c:83
 msgid "capture width"
 msgstr "šířka záznamu"
 
-#: ../src/main.c:83
+#: ../src/main.c:85
 msgid "capture height"
 msgstr "výška záznamu"
 
-#: ../src/main.c:86
+#: ../src/main.c:88
 msgid "maximum capture size"
 msgstr "maximální velikost záznamu"
 
-#: ../src/main.c:88
+#: ../src/main.c:90
 msgid "minimum capture size"
 msgstr "minimální velikost záznamu"
 
-#: ../src/main.c:90
+#: ../src/main.c:92
 msgid "middle capture size"
 msgstr "střední velikost záznamu"
 
-#: ../src/main.c:92
+#: ../src/main.c:94
 msgid "use read() rather than mmap()"
 msgstr "používat read () místo mmap ()"
 
-#: ../src/main.c:114
+#: ../src/main.c:115
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:130
+#: ../src/main.c:131
 #, c-format
 msgid ""
 "\n"
@@ -596,7 +609,7 @@ msgstr ""
 "Camorama verze %s\n"
 "\n"
 
-#: ../src/main.c:264
+#: ../src/main.c:256
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 
@@ -604,37 +617,3 @@ msgstr "Nelze nalézt soubor s hlavním rozhraním (camorama.glade)."
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Nelze nalézt soubor s obrázkem: %s"
-
-#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
-#: ../src/v4l.c:226 ../src/v4l.c:241
-#, c-format
-msgid ""
-"Could not connect to video device (%s).\n"
-"Please check connection."
-msgstr ""
-"Nelze se připojit k video zařízení (%s).\n"
-"Zkontrolujte prosím připojení."
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "<span weight=\"bold\">Effects</span>"
-#~ msgstr "<span weight=\"bold\">Efekty</span>"
-
-#~ msgid "Black & white"
-#~ msgstr "Černobíle"
-
-#~ msgid "Color threshold"
-#~ msgstr "Barevný práh"
-
-#~ msgid "Laplace"
-#~ msgstr "Laplace"
-
-#~ msgid "Negative"
-#~ msgstr "Negativ"
-
-#~ msgid "Orientation"
-#~ msgstr "Orientace"
-
-#~ msgid "The orientation of the tray."
-#~ msgstr "Orientace oznamovací oblasti."

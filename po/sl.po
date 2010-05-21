@@ -1,14 +1,14 @@
 # Copyright (C) 2002-2007 Free Software Foundation, Inc.
 # This file is distributed under the same license as the package.
 #
-# Matej Urbančič <matej.urban@gmail.com>, 2006 - 2007.
+# Matej Urbančič <mateju@svn.gnome.org>, 2006 - 2007.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-07-04 03:47+0100\n"
-"PO-Revision-Date: 2007-11-15 15:49+0100\n"
+"PO-Revision-Date: 2010-05-21 21:05+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -38,15 +38,15 @@ msgstr "<span weight=\"bold\">Splošno</span>"
 
 #: ../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Tip slike</span>"
+msgstr "<span weight=\"bold\">Vrsta slike</span>"
 
 #: ../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Lokalni zajem</span>"
+msgstr "<span weight=\"bold\">Krajevno zajemanje</span>"
 
 #: ../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Oddaljeni zajem</span>"
+msgstr "<span weight=\"bold\">Oddaljeno zajemanje</span>"
 
 #: ../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
@@ -74,7 +74,7 @@ msgstr "Camorama-libglade"
 
 #: ../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
-msgstr "Interval zajemanja (v minutah)"
+msgstr "Časovni razmik zajemanja (v minutah):"
 
 #: ../data/camorama.glade.h:13
 msgid "Color:"
@@ -90,11 +90,11 @@ msgstr "Izriši datum in čas"
 
 #: ../data/camorama.glade.h:16
 msgid "FTP server: "
-msgstr "FTP strežnik: "
+msgstr "Strežnik FTP: "
 
 #: ../data/camorama.glade.h:17
 msgid "Filename"
-msgstr "Ime Datoteke"
+msgstr "Ime datoteke"
 
 #: ../data/camorama.glade.h:18
 msgid "General"
@@ -110,7 +110,7 @@ msgstr "Veliko"
 
 #: ../data/camorama.glade.h:21
 msgid "Local Capture"
-msgstr "Lokalno zajemanje"
+msgstr "Krajevno zajemanje"
 
 #: ../data/camorama.glade.h:22
 msgid "Medium"
@@ -122,7 +122,7 @@ msgstr "Geslo:"
 
 #: ../data/camorama.glade.h:24
 msgid "Preferences"
-msgstr "Lastnosti"
+msgstr "Možnosti"
 
 #: ../data/camorama.glade.h:25
 msgid "Remote Capture"
@@ -134,11 +134,11 @@ msgstr "Mapa za shranjevanje:"
 
 #: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
-msgstr "Shrani datoteke v jpeg formatu"
+msgstr "Shrani datoteke v jpeg zapisu"
 
 #: ../data/camorama.glade.h:28
 msgid "Save files in png format"
-msgstr "Shrani datoteke v png formatu"
+msgstr "Shrani datoteke v png zapisu"
 
 #: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
@@ -146,7 +146,7 @@ msgstr "Pokaži spremembe"
 
 #: ../data/camorama.glade.h:30
 msgid "Show Effects"
-msgstr "Prikaži efekte"
+msgstr "Pokaži učinke"
 
 #: ../data/camorama.glade.h:31
 msgid "Small"
@@ -154,7 +154,7 @@ msgstr "Majhno"
 
 #: ../data/camorama.glade.h:32
 msgid "String:"
-msgstr "Izraz:"
+msgstr "Niz:"
 
 #: ../data/camorama.glade.h:33
 msgid "Take Picture"
@@ -166,7 +166,7 @@ msgstr "Časovni žig"
 
 #: ../data/camorama.glade.h:35
 msgid "Use custom string"
-msgstr "Uporabi prilagojen izraz"
+msgstr "Uporabi prilagojeni niz"
 
 #: ../data/camorama.glade.h:36
 msgid "Username:"
@@ -182,7 +182,7 @@ msgstr "_Mapa za zajete slike:"
 
 #: ../data/camorama.glade.h:39
 msgid "_Enable local capture"
-msgstr "_Omogoči lokalno zajemanje"
+msgstr "_Omogoči krajevno zajemanje"
 
 #: ../data/camorama.glade.h:40
 msgid "_Enable remote capture"
@@ -210,11 +210,11 @@ msgstr "spletni posnetek"
 
 #: ../data/camorama.glade.h:46
 msgid "your-password"
-msgstr "vaše-geslo"
+msgstr "geslo"
 
 #: ../data/camorama.glade.h:47
 msgid "your-username"
-msgstr "vaše-uporabniško-ime"
+msgstr "uporabniško-ime"
 
 #: ../data/camorama.glade.h:48
 msgid "~/.gnome-desktop"
@@ -230,11 +230,11 @@ msgstr "Pripni časovni žig oddaljeni datoteki"
 
 #: ../data/camorama.schemas.in.h:3
 msgid "Appends a timestamp, in UNIX time, to the ends of filenames"
-msgstr "Pripne časovni žig, v UNIX času, koncu imena datoteke"
+msgstr "Pripne časovni žig, v UNIX zapisu, koncu imena datoteke"
 
 #: ../data/camorama.schemas.in.h:4
 msgid "Appends a timestamp, in UNIX time, to the ends of remote filenames"
-msgstr "Pripne časovni žig, v UNIX času, koncu imena oddaljene datoteke"
+msgstr "Pripne časovni žig, v UNIX zapisu, koncu imena oddaljene datoteke"
 
 #: ../data/camorama.schemas.in.h:5
 msgid "Custom text for the timestamp"
@@ -246,15 +246,15 @@ msgstr "Določi izraz za prilagojeno besedilo prilepljeno na sliko."
 
 #: ../data/camorama.schemas.in.h:7
 msgid "Filename for local captures"
-msgstr "Ime datoteke lokalnih slik"
+msgstr "Ime datoteke krajevnih slik"
 
 #: ../data/camorama.schemas.in.h:8
 msgid "Filename for saving captured pictures to locally"
-msgstr "Ime datoteke za shranjevanje lokalno"
+msgstr "Ime datoteke za shranjevanje krajevno"
 
 #: ../data/camorama.schemas.in.h:9
 msgid "Folder for local captures"
-msgstr "Mapa za lokalno zajemanje"
+msgstr "Mapa za krajevno zajemanje"
 
 #: ../data/camorama.schemas.in.h:10
 msgid "Folder for remote captures"
@@ -266,23 +266,23 @@ msgstr "Mapa za shranjevanje zajetih slik na oddaljene povezave"
 
 #: ../data/camorama.schemas.in.h:12
 msgid "Folder for saving captured pictures to locally"
-msgstr "Mapa za shranjevanje zajetih slik na lokalne povezave"
+msgstr "Mapa za shranjevanje zajetih slik na krajevne povezave"
 
 #: ../data/camorama.schemas.in.h:13
 msgid "Hostname for FTP server"
-msgstr "Ime gostitelja za FTP strežnik"
+msgstr "Ime gostitelja za strežnik FTP"
 
 #: ../data/camorama.schemas.in.h:14
 msgid "Hostname for the FTP server for remote captures."
-msgstr "Ime gostitelja za FTP strežnik za oddaljeno zajemanje"
+msgstr "Ime gostitelja za strežnik FTP za oddaljeno zajemanje."
 
 #: ../data/camorama.schemas.in.h:15
 msgid "Interval for auto-capture"
-msgstr "Interval za samodejno zajemanje"
+msgstr "Razmik samodejnega zajemanja"
 
 #: ../data/camorama.schemas.in.h:16
 msgid "Local capture image format"
-msgstr "Format slik za lokalno zajemanje"
+msgstr "Zapis slik za krajevno zajemanje"
 
 #: ../data/camorama.schemas.in.h:17
 msgid "Name for the filename of uploaded images."
@@ -290,11 +290,11 @@ msgstr "Ime datoteke za poslane slike."
 
 #: ../data/camorama.schemas.in.h:18
 msgid "Password for FTP server"
-msgstr "Geslo za FTP strežnik"
+msgstr "Geslo za strežnik FTP"
 
 #: ../data/camorama.schemas.in.h:19
 msgid "Remote capture image format"
-msgstr "Format slik za oddaljeno zajemanje"
+msgstr "Zapis slik za oddaljeno zajemanje"
 
 #: ../data/camorama.schemas.in.h:20
 msgid "Remote save filename"
@@ -302,43 +302,43 @@ msgstr "Ime datoteke za oddaljeno zajemanje"
 
 #: ../data/camorama.schemas.in.h:21
 msgid "Specifies the image format to be used for locally saved pictures"
-msgstr "Določi format slik za lokalno shranjene slike"
+msgstr "Določi zapis slik za krajevno shranjene slike"
 
 #: ../data/camorama.schemas.in.h:22
 msgid "Specifies the image format to be used for remotely saved pictures"
-msgstr "Določi format slik za oddaljeno shranjene slike"
+msgstr "Določi zapis slik za oddaljeno shranjene slike"
 
 #: ../data/camorama.schemas.in.h:23
 msgid "Specifies the interval for automatic capture of pictures."
-msgstr "Določi interval za samodejno zajemanje slik."
+msgstr "Določi časovni razmik samodejnega zajemanja slik."
 
 #: ../data/camorama.schemas.in.h:24
 msgid "The password for the FTP account for remote captures."
-msgstr "Uporabniško ime za FTP strežnik za oddaljene slike."
+msgstr "Uporabniško ime za strežnik FTP za oddaljene slike."
 
 #: ../data/camorama.schemas.in.h:25
 msgid "The unix file system path to the device that's assigned to your camera."
-msgstr "Unix sistemska pot do naprave dodeljene kameri."
+msgstr "Unix sistemska pot do naprave dodeljene spletni kameri."
 
 #: ../data/camorama.schemas.in.h:26
 msgid "Toggles auto-capture"
-msgstr "Preklop samodejnega zajemanja"
+msgstr "Preklopi samodejno zajemanje"
 
 #: ../data/camorama.schemas.in.h:27
 msgid "Toggles automatic capturing of pictures."
-msgstr "Preklaplja samodejno zajemanje slik"
+msgstr "Preklopi samodejno zajemanje slik."
 
 #: ../data/camorama.schemas.in.h:28
 msgid "Toggles local capture"
-msgstr "Preklop lokalnega zajemanja"
+msgstr "Preklopi krajevno zajemanje"
 
 #: ../data/camorama.schemas.in.h:29
 msgid "Toggles remote capture"
-msgstr "Preklop oddaljenega zajemanja"
+msgstr "Preklopi oddaljeno zajemanje"
 
 #: ../data/camorama.schemas.in.h:30
 msgid "Toggles the custom string"
-msgstr "Preklop prilagojenega izraza"
+msgstr "Preklopi prilagojeni niz"
 
 #: ../data/camorama.schemas.in.h:31
 msgid "Toggles the datestamp in captures"
@@ -350,7 +350,7 @@ msgstr "Preklop izpisovanja časovnega žiga znotraj zajetih slik"
 
 #: ../data/camorama.schemas.in.h:33
 msgid "Toggles the insertion of a timestamp into local images"
-msgstr "Preklop vnosa časovnega žiga v lokalne slike"
+msgstr "Preklop vnosa časovnega žiga v krajevne slike"
 
 #: ../data/camorama.schemas.in.h:34
 msgid "Toggles the insertion of a timestamp into the images for FTP upload."
@@ -370,15 +370,15 @@ msgstr "Preklop uporabe drsnikov za ureditev video lastnosti"
 
 #: ../data/camorama.schemas.in.h:38
 msgid "Toggles the video adjustment sliders"
-msgstr "Preklop drsnikov za ureditev videa"
+msgstr "Preklop drsnikov za urejanje videa"
 
 #: ../data/camorama.schemas.in.h:39
 msgid "Toggles the video effects buttons"
-msgstr "Preklop gumbov za video efekte"
+msgstr "Preklop gumbov za video učinke"
 
 #: ../data/camorama.schemas.in.h:40
 msgid "Toggles timestamp for local captures"
-msgstr "Preklop časovnega žiga za lokalne slike"
+msgstr "Preklop časovnega žiga za krajevne slike"
 
 #: ../data/camorama.schemas.in.h:41
 msgid "Toggles timestamp for remote captures"
@@ -398,7 +398,7 @@ msgstr "Video naprava"
 
 #: ../data/camorama.schemas.in.h:45
 msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures locally."
-msgstr "Ob zajemanju slik preko gumba \"Zajem slike\" ali s samodejnim zajemanjem, ta možnost dovoli preklop shranjevanja na lokalni disk."
+msgstr "Ob zajemanju slik preko gumba \"Zajem slike\" ali s samodejnim zajemanjem, ta možnost dovoli preklop shranjevanja na krajevni disk."
 
 #: ../data/camorama.schemas.in.h:46
 msgid "When capturing pictures via the \"Take Picture\" button, or with auto capture, this key toggles the saving of pictures to a remote server."
@@ -406,7 +406,7 @@ msgstr "Ob zajemanju slik preko gumba \"Zajem slike\" ali s samodejnim zajemanje
 
 #: ../src/callbacks.c:500
 msgid "translator_credits"
-msgstr "Matej Urbančič <mateju@svn.gnome.org>"
+msgstr "Matej Urbančič, <mateju@svn.gnome.org>"
 
 #: ../src/callbacks.c:509
 msgid "Camorama"
@@ -417,7 +417,7 @@ msgstr "Camorama"
 #: ../src/callbacks.c:679
 #: ../src/callbacks.c:692
 msgid "Unable to capture image."
-msgstr "Zajemanje slike ni omogoče."
+msgstr "Zajemanje slike ni mogoče."
 
 #: ../src/callbacks.c:808
 #, c-format
@@ -426,13 +426,13 @@ msgid ""
 "Remote Capture: %d\n"
 "Capture Interval: %d"
 msgstr ""
-"Lokalno zajemanje: %d\n"
+"Krajevno zajemanje: %d\n"
 "Oddaljeno zajemanje: %d\n"
-"Interval zajemanja: %d"
+"Časovni razmik zajemanja: %d"
 
 #: ../src/callbacks.c:817
 msgid "Automatic Capture Disabled"
-msgstr "Onemogočeno avtomatično zajemanje"
+msgstr "Onemogočeno samodejno zajemanje"
 
 #: ../src/camorama-filter-laplace.c:128
 msgid "Laplace (4 Neighbours)"
@@ -441,7 +441,7 @@ msgstr "Laplace (4 sosedi)"
 #. TRANSLATORS: This is a noun
 #: ../src/camorama-filter-mirror.c:67
 msgid "Mirror"
-msgstr "Zrcaljenje"
+msgstr "Zrcalo"
 
 #: ../src/camorama-stock-items.c:14
 msgid "Webcam"
@@ -478,7 +478,7 @@ msgid ""
 "Cannot upload image."
 msgstr ""
 "Ni mogoče odpreti trenutne slikovne datoteke '%s'.\n"
-"Ni mogoče prenesti slike."
+"Ni mogoče poslati slike."
 
 #: ../src/fileio.c:312
 #, c-format
@@ -488,7 +488,7 @@ msgstr "Prišlo je do napake med odpiranjem %s."
 #: ../src/fileio.c:324
 #, c-format
 msgid "An error occurred writing to %s."
-msgstr "Prišlo je do napake pri pisanju na %s."
+msgstr "Prišlo je do napake med pisanjem na %s."
 
 #: ../src/fileio.c:404
 #, c-format
@@ -539,7 +539,7 @@ msgstr "Sobel"
 
 #: ../src/main.c:76
 msgid "show version and exit"
-msgstr "prikaži verzijo in zapusti"
+msgstr "pokaži različico in končaj"
 
 #: ../src/main.c:78
 msgid "v4l device to use"
@@ -587,7 +587,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Camorama verzija %s\n"
+"Camorama različica %s\n"
 "\n"
 
 #: ../src/main.c:264
@@ -611,5 +611,5 @@ msgid ""
 "Please check connection."
 msgstr ""
 "Povezava z video napravo (%s) ni mogoča.\n"
-"Prosim, preverite povezavo."
+"Preverite povezavo."
 

@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: camorama\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-03-09 03:33+0000\n"
-"PO-Revision-Date: 2007-03-09 23:01-0300\n"
-"Last-Translator: Andre Noel <andrenoel@ubuntu.com>\n"
+"POT-Creation-Date: 2010-05-29 09:47-0400\n"
+"PO-Revision-Date: 2010-05-10 09:57-0300\n"
+"Last-Translator: Lucas Mezencio <lucas.mezencio@gmail.com>\n"
 "Language-Team: Portuguese/Brazil <gnome-l10n-br@listas.cipspa.org.br>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: ../camorama.desktop.in.h:1
 msgid "Camorama Webcam Viewer"
-msgstr "Visualizador de Webcam Camorama"
+msgstr "Visualizador de webcam Camorama"
 
-#: ../camorama.desktop.in.h:2 ../src/callbacks.c:511
+#: ../camorama.desktop.in.h:2 ../src/callbacks.c:480
 msgid "View, alter and save images from a webcam"
 msgstr "Ver, alterar e gravar imagens de uma webcam"
 
@@ -36,15 +36,15 @@ msgstr "<span weight=\"bold\">Geral</span>"
 
 #: ../data/camorama.glade.h:3
 msgid "<span weight=\"bold\">Image Type</span>"
-msgstr "<span weight=\"bold\">Tipo de Imagem</span>"
+msgstr "<span weight=\"bold\">Tipo de imagem</span>"
 
 #: ../data/camorama.glade.h:4
 msgid "<span weight=\"bold\">Local Capture</span>"
-msgstr "<span weight=\"bold\">Captura Local</span>"
+msgstr "<span weight=\"bold\">Captura local</span>"
 
 #: ../data/camorama.glade.h:5
 msgid "<span weight=\"bold\">Remote Capture</span>"
-msgstr "<span weight=\"bold\">Captura Remota</span>"
+msgstr "<span weight=\"bold\">Captura remota</span>"
 
 #: ../data/camorama.glade.h:6
 msgid "<span weight=\"bold\">Timestamp</span>"
@@ -60,7 +60,7 @@ msgstr "Acrescentar horário ao nome do arquivo"
 
 #: ../data/camorama.glade.h:9
 msgid "Automatic Capture"
-msgstr "Captura Automática"
+msgstr "Captura automática"
 
 #: ../data/camorama.glade.h:10
 msgid "Brightness:"
@@ -72,7 +72,7 @@ msgstr "Camorama-libglade"
 
 #: ../data/camorama.glade.h:12
 msgid "Capture Interval (in minutes):"
-msgstr "Intervalo Captura (em minutos):"
+msgstr "Intervalo captura (em minutos):"
 
 #: ../data/camorama.glade.h:13
 msgid "Color:"
@@ -92,7 +92,7 @@ msgstr "Servidor FTP: "
 
 #: ../data/camorama.glade.h:17
 msgid "Filename"
-msgstr "Nome arquivo"
+msgstr "Nome do arquivo"
 
 #: ../data/camorama.glade.h:18
 msgid "General"
@@ -100,7 +100,7 @@ msgstr "Geral"
 
 #: ../data/camorama.glade.h:19
 msgid "Hue:"
-msgstr "Coloração:"
+msgstr "Matiz:"
 
 #: ../data/camorama.glade.h:20
 msgid "Large"
@@ -108,7 +108,7 @@ msgstr "Grande"
 
 #: ../data/camorama.glade.h:21
 msgid "Local Capture"
-msgstr "Captura Local"
+msgstr "Captura local"
 
 #: ../data/camorama.glade.h:22
 msgid "Medium"
@@ -124,11 +124,11 @@ msgstr "Preferências"
 
 #: ../data/camorama.glade.h:25
 msgid "Remote Capture"
-msgstr "Captura Remota"
+msgstr "Captura remota"
 
 #: ../data/camorama.glade.h:26
 msgid "Save directory:"
-msgstr "Directório gravação:"
+msgstr "Diretório para gravação:"
 
 #: ../data/camorama.glade.h:27
 msgid "Save files in jpeg format"
@@ -140,11 +140,11 @@ msgstr "Gravar arquivos no formato png"
 
 #: ../data/camorama.glade.h:29
 msgid "Show Adjustments"
-msgstr "Mostrar Ajustes"
+msgstr "Mostrar ajustes"
 
 #: ../data/camorama.glade.h:30
 msgid "Show Effects"
-msgstr "Mostrar Efeitos"
+msgstr "Mostrar efeitos"
 
 #: ../data/camorama.glade.h:31
 msgid "Small"
@@ -156,7 +156,7 @@ msgstr "Expressão:"
 
 #: ../data/camorama.glade.h:33
 msgid "Take Picture"
-msgstr "Tirar Fotografia"
+msgstr "Tirar fotografia"
 
 #: ../data/camorama.glade.h:34
 msgid "Timestamp"
@@ -172,19 +172,19 @@ msgstr "Usuário:"
 
 #: ../data/camorama.glade.h:37
 msgid "White Balance:"
-msgstr "Equilíbrio de Branco:"
+msgstr "Equilíbrio de branco:"
 
 #: ../data/camorama.glade.h:38
 msgid "_Directory for captured pics:"
-msgstr "_Directório para imagens caputadas:"
+msgstr "_Diretório para imagens capturadas:"
 
 #: ../data/camorama.glade.h:39
 msgid "_Enable local capture"
-msgstr "_Activar captura local"
+msgstr "_Ativar captura local"
 
 #: ../data/camorama.glade.h:40
 msgid "_Enable remote capture"
-msgstr "_Activar captura remota"
+msgstr "_Ativar captura remota"
 
 #: ../data/camorama.glade.h:41
 msgid "_Filename for pictures:"
@@ -416,7 +416,7 @@ msgstr ""
 "Ao capturar imagens através do botão \"Tirar Fotografia\", ou com auto-"
 "captura, esta tecla alterna a gravação das imagens num servidor remoto."
 
-#: ../src/callbacks.c:500
+#: ../src/callbacks.c:469
 msgid "translator_credits"
 msgstr ""
 "Alexandre Folle de Menezes <afmenez@terra.com.br>\n"
@@ -424,35 +424,32 @@ msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Andre Noel <andrenoel@ubuntu.com>"
 
-#: ../src/callbacks.c:509
+#: ../src/callbacks.c:478
 msgid "Camorama"
 msgstr "Camorama"
 
-#: ../src/callbacks.c:595 ../src/callbacks.c:629 ../src/callbacks.c:679
-#: ../src/callbacks.c:692
-msgid "Unable to capture image."
-msgstr "Impossível capturar imagem."
-
-#: ../src/callbacks.c:823
+#: ../src/callbacks.c:632
 #, c-format
 msgid ""
 "Local Capture: %d\n"
 "Remote Capture: %d\n"
 "Capture Interval: %d"
 msgstr ""
-"Captura Local: %d\n"
-"Captura Remota: %d\n"
-"Intervalo de Captura: %d"
+"Captura local: %d\n"
+"Captura remota: %d\n"
+"Intervalo de captura: %d"
 
-#: ../src/callbacks.c:832
+#: ../src/callbacks.c:641
+#, c-format
 msgid "Automatic Capture Disabled"
-msgstr "Captura Automática Desabilitada"
+msgstr "Captura automática desabilitada"
 
 #: ../src/camorama-filter-laplace.c:128
 msgid "Laplace (4 Neighbours)"
 msgstr "Laplace (4 Vizinhos)"
 
-#: ../src/camorama-filter-mirror.c:66
+#. TRANSLATORS: This is a noun
+#: ../src/camorama-filter-mirror.c:67
 msgid "Mirror"
 msgstr "Espelho"
 
@@ -462,11 +459,26 @@ msgstr "Webcam"
 
 #: ../src/camorama-window.c:112
 msgid "_Add Filter"
-msgstr "_Adicionar Filtro"
+msgstr "_Adicionar filtro"
 
-#: ../src/camorama-window.c:199
+#: ../src/camorama-window.c:201
 msgid "Effects"
 msgstr "Efeitos"
+
+#: ../src/capture-strategy-mmap.c:66 ../src/v4l.c:94 ../src/v4l.c:168
+#: ../src/v4l.c:180 ../src/v4l.c:205 ../src/v4l.c:226
+#, c-format
+msgid ""
+"Could not connect to video device (%s).\n"
+"Please check connection."
+msgstr ""
+"Impossível conectar ao dispositivo de vídeo (%s).\n"
+"Verifique a conexão."
+
+#: ../src/capture-strategy-mmap.c:105 ../src/capture-strategy-mmap.c:118
+#: ../src/capture-strategy-mmap.c:200 ../src/capture-strategy-mmap.c:231
+msgid "Unable to capture image."
+msgstr "Impossível capturar imagem."
 
 #: ../src/fileio.c:120 ../src/fileio.c:266
 msgid "Could save temporary image file in /tmp."
@@ -477,7 +489,7 @@ msgstr "É possível salvar a imagem temporária em /tmp."
 msgid "Unable to create image '%s'."
 msgstr "Impossível criar imagem '%s'."
 
-#: ../src/fileio.c:147 ../src/fileio.c:430
+#: ../src/fileio.c:147 ../src/fileio.c:428
 #, c-format
 msgid "Could not save image '%s/%s'."
 msgstr "Impossível salvar a imagem '%s/%s'."
@@ -501,19 +513,19 @@ msgstr "Ocorreu um erro abrindo %s."
 msgid "An error occurred writing to %s."
 msgstr "Ocorreu um erro escrevendo em %s."
 
-#: ../src/fileio.c:404
+#: ../src/fileio.c:402
 #, c-format
 msgid "Could not create directory '%s'."
 msgstr "Impossível criar o diretório '%s'."
 
-#: ../src/fileio.c:415
+#: ../src/fileio.c:413
 #, c-format
 msgid "Could not change to directory '%s'."
 msgstr "Impossível mudar para o diretório '%s'."
 
 #: ../src/filter.c:170
 msgid "Color Correction"
-msgstr "Correção de Cor"
+msgstr "Correção de cor"
 
 #: ../src/filter.c:195
 msgid "Invert"
@@ -543,60 +555,65 @@ msgstr "Monocromático"
 msgid "Monochrome (Weight)"
 msgstr "Monocromático (Peso)"
 
-#: ../src/filter.c:562
+#. TRANSLATORS: http://en.wikipedia.org/wiki/Sobel
+#: ../src/filter.c:563
 msgid "Sobel"
 msgstr "Realçar"
 
-#: ../src/main.c:53
+#: ../src/main.c:78
 msgid "show version and exit"
 msgstr "mostrar versão e sair"
 
-#: ../src/main.c:55
+#: ../src/main.c:80
 msgid "v4l device to use"
 msgstr "Dispositivo v4l a usar"
 
-#: ../src/main.c:57
+#: ../src/main.c:82
 msgid "enable debugging code"
 msgstr "ativar código de depuração"
 
-#: ../src/main.c:58
+#: ../src/main.c:83
 msgid "capture width"
 msgstr "largura captura"
 
-#: ../src/main.c:60
+#: ../src/main.c:85
 msgid "capture height"
 msgstr "altura captura"
 
-#: ../src/main.c:63
+#: ../src/main.c:88
 msgid "maximum capture size"
 msgstr "tamanho máximo captura"
 
-#: ../src/main.c:65
+#: ../src/main.c:90
 msgid "minimum capture size"
 msgstr "tamanho mínimo captura"
 
-#: ../src/main.c:67
+#: ../src/main.c:92
 msgid "middle capture size"
 msgstr "tamanho médio captura"
 
-#: ../src/main.c:69
+#: ../src/main.c:94
 msgid "use read() rather than mmap()"
 msgstr "usar read() em vez de mmap()"
 
-#: ../src/main.c:91
+#: ../src/main.c:115
 msgid "camorama"
 msgstr "camorama"
 
-#: ../src/main.c:104
+#: ../src/main.c:131
 #, c-format
 msgid ""
 "\n"
 "\n"
 "Camorama version %s\n"
 "\n"
-msgstr "\n\nVersão %s do Camorama\n\n"
+msgstr ""
+"\n"
+"\n"
+"Versão %s do Camorama\n"
+"\n"
 
-#: ../src/main.c:238
+#: ../src/main.c:256
 msgid "Couldn't find the main interface file (camorama.glade)."
 msgstr ""
 "Impossível encontrar o arquivo de interface principal (camorama.glade)."
@@ -605,16 +622,6 @@ msgstr ""
 #, c-format
 msgid "Couldn't find pixmap file: %s"
 msgstr "Impossível encontrar arquivo pixmap: %s"
-
-#: ../src/v4l.c:94 ../src/v4l.c:168 ../src/v4l.c:180 ../src/v4l.c:205
-#: ../src/v4l.c:226 ../src/v4l.c:241
-#, c-format
-msgid ""
-"Could not connect to video device (%s).\n"
-"Please check connection."
-msgstr ""
-"Impossível conectar ao dispositivo de vídeo (%s).\n"
-"Verifique a conexão."
 
 #~ msgid "Orientation"
 #~ msgstr "Orientação"
